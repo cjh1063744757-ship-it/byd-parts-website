@@ -300,6 +300,12 @@
       .hero-stats { gap: 20px; }
     }
 
+    /* Fix header on homepage (white background below, not dark hero) */
+    header { background: #1B3A6B; }
+    header .logo-name { color: #fff; }
+    header .nav-link { color: rgba(255,255,255,.9); }
+    header .nav-link:hover, header .nav-link.active { color: #fff; }
+    header.scrolled { background: #1B3A6B; }
     /* ══ SEARCH BAR ══ */
     .home-search-bar {
       background: #fff; border-bottom: 1px solid #e8edf3;
