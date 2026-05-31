@@ -1032,19 +1032,19 @@ footer { background: #0e1628; color: rgba(255,255,255,0.65); padding: 72px 0 0; 
   display: flex;
   align-items: center;
   gap: 5px;
-  background: rgba(27,58,107,0.06);
-  border: 1px solid var(--border);
+  background: rgba(255,255,255,0.15);
+  border: 1px solid rgba(255,255,255,0.5);
   border-radius: 8px;
   padding: 6px 10px;
   cursor: pointer;
   font-family: 'Inter', sans-serif;
   font-size: 0.82rem;
   font-weight: 600;
-  color: var(--dark);
+  color: #ffffff;
   transition: var(--transition);
   white-space: nowrap;
 }
-.lang-btn:hover { background: var(--light); }
+.lang-btn:hover { background: rgba(255,255,255,0.25); }
 .lang-btn .dropdown-arrow { font-size: 0.68rem; opacity: 0.6; }
 .lang-menu {
   display: none;
