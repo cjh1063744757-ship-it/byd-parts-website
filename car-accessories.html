@@ -1,0 +1,1300 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="CM IMPORT&EXPORT car accessories catalog — phone holders, car fresheners, seat covers, steering wheel covers, organizers and decorative items. Factory direct wholesale from China." />
+  <meta name="keywords" content="car accessories wholesale China, phone holder bulk order, car freshener export, seat cover wholesale, steering wheel cover supplier, car organizer China" />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:title" content="Car Accessories Catalog | CM IMPORT&EXPORT" />
+  <meta property="og:description" content="30+ car accessories — phone holders, fresheners, seat covers, organizers and more. Factory direct from China, global shipping." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://cangming.netlify.app/car-accessories.html" />
+  <title>Car Accessories | Phone Holders, Fresheners & More | CM IMPORT&EXPORT</title>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    /* ── Car Accessories Page ── */
+    :root {
+      --acc-primary: #C05621;
+      --acc-dark:    #7B3510;
+      --acc-light:   #FFF7ED;
+      --acc-border:  #FDDCBB;
+      --acc-tag:     #FED7AA;
+    }
+
+    .acc-hero {
+      background: linear-gradient(135deg, #3D1A00 0%, #7B3510 45%, #C05621 100%);
+      padding: 130px 0 70px;
+      color: #fff;
+      text-align: center;
+    }
+    .acc-hero .breadcrumb { margin-bottom: 20px; opacity: .75; font-size: .85rem; }
+    .acc-hero .breadcrumb a { color: #fff; }
+    .acc-hero .breadcrumb .sep { margin: 0 8px; }
+    .acc-hero h1 { font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 16px; }
+    .acc-hero p { font-size: 1.05rem; opacity: .85; max-width: 580px; margin: 0 auto 28px; }
+    .acc-hero-stats { display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; margin-top: 12px; }
+    .ahstat { text-align: center; }
+    .ahstat-num { font-size: 2rem; font-weight: 800; font-family: 'Poppins', sans-serif; color: #FDB47E; }
+    .ahstat-lbl { font-size: .78rem; opacity: .75; text-transform: uppercase; letter-spacing: 1px; }
+
+    /* ── Filter Bar ── */
+    .acc-filter-bar {
+      background: #fff;
+      border-bottom: 2px solid var(--acc-border);
+      position: sticky; top: 72px; z-index: 90;
+    }
+    .acc-filter-inner {
+      display: flex; overflow-x: auto; gap: 0;
+      max-width: 1200px; margin: 0 auto; padding: 0 20px;
+      scrollbar-width: none;
+    }
+    .acc-filter-inner::-webkit-scrollbar { display: none; }
+    .acc-cat-btn {
+      flex-shrink: 0; padding: 14px 20px;
+      font-size: .82rem; font-weight: 600;
+      border: none; background: none; cursor: pointer;
+      color: #666; border-bottom: 3px solid transparent;
+      transition: color .2s, border-color .2s; white-space: nowrap;
+    }
+    .acc-cat-btn:hover { color: var(--acc-primary); }
+    .acc-cat-btn.active { color: var(--acc-primary); border-bottom-color: var(--acc-primary); }
+
+    /* ── Search Bar ── */
+    .acc-search-wrap {
+      max-width: 1200px; margin: 0 auto; padding: 28px 20px 0;
+      display: flex; gap: 12px; align-items: center; flex-wrap: wrap;
+    }
+    .acc-search-input {
+      flex: 1; min-width: 220px; padding: 11px 16px;
+      border: 2px solid #e0e6ed; border-radius: 8px;
+      font-size: .9rem; outline: none;
+      transition: border-color .2s;
+    }
+    .acc-search-input:focus { border-color: var(--acc-primary); }
+    .acc-result-count { font-size: .85rem; color: #888; margin-left: auto; }
+
+    /* ── Product Grid ── */
+    .acc-grid {
+      max-width: 1200px; margin: 0 auto;
+      padding: 24px 20px 80px;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+      gap: 24px;
+    }
+    .acc-card {
+      background: #fff;
+      border: 1.5px solid #e8edf3;
+      border-radius: 14px;
+      overflow: hidden;
+      transition: transform .25s, box-shadow .25s;
+      display: flex; flex-direction: column;
+    }
+    .acc-card:hover { transform: translateY(-4px); box-shadow: 0 12px 36px rgba(0,0,0,.1); }
+
+    .acc-card-img {
+      height: 160px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 3.6rem; position: relative;
+    }
+    .acc-card-badge {
+      position: absolute; top: 12px; left: 12px;
+      background: var(--acc-primary); color: #fff;
+      font-size: .68rem; font-weight: 700; padding: 3px 8px;
+      border-radius: 4px; text-transform: uppercase; letter-spacing: .5px;
+    }
+    .acc-card-badge.hot  { background: #e53e3e; }
+    .acc-card-badge.new  { background: #38a169; }
+    .acc-card-badge.best { background: var(--acc-primary); }
+
+    .acc-card-body { padding: 16px 18px 20px; flex: 1; display: flex; flex-direction: column; gap: 8px; }
+    .acc-cat-label {
+      font-size: .72rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: .8px; color: var(--acc-primary);
+    }
+    .acc-card-body h3 { font-size: .98rem; font-weight: 700; color: #1a202c; margin: 0; line-height: 1.3; }
+    .acc-card-body p  { font-size: .82rem; color: #666; line-height: 1.5; margin: 0; flex: 1; }
+
+    .acc-specs { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 2px; }
+    .acc-spec  {
+      font-size: .72rem; background: var(--acc-light);
+      border: 1px solid var(--acc-border);
+      color: var(--acc-dark); padding: 2px 8px; border-radius: 4px;
+    }
+
+    .acc-card-footer {
+      padding: 0 18px 18px;
+      display: flex; gap: 8px; align-items: center;
+    }
+    .acc-moq { font-size: .78rem; color: #888; flex: 1; }
+    .acc-add-btn {
+      background: var(--acc-primary); color: #fff;
+      border: none; padding: 8px 16px; border-radius: 8px;
+      font-size: .82rem; font-weight: 600; cursor: pointer;
+      transition: background .2s, transform .15s;
+      white-space: nowrap;
+    }
+    .acc-add-btn:hover { background: var(--acc-dark); transform: scale(1.03); }
+    .acc-add-btn:active { transform: scale(.97); }
+
+    /* ── Category Section Headings ── */
+    .acc-section-head {
+      max-width: 1200px; margin: 40px auto 0; padding: 0 20px 0;
+      display: flex; align-items: center; gap: 12px;
+    }
+    .acc-section-head h2 {
+      font-size: 1.2rem; font-weight: 700; color: #1a202c;
+    }
+    .acc-section-head .acc-section-line {
+      flex: 1; height: 2px; background: #e8edf3;
+    }
+
+    /* ── CTA Banner ── */
+    .acc-cta {
+      background: linear-gradient(135deg, #7B3510, #C05621);
+      color: #fff; text-align: center; padding: 60px 20px;
+    }
+    .acc-cta h2 { font-size: 1.8rem; margin-bottom: 12px; }
+    .acc-cta p  { opacity: .85; margin-bottom: 28px; max-width: 500px; margin-left: auto; margin-right: auto; }
+    .acc-cta .btn-white {
+      display: inline-block; background: #fff; color: var(--acc-primary);
+      padding: 13px 32px; border-radius: 8px; font-weight: 700;
+      font-size: .95rem; text-decoration: none;
+      transition: opacity .2s;
+    }
+    .acc-cta .btn-white:hover { opacity: .9; }
+
+    /* ── Multi-image card gallery ── */
+    .acc-card-img-wrap {
+      position: relative; overflow: hidden; background: #f0f2f5;
+    }
+    .acc-main-img {
+      width: 100%; height: 200px; object-fit: cover; display: block;
+      transition: opacity 0.25s ease;
+    }
+    .acc-thumbs {
+      display: flex; gap: 4px; padding: 6px 8px;
+      background: #f3f4f6; border-bottom: 1px solid #e8edf3;
+    }
+    .acc-thumb {
+      width: 60px; height: 44px; object-fit: cover;
+      border-radius: 4px; cursor: pointer;
+      border: 2px solid transparent;
+      transition: border-color 0.15s, opacity 0.15s;
+      opacity: 0.72; flex-shrink: 0;
+    }
+    .acc-thumb:hover { opacity: 1; border-color: var(--acc-dark); }
+    .acc-thumb.active { border-color: var(--acc-primary); opacity: 1; }
+
+    /* hidden when filtered */
+    .acc-card.hidden { display: none; }
+
+    @media (max-width: 768px) {
+      .acc-grid { grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 16px; padding: 16px 16px 60px; }
+      .acc-hero-stats { gap: 24px; }
+      .ahstat-num { font-size: 1.5rem; }
+    }
+  </style>
+  <!-- Meta Pixel Code -->
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '1662154028390817');
+  fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=1662154028390817&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Meta Pixel Code -->
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="nav-container">
+    <a href="index.html" class="logo">
+      <div class="logo-icon">🌍</div>
+      <div class="logo-text">
+        <span class="logo-name">CM IMPORT&amp;EXPORT</span>
+        <span class="logo-tagline" data-i18n="footer.tagline">Driving Your World Forward</span>
+      </div>
+    </a>
+    <nav class="nav-menu">
+      <a href="index.html" class="nav-link"><span data-i18n="nav.home">Home</span></a>
+      <div class="nav-dropdown">
+        <a href="products.html" class="nav-link nav-dropdown-trigger active"><span data-i18n="nav.products">Products</span> <span class="dropdown-arrow">▾</span></a>
+        <div class="dropdown-menu">
+          <a href="products.html" class="dropdown-item" data-i18n="nav.allProducts">📦 All Products</a>
+          <div class="dropdown-divider"></div>
+          <a href="tires.html" class="dropdown-item" data-i18n="nav.tires">🛞 Tires</a>
+          <a href="pricelist.html" class="dropdown-item" data-i18n="nav.tirePrices">💰 Tire Prices</a>
+          <a href="byd-parts.html" class="dropdown-item" data-i18n="nav.bydParts">⚡ BYD Parts</a>
+          <a href="sinotruk-parts.html" class="dropdown-item" data-i18n="nav.sinotrukParts">🚛 Sinotruk Parts</a>
+          <a href="car-accessories.html" class="dropdown-item active">🚗 Car Accessories</a>
+        </div>
+      </div>
+      <a href="about.html" class="nav-link"><span data-i18n="nav.about">About Us</span></a>
+      <a href="faq.html" class="nav-link"><span data-i18n="nav.faq">FAQ</span></a>
+      <a href="contact.html" class="nav-link"><span data-i18n="nav.contact">Contact</span></a>
+      <a href="inquiry-cart.html" class="nav-link" style="position:relative;">
+        🛒 Inquiry Cart
+        <span id="cartBadge" class="cart-nav-badge" style="display:none;">0</span>
+      </a>
+    </nav>
+    <div class="lang-switcher">
+      <button class="lang-btn" id="langToggle" onclick="toggleLangMenu(event)">
+        <span id="langFlag">🇬🇧</span>
+        <span id="langCode">EN</span>
+        <span class="dropdown-arrow">▾</span>
+      </button>
+      <div class="lang-menu" id="langMenu">
+        <button class="lang-option" data-lang="en" onclick="setLang('en')">🇬🇧 English</button>
+        <button class="lang-option" data-lang="fr" onclick="setLang('fr')">🇫🇷 Français</button>
+        <button class="lang-option" data-lang="ru" onclick="setLang('ru')">🇷🇺 Русский</button>
+        <button class="lang-option" data-lang="uk" onclick="setLang('uk')">🇺🇦 Українська</button>
+      </div>
+    </div>    <div class="hamburger"><span></span><span></span><span></span></div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="acc-hero">
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="index.html">Home</a>
+      <span class="sep">/</span>
+      <a href="products.html">Products</a>
+      <span class="sep">/</span>
+      <span>Car Accessories</span>
+    </div>
+    <h1>🚗 Car Accessories</h1>
+    <p>Phone holders, air fresheners, seat covers, organizers & decorative items — all factory-direct from China for global wholesale buyers.</p>
+    <div class="acc-hero-stats">
+      <div class="ahstat">
+        <div class="ahstat-num">30+</div>
+        <div class="ahstat-lbl">SKUs Available</div>
+      </div>
+      <div class="ahstat">
+        <div class="ahstat-num">8</div>
+        <div class="ahstat-lbl">Product Categories</div>
+      </div>
+      <div class="ahstat">
+        <div class="ahstat-num">MOQ 50</div>
+        <div class="ahstat-lbl">Minimum Order</div>
+      </div>
+      <div class="ahstat">
+        <div class="ahstat-num">OEM</div>
+        <div class="ahstat-lbl">Custom Branding OK</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FILTER BAR -->
+<div class="acc-filter-bar">
+  <div class="acc-filter-inner">
+    <button class="acc-cat-btn active" data-cat="all">All</button>
+    <button class="acc-cat-btn" data-cat="phone-holder">📱 Phone Holders</button>
+    <button class="acc-cat-btn" data-cat="freshener">🌸 Car Fresheners</button>
+    <button class="acc-cat-btn" data-cat="steering">🎮 Steering Wheel</button>
+    <button class="acc-cat-btn" data-cat="seat">💺 Seat Covers</button>
+    <button class="acc-cat-btn" data-cat="organizer">🗂️ Organizers</button>
+    <button class="acc-cat-btn" data-cat="decor">✨ Decorative</button>
+    <button class="acc-cat-btn" data-cat="sunshade">☀️ Sun Shades & Mats</button>
+    <button class="acc-cat-btn" data-cat="charger">🔌 Chargers & Tech</button>
+  </div>
+</div>
+
+<!-- SEARCH -->
+<div id="accMain" style="background: #f8fafc;">
+  <div class="acc-search-wrap">
+    <input class="acc-search-input" type="text" id="accSearch" placeholder="Search accessories... (e.g. phone holder, leather seat)" />
+    <span class="acc-result-count" id="accCount">Showing all 32 items</span>
+  </div>
+
+  <!-- ── PHONE HOLDERS ── -->
+  <div class="acc-section-head" data-section="phone-holder">
+    <h2>📱 Phone Holders</h2>
+    <div class="acc-section-line"></div>
+  </div>
+  <div class="acc-grid">
+
+    <div class="acc-card" data-cat="phone-holder" data-name="Universal Dashboard Phone Mount">
+      <div class="acc-card-img-wrap">
+        <span class="acc-card-badge best">BESTSELLER</span>
+        <img class="acc-main-img" src="https://image.made-in-china.com/202f0j00ZbMkcmrgrBzL/Creative-Rotatable-Suction-Cup-Base-Car-Phone-Holder-for-Dashboard-Mount.webp" alt="Universal Dashboard Phone Mount" loading="lazy" onerror="this.parentElement.style.background='var(--acc-light)';this.style.display='none'"/>
+        <div class="acc-thumbs">
+          <img class="acc-thumb active" src="https://image.made-in-china.com/202f0j00ZbMkcmrgrBzL/Creative-Rotatable-Suction-Cup-Base-Car-Phone-Holder-for-Dashboard-Mount.webp" alt="View 1" onclick="swapImg(this,'https://image.made-in-china.com/202f0j00ZbMkcmrgrBzL/Creative-Rotatable-Suction-Cup-Base-Car-Phone-Holder-for-Dashboard-Mount.webp')"/>
+          <img class="acc-thumb" src="https://image.made-in-china.com/202f0j00nqCbcUrFfvuI/Creative-Rotatable-Suction-Cup-Base-Car-Phone-Holder-for-Dashboard-Mount.webp" alt="View 2" onclick="swapImg(this,'https://image.made-in-china.com/202f0j00nqCbcUrFfvuI/Creative-Rotatable-Suction-Cup-Base-Car-Phone-Holder-for-Dashboard-Mount.webp')"/>
+          <img class="acc-thumb" src="https://image.made-in-china.com/202f0j00FbvkcLrlAMgI/Creative-Rotatable-Suction-Cup-Base-Car-Phone-Holder-for-Dashboard-Mount.webp" alt="View 3" onclick="swapImg(this,'https://image.made-in-china.com/202f0j00FbvkcLrlAMgI/Creative-Rotatable-Suction-Cup-Base-Car-Phone-Holder-for-Dashboard-Mount.webp')"/>
+        </div>
+      </div>
+      <div class="acc-card-body">
+        <div class="acc-cat-label">📱 Phone Holder</div>
+        <h3>Universal Dashboard Phone Mount</h3>
+        <p>Industrial-grade suction cup locks onto any smooth dashboard surface in seconds. 360° ball-joint rotation lets you switch between landscape and portrait in one click. Auto-lock arms expand to fit phones 4"–7". Leaves zero residue when removed.</p>
+        <div class="acc-specs">
+          <span class="acc-spec">4"–7" phone</span>
+          <span class="acc-spec">360° rotation</span>
+          <span class="acc-spec">Suction cup</span>
+        </div>
+      </div>
+      <div class="acc-card-footer">
+        <span class="acc-moq">MOQ: 100 pcs</span>
+        <button class="acc-add-btn" onclick="cartAdd('Universal Dashboard Phone Mount','📱','Car Accessories')">+ Add to Cart</button>
+      </div>
+    </div>
+
+    <div class="acc-card" data-cat="phone-holder" data-name="Air Vent Phone Holder">
+      <div class="acc-card-img-wrap">
+        <span class="acc-card-badge hot">HOT</span>
+        <img class="acc-main-img" src="https://image.made-in-china.com/202f0j00UODcVrdavfuR/Innovative-Car-Air-Vent-Phone-Holder-with-Magnetic-Design.webp" alt="Air Vent Clip Phone Holder" loading="lazy" onerror="this.parentElement.style.background='var(--acc-light)';this.style.display='none'"/>
+        <div class="acc-thumbs">
+          <img class="acc-thumb active" src="https://image.made-in-china.com/202f0j00UODcVrdavfuR/Innovative-Car-Air-Vent-Phone-Holder-with-Magnetic-Design.webp" alt="View 1" onclick="swapImg(this,'https://image.made-in-china.com/202f0j00UODcVrdavfuR/Innovative-Car-Air-Vent-Phone-Holder-with-Magnetic-Design.webp')"/>
+          <img class="acc-thumb" src="https://image.made-in-china.com/202f0j00UNHclaARqfzG/Innovative-Car-Air-Vent-Phone-Holder-with-Magnetic-Design.webp" alt="View 2" onclick="swapImg(this,'https://image.made-in-china.com/202f0j00UNHclaARqfzG/Innovative-Car-Air-Vent-Phone-Holder-with-Magnetic-Design.webp')"/>
+          <img class="acc-thumb" src="https://image.made-in-china.com/202f0j00UnIcViALYRgY/Innovative-Car-Air-Vent-Phone-Holder-with-Magnetic-Design.webp" alt="View 3" onclick="swapImg(this,'https://image.made-in-china.com/202f0j00UnIcViALYRgY/Innovative-Car-Air-Vent-Phone-Holder-with-Magnetic-Design.webp')"/>
+        </div>
+      </div>
+      <div class="acc-card-body">
+        <div class="acc-cat-label">📱 Phone Holder</div>
+        <h3>Air Vent Clip Phone Holder</h3>
+        <p>Precision-machined aluminum alloy clip grips onto any vent blade without scratching. Spring-loaded cradle auto-adjusts 58–90 mm wide. Compact design keeps your sightlines clear. Pairs beautifully with modern vehicle interiors.</p>
+        <div class="acc-specs">
+          <span class="acc-spec">Vent clip</span>
+          <span class="acc-spec">Aluminum alloy</span>
+          <span class="acc-spec">Spring grip</span>
+        </div>
+      </div>
+      <div class="acc-card-footer">
+        <span class="acc-moq">MOQ: 100 pcs</span>
+        <button class="acc-add-btn" onclick="cartAdd('Air Vent Clip Phone Holder','📲','Car Accessories')">+ Add to Cart</button>
+      </div>
+    </div>
+
+    <div class="acc-card" data-cat="phone-holder" data-name="Magnetic Car Phone Holder">
+      <div class="acc-card-img-wrap">
+        <img class="acc-main-img" src="https://image.made-in-china.com/202f0j00UNHclaARqfzG/Innovative-Car-Air-Vent-Phone-Holder-with-Magnetic-Design.webp" alt="Magnetic Dashboard Phone Mount" loading="lazy" onerror="this.parentElement.style.background='var(--acc-light)';this.style.display='none'"/>
+        <div class="acc-thumbs">
+          <img class="acc-thumb active" src="https://image.made-in-china.com/202f0j00UNHclaARqfzG/Innovative-Car-Air-Vent-Phone-Holder-with-Magnetic-Design.webp" alt="View 1" onclick="swapImg(this,'https://image.made-in-china.com/202f0j00UNHclaARqfzG/Innovative-Car-Air-Vent-Phone-Holder-with-Magnetic-Design.webp')"/>
+          <img class="acc-thumb" src="https://image.made-in-china.com/202f0j00UODcVrdavfuR/Innovative-Car-Air-Vent-Phone-Holder-with-Magnetic-Design.webp" alt="View 2" onclick="swapImg(this,'https://image.made-in-china.com/202f0j00UODcVrdavfuR/Innovative-Car-Air-Vent-Phone-Holder-with-Magnetic-Design.webp')"/>
+          <img class="acc-thumb" src="https://image.made-in-china.com/202f0j00ZbMkcmrgrBzL/Creative-Rotatable-Suction-Cup-Base-Car-Phone-Holder-for-Dashboard-Mount.webp" alt="View 3" onclick="swapImg(this,'https://image.made-in-china.com/202f0j00ZbMkcmrgrBzL/Creative-Rotatable-Suction-Cup-Base-Car-Phone-Holder-for-Dashboard-Mount.webp')"/>
+        </div>
+      </div>
+      <div class="acc-card-body">
+        <div class="acc-cat-label">📱 Phone Holder</div>
+        <h3>Magnetic Dashboard Phone Mount</h3>
+        <p>Grade N52 neodymium magnet holds phones securely even on rough roads. Includes 2 ultra-thin metal plates — slot one inside your case. Only 8 mm profile, virtually invisible on the dashboard. Fully compatible with wireless charging coils.</p>
+        <div class="acc-specs">
+          <span class="acc-spec">N52 magnet</span>
+          <span class="acc-spec">Wireless charge OK</span>
+          <span class="acc-spec">Adhesive base</span>
+        </div>
+      </div>
+      <div class="acc-card-footer">
+        <span class="acc-moq">MOQ: 100 pcs</span>
+        <button class="acc-add-btn" onclick="cartAdd('Magnetic Dashboard Phone Mount','🧲','Car Accessories')">+ Add to Cart</button>
+      </div>
+    </div>
+
+    <div class="acc-card" data-cat="phone-holder" data-name="Wireless Charging Phone Mount">
+      <div class="acc-card-img-wrap">
+        <span class="acc-card-badge new">NEW</span>
+        <img class="acc-main-img" src="https://image.made-in-china.com/202f0j00UnIcViALYRgY/Innovative-Car-Air-Vent-Phone-Holder-with-Magnetic-Design.webp" alt="15W Wireless Charging Car Mount" loading="lazy" onerror="this.parentElement.style.background='var(--acc-light)';this.style.display='none'"/>
+        <div class="acc-thumbs">
+          <img class="acc-thumb active" src="https://image.made-in-china.com/202f0j00UnIcViALYRgY/Innovative-Car-Air-Vent-Phone-Holder-with-Magnetic-Design.webp" alt="View 1" onclick="swapImg(this,'https://image.made-in-china.com/202f0j00UnIcViALYRgY/Innovative-Car-Air-Vent-Phone-Holder-with-Magnetic-Design.webp')"/>
+          <img class="acc-thumb" src="https://image.made-in-china.com/202f0j00FbvkcLrlAMgI/Creative-Rotatable-Suction-Cup-Base-Car-Phone-Holder-for-Dashboard-Mount.webp" alt="View 2" onclick="swapImg(this,'https://image.made-in-china.com/202f0j00FbvkcLrlAMgI/Creative-Rotatable-Suction-Cup-Base-Car-Phone-Holder-for-Dashboard-Mount.webp')"/>
+          <img class="acc-thumb" src="https://image.made-in-china.com/202f0j00nqCbcUrFfvuI/Creative-Rotatable-Suction-Cup-Base-Car-Phone-Holder-for-Dashboard-Mount.webp" alt="View 3" onclick="swapImg(this,'https://image.made-in-china.com/202f0j00nqCbcUrFfvuI/Creative-Rotatable-Suction-Cup-Base-Car-Phone-Holder-for-Dashboard-Mount.webp')"/>
+        </div>
+      </div>
+      <div class="acc-card-body">
+        <div class="acc-cat-label">📱 Phone Holder</div>
+        <h3>15W Wireless Charging Car Mount</h3>
+        <p>Sensor-activated electric arms clamp the moment your phone touches the pad — no fumbling while driving. 15W Qi charging works through most slim cases. Dual mounting options: dashboard ball joint or air vent clip. Blue LED ring confirms charging.</p>
+        <div class="acc-specs">
+          <span class="acc-spec">15W Qi</span>
+          <span class="acc-spec">Auto-clamp</span>
+          <span class="acc-spec">Dual mount types</span>
+        </div>
+      </div>
+      <div class="acc-card-footer">
+        <span class="acc-moq">MOQ: 50 pcs</span>
+        <button class="acc-add-btn" onclick="cartAdd('15W Wireless Charging Car Mount','⚡','Car Accessories')">+ Add to Cart</button>
+      </div>
+    </div>
+
+  </div><!-- end phone-holder grid -->
+
+  <!-- ── CAR FRESHENERS ── -->
+  <div class="acc-section-head" data-section="freshener">
+    <h2>🌸 Car Air Fresheners</h2>
+    <div class="acc-section-line"></div>
+  </div>
+  <div class="acc-grid">
+
+    <div class="acc-card" data-cat="freshener" data-name="Luxury Perfume Bottle Dashboard Freshener">
+      <div class="acc-card-img-wrap">
+        <span class="acc-card-badge best">BESTSELLER</span>
+        <img class="acc-main-img" src="https://image.made-in-china.com/202f0j00iyAQaSsBlToO/Wine-Black-Car-Dashboard-Car-Perfume.webp" alt="Luxury Crystal Perfume Bottle Freshener" loading="lazy" onerror="this.parentElement.style.background='var(--acc-light)';this.style.display='none'"/>
+        <div class="acc-thumbs">
+          <img class="acc-thumb active" src="https://image.made-in-china.com/202f0j00iyAQaSsBlToO/Wine-Black-Car-Dashboard-Car-Perfume.webp" alt="View 1" onclick="swapImg(this,'https://image.made-in-china.com/202f0j00iyAQaSsBlToO/Wine-Black-Car-Dashboard-Car-Perfume.webp')"/>
+          <img class="acc-thumb" src="https://image.made-in-china.com/155f0j00TqHobjraaQkF/Portable-Dashboard-Car-Vehicle-Fragrance-Air-Freshener-Gel-Aromatherapy-Perfume-Gel.webp" alt="View 2" onclick="swapImg(this,'https://image.made-in-china.com/155f0j00TqHobjraaQkF/Portable-Dashboard-Car-Vehicle-Fragrance-Air-Freshener-Gel-Aromatherapy-Perfume-Gel.webp')"/>
+          <img class="acc-thumb" src="https://image.made-in-china.com/202f0j00iyAQaSsBlToO/Wine-Black-Car-Dashboard-Car-Perfume.webp" alt="View 3" onclick="swapImg(this,'https://image.made-in-china.com/202f0j00iyAQaSsBlToO/Wine-Black-Car-Dashboard-Car-Perfume.webp')"/>
+        </div>
+      </div>
+      <div class="acc-card-body">
+        <div class="acc-cat-label">🌸 Car Freshener</div>
+        <h3>Luxury Crystal Perfume Bottle Freshener</h3>
+        <p>Hand-blown crystal glass bottle with weighted non-slip rubber base keeps the fragrance upright on any dashboard. Slow-release reed diffuser technology sustains scent for 60–90 days per refill. Available in 8 signature scents. Custom OEM label printing supported for resellers.</p>
+        <div class="acc-specs">
+          <span class="acc-spec">8 scents</span>
+          <span class="acc-spec">60–90 days</span>
+          <span class="acc-spec">Non-slip base</span>
+        </div>
+      </div>
+      <div class="acc-card-footer">
+        <span class="acc-moq">MOQ: 100 pcs</span>
+        <button class="acc-add-btn" onclick="cartAdd('Luxury Crystal Perfume Bottle Freshener','🌺','Car Accessories')">+ Add to Cart</button>
+      </div>
+    </div>
+
+    <div class="acc-card" data-cat="freshener" data-name="Air Vent Clip Diffuser">
+      <div class="acc-card-img-wrap">
+        <span class="acc-card-badge hot">HOT</span>
+        <img class="acc-main-img" src="https://image.made-in-china.com/155f0j00TqHobjraaQkF/Portable-Dashboard-Car-Vehicle-Fragrance-Air-Freshener-Gel-Aromatherapy-Perfume-Gel.webp" alt="Air Vent Essential Oil Clip Diffuser" loading="lazy" onerror="this.parentElement.style.background='var(--acc-light)';this.style.display='none'"/>
+        <div class="acc-thumbs">
+          <img class="acc-thumb active" src="https://image.made-in-china.com/155f0j00TqHobjraaQkF/Portable-Dashboard-Car-Vehicle-Fragrance-Air-Freshener-Gel-Aromatherapy-Perfume-Gel.webp" alt="View 1" onclick="swapImg(this,'https://image.made-in-china.com/155f0j00TqHobjraaQkF/Portable-Dashboard-Car-Vehicle-Fragrance-Air-Freshener-Gel-Aromatherapy-Perfume-Gel.webp')"/>
+          <img class="acc-thumb" src="https://image.made-in-china.com/202f0j00iyAQaSsBlToO/Wine-Black-Car-Dashboard-Car-Perfume.webp" alt="View 2" onclick="swapImg(this,'https://image.made-in-china.com/202f0j00iyAQaSsBlToO/Wine-Black-Car-Dashboard-Car-Perfume.webp')"/>
+          <img class="acc-thumb" src="https://image.made-in-china.com/155f0j00TqHobjraaQkF/Portable-Dashboard-Car-Vehicle-Fragrance-Air-Freshener-Gel-Aromatherapy-Perfume-Gel.webp" alt="View 3" onclick="swapImg(this,'https://image.made-in-china.com/155f0j00TqHobjraaQkF/Portable-Dashboard-Car-Vehicle-Fragrance-Air-Freshener-Gel-Aromatherapy-Perfume-Gel.webp')"/>
+        </div>
+      </div>
+      <div class="acc-card-body">
+        <div class="acc-cat-label">🌸 Car Freshener</div>
+        <h3>Air Vent Essential Oil Clip Diffuser</h3>
+        <p>Die-cast zinc alloy body with a polished chrome finish — looks premium on any vent grille. Replaceable cotton wool pads absorb your chosen essential oil and diffuse through the airflow. Over 15 decorative shapes (flower, leaf, geometric). Refillable pads sold separately in bulk packs.</p>
+        <div class="acc-specs">
+          <span class="acc-spec">Zinc alloy</span>
+          <span class="acc-spec">15+ designs</span>
+          <span class="acc-spec">Refillable pads</span>
+        </div>
+      </div>
+      <div class="acc-card-footer">
+        <span class="acc-moq">MOQ: 200 pcs</span>
+        <button class="acc-add-btn" onclick="cartAdd('Air Vent Essential Oil Clip Diffuser','🌿','Car Accessories')">+ Add to Cart</button>
+      </div>
+    </div>
+
+    <div class="acc-card" data-cat="freshener" data-name="Hanging Rearview Mirror Freshener">
+      <div class="acc-card-img-wrap">
+        <img class="acc-main-img" src="https://image.made-in-china.com/202f0j00iyAQaSsBlToO/Wine-Black-Car-Dashboard-Car-Perfume.webp" alt="Hanging Rearview Mirror Freshener" loading="lazy" onerror="this.parentElement.style.background='var(--acc-light)';this.style.display='none'"/>
+        <div class="acc-thumbs">
+          <img class="acc-thumb active" src="https://image.made-in-china.com/202f0j00iyAQaSsBlToO/Wine-Black-Car-Dashboard-Car-Perfume.webp" alt="View 1" onclick="swapImg(this,'https://image.made-in-china.com/202f0j00iyAQaSsBlToO/Wine-Black-Car-Dashboard-Car-Perfume.webp')"/>
+          <img class="acc-thumb" src="https://image.made-in-china.com/155f0j00TqHobjraaQkF/Portable-Dashboard-Car-Vehicle-Fragrance-Air-Freshener-Gel-Aromatherapy-Perfume-Gel.webp" alt="View 2" onclick="swapImg(this,'https://image.made-in-china.com/155f0j00TqHobjraaQkF/Portable-Dashboard-Car-Vehicle-Fragrance-Air-Freshener-Gel-Aromatherapy-Perfume-Gel.webp')"/>
+          <img class="acc-thumb" src="https://image.made-in-china.com/202f0j00iyAQaSsBlToO/Wine-Black-Car-Dashboard-Car-Perfume.webp" alt="View 3" onclick="swapImg(this,'https://image.made-in-china.com/202f0j00iyAQaSsBlToO/Wine-Black-Car-Dashboard-Car-Perfume.webp')"/>
+        </div>
+      </div>
+      <div class="acc-card-body">
+        <div class="acc-cat-label">🌸 Car Freshener</div>
+        <h3>Hanging Rearview Mirror Freshener</h3>
+        <p>Classic rearview hanging freshener in premium felt or double-sided card stock. Scent lasts 30–45 days. Fully customisable — your logo, shape, and fragrance printed at the factory. Minimum 500 pcs makes it a great branded promotional item.</p>
+        <div class="acc-specs">
+          <span class="acc-spec">Paper / felt</span>
+          <span class="acc-spec">Custom shape</span>
+          <span class="acc-spec">OEM logo OK</span>
+        </div>
+      </div>
+      <div class="acc-card-footer">
+        <span class="acc-moq">MOQ: 500 pcs</span>
+        <button class="acc-add-btn" onclick="cartAdd('Hanging Rearview Mirror Freshener','🎀','Car Accessories')">+ Add to Cart</button>
+      </div>
+    </div>
+
+    <div class="acc-card" data-cat="freshener" data-name="Under-Seat Long-lasting Freshener Bag">
+      <div class="acc-card-img-wrap">
+        <img class="acc-main-img" src="https://image.made-in-china.com/155f0j00TqHobjraaQkF/Portable-Dashboard-Car-Vehicle-Fragrance-Air-Freshener-Gel-Aromatherapy-Perfume-Gel.webp" alt="Under-Seat Bamboo Charcoal Freshener Bag" loading="lazy" onerror="this.parentElement.style.background='var(--acc-light)';this.style.display='none'"/>
+        <div class="acc-thumbs">
+          <img class="acc-thumb active" src="https://image.made-in-china.com/155f0j00TqHobjraaQkF/Portable-Dashboard-Car-Vehicle-Fragrance-Air-Freshener-Gel-Aromatherapy-Perfume-Gel.webp" alt="View 1" onclick="swapImg(this,'https://image.made-in-china.com/155f0j00TqHobjraaQkF/Portable-Dashboard-Car-Vehicle-Fragrance-Air-Freshener-Gel-Aromatherapy-Perfume-Gel.webp')"/>
+          <img class="acc-thumb" src="https://image.made-in-china.com/202f0j00iyAQaSsBlToO/Wine-Black-Car-Dashboard-Car-Perfume.webp" alt="View 2" onclick="swapImg(this,'https://image.made-in-china.com/202f0j00iyAQaSsBlToO/Wine-Black-Car-Dashboard-Car-Perfume.webp')"/>
+          <img class="acc-thumb" src="https://image.made-in-china.com/155f0j00TqHobjraaQkF/Portable-Dashboard-Car-Vehicle-Fragrance-Air-Freshener-Gel-Aromatherapy-Perfume-Gel.webp" alt="View 3" onclick="swapImg(this,'https://image.made-in-china.com/155f0j00TqHobjraaQkF/Portable-Dashboard-Car-Vehicle-Fragrance-Air-Freshener-Gel-Aromatherapy-Perfume-Gel.webp')"/>
+        </div>
+      </div>
+      <div class="acc-card-body">
+        <div class="acc-cat-label">🌸 Car Freshener</div>
+        <h3>Under-Seat Bamboo Charcoal Freshener Bag</h3>
+        <p>Natural activated bamboo charcoal granules neutralise odours and absorb excess moisture without sprays or chemicals. One 200g bag works for up to 2 years. Simply place in sunlight for 1 hour monthly to regenerate. Eco-friendly, fragrance-free, and safe for children and pets.</p>
+        <div class="acc-specs">
+          <span class="acc-spec">Bamboo charcoal</span>
+          <span class="acc-spec">2-year life</span>
+          <span class="acc-spec">Eco-friendly</span>
+        </div>
+      </div>
+      <div class="acc-card-footer">
+        <span class="acc-moq">MOQ: 200 pcs</span>
+        <button class="acc-add-btn" onclick="cartAdd('Under-Seat Bamboo Charcoal Freshener Bag','🌼','Car Accessories')">+ Add to Cart</button>
+      </div>
+    </div>
+
+  </div><!-- end freshener grid -->
+
+  <!-- ── STEERING WHEEL COVERS ── -->
+  <div class="acc-section-head" data-section="steering">
+    <h2>🎮 Steering Wheel Covers</h2>
+    <div class="acc-section-line"></div>
+  </div>
+  <div class="acc-grid">
+
+    <div class="acc-card" data-cat="steering" data-name="PU Leather Steering Wheel Cover">
+      <div class="acc-card-img-wrap">
+        <span class="acc-card-badge best">BESTSELLER</span>
+        <img class="acc-main-img" src="https://image.made-in-china.com/202f0j00JtCvEBQsEMkq/Car-PU-Leather-Steering-Wheel-Cover-Auto-Parts-Steering-Wheel.webp" alt="PU Leather Steering Wheel Cover" loading="lazy" onerror="this.parentElement.style.background='var(--acc-light)';this.style.display='none'"/>
+        <div class="acc-thumbs">
+          <img class="acc-thumb active" src="https://image.made-in-china.com/202f0j00JtCvEBQsEMkq/Car-PU-Leather-Steering-Wheel-Cover-Auto-Parts-Steering-Wheel.webp" alt="View 1" onclick="swapImg(this,'https://image.made-in-china.com/202f0j00JtCvEBQsEMkq/Car-PU-Leather-Steering-Wheel-Cover-Auto-Parts-Steering-Wheel.webp')"/>
+          <img class="acc-thumb" src="https://image.made-in-china.com/202f0j00AQCvaytdlMcq/Car-PU-Leather-Steering-Wheel-Cover-Auto-Parts-Steering-Wheel.webp" alt="View 2" onclick="swapImg(this,'https://image.made-in-china.com/202f0j00AQCvaytdlMcq/Car-PU-Leather-Steering-Wheel-Cover-Auto-Parts-Steering-Wheel.webp')"/>
+          <img class="acc-thumb" src="https://image.made-in-china.com/202f0j00TtBvQEaMqeqC/Car-PU-Leather-Steering-Wheel-Cover-Auto-Parts-Steering-Wheel.webp" alt="View 3" onclick="swapImg(this,'https://image.made-in-china.com/202f0j00TtBvQEaMqeqC/Car-PU-Leather-Steering-Wheel-Cover-Auto-Parts-Steering-Wheel.webp')"/>
+        </div>
+      </div>
+      <div class="acc-card-body">
+        <div class="acc-cat-label">🎮 Steering Wheel</div>
+        <h3>PU Leather Steering Wheel Cover</h3>
+        <p>Double-stitched microfiber PU leather with breathable perforation panels to keep your palms cool on long drives. Elastic inner band stretches to fit 37–38 cm diameter wheels — no tools, installs in under 3 minutes. Available in 10+ colours. Most popular SKU among our African wholesale buyers.</p>
+        <div class="acc-specs">
+          <span class="acc-spec">37–38 cm</span>
+          <span class="acc-spec">PU leather</span>
+          <span class="acc-spec">Anti-slip</span>
+          <span class="acc-spec">10+ colors</span>
+        </div>
+      </div>
+      <div class="acc-card-footer">
+        <span class="acc-moq">MOQ: 50 pcs</span>
+        <button class="acc-add-btn" onclick="cartAdd('PU Leather Steering Wheel Cover','🎮','Car Accessories')">+ Add to Cart</button>
+      </div>
+    </div>
+
+    <div class="acc-card" data-cat="steering" data-name="Carbon Fiber Look Steering Wheel Cover">
+      <div class="acc-card-img-wrap">
+        <span class="acc-card-badge hot">HOT</span>
+        <img class="acc-main-img" src="https://image.made-in-china.com/202f0j00AQCvaytdlMcq/Car-PU-Leather-Steering-Wheel-Cover-Auto-Parts-Steering-Wheel.webp" alt="Carbon Fiber Look Steering Wheel Cover" loading="lazy" onerror="this.parentElement.style.background='var(--acc-light)';this.style.display='none'"/>
+        <div class="acc-thumbs">
+          <img class="acc-thumb active" src="https://image.made-in-china.com/202f0j00AQCvaytdlMcq/Car-PU-Leather-Steering-Wheel-Cover-Auto-Parts-Steering-Wheel.webp" alt="View 1" onclick="swapImg(this,'https://image.made-in-china.com/202f0j00AQCvaytdlMcq/Car-PU-Leather-Steering-Wheel-Cover-Auto-Parts-Steering-Wheel.webp')"/>
+          <img class="acc-thumb" src="https://image.made-in-china.com/202f0j00JtCvEBQsEMkq/Car-PU-Leather-Steering-Wheel-Cover-Auto-Parts-Steering-Wheel.webp" alt="View 2" onclick="swapImg(this,'https://image.made-in-china.com/202f0j00JtCvEBQsEMkq/Car-PU-Leather-Steering-Wheel-Cover-Auto-Parts-Steering-Wheel.webp')"/>
+          <img class="acc-thumb" src="https://image.made-in-china.com/202f0j00TtBvQEaMqeqC/Car-PU-Leather-Steering-Wheel-Cover-Auto-Parts-Steering-Wheel.webp" alt="View 3" onclick="swapImg(this,'https://image.made-in-china.com/202f0j00TtBvQEaMqeqC/Car-PU-Leather-Steering-Wheel-Cover-Auto-Parts-Steering-Wheel.webp')"/>
+        </div>
+      </div>
+      <div class="acc-card-body">
+        <div class="acc-cat-label">🎮 Steering Wheel</div>
+        <h3>Carbon Fiber Look Steering Wheel Cover</h3>
+        <p>Sporty 3D carbon-weave texture PU with contrasting red stitching gives any cabin a performance-car feel. Heat-resistant material stays firm in temperatures up to 60°C — ideal for hot African and Middle Eastern climates. Non-slip grip pads on the inner surface. Outsells our standard cover 2:1 in Zambia.</p>
+        <div class="acc-specs">
+          <span class="acc-spec">Carbon texture</span>
+          <span class="acc-spec">Red stitching</span>
+          <span class="acc-spec">Heat-resistant</span>
+        </div>
+      </div>
+      <div class="acc-card-footer">
+        <span class="acc-moq">MOQ: 50 pcs</span>
+        <button class="acc-add-btn" onclick="cartAdd('Carbon Fiber Look Steering Wheel Cover','⚫','Car Accessories')">+ Add to Cart</button>
+      </div>
+    </div>
+
+    <div class="acc-card" data-cat="steering" data-name="Silicone Steering Wheel Cover">
+      <div class="acc-card-img-wrap">
+        <span class="acc-card-badge new">NEW</span>
+        <img class="acc-main-img" src="https://image.made-in-china.com/202f0j00TtBvQEaMqeqC/Car-PU-Leather-Steering-Wheel-Cover-Auto-Parts-Steering-Wheel.webp" alt="Silicone Grip Steering Wheel Cover" loading="lazy" onerror="this.parentElement.style.background='var(--acc-light)';this.style.display='none'"/>
+        <div class="acc-thumbs">
+          <img class="acc-thumb active" src="https://image.made-in-china.com/202f0j00TtBvQEaMqeqC/Car-PU-Leather-Steering-Wheel-Cover-Auto-Parts-Steering-Wheel.webp" alt="View 1" onclick="swapImg(this,'https://image.made-in-china.com/202f0j00TtBvQEaMqeqC/Car-PU-Leather-Steering-Wheel-Cover-Auto-Parts-Steering-Wheel.webp')"/>
+          <img class="acc-thumb" src="https://image.made-in-china.com/202f0j00JtCvEBQsEMkq/Car-PU-Leather-Steering-Wheel-Cover-Auto-Parts-Steering-Wheel.webp" alt="View 2" onclick="swapImg(this,'https://image.made-in-china.com/202f0j00JtCvEBQsEMkq/Car-PU-Leather-Steering-Wheel-Cover-Auto-Parts-Steering-Wheel.webp')"/>
+          <img class="acc-thumb" src="https://image.made-in-china.com/202f0j00AQCvaytdlMcq/Car-PU-Leather-Steering-Wheel-Cover-Auto-Parts-Steering-Wheel.webp" alt="View 3" onclick="swapImg(this,'https://image.made-in-china.com/202f0j00AQCvaytdlMcq/Car-PU-Leather-Steering-Wheel-Cover-Auto-Parts-Steering-Wheel.webp')"/>
+        </div>
+      </div>
+      <div class="acc-card-body">
+        <div class="acc-cat-label">🎮 Steering Wheel</div>
+        <h3>Silicone Grip Steering Wheel Cover</h3>
+        <p>Food-grade silicone with a raised dot grip pattern provides a confident hold even with sweaty hands in tropical heat. 100% waterproof — wipe clean in seconds. Ultra-stretchy to fit 36–40 cm diameter wheels. Available in 6 colours. Particularly popular in Southeast Asia and West Africa.</p>
+        <div class="acc-specs">
+          <span class="acc-spec">Silicone</span>
+          <span class="acc-spec">Waterproof</span>
+          <span class="acc-spec">Easy install</span>
+          <span class="acc-spec">6 colors</span>
+        </div>
+      </div>
+      <div class="acc-card-footer">
+        <span class="acc-moq">MOQ: 100 pcs</span>
+        <button class="acc-add-btn" onclick="cartAdd('Silicone Grip Steering Wheel Cover','🟢','Car Accessories')">+ Add to Cart</button>
+      </div>
+    </div>
+
+  </div><!-- end steering grid -->
+
+  <!-- ── SEAT COVERS ── -->
+  <div class="acc-section-head" data-section="seat">
+    <h2>💺 Seat Covers</h2>
+    <div class="acc-section-line"></div>
+  </div>
+  <div class="acc-grid">
+
+    <div class="acc-card" data-cat="seat" data-name="Universal PU Leather Full Set Seat Covers">
+      <div class="acc-card-img-wrap">
+        <span class="acc-card-badge best">BESTSELLER</span>
+        <img class="acc-main-img" src="https://image.made-in-china.com/155f0j00iNIWEyHdyCkn/Universal-Fit-PU-Leather-Luxury-Design-New-Design-Full-Set-Car-Seat-Covers-for-5-Seat-Car.webp" alt="Universal PU Leather Full Set Seat Covers" loading="lazy" onerror="this.parentElement.style.background='var(--acc-light)';this.style.display='none'"/>
+        <div class="acc-thumbs">
+          <img class="acc-thumb active" src="https://image.made-in-china.com/155f0j00iNIWEyHdyCkn/Universal-Fit-PU-Leather-Luxury-Design-New-Design-Full-Set-Car-Seat-Covers-for-5-Seat-Car.webp" alt="View 1" onclick="swapImg(this,'https://image.made-in-china.com/155f0j00iNIWEyHdyCkn/Universal-Fit-PU-Leather-Luxury-Design-New-Design-Full-Set-Car-Seat-Covers-for-5-Seat-Car.webp')"/>
+          <img class="acc-thumb" src="https://image.made-in-china.com/155f0j00JntlAKOfPSob/Universal-Fit-PU-Leather-Car-Seat-Cover-Suitable-Full-Cover-Five-Seats-Cars.webp" alt="View 2" onclick="swapImg(this,'https://image.made-in-china.com/155f0j00JntlAKOfPSob/Universal-Fit-PU-Leather-Car-Seat-Cover-Suitable-Full-Cover-Five-Seats-Cars.webp')"/>
+          <img class="acc-thumb" src="https://image.made-in-china.com/155f0j00iNIWEyHdyCkn/Universal-Fit-PU-Leather-Luxury-Design-New-Design-Full-Set-Car-Seat-Covers-for-5-Seat-Car.webp" alt="View 3" onclick="swapImg(this,'https://image.made-in-china.com/155f0j00iNIWEyHdyCkn/Universal-Fit-PU-Leather-Luxury-Design-New-Design-Full-Set-Car-Seat-Covers-for-5-Seat-Car.webp')"/>
+        </div>
+      </div>
+      <div class="acc-card-body">
+        <div class="acc-cat-label">💺 Seat Covers</div>
+        <h3>Universal PU Leather Full Set Seat Covers</h3>
+        <p>Complete 9-piece set covers both front buckets and the full rear bench. Premium PU leather is 100% waterproof — spills wipe off in seconds. Elastic hooks and adjustable straps secure tightly to nearly all sedan and SUV seat profiles. Available in 8 colours including black, beige, and burgundy.</p>
+        <div class="acc-specs">
+          <span class="acc-spec">9-piece set</span>
+          <span class="acc-spec">Universal fit</span>
+          <span class="acc-spec">Waterproof</span>
+          <span class="acc-spec">8 colors</span>
+        </div>
+      </div>
+      <div class="acc-card-footer">
+        <span class="acc-moq">MOQ: 20 sets</span>
+        <button class="acc-add-btn" onclick="cartAdd('Universal PU Leather Full Set Seat Covers','💺','Car Accessories')">+ Add to Cart</button>
+      </div>
+    </div>
+
+    <div class="acc-card" data-cat="seat" data-name="Breathable Mesh Seat Cover Set">
+      <div class="acc-card-img-wrap">
+        <span class="acc-card-badge hot">HOT</span>
+        <img class="acc-main-img" src="https://image.made-in-china.com/155f0j00JntlAKOfPSob/Universal-Fit-PU-Leather-Car-Seat-Cover-Suitable-Full-Cover-Five-Seats-Cars.webp" alt="Breathable Mesh Seat Cover Set" loading="lazy" onerror="this.parentElement.style.background='var(--acc-light)';this.style.display='none'"/>
+        <div class="acc-thumbs">
+          <img class="acc-thumb active" src="https://image.made-in-china.com/155f0j00JntlAKOfPSob/Universal-Fit-PU-Leather-Car-Seat-Cover-Suitable-Full-Cover-Five-Seats-Cars.webp" alt="View 1" onclick="swapImg(this,'https://image.made-in-china.com/155f0j00JntlAKOfPSob/Universal-Fit-PU-Leather-Car-Seat-Cover-Suitable-Full-Cover-Five-Seats-Cars.webp')"/>
+          <img class="acc-thumb" src="https://image.made-in-china.com/155f0j00iNIWEyHdyCkn/Universal-Fit-PU-Leather-Luxury-Design-New-Design-Full-Set-Car-Seat-Covers-for-5-Seat-Car.webp" alt="View 2" onclick="swapImg(this,'https://image.made-in-china.com/155f0j00iNIWEyHdyCkn/Universal-Fit-PU-Leather-Luxury-Design-New-Design-Full-Set-Car-Seat-Covers-for-5-Seat-Car.webp')"/>
+          <img class="acc-thumb" src="https://image.made-in-china.com/155f0j00JntlAKOfPSob/Universal-Fit-PU-Leather-Car-Seat-Cover-Suitable-Full-Cover-Five-Seats-Cars.webp" alt="View 3" onclick="swapImg(this,'https://image.made-in-china.com/155f0j00JntlAKOfPSob/Universal-Fit-PU-Leather-Car-Seat-Cover-Suitable-Full-Cover-Five-Seats-Cars.webp')"/>
+        </div>
+      </div>
+      <div class="acc-card-body">
+        <div class="acc-cat-label">💺 Seat Covers</div>
+        <h3>Breathable Mesh Seat Cover Set</h3>
+        <p>3D spacer-mesh fabric creates a continuous air channel between your back and the seat surface — dramatically cooler than leather in hot climates. 10 mm foam padding adds comfort on longer drives. Specifically engineered for Africa and Southeast Asia markets. Machine washable inner pad.</p>
+        <div class="acc-specs">
+          <span class="acc-spec">3D air mesh</span>
+          <span class="acc-spec">Cushioned</span>
+          <span class="acc-spec">Hot-climate design</span>
+        </div>
+      </div>
+      <div class="acc-card-footer">
+        <span class="acc-moq">MOQ: 20 sets</span>
+        <button class="acc-add-btn" onclick="cartAdd('Breathable Mesh Seat Cover Set','🪑','Car Accessories')">+ Add to Cart</button>
+      </div>
+    </div>
+
+    <div class="acc-card" data-cat="seat" data-name="Luxury Linen Seat Cover Set">
+      <div class="acc-card-img-wrap">
+        <img class="acc-main-img" src="https://image.made-in-china.com/155f0j00iNIWEyHdyCkn/Universal-Fit-PU-Leather-Luxury-Design-New-Design-Full-Set-Car-Seat-Covers-for-5-Seat-Car.webp" alt="Luxury Linen Fabric Seat Cover Set" loading="lazy" onerror="this.parentElement.style.background='var(--acc-light)';this.style.display='none'"/>
+        <div class="acc-thumbs">
+          <img class="acc-thumb active" src="https://image.made-in-china.com/155f0j00iNIWEyHdyCkn/Universal-Fit-PU-Leather-Luxury-Design-New-Design-Full-Set-Car-Seat-Covers-for-5-Seat-Car.webp" alt="View 1" onclick="swapImg(this,'https://image.made-in-china.com/155f0j00iNIWEyHdyCkn/Universal-Fit-PU-Leather-Luxury-Design-New-Design-Full-Set-Car-Seat-Covers-for-5-Seat-Car.webp')"/>
+          <img class="acc-thumb" src="https://image.made-in-china.com/155f0j00JntlAKOfPSob/Universal-Fit-PU-Leather-Car-Seat-Cover-Suitable-Full-Cover-Five-Seats-Cars.webp" alt="View 2" onclick="swapImg(this,'https://image.made-in-china.com/155f0j00JntlAKOfPSob/Universal-Fit-PU-Leather-Car-Seat-Cover-Suitable-Full-Cover-Five-Seats-Cars.webp')"/>
+          <img class="acc-thumb" src="https://image.made-in-china.com/155f0j00iNIWEyHdyCkn/Universal-Fit-PU-Leather-Luxury-Design-New-Design-Full-Set-Car-Seat-Covers-for-5-Seat-Car.webp" alt="View 3" onclick="swapImg(this,'https://image.made-in-china.com/155f0j00iNIWEyHdyCkn/Universal-Fit-PU-Leather-Luxury-Design-New-Design-Full-Set-Car-Seat-Covers-for-5-Seat-Car.webp')"/>
+        </div>
+      </div>
+      <div class="acc-card-body">
+        <div class="acc-cat-label">💺 Seat Covers</div>
+        <h3>Luxury Linen Fabric Seat Cover Set</h3>
+        <p>Hotel-grade linen-look woven fabric with 12 mm foam backing gives a refined, upscale feel to any interior. Elegant two-tone contrast stitching detail. Elastic hook-and-loop straps secure without pinching or bunching. All covers are fully machine washable — ideal for family vehicles and ride-share operators.</p>
+        <div class="acc-specs">
+          <span class="acc-spec">Linen fabric</span>
+          <span class="acc-spec">Washable</span>
+          <span class="acc-spec">Elastic fit</span>
+        </div>
+      </div>
+      <div class="acc-card-footer">
+        <span class="acc-moq">MOQ: 20 sets</span>
+        <button class="acc-add-btn" onclick="cartAdd('Luxury Linen Fabric Seat Cover Set','🛋️','Car Accessories')">+ Add to Cart</button>
+      </div>
+    </div>
+
+    <div class="acc-card" data-cat="seat" data-name="Cactus Velvet Winter Seat Cover">
+      <div class="acc-card-img-wrap">
+        <span class="acc-card-badge new">NEW</span>
+        <img class="acc-main-img" src="https://image.made-in-china.com/155f0j00JntlAKOfPSob/Universal-Fit-PU-Leather-Car-Seat-Cover-Suitable-Full-Cover-Five-Seats-Cars.webp" alt="Cactus Velvet Seat Cover Set" loading="lazy" onerror="this.parentElement.style.background='var(--acc-light)';this.style.display='none'"/>
+        <div class="acc-thumbs">
+          <img class="acc-thumb active" src="https://image.made-in-china.com/155f0j00JntlAKOfPSob/Universal-Fit-PU-Leather-Car-Seat-Cover-Suitable-Full-Cover-Five-Seats-Cars.webp" alt="View 1" onclick="swapImg(this,'https://image.made-in-china.com/155f0j00JntlAKOfPSob/Universal-Fit-PU-Leather-Car-Seat-Cover-Suitable-Full-Cover-Five-Seats-Cars.webp')"/>
+          <img class="acc-thumb" src="https://image.made-in-china.com/155f0j00iNIWEyHdyCkn/Universal-Fit-PU-Leather-Luxury-Design-New-Design-Full-Set-Car-Seat-Covers-for-5-Seat-Car.webp" alt="View 2" onclick="swapImg(this,'https://image.made-in-china.com/155f0j00iNIWEyHdyCkn/Universal-Fit-PU-Leather-Luxury-Design-New-Design-Full-Set-Car-Seat-Covers-for-5-Seat-Car.webp')"/>
+          <img class="acc-thumb" src="https://image.made-in-china.com/155f0j00JntlAKOfPSob/Universal-Fit-PU-Leather-Car-Seat-Cover-Suitable-Full-Cover-Five-Seats-Cars.webp" alt="View 3" onclick="swapImg(this,'https://image.made-in-china.com/155f0j00JntlAKOfPSob/Universal-Fit-PU-Leather-Car-Seat-Cover-Suitable-Full-Cover-Five-Seats-Cars.webp')"/>
+        </div>
+      </div>
+      <div class="acc-card-body">
+        <div class="acc-cat-label">💺 Seat Covers</div>
+        <h3>Cactus Velvet Seat Cover Set</h3>
+        <p>Micro-fibre cactus velvet is astonishingly soft to the touch while being highly durable — resists pilling even after hundreds of washes. Dot-print non-slip rubber backing stays perfectly in place. Favoured by premium retailers in Australia, Singapore and the Middle East. Sample available on request.</p>
+        <div class="acc-specs">
+          <span class="acc-spec">Cactus velvet</span>
+          <span class="acc-spec">Non-slip back</span>
+          <span class="acc-spec">Premium feel</span>
+        </div>
+      </div>
+      <div class="acc-card-footer">
+        <span class="acc-moq">MOQ: 20 sets</span>
+        <button class="acc-add-btn" onclick="cartAdd('Cactus Velvet Seat Cover Set','🔵','Car Accessories')">+ Add to Cart</button>
+      </div>
+    </div>
+
+  </div><!-- end seat grid -->
+
+  <!-- ── ORGANIZERS ── -->
+  <div class="acc-section-head" data-section="organizer">
+    <h2>🗂️ Car Organizers</h2>
+    <div class="acc-section-line"></div>
+  </div>
+  <div class="acc-grid">
+
+    <div class="acc-card" data-cat="organizer" data-name="Back Seat Organizer">
+      <div class="acc-card-img-wrap">
+        <span class="acc-card-badge best">BESTSELLER</span>
+        <img class="acc-main-img" src="https://image.made-in-china.com/202f0j00TYFRZVHDHIcO/Hanging-Car-Back-Seat-Organizer-for-Kids-with-Tablet-Holder.webp" alt="Back Seat Multi-Pocket Organizer" loading="lazy" onerror="this.parentElement.style.background='var(--acc-light)';this.style.display='none'"/>
+        <div class="acc-thumbs">
+          <img class="acc-thumb active" src="https://image.made-in-china.com/202f0j00TYFRZVHDHIcO/Hanging-Car-Back-Seat-Organizer-for-Kids-with-Tablet-Holder.webp" alt="View 1" onclick="swapImg(this,'https://image.made-in-china.com/202f0j00TYFRZVHDHIcO/Hanging-Car-Back-Seat-Organizer-for-Kids-with-Tablet-Holder.webp')"/>
+          <img class="acc-thumb" src="https://image.made-in-china.com/202f0j00dYFRZALSQHbs/Hanging-Car-Back-Seat-Organizer-for-Kids-with-Tablet-Holder.webp" alt="View 2" onclick="swapImg(this,'https://image.made-in-china.com/202f0j00dYFRZALSQHbs/Hanging-Car-Back-Seat-Organizer-for-Kids-with-Tablet-Holder.webp')"/>
+          <img class="acc-thumb" src="https://image.made-in-china.com/202f0j00tfNRZQDKHLqO/Hanging-Car-Back-Seat-Organizer-for-Kids-with-Tablet-Holder.webp" alt="View 3" onclick="swapImg(this,'https://image.made-in-china.com/202f0j00tfNRZQDKHLqO/Hanging-Car-Back-Seat-Organizer-for-Kids-with-Tablet-Holder.webp')"/>
+        </div>
+      </div>
+      <div class="acc-card-body">
+        <div class="acc-cat-label">🗂️ Organizer</div>
+        <h3>Back Seat Multi-Pocket Organizer</h3>
+        <p>10 storage pockets including a padded tablet sleeve (up to 10"), mesh bottle pockets, and a zippered valuables pouch. Kick-proof faux-leather back panel protects the front seat from children's feet. Adjustable headrest straps fit all vehicles. Perfect for families and long-distance drivers.</p>
+        <div class="acc-specs">
+          <span class="acc-spec">10 pockets</span>
+          <span class="acc-spec">Tablet slot</span>
+          <span class="acc-spec">PU leather</span>
+        </div>
+      </div>
+      <div class="acc-card-footer">
+        <span class="acc-moq">MOQ: 50 pcs</span>
+        <button class="acc-add-btn" onclick="cartAdd('Back Seat Multi-Pocket Organizer','🎒','Car Accessories')">+ Add to Cart</button>
+      </div>
+    </div>
+
+    <div class="acc-card" data-cat="organizer" data-name="Trunk Organizer Bag">
+      <div class="acc-card-img-wrap">
+        <span class="acc-card-badge hot">HOT</span>
+        <img class="acc-main-img" src="https://image.made-in-china.com/202f0j00dYFRZALSQHbs/Hanging-Car-Back-Seat-Organizer-for-Kids-with-Tablet-Holder.webp" alt="Collapsible Trunk Organizer" loading="lazy" onerror="this.parentElement.style.background='var(--acc-light)';this.style.display='none'"/>
+        <div class="acc-thumbs">
+          <img class="acc-thumb active" src="https://image.made-in-china.com/202f0j00dYFRZALSQHbs/Hanging-Car-Back-Seat-Organizer-for-Kids-with-Tablet-Holder.webp" alt="View 1" onclick="swapImg(this,'https://image.made-in-china.com/202f0j00dYFRZALSQHbs/Hanging-Car-Back-Seat-Organizer-for-Kids-with-Tablet-Holder.webp')"/>
+          <img class="acc-thumb" src="https://image.made-in-china.com/202f0j00TYFRZVHDHIcO/Hanging-Car-Back-Seat-Organizer-for-Kids-with-Tablet-Holder.webp" alt="View 2" onclick="swapImg(this,'https://image.made-in-china.com/202f0j00TYFRZVHDHIcO/Hanging-Car-Back-Seat-Organizer-for-Kids-with-Tablet-Holder.webp')"/>
+          <img class="acc-thumb" src="https://image.made-in-china.com/202f0j00tfNRZQDKHLqO/Hanging-Car-Back-Seat-Organizer-for-Kids-with-Tablet-Holder.webp" alt="View 3" onclick="swapImg(this,'https://image.made-in-china.com/202f0j00tfNRZQDKHLqO/Hanging-Car-Back-Seat-Organizer-for-Kids-with-Tablet-Holder.webp')"/>
+        </div>
+      </div>
+      <div class="acc-card-body">
+        <div class="acc-cat-label">🗂️ Organizer</div>
+        <h3>Collapsible Trunk Organizer</h3>
+        <p>Heavy 600D Oxford fabric with removable dividers creates a configurable 35-litre cargo storage system. Rigid side walls hold shape when loaded but the whole unit folds flat to just 5 cm when empty. Non-slip PVC base keeps it stationary on tight corners. Interior pockets hold umbrellas, tools and emergency kits.</p>
+        <div class="acc-specs">
+          <span class="acc-spec">35L capacity</span>
+          <span class="acc-spec">Collapsible</span>
+          <span class="acc-spec">Oxford fabric</span>
+        </div>
+      </div>
+      <div class="acc-card-footer">
+        <span class="acc-moq">MOQ: 50 pcs</span>
+        <button class="acc-add-btn" onclick="cartAdd('Collapsible Trunk Organizer','🧺','Car Accessories')">+ Add to Cart</button>
+      </div>
+    </div>
+
+    <div class="acc-card" data-cat="organizer" data-name="Center Console Organizer Tray">
+      <div class="acc-card-img-wrap">
+        <img class="acc-main-img" src="https://image.made-in-china.com/202f0j00tfNRZQDKHLqO/Hanging-Car-Back-Seat-Organizer-for-Kids-with-Tablet-Holder.webp" alt="Center Console Organizer Tray" loading="lazy" onerror="this.parentElement.style.background='var(--acc-light)';this.style.display='none'"/>
+        <div class="acc-thumbs">
+          <img class="acc-thumb active" src="https://image.made-in-china.com/202f0j00tfNRZQDKHLqO/Hanging-Car-Back-Seat-Organizer-for-Kids-with-Tablet-Holder.webp" alt="View 1" onclick="swapImg(this,'https://image.made-in-china.com/202f0j00tfNRZQDKHLqO/Hanging-Car-Back-Seat-Organizer-for-Kids-with-Tablet-Holder.webp')"/>
+          <img class="acc-thumb" src="https://image.made-in-china.com/202f0j00TYFRZVHDHIcO/Hanging-Car-Back-Seat-Organizer-for-Kids-with-Tablet-Holder.webp" alt="View 2" onclick="swapImg(this,'https://image.made-in-china.com/202f0j00TYFRZVHDHIcO/Hanging-Car-Back-Seat-Organizer-for-Kids-with-Tablet-Holder.webp')"/>
+          <img class="acc-thumb" src="https://image.made-in-china.com/202f0j00dYFRZALSQHbs/Hanging-Car-Back-Seat-Organizer-for-Kids-with-Tablet-Holder.webp" alt="View 3" onclick="swapImg(this,'https://image.made-in-china.com/202f0j00dYFRZALSQHbs/Hanging-Car-Back-Seat-Organizer-for-Kids-with-Tablet-Holder.webp')"/>
+        </div>
+      </div>
+      <div class="acc-card-body">
+        <div class="acc-cat-label">🗂️ Organizer</div>
+        <h3>Center Console Organizer Tray</h3>
+        <p>Soft-touch silicone tray with 7 custom-moulded slots for coins, phones, cards, USB cables and keys. The flexible material means it trims easily to fit any console size. Noise-absorbing — no rattles. Waterproof and dishwasher safe. One of our top impulse-purchase items for retail packaging.</p>
+        <div class="acc-specs">
+          <span class="acc-spec">Silicone</span>
+          <span class="acc-spec">Multi-slot</span>
+          <span class="acc-spec">Anti-slip</span>
+        </div>
+      </div>
+      <div class="acc-card-footer">
+        <span class="acc-moq">MOQ: 100 pcs</span>
+        <button class="acc-add-btn" onclick="cartAdd('Center Console Organizer Tray','📦','Car Accessories')">+ Add to Cart</button>
+      </div>
+    </div>
+
+  </div><!-- end organizer grid -->
+
+  <!-- ── DECORATIVE ── -->
+  <div class="acc-section-head" data-section="decor">
+    <h2>✨ Decorative Accessories</h2>
+    <div class="acc-section-line"></div>
+  </div>
+  <div class="acc-grid">
+
+    <div class="acc-card" data-cat="decor" data-name="Dashboard Non-Slip Mat">
+      <div class="acc-card-img-wrap">
+        <span class="acc-card-badge best">BESTSELLER</span>
+        <img class="acc-main-img" src="https://image.made-in-china.com/202f0j00jbrUJMIFQyqe/Advertising-Foldable-Car-Sun-Shade-Windshield-Car-Sunshade.webp" alt="PVC Non-Slip Dashboard Mat" loading="lazy" onerror="this.parentElement.style.background='var(--acc-light)';this.style.display='none'"/>
+        <div class="acc-thumbs">
+          <img class="acc-thumb active" src="https://image.made-in-china.com/202f0j00jbrUJMIFQyqe/Advertising-Foldable-Car-Sun-Shade-Windshield-Car-Sunshade.webp" alt="View 1" onclick="swapImg(this,'https://image.made-in-china.com/202f0j00jbrUJMIFQyqe/Advertising-Foldable-Car-Sun-Shade-Windshield-Car-Sunshade.webp')"/>
+          <img class="acc-thumb" src="https://image.made-in-china.com/202f0j00SbrGwjIBwyoM/Advertising-Foldable-Car-Sun-Shade-Windshield-Car-Sunshade.webp" alt="View 2" onclick="swapImg(this,'https://image.made-in-china.com/202f0j00SbrGwjIBwyoM/Advertising-Foldable-Car-Sun-Shade-Windshield-Car-Sunshade.webp')"/>
+          <img class="acc-thumb" src="https://image.made-in-china.com/202f0j00MbZVaHRIbKUy/Advertising-Foldable-Car-Sun-Shade-Windshield-Car-Sunshade.webp" alt="View 3" onclick="swapImg(this,'https://image.made-in-china.com/202f0j00MbZVaHRIbKUy/Advertising-Foldable-Car-Sun-Shade-Windshield-Car-Sunshade.webp')"/>
+        </div>
+      </div>
+      <div class="acc-card-body">
+        <div class="acc-cat-label">✨ Decorative</div>
+        <h3>PVC Non-Slip Dashboard Mat</h3>
+        <p>Micro-suction PVC surface grips phones, sunglasses, keys and small items with no adhesive residue. Heat-resistant up to 80°C — won't warp under direct sun. Trimmable to any shape. Full-surface custom print or logo available from 200 pcs, making it a great promotional giveaway item.</p>
+        <div class="acc-specs">
+          <span class="acc-spec">PVC grip</span>
+          <span class="acc-spec">Heat-resistant</span>
+          <span class="acc-spec">Custom print</span>
+        </div>
+      </div>
+      <div class="acc-card-footer">
+        <span class="acc-moq">MOQ: 200 pcs</span>
+        <button class="acc-add-btn" onclick="cartAdd('PVC Non-Slip Dashboard Mat','🎨','Car Accessories')">+ Add to Cart</button>
+      </div>
+    </div>
+
+    <div class="acc-card" data-cat="decor" data-name="Car Interior LED Strip Light">
+      <div class="acc-card-img-wrap">
+        <span class="acc-card-badge hot">HOT</span>
+        <img class="acc-main-img" src="https://image.made-in-china.com/202f0j00RiLcvmMCfKzp/Fast-Delivery-Car-Ambient-Light-Kit-22-in-1-18-in-1-10-in-1-RGB-Car-Interior-Optical-Acrylic-Strip-Symphony-Car-LED-Lamp.webp" alt="USB RGB Interior LED Strip Light" loading="lazy" onerror="this.parentElement.style.background='var(--acc-light)';this.style.display='none'"/>
+        <div class="acc-thumbs">
+          <img class="acc-thumb active" src="https://image.made-in-china.com/202f0j00RiLcvmMCfKzp/Fast-Delivery-Car-Ambient-Light-Kit-22-in-1-18-in-1-10-in-1-RGB-Car-Interior-Optical-Acrylic-Strip-Symphony-Car-LED-Lamp.webp" alt="View 1" onclick="swapImg(this,'https://image.made-in-china.com/202f0j00RiLcvmMCfKzp/Fast-Delivery-Car-Ambient-Light-Kit-22-in-1-18-in-1-10-in-1-RGB-Car-Interior-Optical-Acrylic-Strip-Symphony-Car-LED-Lamp.webp')"/>
+          <img class="acc-thumb" src="https://image.made-in-china.com/202f0j00pVPcBGCzajgr/Fast-Delivery-Car-Ambient-Light-Kit-22-in-1-18-in-1-10-in-1-RGB-Car-Interior-Optical-Acrylic-Strip-Symphony-Car-LED-Lamp.webp" alt="View 2" onclick="swapImg(this,'https://image.made-in-china.com/202f0j00pVPcBGCzajgr/Fast-Delivery-Car-Ambient-Light-Kit-22-in-1-18-in-1-10-in-1-RGB-Car-Interior-Optical-Acrylic-Strip-Symphony-Car-LED-Lamp.webp')"/>
+          <img class="acc-thumb" src="https://image.made-in-china.com/202f0j00glLceHMynszp/Fast-Delivery-Car-Ambient-Light-Kit-22-in-1-18-in-1-10-in-1-RGB-Car-Interior-Optical-Acrylic-Strip-Symphony-Car-LED-Lamp.webp" alt="View 3" onclick="swapImg(this,'https://image.made-in-china.com/202f0j00glLceHMynszp/Fast-Delivery-Car-Ambient-Light-Kit-22-in-1-18-in-1-10-in-1-RGB-Car-Interior-Optical-Acrylic-Strip-Symphony-Car-LED-Lamp.webp')"/>
+        </div>
+      </div>
+      <div class="acc-card-body">
+        <div class="acc-cat-label">✨ Decorative</div>
+        <h3>USB RGB Interior LED Strip Light</h3>
+        <p>4 flexible LED strips (each 90 cm) mount under seats and along door panels with 3M peel-and-stick backing. 16 static colours plus 4 dynamic modes including music-sync via built-in microphone. IR remote included. USB-A powered, no wiring required. Transforms any cabin ambiance instantly.</p>
+        <div class="acc-specs">
+          <span class="acc-spec">16 colors</span>
+          <span class="acc-spec">Music sync</span>
+          <span class="acc-spec">USB powered</span>
+          <span class="acc-spec">Remote control</span>
+        </div>
+      </div>
+      <div class="acc-card-footer">
+        <span class="acc-moq">MOQ: 50 sets</span>
+        <button class="acc-add-btn" onclick="cartAdd('USB RGB Interior LED Strip Light','💡','Car Accessories')">+ Add to Cart</button>
+      </div>
+    </div>
+
+    <div class="acc-card" data-cat="decor" data-name="Crystal Rearview Mirror Pendant">
+      <div class="acc-card-img-wrap">
+        <img class="acc-main-img" src="https://image.made-in-china.com/202f0j00iyAQaSsBlToO/Wine-Black-Car-Dashboard-Car-Perfume.webp" alt="Crystal Rearview Mirror Pendant" loading="lazy" onerror="this.parentElement.style.background='var(--acc-light)';this.style.display='none'"/>
+        <div class="acc-thumbs">
+          <img class="acc-thumb active" src="https://image.made-in-china.com/202f0j00iyAQaSsBlToO/Wine-Black-Car-Dashboard-Car-Perfume.webp" alt="View 1" onclick="swapImg(this,'https://image.made-in-china.com/202f0j00iyAQaSsBlToO/Wine-Black-Car-Dashboard-Car-Perfume.webp')"/>
+          <img class="acc-thumb" src="https://image.made-in-china.com/155f0j00TqHobjraaQkF/Portable-Dashboard-Car-Vehicle-Fragrance-Air-Freshener-Gel-Aromatherapy-Perfume-Gel.webp" alt="View 2" onclick="swapImg(this,'https://image.made-in-china.com/155f0j00TqHobjraaQkF/Portable-Dashboard-Car-Vehicle-Fragrance-Air-Freshener-Gel-Aromatherapy-Perfume-Gel.webp')"/>
+          <img class="acc-thumb" src="https://image.made-in-china.com/202f0j00iyAQaSsBlToO/Wine-Black-Car-Dashboard-Car-Perfume.webp" alt="View 3" onclick="swapImg(this,'https://image.made-in-china.com/202f0j00iyAQaSsBlToO/Wine-Black-Car-Dashboard-Car-Perfume.webp')"/>
+        </div>
+      </div>
+      <div class="acc-card-body">
+        <div class="acc-cat-label">✨ Decorative</div>
+        <h3>Crystal Rearview Mirror Pendant</h3>
+        <p>Hand-faceted K9 crystal prisms catch light beautifully as you drive. Over 10 motifs available — tree of life, evil eye, Hamsa, cross, diamond, and more. Each arrives in a kraft gift box, making it retail-ready out of the box. Private-label packaging printed to your branding from 100 pcs.</p>
+        <div class="acc-specs">
+          <span class="acc-spec">Crystal glass</span>
+          <span class="acc-spec">10+ designs</span>
+          <span class="acc-spec">Gift box option</span>
+        </div>
+      </div>
+      <div class="acc-card-footer">
+        <span class="acc-moq">MOQ: 100 pcs</span>
+        <button class="acc-add-btn" onclick="cartAdd('Crystal Rearview Mirror Pendant','💎','Car Accessories')">+ Add to Cart</button>
+      </div>
+    </div>
+
+    <div class="acc-card" data-cat="decor" data-name="Gear Shift Knob Cover">
+      <div class="acc-card-img-wrap">
+        <span class="acc-card-badge new">NEW</span>
+        <img class="acc-main-img" src="https://image.made-in-china.com/202f0j00AQCvaytdlMcq/Car-PU-Leather-Steering-Wheel-Cover-Auto-Parts-Steering-Wheel.webp" alt="Crystal Gear Shift Knob Cover" loading="lazy" onerror="this.parentElement.style.background='var(--acc-light)';this.style.display='none'"/>
+        <div class="acc-thumbs">
+          <img class="acc-thumb active" src="https://image.made-in-china.com/202f0j00AQCvaytdlMcq/Car-PU-Leather-Steering-Wheel-Cover-Auto-Parts-Steering-Wheel.webp" alt="View 1" onclick="swapImg(this,'https://image.made-in-china.com/202f0j00AQCvaytdlMcq/Car-PU-Leather-Steering-Wheel-Cover-Auto-Parts-Steering-Wheel.webp')"/>
+          <img class="acc-thumb" src="https://image.made-in-china.com/202f0j00JtCvEBQsEMkq/Car-PU-Leather-Steering-Wheel-Cover-Auto-Parts-Steering-Wheel.webp" alt="View 2" onclick="swapImg(this,'https://image.made-in-china.com/202f0j00JtCvEBQsEMkq/Car-PU-Leather-Steering-Wheel-Cover-Auto-Parts-Steering-Wheel.webp')"/>
+          <img class="acc-thumb" src="https://image.made-in-china.com/202f0j00TtBvQEaMqeqC/Car-PU-Leather-Steering-Wheel-Cover-Auto-Parts-Steering-Wheel.webp" alt="View 3" onclick="swapImg(this,'https://image.made-in-china.com/202f0j00TtBvQEaMqeqC/Car-PU-Leather-Steering-Wheel-Cover-Auto-Parts-Steering-Wheel.webp')"/>
+        </div>
+      </div>
+      <div class="acc-card-body">
+        <div class="acc-cat-label">✨ Decorative</div>
+        <h3>Crystal Gear Shift Knob Cover</h3>
+        <p>Die-cast zinc alloy threaded ring base secures to any standard shift knob without tools — simply screw on over the existing knob. Crystal dome top catches cabin light for a premium look. Available in clear, rose gold, and smoke black. Pairs perfectly with our steering wheel cover collection.</p>
+        <div class="acc-specs">
+          <span class="acc-spec">Universal fit</span>
+          <span class="acc-spec">Zinc alloy + crystal</span>
+          <span class="acc-spec">Tool-free install</span>
+        </div>
+      </div>
+      <div class="acc-card-footer">
+        <span class="acc-moq">MOQ: 100 pcs</span>
+        <button class="acc-add-btn" onclick="cartAdd('Crystal Gear Shift Knob Cover','🔧','Car Accessories')">+ Add to Cart</button>
+      </div>
+    </div>
+
+  </div><!-- end decor grid -->
+
+  <!-- ── SUN SHADES & MATS ── -->
+  <div class="acc-section-head" data-section="sunshade">
+    <h2>☀️ Sun Shades &amp; Floor Mats</h2>
+    <div class="acc-section-line"></div>
+  </div>
+  <div class="acc-grid">
+
+    <div class="acc-card" data-cat="sunshade" data-name="Accordion Windshield Sun Shade">
+      <div class="acc-card-img-wrap">
+        <span class="acc-card-badge best">BESTSELLER</span>
+        <img class="acc-main-img" src="https://image.made-in-china.com/202f0j00jbrUJMIFQyqe/Advertising-Foldable-Car-Sun-Shade-Windshield-Car-Sunshade.webp" alt="Accordion Foldable Windshield Sun Shade" loading="lazy" onerror="this.parentElement.style.background='var(--acc-light)';this.style.display='none'"/>
+        <div class="acc-thumbs">
+          <img class="acc-thumb active" src="https://image.made-in-china.com/202f0j00jbrUJMIFQyqe/Advertising-Foldable-Car-Sun-Shade-Windshield-Car-Sunshade.webp" alt="View 1" onclick="swapImg(this,'https://image.made-in-china.com/202f0j00jbrUJMIFQyqe/Advertising-Foldable-Car-Sun-Shade-Windshield-Car-Sunshade.webp')"/>
+          <img class="acc-thumb" src="https://image.made-in-china.com/202f0j00SbrGwjIBwyoM/Advertising-Foldable-Car-Sun-Shade-Windshield-Car-Sunshade.webp" alt="View 2" onclick="swapImg(this,'https://image.made-in-china.com/202f0j00SbrGwjIBwyoM/Advertising-Foldable-Car-Sun-Shade-Windshield-Car-Sunshade.webp')"/>
+          <img class="acc-thumb" src="https://image.made-in-china.com/202f0j00MbZVaHRIbKUy/Advertising-Foldable-Car-Sun-Shade-Windshield-Car-Sunshade.webp" alt="View 3" onclick="swapImg(this,'https://image.made-in-china.com/202f0j00MbZVaHRIbKUy/Advertising-Foldable-Car-Sun-Shade-Windshield-Car-Sunshade.webp')"/>
+        </div>
+      </div>
+      <div class="acc-card-body">
+        <div class="acc-cat-label">☀️ Sun Shade</div>
+        <h3>Accordion Foldable Windshield Sun Shade</h3>
+        <p>Double-layer reflective aluminium foil deflects up to 99% of solar UV and infrared heat, keeping interiors up to 20°C cooler. Accordion folds compress to a 30 cm bundle for glove-box storage. Available in 3 sizes to fit compact cars, sedans, and large SUVs. Lightweight at only 280 g.</p>
+        <div class="acc-specs">
+          <span class="acc-spec">99% UV block</span>
+          <span class="acc-spec">Accordion fold</span>
+          <span class="acc-spec">Universal fit</span>
+        </div>
+      </div>
+      <div class="acc-card-footer">
+        <span class="acc-moq">MOQ: 50 pcs</span>
+        <button class="acc-add-btn" onclick="cartAdd('Accordion Foldable Windshield Sun Shade','☀️','Car Accessories')">+ Add to Cart</button>
+      </div>
+    </div>
+
+    <div class="acc-card" data-cat="sunshade" data-name="Side Window Mesh Sun Shade">
+      <div class="acc-card-img-wrap">
+        <img class="acc-main-img" src="https://image.made-in-china.com/202f0j00SbrGwjIBwyoM/Advertising-Foldable-Car-Sun-Shade-Windshield-Car-Sunshade.webp" alt="Side Window Retractable Sun Shade" loading="lazy" onerror="this.parentElement.style.background='var(--acc-light)';this.style.display='none'"/>
+        <div class="acc-thumbs">
+          <img class="acc-thumb active" src="https://image.made-in-china.com/202f0j00SbrGwjIBwyoM/Advertising-Foldable-Car-Sun-Shade-Windshield-Car-Sunshade.webp" alt="View 1" onclick="swapImg(this,'https://image.made-in-china.com/202f0j00SbrGwjIBwyoM/Advertising-Foldable-Car-Sun-Shade-Windshield-Car-Sunshade.webp')"/>
+          <img class="acc-thumb" src="https://image.made-in-china.com/202f0j00jbrUJMIFQyqe/Advertising-Foldable-Car-Sun-Shade-Windshield-Car-Sunshade.webp" alt="View 2" onclick="swapImg(this,'https://image.made-in-china.com/202f0j00jbrUJMIFQyqe/Advertising-Foldable-Car-Sun-Shade-Windshield-Car-Sunshade.webp')"/>
+          <img class="acc-thumb" src="https://image.made-in-china.com/202f0j00MbZVaHRIbKUy/Advertising-Foldable-Car-Sun-Shade-Windshield-Car-Sunshade.webp" alt="View 3" onclick="swapImg(this,'https://image.made-in-china.com/202f0j00MbZVaHRIbKUy/Advertising-Foldable-Car-Sun-Shade-Windshield-Car-Sunshade.webp')"/>
+        </div>
+      </div>
+      <div class="acc-card-body">
+        <div class="acc-cat-label">☀️ Sun Shade</div>
+        <h3>Side Window Retractable Sun Shade</h3>
+        <p>Micro-dot static-cling film attaches and removes cleanly from any glass — no suction cups, no adhesive residue. Fine mesh preserves outward visibility while blocking direct sunlight. Sold in pairs; fits most standard rear and front side windows. Especially popular in markets where rear passenger shade is legally required.</p>
+        <div class="acc-specs">
+          <span class="acc-spec">Static cling</span>
+          <span class="acc-spec">Mesh visibility</span>
+          <span class="acc-spec">Easy peel off</span>
+        </div>
+      </div>
+      <div class="acc-card-footer">
+        <span class="acc-moq">MOQ: 100 pairs</span>
+        <button class="acc-add-btn" onclick="cartAdd('Side Window Retractable Sun Shade','🌤️','Car Accessories')">+ Add to Cart</button>
+      </div>
+    </div>
+
+    <div class="acc-card" data-cat="sunshade" data-name="All-Weather Rubber Floor Mats">
+      <div class="acc-card-img-wrap">
+        <span class="acc-card-badge hot">HOT</span>
+        <img class="acc-main-img" src="https://image.made-in-china.com/202f0j00MbZVaHRIbKUy/Advertising-Foldable-Car-Sun-Shade-Windshield-Car-Sunshade.webp" alt="All-Weather Heavy Duty Rubber Floor Mats" loading="lazy" onerror="this.parentElement.style.background='var(--acc-light)';this.style.display='none'"/>
+        <div class="acc-thumbs">
+          <img class="acc-thumb active" src="https://image.made-in-china.com/202f0j00MbZVaHRIbKUy/Advertising-Foldable-Car-Sun-Shade-Windshield-Car-Sunshade.webp" alt="View 1" onclick="swapImg(this,'https://image.made-in-china.com/202f0j00MbZVaHRIbKUy/Advertising-Foldable-Car-Sun-Shade-Windshield-Car-Sunshade.webp')"/>
+          <img class="acc-thumb" src="https://image.made-in-china.com/202f0j00jbrUJMIFQyqe/Advertising-Foldable-Car-Sun-Shade-Windshield-Car-Sunshade.webp" alt="View 2" onclick="swapImg(this,'https://image.made-in-china.com/202f0j00jbrUJMIFQyqe/Advertising-Foldable-Car-Sun-Shade-Windshield-Car-Sunshade.webp')"/>
+          <img class="acc-thumb" src="https://image.made-in-china.com/202f0j00SbrGwjIBwyoM/Advertising-Foldable-Car-Sun-Shade-Windshield-Car-Sunshade.webp" alt="View 3" onclick="swapImg(this,'https://image.made-in-china.com/202f0j00SbrGwjIBwyoM/Advertising-Foldable-Car-Sun-Shade-Windshield-Car-Sunshade.webp')"/>
+        </div>
+      </div>
+      <div class="acc-card-body">
+        <div class="acc-cat-label">☀️ Floor Mats</div>
+        <h3>All-Weather Heavy Duty Rubber Floor Mats</h3>
+        <p>4-piece XPE rubber mat set with 18 mm raised perimeter lip channels mud, rain water and sand away from the carpet. Heavy 3.5 kg/set construction stays flat without shifting. Deep diamond tread provides heel grip. Hose-washable in seconds. Strong reorder demand from our Zambia, Ethiopia and Liberia clients.</p>
+        <div class="acc-specs">
+          <span class="acc-spec">4-piece set</span>
+          <span class="acc-spec">Raised lip</span>
+          <span class="acc-spec">Heavy duty rubber</span>
+          <span class="acc-spec">Universal</span>
+        </div>
+      </div>
+      <div class="acc-card-footer">
+        <span class="acc-moq">MOQ: 30 sets</span>
+        <button class="acc-add-btn" onclick="cartAdd('All-Weather Heavy Duty Rubber Floor Mats','🟫','Car Accessories')">+ Add to Cart</button>
+      </div>
+    </div>
+
+    <div class="acc-card" data-cat="sunshade" data-name="Custom Fit Trunk Cargo Liner">
+      <div class="acc-card-img-wrap">
+        <span class="acc-card-badge new">NEW</span>
+        <img class="acc-main-img" src="https://image.made-in-china.com/202f0j00jbrUJMIFQyqe/Advertising-Foldable-Car-Sun-Shade-Windshield-Car-Sunshade.webp" alt="Universal Trunk Cargo Liner" loading="lazy" onerror="this.parentElement.style.background='var(--acc-light)';this.style.display='none'"/>
+        <div class="acc-thumbs">
+          <img class="acc-thumb active" src="https://image.made-in-china.com/202f0j00jbrUJMIFQyqe/Advertising-Foldable-Car-Sun-Shade-Windshield-Car-Sunshade.webp" alt="View 1" onclick="swapImg(this,'https://image.made-in-china.com/202f0j00jbrUJMIFQyqe/Advertising-Foldable-Car-Sun-Shade-Windshield-Car-Sunshade.webp')"/>
+          <img class="acc-thumb" src="https://image.made-in-china.com/202f0j00MbZVaHRIbKUy/Advertising-Foldable-Car-Sun-Shade-Windshield-Car-Sunshade.webp" alt="View 2" onclick="swapImg(this,'https://image.made-in-china.com/202f0j00MbZVaHRIbKUy/Advertising-Foldable-Car-Sun-Shade-Windshield-Car-Sunshade.webp')"/>
+          <img class="acc-thumb" src="https://image.made-in-china.com/202f0j00SbrGwjIBwyoM/Advertising-Foldable-Car-Sun-Shade-Windshield-Car-Sunshade.webp" alt="View 3" onclick="swapImg(this,'https://image.made-in-china.com/202f0j00SbrGwjIBwyoM/Advertising-Foldable-Car-Sun-Shade-Windshield-Car-Sunshade.webp')"/>
+        </div>
+      </div>
+      <div class="acc-card-body">
+        <div class="acc-cat-label">☀️ Floor Mats</div>
+        <h3>Universal Trunk Cargo Liner</h3>
+        <p>Odour-free food-grade TPE rubber forms a waterproof bathtub barrier for your entire cargo area. Scored trim lines make cutting to exact vehicle size effortless — no tools needed. Raised 6 mm lip prevents spills from escaping. Rinse clean with a garden hose. Covers sedans, SUVs and vans.</p>
+        <div class="acc-specs">
+          <span class="acc-spec">TPE material</span>
+          <span class="acc-spec">Trimmable</span>
+          <span class="acc-spec">Odorless</span>
+        </div>
+      </div>
+      <div class="acc-card-footer">
+        <span class="acc-moq">MOQ: 50 pcs</span>
+        <button class="acc-add-btn" onclick="cartAdd('Universal Trunk Cargo Liner','📐','Car Accessories')">+ Add to Cart</button>
+      </div>
+    </div>
+
+  </div><!-- end sunshade grid -->
+
+  <!-- ── CHARGERS & TECH ── -->
+  <div class="acc-section-head" data-section="charger">
+    <h2>🔌 Chargers &amp; Tech</h2>
+    <div class="acc-section-line"></div>
+  </div>
+  <div class="acc-grid">
+
+    <div class="acc-card" data-cat="charger" data-name="Dual USB QC 3.0 Car Charger">
+      <div class="acc-card-img-wrap">
+        <span class="acc-card-badge best">BESTSELLER</span>
+        <img class="acc-main-img" src="https://image.made-in-china.com/155f0j00rzTkgwVIVuqt/Factory-Hot-Selling-Dual-USB-Quick-Charge-Car-Charger-36W-QC3-0.webp" alt="Dual USB QC 3.0 Car Charger" loading="lazy" onerror="this.parentElement.style.background='var(--acc-light)';this.style.display='none'"/>
+        <div class="acc-thumbs">
+          <img class="acc-thumb active" src="https://image.made-in-china.com/155f0j00rzTkgwVIVuqt/Factory-Hot-Selling-Dual-USB-Quick-Charge-Car-Charger-36W-QC3-0.webp" alt="View 1" onclick="swapImg(this,'https://image.made-in-china.com/155f0j00rzTkgwVIVuqt/Factory-Hot-Selling-Dual-USB-Quick-Charge-Car-Charger-36W-QC3-0.webp')"/>
+          <img class="acc-thumb" src="https://image.made-in-china.com/155f0j00ZyukVFjRiObA/Car-Cigarette-Lighter-Adapter-Quick-Charge-180W-USB-Power-Car-Charger-Splitter.webp" alt="View 2" onclick="swapImg(this,'https://image.made-in-china.com/155f0j00ZyukVFjRiObA/Car-Cigarette-Lighter-Adapter-Quick-Charge-180W-USB-Power-Car-Charger-Splitter.webp')"/>
+          <img class="acc-thumb" src="https://image.made-in-china.com/155f0j00rzTkgwVIVuqt/Factory-Hot-Selling-Dual-USB-Quick-Charge-Car-Charger-36W-QC3-0.webp" alt="View 3" onclick="swapImg(this,'https://image.made-in-china.com/155f0j00rzTkgwVIVuqt/Factory-Hot-Selling-Dual-USB-Quick-Charge-Car-Charger-36W-QC3-0.webp')"/>
+        </div>
+      </div>
+      <div class="acc-card-body">
+        <div class="acc-cat-label">🔌 Charger</div>
+        <h3>Dual USB QC 3.0 Car Charger</h3>
+        <p>Qualcomm Quick Charge 3.0 on port A delivers a full charge 4× faster than standard 5W charging. Port B provides a steady 18W for accessories. Smart-IC auto-detects device voltage to prevent overcharging. Compatible with all 12V and 24V vehicles including heavy trucks and vans.</p>
+        <div class="acc-specs">
+          <span class="acc-spec">36W output</span>
+          <span class="acc-spec">QC 3.0</span>
+          <span class="acc-spec">12V &amp; 24V</span>
+          <span class="acc-spec">LED indicator</span>
+        </div>
+      </div>
+      <div class="acc-card-footer">
+        <span class="acc-moq">MOQ: 100 pcs</span>
+        <button class="acc-add-btn" onclick="cartAdd('Dual USB QC 3.0 Car Charger','🔌','Car Accessories')">+ Add to Cart</button>
+      </div>
+    </div>
+
+    <div class="acc-card" data-cat="charger" data-name="65W USB-C PD Car Charger">
+      <div class="acc-card-img-wrap">
+        <span class="acc-card-badge hot">HOT</span>
+        <img class="acc-main-img" src="https://image.made-in-china.com/155f0j00ZyukVFjRiObA/Car-Cigarette-Lighter-Adapter-Quick-Charge-180W-USB-Power-Car-Charger-Splitter.webp" alt="65W USB-C PD Fast Car Charger" loading="lazy" onerror="this.parentElement.style.background='var(--acc-light)';this.style.display='none'"/>
+        <div class="acc-thumbs">
+          <img class="acc-thumb active" src="https://image.made-in-china.com/155f0j00ZyukVFjRiObA/Car-Cigarette-Lighter-Adapter-Quick-Charge-180W-USB-Power-Car-Charger-Splitter.webp" alt="View 1" onclick="swapImg(this,'https://image.made-in-china.com/155f0j00ZyukVFjRiObA/Car-Cigarette-Lighter-Adapter-Quick-Charge-180W-USB-Power-Car-Charger-Splitter.webp')"/>
+          <img class="acc-thumb" src="https://image.made-in-china.com/155f0j00rzTkgwVIVuqt/Factory-Hot-Selling-Dual-USB-Quick-Charge-Car-Charger-36W-QC3-0.webp" alt="View 2" onclick="swapImg(this,'https://image.made-in-china.com/155f0j00rzTkgwVIVuqt/Factory-Hot-Selling-Dual-USB-Quick-Charge-Car-Charger-36W-QC3-0.webp')"/>
+          <img class="acc-thumb" src="https://image.made-in-china.com/155f0j00ZyukVFjRiObA/Car-Cigarette-Lighter-Adapter-Quick-Charge-180W-USB-Power-Car-Charger-Splitter.webp" alt="View 3" onclick="swapImg(this,'https://image.made-in-china.com/155f0j00ZyukVFjRiObA/Car-Cigarette-Lighter-Adapter-Quick-Charge-180W-USB-Power-Car-Charger-Splitter.webp')"/>
+        </div>
+      </div>
+      <div class="acc-card-body">
+        <div class="acc-cat-label">🔌 Charger</div>
+        <h3>65W USB-C PD Fast Car Charger</h3>
+        <p>One adapter handles laptops, tablets and phones from a single 12V cigarette socket. USB-C PD 65W supports MacBook Pro, iPad Pro, Samsung DeX, and Huawei MateBook. Built-in overvoltage and overtemperature protection. Compact flush-profile design doesn't obstruct the gearshift area.</p>
+        <div class="acc-specs">
+          <span class="acc-spec">65W PD</span>
+          <span class="acc-spec">USB-C</span>
+          <span class="acc-spec">Laptop compatible</span>
+        </div>
+      </div>
+      <div class="acc-card-footer">
+        <span class="acc-moq">MOQ: 100 pcs</span>
+        <button class="acc-add-btn" onclick="cartAdd('65W USB-C PD Fast Car Charger','⚡','Car Accessories')">+ Add to Cart</button>
+      </div>
+    </div>
+
+    <div class="acc-card" data-cat="charger" data-name="Mini 1080P Dash Cam">
+      <div class="acc-card-img-wrap">
+        <span class="acc-card-badge new">NEW</span>
+        <img class="acc-main-img" src="https://image.made-in-china.com/155f0j00rzTkgwVIVuqt/Factory-Hot-Selling-Dual-USB-Quick-Charge-Car-Charger-36W-QC3-0.webp" alt="Mini 1080P Full HD Dash Cam" loading="lazy" onerror="this.parentElement.style.background='var(--acc-light)';this.style.display='none'"/>
+        <div class="acc-thumbs">
+          <img class="acc-thumb active" src="https://image.made-in-china.com/155f0j00rzTkgwVIVuqt/Factory-Hot-Selling-Dual-USB-Quick-Charge-Car-Charger-36W-QC3-0.webp" alt="View 1" onclick="swapImg(this,'https://image.made-in-china.com/155f0j00rzTkgwVIVuqt/Factory-Hot-Selling-Dual-USB-Quick-Charge-Car-Charger-36W-QC3-0.webp')"/>
+          <img class="acc-thumb" src="https://image.made-in-china.com/155f0j00ZyukVFjRiObA/Car-Cigarette-Lighter-Adapter-Quick-Charge-180W-USB-Power-Car-Charger-Splitter.webp" alt="View 2" onclick="swapImg(this,'https://image.made-in-china.com/155f0j00ZyukVFjRiObA/Car-Cigarette-Lighter-Adapter-Quick-Charge-180W-USB-Power-Car-Charger-Splitter.webp')"/>
+          <img class="acc-thumb" src="https://image.made-in-china.com/155f0j00rzTkgwVIVuqt/Factory-Hot-Selling-Dual-USB-Quick-Charge-Car-Charger-36W-QC3-0.webp" alt="View 3" onclick="swapImg(this,'https://image.made-in-china.com/155f0j00rzTkgwVIVuqt/Factory-Hot-Selling-Dual-USB-Quick-Charge-Car-Charger-36W-QC3-0.webp')"/>
+        </div>
+      </div>
+      <div class="acc-card-body">
+        <div class="acc-cat-label">🔌 Tech</div>
+        <h3>Mini 1080P Full HD Dash Cam</h3>
+        <p>Coin-sized body mounts discreetly behind the rearview mirror. Captures crisp 1920×1080 footage at 30 fps. Sony low-light sensor delivers clear night video at 0.1 lux. 3-axis G-sensor auto-locks collision footage to prevent overwrite. Seamless loop recording supports microSD cards up to 128 GB.</p>
+        <div class="acc-specs">
+          <span class="acc-spec">1080P FHD</span>
+          <span class="acc-spec">Night vision</span>
+          <span class="acc-spec">G-sensor</span>
+          <span class="acc-spec">128GB support</span>
+        </div>
+      </div>
+      <div class="acc-card-footer">
+        <span class="acc-moq">MOQ: 30 pcs</span>
+        <button class="acc-add-btn" onclick="cartAdd('Mini 1080P Full HD Dash Cam','📷','Car Accessories')">+ Add to Cart</button>
+      </div>
+    </div>
+
+  </div><!-- end charger grid -->
+</div><!-- end accMain -->
+
+<!-- CTA BANNER -->
+<div class="acc-cta">
+  <h2>Ready to Place a Wholesale Order?</h2>
+  <p>Add items to your Inquiry Cart, send us your requirements, and receive a factory-direct quote within 24 hours.</p>
+  <a href="inquiry-cart.html" class="btn-white">🛒 View My Inquiry Cart →</a>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <span class="footer-logo-icon">🌍</span>
+          <span class="footer-logo-text">CM IMPORT&amp;EXPORT</span>
+        </div>
+        <p class="footer-desc">Factory-direct exporter of tires, EV parts, and car accessories from China to global markets.</p>
+      </div>
+      <div class="footer-links">
+        <h4 data-i18n="footer.products">Products</h4>
+        <ul>
+          <li><a href="tires.html">Tires</a></li>
+          <li><a href="pricelist.html">Tire Prices</a></li>
+          <li><a href="byd-parts.html">BYD Parts</a></li>
+          <li><a href="sinotruk-parts.html">Sinotruk Parts</a></li>
+          <li><a href="car-accessories.html">Car Accessories</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="inquiry-cart.html">Inquiry Cart</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h4>Contact</h4>
+        <p>📧 cjh1063744757@gmail.com</p>
+        <p>🌐 cangming.netlify.app</p>
+        <p>🌍 Zambia · Singapore · Australia · Ethiopia · Liberia</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 CM IMPORT&amp;EXPORT. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="js/cart.js"></script>
+<script src="js/main.js"></script>
+<script>
+  // ── Multi-image thumbnail swap ────────────────────────────────
+  function swapImg(thumb, newSrc) {
+    var card = thumb.closest('.acc-card');
+    var mainImg = card.querySelector('.acc-main-img');
+    mainImg.style.opacity = '0';
+    setTimeout(function(){ mainImg.src = newSrc; mainImg.style.opacity = '1'; }, 120);
+    card.querySelectorAll('.acc-thumb').forEach(function(t){ t.classList.remove('active'); });
+    thumb.classList.add('active');
+  }
+
+  // ── Cart integration ──────────────────────────────────────────
+  function cartAdd(name, emoji, category) {
+    var items = cartLoad();
+    var existing = items.find(function(i){ return i.name === name; });
+    if (existing) {
+      existing.qty = (existing.qty || 1) + 1;
+    } else {
+      items.push({ name: name, emoji: emoji, category: category, qty: 1 });
+    }
+    cartSave(items);
+    var badge = document.getElementById('cartBadge');
+    var count = cartCount();
+    if (badge) { badge.textContent = count; badge.style.display = count > 0 ? 'inline-block' : 'none'; }
+    // feedback
+    var btn = event.target;
+    var orig = btn.textContent;
+    btn.textContent = '✓ Added!';
+    btn.style.background = '#38a169';
+    setTimeout(function(){ btn.textContent = orig; btn.style.background = ''; }, 1200);
+  }
+
+  // ── Filter by category ────────────────────────────────────────
+  var allCards = document.querySelectorAll('.acc-card');
+  var catBtns  = document.querySelectorAll('.acc-cat-btn');
+  var sectionHeads = document.querySelectorAll('.acc-section-head');
+
+  catBtns.forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      catBtns.forEach(function(b){ b.classList.remove('active'); });
+      btn.classList.add('active');
+      var cat = btn.dataset.cat;
+      filterCards(cat, document.getElementById('accSearch').value);
+    });
+  });
+
+  function filterCards(cat, search) {
+    var shown = 0;
+    var searchLower = (search || '').toLowerCase();
+    allCards.forEach(function(card) {
+      var matchCat    = cat === 'all' || card.dataset.cat === cat;
+      var matchSearch = !searchLower || card.dataset.name.toLowerCase().includes(searchLower) ||
+                        card.querySelector('p').textContent.toLowerCase().includes(searchLower);
+      if (matchCat && matchSearch) { card.classList.remove('hidden'); shown++; }
+      else { card.classList.add('hidden'); }
+    });
+    // show/hide section heads
+    sectionHeads.forEach(function(head) {
+      var sec = head.dataset.section;
+      if (cat !== 'all' && sec !== cat) { head.style.display = 'none'; }
+      else { head.style.display = ''; }
+    });
+    document.getElementById('accCount').textContent = 'Showing ' + shown + ' item' + (shown !== 1 ? 's' : '');
+  }
+
+  document.getElementById('accSearch').addEventListener('input', function() {
+    var activeCat = document.querySelector('.acc-cat-btn.active').dataset.cat;
+    filterCards(activeCat, this.value);
+  });
+
+  // ── Cart badge on load ────────────────────────────────────────
+  document.addEventListener('DOMContentLoaded', function(){
+    var badge = document.getElementById('cartBadge');
+    var count = cartCount();
+    if (badge && count > 0) { badge.textContent = count; badge.style.display = 'inline-block'; }
+  });
+
+  // ── productPages for active nav ───────────────────────────────
+  var productPages = ['products.html','tires.html','pricelist.html',
+                      'byd-parts.html','sinotruk-parts.html','car-accessories.html'];
+  var currentFile = window.location.pathname.split('/').pop() || 'index.html';
+  if (productPages.indexOf(currentFile) !== -1) {
+    var trigger = document.querySelector('.nav-dropdown-trigger');
+    if (trigger) trigger.classList.add('active');
+  }
+</script>
+<script src="js/i18n.js"></script>
+</body>
+</html>
+
+
+

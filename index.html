@@ -1,0 +1,1115 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="CM IMPORT&EXPORT - Factory-direct exporter of tires, BYD &amp; Sinotruk parts to Zambia, Singapore, Australia, Ethiopia and Liberia. ISO certified, SGS inspected. Get a free quote today." />
+  <meta name="keywords" content="tires export China, EV auto parts exporter, new energy vehicle parts, Zambia tires supplier, Singapore auto parts, BYD parts export, Sinotruk parts wholesale" />
+  <meta name="author" content="CM IMPORT&EXPORT" />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:title" content="CM IMPORT&EXPORT | Premium Tires, EV Parts & Auto Parts" />
+  <meta property="og:description" content="Professional Chinese exporter of tires and new energy auto parts. Serving Zambia, Singapore, Australia, Ethiopia and Liberia." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://cmtowndealer.com" />
+  <meta property="og:site_name" content="CM IMPORT&EXPORT" />
+  <title>CM IMPORT&EXPORT | Premium Tires, EV Parts & Auto Parts Exporter</title>
+  <!-- Google Analytics GA4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    /* ══════════════════════════════════════════════
+       HOMEPAGE REDESIGN — bz-auto.com inspired
+       ══════════════════════════════════════════════ */
+
+    /* ── HERO: Tech split layout with car assembly ── */
+    .hero {
+      position: relative; min-height: 92vh;
+      display: flex; align-items: stretch;
+      background: #060c18; overflow: hidden; padding: 0;
+    }
+    /* Dot grid */
+    .hero::before {
+      content: ''; position: absolute; inset: 0; z-index: 0;
+      background-image: radial-gradient(rgba(56,189,248,.16) 1px, transparent 1px);
+      background-size: 42px 42px; pointer-events: none;
+    }
+    /* Right-side ambient glow */
+    .hero::after {
+      content: ''; position: absolute; inset: 0; z-index: 0; pointer-events: none;
+      background: radial-gradient(ellipse 65% 80% at 75% 50%, rgba(14,165,233,.1) 0%, transparent 68%);
+    }
+    .hero .container {
+      position: relative; z-index: 2;
+      display: flex; align-items: center; gap: 40px;
+      padding-top: 72px; padding-bottom: 72px;
+      width: 100%; max-width: 1280px;
+    }
+    /* Left text column */
+    .hero-text { flex: 0 0 460px; min-width: 0; }
+    /* Right animation column */
+    .hero-car-stage {
+      flex: 1; position: relative; min-height: 360px;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+    }
+    /* Car SVG */
+    .car-assemble-svg { width: 100%; max-width: 660px; overflow: visible; }
+    /* Assembled car label */
+    .car-label {
+      font-size: .68rem; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase;
+      color: rgba(56,189,248,.55); text-align: center; margin-top: 10px;
+      opacity: 0; transition: opacity 1s ease 0.3s;
+    }
+    .car-label.show { opacity: 1; }
+    /* Scan line sweep */
+    .hero-scan {
+      position: absolute; left: 5%; right: 5%; height: 1px;
+      background: linear-gradient(90deg, transparent 0%, rgba(56,189,248,.5) 30%, rgba(129,140,248,.6) 50%, rgba(56,189,248,.5) 70%, transparent 100%);
+      box-shadow: 0 0 8px rgba(56,189,248,.4);
+      pointer-events: none; top: 0;
+      animation: heroScan 4s ease-in-out infinite;
+    }
+    @keyframes heroScan {
+      0%   { top: 5%;  opacity: 0; }
+      8%   { opacity: 1; }
+      92%  { opacity: 1; }
+      100% { top: 95%; opacity: 0; }
+    }
+    /* Individual part animation */
+    .ap { transition: transform 0.88s cubic-bezier(0.16,1,0.3,1), opacity 0.58s ease; }
+    /* Assembled car glow pulse */
+    @keyframes carPulse {
+      0%,100% { filter: drop-shadow(0 0 4px rgba(56,189,248,.35)); }
+      50%      { filter: drop-shadow(0 0 18px rgba(56,189,248,.85)) drop-shadow(0 0 36px rgba(99,102,241,.35)); }
+    }
+    .car-glow { animation: carPulse 3s ease-in-out infinite; }
+    /* Text styles */
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(255,255,255,.09); border: 1px solid rgba(255,255,255,.18);
+      color: #93c5fd; font-size: .78rem; font-weight: 600;
+      letter-spacing: .8px; text-transform: uppercase;
+      padding: 6px 14px; border-radius: 50px; margin-bottom: 28px;
+    }
+    .hero-badge .dot { width: 7px; height: 7px; background: #22d3ee; border-radius: 50%; display: inline-block; }
+    .hero h1 {
+      font-size: clamp(2.2rem, 4.5vw, 3.6rem); line-height: 1.13;
+      color: #fff; font-weight: 800; margin-bottom: 20px;
+    }
+    .hero h1 .highlight {
+      background: linear-gradient(90deg, #38bdf8, #818cf8);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    }
+    .hero p { color: rgba(255,255,255,.75); font-size: 1rem; line-height: 1.7; max-width: 420px; margin-bottom: 26px; }
+    .hero-trust-tags { display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: 28px; }
+    .hero-trust-tag {
+      background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.15);
+      color: rgba(255,255,255,.82); font-size: .76rem; font-weight: 600;
+      padding: 5px 13px; border-radius: 50px;
+    }
+    .hero-buttons { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 40px; }
+    .hero-buttons .btn-green {
+      background: linear-gradient(135deg, #0ea5e9, #3b82f6); border: none;
+      padding: 13px 28px; font-size: .95rem;
+      box-shadow: 0 8px 28px rgba(59,130,246,.38);
+    }
+    .hero-buttons .btn-green:hover {
+      background: linear-gradient(135deg, #38bdf8, #6366f1);
+      transform: translateY(-2px); box-shadow: 0 12px 38px rgba(99,102,241,.42);
+    }
+    .hero-buttons .btn-secondary {
+      background: transparent; border: 2px solid rgba(255,255,255,.35);
+      color: #fff; padding: 11px 24px; font-size: .95rem;
+    }
+    .hero-buttons .btn-secondary:hover { background: rgba(255,255,255,.1); border-color: rgba(255,255,255,.65); }
+    .hero-stats {
+      display: flex; gap: 28px; flex-wrap: wrap;
+      padding-top: 28px; border-top: 1px solid rgba(255,255,255,.12);
+    }
+    .hero-stat-number { font-size: 1.9rem; font-weight: 800; color: #fff; line-height: 1; }
+    .hero-stat-number span { color: #38bdf8; }
+    .hero-stat-label { font-size: .72rem; color: rgba(255,255,255,.5); margin-top: 4px; text-transform: uppercase; letter-spacing: .5px; }
+    /* Scroll hint */
+    .hero-scroll { position: absolute; bottom: 24px; left: 50%; transform: translateX(-50%); z-index: 2; color: rgba(255,255,255,.4); font-size: .72rem; text-align: center; letter-spacing: .5px; }
+    .hero-scroll svg { width: 18px; display: block; margin: 4px auto 0; animation: scrollBounce 1.8s ease infinite; }
+    @keyframes scrollBounce { 0%,100%{transform:translateY(0)} 50%{transform:translateY(6px)} }
+    /* Responsive */
+    @media (max-width: 940px) {
+      .hero .container { flex-direction: column; gap: 28px; }
+      .hero-text { flex: none; }
+      .hero-car-stage { width: 100%; max-width: 580px; min-height: 280px; }
+      .hero h1 { font-size: clamp(2rem, 7vw, 3rem); }
+    }
+
+    /* ── PRODUCT CARDS ── */
+    .product-card { background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 12px rgba(0,0,0,.07); transition: transform .3s ease, box-shadow .3s ease; border: 1px solid #f1f5f9; }
+    .product-card:hover { transform: translateY(-6px); box-shadow: 0 16px 48px rgba(0,0,0,.13); }
+    .product-card-photo-top { position: relative; height: 220px; overflow: hidden; }
+    .product-card-photo-top img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s ease; }
+    .product-card:hover .product-card-photo-top img { transform: scale(1.06); }
+    .product-card-photo-top .product-card-badge { position: absolute; top: 14px; right: 14px; z-index: 2; }
+    .product-card-body { padding: 22px; }
+    .product-card-body h3 { margin-bottom: 6px; }
+    .product-card-body .product-brands { font-size: .78rem; color: #64748b; margin-bottom: 10px; }
+
+    /* ── BRAND STRIP ── */
+    .brands-strip { background: #fff; border-top: 1px solid #e8edf3; border-bottom: 1px solid #e8edf3; padding: 20px 0; }
+    .brands-strip-inner { max-width: 1200px; margin: 0 auto; padding: 0 20px; display: flex; justify-content: center; align-items: center; gap: 12px; flex-wrap: wrap; }
+    .brands-strip-label { font-size: .72rem; color: #94a3b8; font-weight: 700; text-transform: uppercase; letter-spacing: 1.2px; margin-right: 8px; white-space: nowrap; }
+    .brand-pill { background: #f8fafc; border: 1.5px solid #e2e8f0; border-radius: 50px; padding: 7px 18px; font-weight: 700; font-size: .8rem; color: #334155; white-space: nowrap; transition: all .2s; }
+    .brand-pill:hover { background: #1B3A6B; color: #fff; border-color: #1B3A6B; }
+
+    /* ── WHY SECTION — DARK NAVY ── */
+    .why-section {
+      background: linear-gradient(135deg, #0b1628 0%, #0f2044 50%, #0d1a35 100%) !important;
+      position: relative; overflow: hidden;
+    }
+    .why-section::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(56,189,248,.07) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .why-section .section-tag { color: #93c5fd; border-color: rgba(147,197,253,.25); background: rgba(147,197,253,.1); }
+    .why-section h2 { color: #fff; }
+    .why-section p { color: rgba(255,255,255,.6); }
+    .why-section .divider { background: rgba(255,255,255,.12); }
+    .why-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    @media (max-width: 900px) { .why-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 540px) { .why-grid { grid-template-columns: 1fr; } }
+    .why-card {
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: 14px; padding: 28px 24px;
+      transition: background .2s, transform .2s, border-color .2s;
+      position: relative; overflow: hidden;
+    }
+    .why-card:hover { background: rgba(255,255,255,.09); transform: translateY(-4px); border-color: rgba(255,255,255,.2); }
+    .why-card h3 { color: #e2e8f0; margin-bottom: 10px; font-size: 1rem; }
+    .why-card p { color: rgba(255,255,255,.55); font-size: .88rem; line-height: 1.65; margin: 0; }
+    .why-icon { width: 52px; height: 52px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin-bottom: 16px; }
+    .wc1 .why-icon { background: rgba(59,130,246,.18); }
+    .wc2 .why-icon { background: rgba(34,197,94,.18); }
+    .wc3 .why-icon { background: rgba(14,165,233,.18); }
+    .wc4 .why-icon { background: rgba(245,158,11,.18); }
+    .wc5 .why-icon { background: rgba(168,85,247,.18); }
+    .wc6 .why-icon { background: rgba(20,184,166,.18); }
+    /* Colored top accent line per card */
+    .wc1::before,.wc2::before,.wc3::before,.wc4::before,.wc5::before,.wc6::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; border-radius:14px 14px 0 0; }
+    .wc1::before { background: #3b82f6; }
+    .wc2::before { background: #22c55e; }
+    .wc3::before { background: #0ea5e9; }
+    .wc4::before { background: #f59e0b; }
+    .wc5::before { background: #a855f7; }
+    .wc6::before { background: #14b8a6; }
+
+    /* ── STATS SECTION ── */
+    .stats-section { background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 100%) !important; }
+    .stats-section .section-tag { color: rgba(255,255,255,.55); border-color: rgba(255,255,255,.15); background: rgba(255,255,255,.08); }
+    .stats-section h2 { color: #fff; }
+    .stats-section .divider { background: rgba(255,255,255,.15); }
+    .stat-card { background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.1); border-radius: 12px; transition: background .2s; }
+    .stat-card:hover { background: rgba(255,255,255,.1); }
+    .stat-card .stat-number { color: #7dd3fc; }
+    .stat-card .stat-label { color: rgba(255,255,255,.55); }
+
+    /* ── MARKET CARDS ── */
+    .market-card { border-top: 3px solid var(--primary); border-radius: 12px; transition: transform .25s, box-shadow .25s; }
+    .market-card:hover { transform: translateY(-5px); box-shadow: 0 16px 40px rgba(0,0,0,.1); }
+
+    /* ── TESTIMONIALS ── */
+    .testimonial-card { border-left: 4px solid var(--primary); border-radius: 12px; }
+    .testimonial-stars { color: #f59e0b; font-size: 1.1rem; margin-bottom: 12px; }
+
+    /* ── ORDER STEPS ── */
+    .order-steps-section { background: #f8fafc; }
+
+    /* ── CTA ── */
+    .cta-section { background: linear-gradient(135deg, #1B3A6B 0%, #0f2044 100%); }
+
+    @media (max-width: 640px) {
+      .hero .container { padding-top: 60px; }
+      .hero-stats { gap: 20px; }
+    }
+  </style>
+  <!-- Meta Pixel Code -->
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '1662154028390817');
+  fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=1662154028390817&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Meta Pixel Code -->
+</head>
+<body>
+
+<!-- ============================================================
+     HEADER
+     ============================================================ -->
+<header>
+  <div class="nav-container">
+    <a href="index.html" class="logo">
+      <div class="logo-icon">🌍</div>
+      <div class="logo-text">
+        <span class="logo-name">CM IMPORT&EXPORT</span>
+        <span class="logo-tagline" data-i18n="footer.tagline">Driving Your World Forward</span>
+      </div>
+    </a>
+    <nav class="nav-menu">
+      <a href="index.html" class="nav-link"><span data-i18n="nav.home">Home</span></a>
+      <div class="nav-dropdown">
+        <a href="products.html" class="nav-link nav-dropdown-trigger"><span data-i18n="nav.products">Products</span> <span class="dropdown-arrow">▾</span></a>
+        <div class="dropdown-menu">
+          <a href="products.html" class="dropdown-item" data-i18n="nav.allProducts">📦 All Products</a>
+          <div class="dropdown-divider"></div>
+          <a href="tires.html" class="dropdown-item" data-i18n="nav.tires">🛞 Tires</a>
+          <a href="pricelist.html" class="dropdown-item" data-i18n="nav.tirePrices">💰 Tire Prices</a>
+          <a href="byd-parts.html" class="dropdown-item" data-i18n="nav.bydParts">⚡ BYD Parts</a>
+          <a href="sinotruk-parts.html" class="dropdown-item" data-i18n="nav.sinotrukParts">🚛 Sinotruk Parts</a>
+          <a href="car-accessories.html" class="dropdown-item" data-i18n="nav.carAccessories">🚗 Car Accessories</a>
+        </div>
+      </div>
+      <a href="about.html" class="nav-link"><span data-i18n="nav.about">About Us</span></a>
+      <a href="faq.html" class="nav-link"><span data-i18n="nav.faq">FAQ</span></a>
+      <a href="contact.html" class="nav-link"><span data-i18n="nav.contact">Contact</span></a>
+      <a href="contact.html" class="nav-cta" data-i18n="nav.getQuote">Get a Quote</a>
+    </nav>
+    <div class="lang-switcher">
+      <button class="lang-btn" id="langToggle" onclick="toggleLangMenu(event)">
+        <span id="langFlag">🇬🇧</span>
+        <span id="langCode">EN</span>
+        <span class="dropdown-arrow">▾</span>
+      </button>
+      <div class="lang-menu" id="langMenu">
+        <button class="lang-option" data-lang="en" onclick="setLang('en')">🇬🇧 English</button>
+        <button class="lang-option" data-lang="fr" onclick="setLang('fr')">🇫🇷 Français</button>
+        <button class="lang-option" data-lang="ru" onclick="setLang('ru')">🇷🇺 Русский</button>
+        <button class="lang-option" data-lang="uk" onclick="setLang('uk')">🇺🇦 Українська</button>
+      </div>
+    </div>    <div class="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</header>
+
+<!-- ============================================================
+     HERO
+     ============================================================ -->
+<section class="hero">
+  <div class="container">
+
+    <!-- LEFT: Text content -->
+    <div class="hero-text">
+      <div class="hero-badge">
+        <span class="dot"></span>
+        <span data-i18n="index.hero.badge">China Factory Direct Export Specialist</span>
+      </div>
+      <h1>
+        Tires &amp; EV Parts<br/>
+        <span class="highlight">Factory Direct</span><br/>
+        from China
+      </h1>
+      <p>
+        Skip the middlemen. CM IMPORT&amp;EXPORT sources directly from ISO-certified Chinese factories
+        and delivers to your port in Zambia, Singapore, Australia, Ethiopia and Liberia —
+        with full customs documentation included.
+      </p>
+      <div class="hero-trust-tags">
+        <span class="hero-trust-tag">🏭 Factory Direct</span>
+        <span class="hero-trust-tag">✅ ISO Certified</span>
+        <span class="hero-trust-tag">🌍 15+ Countries Served</span>
+        <span class="hero-trust-tag">📦 FOB / CIF / DAP</span>
+      </div>
+      <div class="hero-buttons">
+        <a href="products.html" class="btn btn-green">Explore Products →</a>
+        <a href="contact.html" class="btn btn-secondary">Request a Free Quote</a>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <div class="hero-stat-number">12<span>+</span></div>
+          <div class="hero-stat-label">Years Experience</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-number">127</div>
+          <div class="hero-stat-label">Active Global Clients</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-number">5</div>
+          <div class="hero-stat-label">Core Export Markets</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-number">96<span>%</span></div>
+          <div class="hero-stat-label">Repeat Order Rate</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT: Yangwang U8 assembly animation -->
+    <div class="hero-car-stage">
+      <div class="hero-scan"></div>
+
+      <svg id="carSVG" viewBox="0 0 860 400" class="car-assemble-svg" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <filter id="gf" x="-40%" y="-40%" width="180%" height="180%">
+            <feGaussianBlur stdDeviation="3.5" result="b"/>
+            <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+          <filter id="gf2" x="-60%" y="-60%" width="220%" height="220%">
+            <feGaussianBlur stdDeviation="7" result="b"/>
+            <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+          <linearGradient id="glassGrad" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.22"/>
+            <stop offset="100%" stop-color="#818cf8" stop-opacity="0.08"/>
+          </linearGradient>
+        </defs>
+
+        <!-- Ground line + shadow -->
+        <line x1="60" y1="338" x2="800" y2="338" stroke="rgba(56,189,248,.18)" stroke-width="1"/>
+        <ellipse cx="428" cy="344" rx="310" ry="7" fill="rgba(56,189,248,.06)"/>
+
+        <!-- ① MAIN BODY OUTLINE — from right -->
+        <g id="ap-body">
+          <path d="M 92,338 L 90,298 L 101,272 L 114,255 L 133,240
+                   L 175,218 L 224,207 L 256,124 L 592,124
+                   L 630,159 L 652,187 L 683,207 L 708,246
+                   L 720,282 L 724,338 Z"
+                fill="rgba(56,189,248,.05)" stroke="#38bdf8" stroke-width="2.2"
+                stroke-linejoin="round" filter="url(#gf)"/>
+        </g>
+
+        <!-- ② WHEEL ARCHES — from below -->
+        <g id="ap-arches">
+          <path d="M 142,338 A 54,54 0 0 1 250,338" fill="none" stroke="#38bdf8" stroke-width="2.8" stroke-linecap="round" filter="url(#gf)"/>
+          <path d="M 526,338 A 54,54 0 0 1 634,338" fill="none" stroke="#38bdf8" stroke-width="2.8" stroke-linecap="round" filter="url(#gf)"/>
+        </g>
+
+        <!-- ③ WINDSHIELD — from top-left -->
+        <g id="ap-windshield">
+          <path d="M 224,207 L 256,124 L 398,124 L 364,207 Z"
+                fill="url(#glassGrad)" stroke="rgba(56,189,248,.75)" stroke-width="1.4" filter="url(#gf)"/>
+          <line x1="310" y1="124" x2="284" y2="207" stroke="rgba(56,189,248,.28)" stroke-width="0.8"/>
+        </g>
+
+        <!-- ④ MAIN SIDE WINDOWS — from above -->
+        <g id="ap-windows">
+          <path d="M 364,207 L 398,124 L 568,124 L 568,207 Z"
+                fill="rgba(100,116,200,.14)" stroke="rgba(129,140,248,.7)" stroke-width="1.3"/>
+          <line x1="483" y1="124" x2="483" y2="207" stroke="rgba(129,140,248,.35)" stroke-width="0.9"/>
+        </g>
+
+        <!-- ⑤ REAR QUARTER GLASS — from top-right -->
+        <g id="ap-rear-win">
+          <path d="M 568,124 L 592,124 L 630,159 L 652,187 L 608,203 L 568,207 Z"
+                fill="rgba(56,189,248,.1)" stroke="rgba(56,189,248,.65)" stroke-width="1.2" filter="url(#gf)"/>
+        </g>
+
+        <!-- ⑥ FRONT WHEEL — from bottom-left (spins in) -->
+        <g id="ap-wheel-f">
+          <circle cx="196" cy="284" r="54" fill="rgba(56,189,248,.04)" stroke="#38bdf8" stroke-width="2.2" filter="url(#gf)"/>
+          <circle cx="196" cy="284" r="34" fill="rgba(56,189,248,.08)" stroke="#38bdf8" stroke-width="1.6"/>
+          <circle cx="196" cy="284" r="10" fill="rgba(56,189,248,.35)" stroke="#7dd3fc" stroke-width="1.8" filter="url(#gf)"/>
+          <!-- 5 spokes -->
+          <line x1="196" y1="284" x2="196" y2="250" stroke="#38bdf8" stroke-width="1.3" opacity=".85"/>
+          <line x1="196" y1="284" x2="228" y2="274" stroke="#38bdf8" stroke-width="1.3" opacity=".85"/>
+          <line x1="196" y1="284" x2="216" y2="312" stroke="#38bdf8" stroke-width="1.3" opacity=".85"/>
+          <line x1="196" y1="284" x2="176" y2="312" stroke="#38bdf8" stroke-width="1.3" opacity=".85"/>
+          <line x1="196" y1="284" x2="164" y2="274" stroke="#38bdf8" stroke-width="1.3" opacity=".85"/>
+          <circle cx="196" cy="284" r="23" fill="none" stroke="rgba(56,189,248,.28)" stroke-width="0.9" stroke-dasharray="5 4"/>
+        </g>
+
+        <!-- ⑦ REAR WHEEL — from bottom-right (spins in) -->
+        <g id="ap-wheel-r">
+          <circle cx="580" cy="284" r="54" fill="rgba(56,189,248,.04)" stroke="#38bdf8" stroke-width="2.2" filter="url(#gf)"/>
+          <circle cx="580" cy="284" r="34" fill="rgba(56,189,248,.08)" stroke="#38bdf8" stroke-width="1.6"/>
+          <circle cx="580" cy="284" r="10" fill="rgba(56,189,248,.35)" stroke="#7dd3fc" stroke-width="1.8" filter="url(#gf)"/>
+          <line x1="580" y1="284" x2="580" y2="250" stroke="#38bdf8" stroke-width="1.3" opacity=".85"/>
+          <line x1="580" y1="284" x2="612" y2="274" stroke="#38bdf8" stroke-width="1.3" opacity=".85"/>
+          <line x1="580" y1="284" x2="600" y2="312" stroke="#38bdf8" stroke-width="1.3" opacity=".85"/>
+          <line x1="580" y1="284" x2="560" y2="312" stroke="#38bdf8" stroke-width="1.3" opacity=".85"/>
+          <line x1="580" y1="284" x2="548" y2="274" stroke="#38bdf8" stroke-width="1.3" opacity=".85"/>
+          <circle cx="580" cy="284" r="23" fill="none" stroke="rgba(56,189,248,.28)" stroke-width="0.9" stroke-dasharray="5 4"/>
+        </g>
+
+        <!-- ⑧ FRONT FASCIA (grille + DRL) — from far left -->
+        <g id="ap-front">
+          <!-- Main grille box -->
+          <rect x="93" y="270" width="46" height="58" rx="3"
+                fill="rgba(56,189,248,.07)" stroke="#38bdf8" stroke-width="1.6"/>
+          <!-- Grille horizontal slats -->
+          <line x1="93" y1="285" x2="139" y2="285" stroke="rgba(56,189,248,.48)" stroke-width="1"/>
+          <line x1="93" y1="300" x2="139" y2="300" stroke="rgba(56,189,248,.48)" stroke-width="1"/>
+          <line x1="93" y1="315" x2="139" y2="315" stroke="rgba(56,189,248,.48)" stroke-width="1"/>
+          <!-- Grille vertical dividers -->
+          <line x1="109" y1="270" x2="109" y2="328" stroke="rgba(56,189,248,.38)" stroke-width="0.9"/>
+          <line x1="124" y1="270" x2="124" y2="328" stroke="rgba(56,189,248,.38)" stroke-width="0.9"/>
+          <!-- DRL headlight strip (U8's horizontal LED bar) -->
+          <path d="M 96,255 L 145,244 L 150,251 L 96,262 Z"
+                fill="rgba(56,189,248,.3)" stroke="#38bdf8" stroke-width="1.1" filter="url(#gf)"/>
+          <!-- Skid plate -->
+          <rect x="90" y="326" width="58" height="12" rx="2"
+                fill="rgba(56,189,248,.1)" stroke="rgba(56,189,248,.5)" stroke-width="1"/>
+          <!-- Tow hook -->
+          <circle cx="93" cy="332" r="4" fill="none" stroke="rgba(56,189,248,.5)" stroke-width="1.2"/>
+        </g>
+
+        <!-- ⑨ REAR FASCIA (tail-light bar + bumper) — from far right -->
+        <g id="ap-rear">
+          <!-- Yangwang U8 full-width tail-light bar -->
+          <line x1="686" y1="209" x2="722" y2="258" stroke="#38bdf8" stroke-width="3.5" stroke-linecap="round" filter="url(#gf)"/>
+          <line x1="689" y1="213" x2="720" y2="255" stroke="rgba(255,255,255,.45)" stroke-width="1.2"/>
+          <!-- Light bar inner glow line -->
+          <line x1="688" y1="211" x2="721" y2="257" stroke="#7dd3fc" stroke-width="1" opacity=".6" filter="url(#gf2)"/>
+          <!-- Tailgate lines -->
+          <line x1="653" y1="187" x2="724" y2="338" stroke="rgba(56,189,248,.3)" stroke-width="0.9" stroke-dasharray="5 4"/>
+          <!-- Rear bumper -->
+          <rect x="681" y="296" width="45" height="36" rx="2"
+                fill="rgba(56,189,248,.06)" stroke="rgba(56,189,248,.5)" stroke-width="1.2"/>
+          <!-- Tow hook -->
+          <circle cx="728" cy="330" r="5" fill="none" stroke="rgba(56,189,248,.55)" stroke-width="1.5"/>
+          <!-- Rear underbody brace -->
+          <line x1="681" y1="332" x2="726" y2="332" stroke="rgba(56,189,248,.25)" stroke-width="1"/>
+        </g>
+
+        <!-- ⑩ ROOF + ROOF RACK — from above -->
+        <g id="ap-roof">
+          <!-- Panoramic roof glass hint -->
+          <rect x="272" y="126" width="262" height="16" rx="2"
+                fill="rgba(56,189,248,.1)" stroke="rgba(56,189,248,.45)" stroke-width="0.9"/>
+          <!-- Roof rail (longitudinal) -->
+          <line x1="316" y1="114" x2="524" y2="114" stroke="rgba(56,189,248,.55)" stroke-width="1.3"/>
+          <!-- Cross bars -->
+          <line x1="316" y1="124" x2="316" y2="114" stroke="rgba(56,189,248,.6)" stroke-width="1.5"/>
+          <line x1="366" y1="124" x2="366" y2="114" stroke="rgba(56,189,248,.6)" stroke-width="1.5"/>
+          <line x1="416" y1="124" x2="416" y2="114" stroke="rgba(56,189,248,.6)" stroke-width="1.5"/>
+          <line x1="466" y1="124" x2="466" y2="114" stroke="rgba(56,189,248,.6)" stroke-width="1.5"/>
+          <line x1="524" y1="124" x2="524" y2="114" stroke="rgba(56,189,248,.6)" stroke-width="1.5"/>
+          <!-- Roof center crease line -->
+          <line x1="256" y1="124" x2="592" y2="124" stroke="rgba(56,189,248,.4)" stroke-width="0.8"/>
+        </g>
+
+        <!-- ⑪ BODY CHARACTER LINES — from bottom -->
+        <g id="ap-lines">
+          <!-- Beltline / window sill -->
+          <line x1="224" y1="207" x2="683" y2="207" stroke="rgba(56,189,248,.55)" stroke-width="1.3"/>
+          <!-- Lower body crease -->
+          <line x1="133" y1="273" x2="720" y2="278" stroke="rgba(56,189,248,.3)" stroke-width="0.9"/>
+          <!-- Front fender flare -->
+          <path d="M 135,240 C 152,234 168,232 180,230 L 224,218"
+                fill="none" stroke="rgba(56,189,248,.42)" stroke-width="1"/>
+          <!-- Rear fender flare -->
+          <path d="M 652,187 L 674,204 C 684,213 680,222 668,226"
+                fill="none" stroke="rgba(56,189,248,.42)" stroke-width="1"/>
+          <!-- B-pillar line -->
+          <line x1="364" y1="124" x2="364" y2="338" stroke="rgba(56,189,248,.22)" stroke-width="0.8" stroke-dasharray="4 3"/>
+          <!-- Door handle details -->
+          <rect x="258" y="245" width="36" height="6" rx="3" fill="none" stroke="rgba(56,189,248,.45)" stroke-width="1"/>
+          <rect x="460" y="245" width="36" height="6" rx="3" fill="none" stroke="rgba(56,189,248,.45)" stroke-width="1"/>
+        </g>
+
+        <!-- ⑫ BADGE + LOGO ACCENTS — from above -->
+        <g id="ap-badge">
+          <!-- Front grille centre badge (diamond shape) -->
+          <path d="M 116,293 L 122,301 L 116,309 L 110,301 Z"
+                fill="rgba(56,189,248,.35)" stroke="#7dd3fc" stroke-width="1.6" filter="url(#gf)"/>
+          <!-- Rear badge -->
+          <path d="M 706,254 L 713,263 L 706,272 L 699,263 Z"
+                fill="rgba(56,189,248,.35)" stroke="#7dd3fc" stroke-width="1.6" filter="url(#gf)"/>
+          <!-- Roof antenna/sensor cluster -->
+          <circle cx="424" cy="117" r="5" fill="none" stroke="#7dd3fc" stroke-width="1.5" opacity=".75" filter="url(#gf)"/>
+          <circle cx="424" cy="117" r="2" fill="#7dd3fc" opacity=".7"/>
+          <!-- LIDAR/sensor pods -->
+          <rect x="102" y="236" width="14" height="8" rx="2" fill="rgba(56,189,248,.2)" stroke="rgba(56,189,248,.6)" stroke-width="1"/>
+          <rect x="717" y="236" width="14" height="8" rx="2" fill="rgba(56,189,248,.2)" stroke="rgba(56,189,248,.6)" stroke-width="1"/>
+        </g>
+
+      </svg>
+
+      <div class="car-label" id="carLabel">YANGWANG U8 &nbsp;·&nbsp; 仰望 U8 &nbsp;·&nbsp; 1100 kW &nbsp;·&nbsp; ALL-WHEEL DRIVE</div>
+    </div>
+
+  </div>
+  <div class="hero-scroll">
+    <span>Scroll Down</span>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+  </div>
+</section>
+
+<!-- ============================================================
+     TRUST BAR
+     ============================================================ -->
+<div class="trust-bar">
+  <div class="trust-track">
+    <div class="trust-item"><span class="trust-dot">✔</span> ISO 9001 Certified Quality</div>
+    <div class="trust-item"><span class="trust-dot">✔</span> CE &amp; RoHS Compliant</div>
+    <div class="trust-item"><span class="trust-dot">✔</span> Factory Direct Pricing</div>
+    <div class="trust-item"><span class="trust-dot">✔</span> Global Shipping &amp; Logistics</div>
+    <div class="trust-item"><span class="trust-dot">✔</span> OEM / ODM Customization</div>
+    <div class="trust-item"><span class="trust-dot">✔</span> 12+ Years Export Experience</div>
+    <div class="trust-item"><span class="trust-dot">✔</span> SGS Pre-Shipment Inspection</div>
+    <div class="trust-item"><span class="trust-dot">✔</span> China Customs Registered Exporter</div>
+    <!-- duplicated for infinite scroll effect -->
+    <div class="trust-item"><span class="trust-dot">✔</span> ISO 9001 Certified Quality</div>
+    <div class="trust-item"><span class="trust-dot">✔</span> CE &amp; RoHS Compliant</div>
+    <div class="trust-item"><span class="trust-dot">✔</span> Factory Direct Pricing</div>
+    <div class="trust-item"><span class="trust-dot">✔</span> Global Shipping &amp; Logistics</div>
+    <div class="trust-item"><span class="trust-dot">✔</span> OEM / ODM Customization</div>
+    <div class="trust-item"><span class="trust-dot">✔</span> 12+ Years Export Experience</div>
+    <div class="trust-item"><span class="trust-dot">✔</span> SGS Pre-Shipment Inspection</div>
+    <div class="trust-item"><span class="trust-dot">✔</span> China Customs Registered Exporter</div>
+  </div>
+</div>
+
+<!-- ============================================================
+     PRODUCTS OVERVIEW
+     ============================================================ -->
+<section class="products-overview section-padding">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-tag" data-i18n="index.products.tag">Our Products</span>
+      <h2 data-i18n="index.products.h2">Four Core Product Lines</h2>
+      <p>Factory-direct tires, BYD &amp; Sinotruk parts, and electric bikes — sourced from certified Chinese manufacturers and shipped to your door.</p>
+      <div class="divider"></div>
+    </div>
+    <div class="products-grid products-grid-3">
+      <!-- Tires -->
+      <div class="product-card reveal reveal-delay-1">
+        <div class="product-card-photo-top">
+          <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=600&q=80" alt="Premium Tires" loading="lazy" />
+          <span class="product-card-badge">Bestseller</span>
+        </div>
+        <div class="product-card-body">
+          <h3 data-i18n="prod.tires.h3">Premium Tires</h3>
+          <p class="product-brands" data-i18n="prod.tires.brands">Brands: Triangle · Linglong · Sailun · Doublestar</p>
+          <p>PCR / TBR / OTR tires covering sizes 155/65R13 up to 315/80R22.5. All-terrain, highway &amp; off-road patterns for diverse market needs.</p>
+          <div class="product-features">
+            <div class="product-feature"><span class="check">✓</span> Sizes: 13" – 22.5" rim diameter</div>
+            <div class="product-feature"><span class="check">✓</span> PCR, TBR &amp; OTR categories</div>
+            <div class="product-feature"><span class="check">✓</span> EU / DOT / SNI / GCC certified</div>
+            <div class="product-feature"><span class="check">✓</span> Private label &amp; OEM available</div>
+          </div>
+          <a href="tires.html" class="btn btn-outline">View Tires &rarr;</a>
+        </div>
+      </div>
+      <!-- BYD Parts -->
+      <div class="product-card reveal reveal-delay-2">
+        <div class="product-card-photo-top">
+          <img src="https://image.made-in-china.com/3f2j00RaloYpSrVihW/Original-and-Replacement-Byd-EV-Parts-Supplier-From-China-for-Song-Plus-Tang-Han-Seal-Dolphin-Atto3-Yuan-Plus-Electric-Models.webp" alt="BYD Auto Parts" loading="lazy" />
+          <span class="product-card-badge" style="background: #e67e22;">Trending</span>
+        </div>
+        <div class="product-card-body">
+          <h3 data-i18n="prod.byd.h3">BYD Auto Parts</h3>
+          <p class="product-brands" data-i18n="prod.byd.brands">Models: BYD Han · Tang · Atto 3 · Song Plus · Dolphin</p>
+          <p>Genuine &amp; OEM-grade parts for BYD's entire new-energy lineup. Battery modules, drive motors, AC/DC chargers, ADAS sensors and body panels.</p>
+          <div class="product-features">
+            <div class="product-feature"><span class="check">✓</span> LFP &amp; NMC battery modules</div>
+            <div class="product-feature"><span class="check">✓</span> Blade Battery compatible parts</div>
+            <div class="product-feature"><span class="check">✓</span> OBD-compatible controllers</div>
+            <div class="product-feature"><span class="check">✓</span> 12-month warranty on EV parts</div>
+          </div>
+          <a href="byd-parts.html" class="btn btn-outline">View BYD Parts &rarr;</a>
+        </div>
+      </div>
+      <!-- Sinotruk Parts -->
+      <div class="product-card reveal reveal-delay-3">
+        <div class="product-card-photo-top">
+          <img src="https://image.made-in-china.com/202f0j00mzJbLplhbRuW/HOWO-Weichai-Sinotruk-Truck-371-336-420-New-Engine-Wd615-Wp10-Wp12-Wd615-36-Wd615-47-D12-42-Assembly.webp" alt="Sinotruk Parts" loading="lazy" />
+          <span class="product-card-badge" style="background: #c0392b;">Heavy Duty</span>
+        </div>
+        <div class="product-card-body">
+          <h3 data-i18n="prod.sinotruk.h3">Sinotruk Parts</h3>
+          <p class="product-brands" data-i18n="prod.sinotruk.brands">Series: HOWO · HOWO-A7 · Steyr · Hohan</p>
+          <p>Engine assemblies, gearboxes, axles, cabins and 500+ SKUs for Sinotruk's commercial truck range. Popular across Africa &amp; Southeast Asia.</p>
+          <div class="product-features">
+            <div class="product-feature"><span class="check">✓</span> WD615 / MC11 engine parts</div>
+            <div class="product-feature"><span class="check">✓</span> Full drivetrain components</div>
+            <div class="product-feature"><span class="check">✓</span> Cabin body &amp; suspension</div>
+            <div class="product-feature"><span class="check">✓</span> Fast air freight for urgent orders</div>
+          </div>
+          <a href="sinotruk-parts.html" class="btn btn-outline">View Sinotruk Parts &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     BRAND PARTNERS STRIP
+     ============================================================ -->
+<div class="brands-strip">
+  <div class="brands-strip-inner">
+    <span class="brands-strip-label">Trusted Brands</span>
+    <span class="brand-pill">Triangle Tyre</span>
+    <span class="brand-pill">Linglong Tire</span>
+    <span class="brand-pill">Sailun Group</span>
+    <span class="brand-pill">Doublestar</span>
+    <span class="brand-pill">BYD Auto</span>
+    <span class="brand-pill">Sinotruk HOWO</span>
+    <span class="brand-pill">Car Accessories</span>
+  </div>
+</div>
+
+<!-- ============================================================
+     GLOBAL MARKETS
+     ============================================================ -->
+<section class="markets-section section-padding">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-tag" data-i18n="index.markets.tag">Global Reach</span>
+      <h2 data-i18n="index.markets.h2">Our Key Export Markets</h2>
+      <p>We deliver directly to growing markets across Africa, Southeast Asia, and Oceania, backed by deep local market knowledge.</p>
+      <div class="divider"></div>
+    </div>
+    <div class="markets-grid">
+      <div class="market-card reveal reveal-delay-1">
+        <span class="market-flag">🇿🇲</span>
+        <div class="market-country" data-i18n="market.zambia">Zambia</div>
+        <div class="market-region" data-i18n="market.zambia.region">Southern Africa</div>
+        <p class="market-desc">A fast-growing automotive market with strong demand for all-terrain tires and durable vehicle parts.</p>
+        <div class="market-tags">
+          <span class="market-tag">Tires</span>
+          <span class="market-tag">Auto Parts</span>
+          <span class="market-tag">EV Parts</span>
+        </div>
+      </div>
+      <div class="market-card reveal reveal-delay-2">
+        <span class="market-flag">🇸🇬</span>
+        <div class="market-country" data-i18n="market.singapore">Singapore</div>
+        <div class="market-region" data-i18n="market.singapore.region">Southeast Asia</div>
+        <p class="market-desc">A global logistics hub with high demand for EV components and premium urban mobility solutions.</p>
+        <div class="market-tags">
+          <span class="market-tag">EV Parts</span>
+          <span class="market-tag">BYD Parts</span>
+          <span class="market-tag">Tires</span>
+        </div>
+      </div>
+      <div class="market-card reveal reveal-delay-3">
+        <span class="market-flag">🇦🇺</span>
+        <div class="market-country" data-i18n="market.australia">Australia</div>
+        <div class="market-region" data-i18n="market.australia.region">Oceania</div>
+        <p class="market-desc">Expanding EV adoption and strong recreational vehicle sector create excellent opportunities.</p>
+        <div class="market-tags">
+          <span class="market-tag">EV Parts</span>
+          <span class="market-tag">Tires</span>
+          <span class="market-tag">Auto Parts</span>
+        </div>
+      </div>
+      <div class="market-card reveal reveal-delay-4">
+        <span class="market-flag">🇪🇹</span>
+        <div class="market-country" data-i18n="market.ethiopia">Ethiopia</div>
+        <div class="market-region" data-i18n="market.ethiopia.region">East Africa</div>
+        <p class="market-desc">The largest economy in East Africa, with booming logistics and transportation infrastructure needs.</p>
+        <div class="market-tags">
+          <span class="market-tag">Tires</span>
+          <span class="market-tag">Sinotruk Parts</span>
+          <span class="market-tag">Auto Parts</span>
+        </div>
+      </div>
+      <div class="market-card reveal reveal-delay-1">
+        <span class="market-flag">🇱🇷</span>
+        <div class="market-country" data-i18n="market.liberia">Liberia</div>
+        <div class="market-region" data-i18n="market.liberia.region">West Africa</div>
+        <p class="market-desc">A growing market with strong demand for commercial truck parts and all-terrain tires to support infrastructure development.</p>
+        <div class="market-tags">
+          <span class="market-tag">Tires</span>
+          <span class="market-tag">Sinotruk Parts</span>
+          <span class="market-tag">Auto Parts</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     WHY CHOOSE US
+     ============================================================ -->
+<section class="why-section section-padding">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-tag" data-i18n="index.why.tag">Why Us</span>
+      <h2>Why Partner with CM IMPORT&amp;EXPORT?</h2>
+      <p>We combine Chinese manufacturing excellence with 12 years of export expertise to deliver unbeatable factory-direct value to your business.</p>
+      <div class="divider"></div>
+    </div>
+    <div class="why-grid">
+      <div class="why-card wc1 reveal reveal-delay-1">
+        <div class="why-icon">🏭</div>
+        <h3 data-i18n="index.why.p1.title">Factory Direct Price</h3>
+        <p>We work directly with 50+ ISO-certified Chinese factories — no agents, no markups. You get the same price our factory partners offer to domestic buyers.</p>
+      </div>
+      <div class="why-card wc2 reveal reveal-delay-2">
+        <div class="why-icon">🔍</div>
+        <h3 data-i18n="index.why.p2.title">SGS Quality Inspection</h3>
+        <p>Every batch undergoes SGS pre-shipment inspection at factory level. Detailed QC reports provided before final payment is released.</p>
+      </div>
+      <div class="why-card wc3 reveal reveal-delay-3">
+        <div class="why-icon">🚢</div>
+        <h3 data-i18n="index.why.p3.title">Fast &amp; Reliable Delivery</h3>
+        <p>Sea freight (25–35 days), air freight (5–7 days), and express options. We handle all export customs paperwork including CO, BL, and packing list.</p>
+      </div>
+      <div class="why-card wc4 reveal reveal-delay-1">
+        <div class="why-icon">🔧</div>
+        <h3 data-i18n="index.why.p4.title">OEM / ODM Available</h3>
+        <p>Custom logo, packaging, and product configurations available with MOQ from just 100 units. Build your own brand backed by Chinese manufacturing.</p>
+      </div>
+      <div class="why-card wc5 reveal reveal-delay-2">
+        <div class="why-icon">💬</div>
+        <h3 data-i18n="index.why.p5.title">After-Sales Support</h3>
+        <p>Dedicated account manager, WhatsApp response within 2 hours, warranty claims handled end-to-end. We don't disappear after the shipment lands.</p>
+      </div>
+      <div class="why-card wc6 reveal reveal-delay-3">
+        <div class="why-icon">📋</div>
+        <h3 data-i18n="index.why.p6.title">Transparent Process</h3>
+        <p>Pro-forma invoice within 24 hours, real-time shipment tracking, and full document package for your local customs clearance — every time.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     HOW TO ORDER
+     ============================================================ -->
+<section class="order-steps-section section-padding">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-tag" data-i18n="index.steps.tag">Simple Process</span>
+      <h2 data-i18n="index.steps.h2">How to Place Your Order</h2>
+      <p>From inquiry to delivery in 5 clear steps — no complicated procedures, no hidden surprises.</p>
+      <div class="divider"></div>
+    </div>
+    <div class="order-steps">
+      <div class="order-step reveal reveal-delay-1">
+        <div class="step-circle">
+          📋
+          <span class="step-num-badge">1</span>
+        </div>
+        <h4 data-i18n="index.steps.s1.title">Submit Inquiry</h4>
+        <p>Tell us what you need — product, quantity, destination port. WhatsApp or our quote form.</p>
+      </div>
+      <div class="order-step reveal reveal-delay-2">
+        <div class="step-circle">
+          💬
+          <span class="step-num-badge">2</span>
+        </div>
+        <h4 data-i18n="index.steps.s2.title">Get Quotation</h4>
+        <p>We send a detailed Pro-Forma Invoice with price, lead time, and shipping options within 24 hrs.</p>
+      </div>
+      <div class="order-step reveal reveal-delay-3">
+        <div class="step-circle">
+          ✅
+          <span class="step-num-badge">3</span>
+        </div>
+        <h4 data-i18n="index.steps.s3.title">Confirm &amp; Deposit</h4>
+        <p>Agree to PI terms and pay 30% deposit by T/T. We confirm your order in writing immediately.</p>
+      </div>
+      <div class="order-step reveal reveal-delay-4">
+        <div class="step-circle">
+          🔍
+          <span class="step-num-badge">4</span>
+        </div>
+        <h4 data-i18n="index.steps.s4.title">Production &amp; QC</h4>
+        <p>Goods are produced or sourced. We conduct pre-shipment inspection and send you photos/video.</p>
+      </div>
+      <div class="order-step reveal reveal-delay-1">
+        <div class="step-circle">
+          🚢
+          <span class="step-num-badge">5</span>
+        </div>
+        <h4 data-i18n="index.steps.s5.title">Ship &amp; Deliver</h4>
+        <p>Balance payment released; goods loaded. Full shipping docs sent digitally within 3 days of sailing.</p>
+      </div>
+    </div>
+    <div style="text-align:center; margin-top: 48px;">
+      <a href="contact.html" class="btn btn-green" data-i18n="btn.startOrder">Start Your Order Now →</a>
+      <a href="faq.html" class="btn btn-secondary" style="margin-left:16px;" data-i18n="btn.viewFaq">View FAQ</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     STATS
+     ============================================================ -->
+<section class="stats-section section-padding">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-tag" data-i18n="index.stats.tag">By the Numbers</span>
+      <h2 data-i18n="index.stats.h2">Our Track Record Speaks</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="stats-grid">
+      <div class="stat-card reveal reveal-delay-1">
+        <div class="stat-number"><span class="counter" data-target="12" data-suffix="+">0+</span></div>
+        <div class="stat-label" data-i18n="index.stats.s1">Years in Export Business</div>
+      </div>
+      <div class="stat-card reveal reveal-delay-2">
+        <div class="stat-number"><span class="counter" data-target="127" data-suffix="">0</span></div>
+        <div class="stat-label" data-i18n="index.stats.s2">Active Global Clients</div>
+      </div>
+      <div class="stat-card reveal reveal-delay-3">
+        <div class="stat-number"><span class="counter" data-target="840" data-suffix="+">0+</span></div>
+        <div class="stat-label" data-i18n="index.stats.s3">Shipments Completed</div>
+      </div>
+      <div class="stat-card reveal reveal-delay-4">
+        <div class="stat-number"><span class="counter" data-target="15" data-suffix="+">0+</span></div>
+        <div class="stat-label" data-i18n="index.stats.s4">Countries Served</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     TESTIMONIALS
+     ============================================================ -->
+<section class="testimonials-section section-padding">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-tag" data-i18n="index.testimonials.tag">Client Feedback</span>
+      <h2 data-i18n="index.testimonials.h2">What Our Partners Say</h2>
+      <p>Real feedback from importers across Africa, Southeast Asia, and Oceania who source with us regularly.</p>
+      <div class="divider"></div>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card reveal reveal-delay-1">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"We've been sourcing Triangle and Linglong tires through CM for three consecutive shipments. The pre-shipment QC report gives our finance team confidence before we release payment. Delivery to Lusaka was exactly on the promised schedule — 32 days from FOB Qingdao."</p>
+        <div class="testimonial-footer">
+          <div class="testimonial-avatar">C.M.</div>
+          <div class="testimonial-info">
+            <div class="testimonial-name">C. Mwansa</div>
+            <div class="testimonial-role">Procurement Manager · Auto Parts Distributor</div>
+            <div class="testimonial-location">🇿🇲 Lusaka, Zambia</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card reveal reveal-delay-2">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"I needed BYD Atto 3 battery modules urgently for a fleet of company vehicles. CM found the stock, arranged air freight from Shenzhen, and had them at my warehouse in Singapore in under a week. Communication was fast and professional throughout."</p>
+        <div class="testimonial-footer">
+          <div class="testimonial-avatar">T.L.</div>
+          <div class="testimonial-info">
+            <div class="testimonial-name">T. Lim</div>
+            <div class="testimonial-role">Fleet Operations Director · EV Leasing Company</div>
+            <div class="testimonial-location">🇸🇬 Singapore</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card reveal reveal-delay-3">
+        <div class="testimonial-stars">★★★★☆</div>
+        <p class="testimonial-text">"We sourced a full set of Sinotruk HOWO engine parts through CM for our fleet maintenance. The parts arrived well-packaged with full documentation, and our mechanic confirmed they were genuine quality. The whole process from inquiry to delivery took under three weeks. Highly reliable partner."</p>
+        <div class="testimonial-footer">
+          <div class="testimonial-avatar">A.G.</div>
+          <div class="testimonial-info">
+            <div class="testimonial-name">A. Girma</div>
+            <div class="testimonial-role">Fleet Manager · Freight &amp; Logistics Company</div>
+            <div class="testimonial-location">🇪🇹 Addis Ababa, Ethiopia</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     CTA
+     ============================================================ -->
+<section class="cta-section">
+  <div class="container">
+    <div class="cta-content reveal">
+      <h2 data-i18n="index.cta.h2">Ready to Start a Partnership?</h2>
+      <p>Send us your inquiry today and receive a customized quotation within 24 hours.</p>
+      <div class="cta-buttons">
+        <a href="contact.html" class="btn btn-white" data-i18n="btn.getQuote">📩 Get a Free Quote</a>
+        <a href="products.html" class="btn btn-outline-white" data-i18n="btn.browseProducts">Browse Products</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo">
+          <div class="logo-icon">🌍</div>
+          <div class="logo-text">
+            <span class="logo-name">CM IMPORT&EXPORT</span>
+            <span class="logo-tagline" data-i18n="footer.tagline">Driving Your World Forward</span>
+          </div>
+        </a>
+        <p class="footer-desc" data-i18n="footer.desc">We are a professional Chinese trading company specializing in the export of tires and new energy automotive parts to global markets.</p>
+        <div class="footer-social">
+          <a href="https://wa.me/8617318305222" class="social-link" target="_blank" title="WhatsApp">💬</a>
+          <a href="mailto:1063744757@qq.com" class="social-link" title="Email">📧</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.quickLinks">Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.products">Products</h4>
+        <ul class="footer-links">
+          <li><a href="tires.html">Passenger Car Tires</a></li>
+          <li><a href="tires.html">Truck &amp; Bus Tires</a></li>
+          <li><a href="byd-parts.html">BYD EV Parts</a></li>
+          <li><a href="sinotruk-parts.html">Sinotruk Parts</a></li>
+          <li><a href="car-accessories.html">Car Accessories</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.contactUs">Contact Us</h4>
+        <div class="footer-contact-item">
+          <span class="icon">📧</span>
+          <div class="footer-contact-text">1063744757@qq.com</div>
+        </div>
+        <div class="footer-contact-item">
+          <span class="icon">📱</span>
+          <div class="footer-contact-text">WhatsApp: +86 173 1830 5222</div>
+        </div>
+        <div class="footer-contact-item">
+          <span class="icon">📍</span>
+          <div class="footer-contact-text">China · Shipping Worldwide</div>
+        </div>
+        <div class="footer-contact-item">
+          <span class="icon">🌐</span>
+          <div class="footer-contact-text">Markets: 🇿🇲 Zambia · 🇸🇬 Singapore<br/>🇦🇺 Australia · 🇪🇹 Ethiopia · 🇱🇷 Liberia</div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 CM IMPORT&amp;EXPORT Co., Ltd. All rights reserved. | <a href="faq.html" style="color:var(--gray-light);">FAQ</a></p>
+      <div class="footer-bottom-links">
+        <a href="#"><span data-i18n="footer.privacy">Privacy Policy</span></a>
+        <a href="#"><span data-i18n="footer.terms">Terms of Service</span></a>
+        <a href="#" data-i18n="footer.sitemap">Sitemap</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+
+<!-- WhatsApp Float Button -->
+<a href="https://wa.me/8617318305222?text=Hello%2C%20I%27m%20interested%20in%20your%20products.%20Please%20send%20me%20more%20information." class="wa-float" target="_blank">
+  <span class="wa-tooltip">💬 Chat with us!</span>
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+  </svg>
+</a>
+<script src="js/i18n.js"></script>
+
+<!-- Yangwang U8 Assembly Animation -->
+<script>
+(function () {
+  'use strict';
+
+  /* Each part: id, scatter-dx, scatter-dy, rotation, assembly-delay-ms */
+  var PARTS = [
+    { id: 'ap-body',       dx:  400, dy:    0, rot:   8, d:   0 },
+    { id: 'ap-arches',     dx:    0, dy:  240, rot:   0, d:  55 },
+    { id: 'ap-windshield', dx: -260, dy: -170, rot: -16, d: 110 },
+    { id: 'ap-windows',    dx:   10, dy: -270, rot:   0, d: 165 },
+    { id: 'ap-rear-win',   dx:  220, dy: -160, rot:  14, d: 200 },
+    { id: 'ap-wheel-f',    dx: -260, dy:  220, rot: -40, d:  80 },
+    { id: 'ap-wheel-r',    dx:  260, dy:  230, rot:  40, d: 130 },
+    { id: 'ap-front',      dx: -450, dy:   24, rot:  -7, d:  35 },
+    { id: 'ap-rear',       dx:  450, dy:   24, rot:   7, d:  75 },
+    { id: 'ap-roof',       dx:    0, dy: -300, rot:   0, d: 180 },
+    { id: 'ap-lines',      dx: -180, dy:   80, rot:   0, d: 250 },
+    { id: 'ap-badge',      dx:    0, dy: -220, rot:   0, d: 320 },
+  ];
+
+  var maxDelay = 0;
+  PARTS.forEach(function (p) { if (p.d > maxDelay) maxDelay = p.d; });
+
+  function getEl(id) { return document.getElementById(id); }
+
+  function scatter() {
+    getEl('carLabel') && getEl('carLabel').classList.remove('show');
+    var svg = getEl('carSVG');
+    if (svg) svg.classList.remove('car-glow');
+
+    PARTS.forEach(function (p) {
+      var el = getEl(p.id);
+      if (!el) return;
+      el.style.transition = 'none';
+      el.style.transform  = 'translate(' + p.dx + 'px,' + p.dy + 'px) rotate(' + p.rot + 'deg)';
+      el.style.opacity    = '0';
+    });
+  }
+
+  function assemble() {
+    /* Force a reflow so scattered state is painted before transitions start */
+    var svg = getEl('carSVG');
+    if (svg) svg.getBoundingClientRect();
+
+    PARTS.forEach(function (p) {
+      var el = getEl(p.id);
+      if (!el) return;
+      setTimeout(function () {
+        el.style.transition = 'transform 0.9s cubic-bezier(0.16,1,0.3,1), opacity 0.6s ease';
+        el.style.transform  = 'translate(0,0) rotate(0deg)';
+        el.style.opacity    = '1';
+      }, p.d);
+    });
+
+    /* After last piece lands: glow pulse + label */
+    setTimeout(function () {
+      if (svg) svg.classList.add('car-glow');
+      var lbl = getEl('carLabel');
+      if (lbl) lbl.classList.add('show');
+    }, maxDelay + 950);
+  }
+
+  function loop() {
+    scatter();
+    setTimeout(function tick() {
+      assemble();
+      /* Hold assembled for 5 s, then scatter and restart */
+      setTimeout(function () {
+        scatter();
+        setTimeout(tick, 500);
+      }, 5200);
+    }, 450);
+  }
+
+  /* Start after page paint */
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', function () { setTimeout(loop, 600); });
+  } else {
+    setTimeout(loop, 600);
+  }
+})();
+</script>
+</body>
+</html>
+
+
+
+
+

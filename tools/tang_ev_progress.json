@@ -1,0 +1,8 @@
+{
+  "task": "替换byd-parts.html中所有BYD Tang EV零件图片，从淘宝搜索匹配图片",
+  "file": "C:/Users/Administrator/Desktop/独立站项目/byd-parts.html",
+  "status": "已完成",
+  "total_parts": 43,
+  "completed": 43,
+  "note": "所有TNG-*图片已替换为淘宝alicdn.com CDN的真实产品图片"
+}

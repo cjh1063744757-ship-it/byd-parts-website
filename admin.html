@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin — Inquiry Management | CM IMPORT&EXPORT</title>
+  <!-- SheetJS for Excel export -->
+  <script src="https://cdn.sheetjs.com/xlsx-0.20.1/package/dist/xlsx.full.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --primary: #1B3A6B; --primary-dark: #0f2447; --primary-light: #2d5a9e;
+      --green: #27AE60; --green-dark: #1e8449;
+      --orange: #F39C12; --red: #e74c3c;
+      --dark: #1A1A2E; --gray-dark: #2c3e50; --gray: #636e72;
+      --gray-light: #b2bec3; --light: #F8F9FA; --white: #FFFFFF;
+      --border: #e0e6ed;
+      --shadow-sm: 0 2px 10px rgba(0,0,0,0.08);
+      --shadow: 0 4px 20px rgba(0,0,0,0.12);
+      --radius: 12px; --radius-sm: 8px;
+      --transition: all 0.25s ease;
+    }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { font-family:'Inter', sans-serif; background:#f0f2f5; color:var(--gray-dark); min-height:100vh; }
+
+    /* ── LOGIN SCREEN ── */
+    .login-screen {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+      padding: 24px;
+    }
+    .login-card {
+      background: var(--white);
+      border-radius: 20px;
+      padding: 48px 40px;
+      width: 100%;
+      max-width: 420px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+      text-align: center;
+    }
+    .login-logo { font-size: 2.5rem; margin-bottom: 8px; }
+    .login-card h1 { font-family:'Poppins',sans-serif; font-size:1.4rem; color:var(--dark); margin-bottom:4px; }
+    .login-card p  { font-size:0.85rem; color:var(--gray); margin-bottom:32px; }
+    .login-input {
+      width:100%; padding:13px 18px;
+      border:2px solid var(--border); border-radius:var(--radius-sm);
+      font-size:1rem; font-family:'Inter',sans-serif;
+      outline:none; transition:var(--transition);
+      text-align:center; letter-spacing:3px;
+      margin-bottom:16px;
+    }
+    .login-input:focus { border-color:var(--primary); box-shadow:0 0 0 3px rgba(27,58,107,0.1); }
+    .login-btn {
+      width:100%; padding:14px;
+      background:var(--primary); color:white; border:none;
+      border-radius:var(--radius-sm); font-size:1rem; font-weight:700;
+      font-family:'Poppins',sans-serif; cursor:pointer;
+      transition:var(--transition);
+    }
+    .login-btn:hover { background:var(--primary-dark); }
+    .login-error { color:var(--red); font-size:0.82rem; margin-top:10px; display:none; }
+
+    /* ── MAIN DASHBOARD ── */
+    .dashboard { display:none; }
+
+    /* Top Nav */
+    .admin-nav {
+      background:var(--primary);
+      padding:0 28px;
+      height:64px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      position:sticky; top:0; z-index:100;
+      box-shadow:0 2px 8px rgba(0,0,0,0.2);
+    }
+    .admin-nav-brand {
+      display:flex; align-items:center; gap:12px; color:white;
+    }
+    .admin-nav-brand .logo-icon { font-size:1.6rem; }
+    .admin-nav-brand h1 { font-family:'Poppins',sans-serif; font-size:1rem; font-weight:700; }
+    .admin-nav-brand span { font-size:0.72rem; opacity:0.7; display:block; }
+    .admin-nav-right { display:flex; align-items:center; gap:12px; }
+    .nav-btn {
+      padding:8px 18px;
+      border-radius:50px;
+      font-size:0.82rem;
+      font-weight:600;
+      font-family:'Inter',sans-serif;
+      cursor:pointer;
+      transition:var(--transition);
+    }
+    .nav-btn-site { background:rgba(255,255,255,0.15); color:white; border:1px solid rgba(255,255,255,0.3); text-decoration:none; }
+    .nav-btn-site:hover { background:rgba(255,255,255,0.25); }
+    .nav-btn-logout { background:rgba(231,76,60,0.2); color:#ffb3b3; border:1px solid rgba(231,76,60,0.4); }
+    .nav-btn-logout:hover { background:var(--red); color:white; }
+
+    /* Body */
+    .admin-body { padding:28px; max-width:1400px; margin:0 auto; }
+
+    /* Stats row */
+    .stats-row {
+      display:grid;
+      grid-template-columns:repeat(4, 1fr);
+      gap:16px;
+      margin-bottom:24px;
+    }
+    @media(max-width:768px){ .stats-row{grid-template-columns:1fr 1fr;} }
+    .stat-card {
+      background:var(--white);
+      border-radius:var(--radius);
+      padding:20px 24px;
+      box-shadow:var(--shadow-sm);
+      border:1px solid var(--border);
+      display:flex; align-items:center; gap:16px;
+    }
+    .stat-icon {
+      width:48px; height:48px;
+      border-radius:12px;
+      display:flex; align-items:center; justify-content:center;
+      font-size:1.5rem; flex-shrink:0;
+    }
+    .stat-icon.blue  { background:rgba(27,58,107,0.1); }
+    .stat-icon.green { background:rgba(39,174,96,0.1); }
+    .stat-icon.orange{ background:rgba(243,156,18,0.1); }
+    .stat-icon.gray  { background:rgba(99,110,114,0.1); }
+    .stat-num { font-family:'Poppins',sans-serif; font-size:1.8rem; font-weight:800; color:var(--dark); line-height:1; }
+    .stat-label { font-size:0.78rem; color:var(--gray); margin-top:4px; }
+
+    /* Toolbar */
+    .toolbar {
+      background:var(--white);
+      border-radius:var(--radius);
+      padding:16px 20px;
+      margin-bottom:20px;
+      box-shadow:var(--shadow-sm);
+      border:1px solid var(--border);
+      display:flex; gap:12px; align-items:center; flex-wrap:wrap;
+    }
+    .search-wrap { position:relative; flex:1; min-width:220px; }
+    .search-wrap svg { position:absolute; left:12px; top:50%; transform:translateY(-50%); width:16px; height:16px; color:var(--gray); }
+    .search-input {
+      width:100%; padding:10px 12px 10px 38px;
+      border:1.5px solid var(--border); border-radius:50px;
+      font-size:0.88rem; font-family:'Inter',sans-serif;
+      outline:none; transition:var(--transition); background:var(--light);
+    }
+    .search-input:focus { border-color:var(--primary); background:white; }
+    .filter-select {
+      padding:10px 16px;
+      border:1.5px solid var(--border); border-radius:50px;
+      font-size:0.85rem; font-family:'Inter',sans-serif;
+      outline:none; background:var(--light); cursor:pointer;
+      transition:var(--transition); min-width:140px;
+    }
+    .filter-select:focus { border-color:var(--primary); }
+    .export-btn {
+      padding:10px 22px;
+      background:var(--green); color:white; border:none;
+      border-radius:50px; font-size:0.85rem; font-weight:700;
+      font-family:'Inter',sans-serif; cursor:pointer;
+      transition:var(--transition);
+      display:flex; align-items:center; gap:7px;
+      white-space:nowrap;
+    }
+    .export-btn:hover { background:var(--green-dark); transform:translateY(-1px); }
+    .result-count { font-size:0.82rem; color:var(--gray); white-space:nowrap; }
+    .result-count strong { color:var(--primary); }
+
+    /* Table */
+    .table-wrap {
+      background:var(--white);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow-sm);
+      border:1px solid var(--border);
+      overflow:hidden;
+    }
+    table { width:100%; border-collapse:collapse; font-size:0.865rem; }
+    thead th {
+      background:var(--primary); color:white;
+      font-family:'Poppins',sans-serif; font-weight:600; font-size:0.78rem;
+      text-align:left; padding:14px 16px;
+      white-space:nowrap; position:sticky; top:64px; z-index:10;
+    }
+    tbody tr { border-bottom:1px solid #f0f0f0; transition:background 0.15s; cursor:pointer; }
+    tbody tr:hover { background:rgba(27,58,107,0.04); }
+    tbody tr:last-child { border-bottom:none; }
+    tbody tr.expanded { background:rgba(27,58,107,0.05); }
+    td { padding:13px 16px; vertical-align:middle; }
+
+    .td-id { font-family:monospace; font-size:0.78rem; color:var(--primary); font-weight:700; }
+    .td-date { font-size:0.8rem; color:var(--gray); white-space:nowrap; }
+    .td-name { font-weight:600; color:var(--dark); }
+    .td-country { font-size:0.82rem; }
+    .td-contact { font-size:0.78rem; color:var(--gray); }
+    .td-contact span { display:block; margin-bottom:2px; }
+    .contact-icon { font-size:0.9em; }
+
+    .status-badge {
+      display:inline-block; padding:4px 12px;
+      border-radius:50px; font-size:0.72rem; font-weight:700;
+      text-transform:uppercase; letter-spacing:0.5px; white-space:nowrap;
+    }
+    .status-new      { background:#e0f2fe; color:#0369a1; }
+    .status-contacted{ background:#fef3c7; color:#92400e; }
+    .status-quoted   { background:#dcfce7; color:#166534; }
+    .status-closed   { background:#f1f5f9; color:#475569; }
+
+    .action-btn {
+      padding:5px 12px;
+      border-radius:50px; font-size:0.72rem; font-weight:600;
+      cursor:pointer; transition:var(--transition);
+      font-family:'Inter',sans-serif;
+      border:1.5px solid var(--border);
+      background:var(--white); color:var(--gray-dark);
+      margin-right:6px;
+    }
+    .action-btn:hover { border-color:var(--primary); color:var(--primary); }
+    .action-btn.del:hover { border-color:var(--red); color:var(--red); }
+
+    /* Expanded row detail */
+    .detail-row { display:none; }
+    .detail-row td { padding:0 16px 16px; }
+    .detail-box {
+      background:#f8fafc;
+      border:1px solid var(--border);
+      border-radius:var(--radius-sm);
+      padding:16px;
+    }
+    .detail-box h4 { font-size:0.82rem; font-weight:700; color:var(--gray-dark); margin-bottom:12px; }
+    .items-mini-table { width:100%; border-collapse:collapse; font-size:0.8rem; }
+    .items-mini-table th { background:rgba(27,58,107,0.1); color:var(--primary); font-weight:700; padding:7px 12px; text-align:left; border-radius:0; }
+    .items-mini-table td { padding:7px 12px; border-bottom:1px solid #eee; }
+    .items-mini-table tr:last-child td { border-bottom:none; }
+
+    /* Empty state */
+    .empty-state { text-align:center; padding:60px 20px; color:var(--gray); }
+    .empty-state .ei { font-size:3rem; margin-bottom:12px; }
+
+    /* Status change select */
+    .status-select {
+      padding:4px 10px;
+      border:1.5px solid var(--border); border-radius:50px;
+      font-size:0.72rem; font-family:'Inter',sans-serif;
+      background:var(--white); cursor:pointer; outline:none;
+    }
+
+    /* Responsive */
+    @media(max-width:900px){
+      .admin-body{ padding:16px; }
+      .hide-mobile { display:none !important; }
+    }
+  </style>
+  <!-- Meta Pixel Code -->
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '1662154028390817');
+  fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=1662154028390817&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Meta Pixel Code -->
+</head>
+<body>
+
+<!-- ──────────────────────────────────────────
+  LOGIN SCREEN
+──────────────────────────────────────────── -->
+<div class="login-screen" id="loginScreen">
+  <div class="login-card">
+    <div class="login-logo">🌍</div>
+    <h1>CM IMPORT&EXPORT</h1>
+    <p>Inquiry Management System</p>
+    <input type="password" id="pwdInput" class="login-input"
+      placeholder="Enter password" onkeydown="if(event.key==='Enter')doLogin()" />
+    <button class="login-btn" onclick="doLogin()">🔐 Login</button>
+    <div class="login-error" id="loginError">Incorrect password. Please try again.</div>
+  </div>
+</div>
+
+<!-- ──────────────────────────────────────────
+  DASHBOARD
+──────────────────────────────────────────── -->
+<div class="dashboard" id="dashboard">
+
+  <!-- Top Nav -->
+  <nav class="admin-nav">
+    <div class="admin-nav-brand">
+      <div class="logo-icon">🌍</div>
+      <div>
+        <h1>CM IMPORT&EXPORT</h1>
+        <span>Inquiry Management</span>
+      </div>
+    </div>
+    <div class="admin-nav-right">
+      <a href="index.html" class="nav-btn nav-btn-site" target="_blank">🔗 View Site</a>
+      <button class="nav-btn nav-btn-logout" onclick="doLogout()">Logout</button>
+    </div>
+  </nav>
+
+  <div class="admin-body">
+
+    <!-- Stats -->
+    <div class="stats-row" id="statsRow">
+      <div class="stat-card">
+        <div class="stat-icon blue">📋</div>
+        <div><div class="stat-num" id="statTotal">0</div><div class="stat-label">Total Inquiries</div></div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon green">🆕</div>
+        <div><div class="stat-num" id="statNew">0</div><div class="stat-label">New</div></div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon orange">⏳</div>
+        <div><div class="stat-num" id="statContacted">0</div><div class="stat-label">Contacted / Quoted</div></div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon gray">✅</div>
+        <div><div class="stat-num" id="statClosed">0</div><div class="stat-label">Closed</div></div>
+      </div>
+    </div>
+
+    <!-- Toolbar -->
+    <div class="toolbar">
+      <div class="search-wrap">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        <input type="text" id="searchInput" class="search-input"
+          placeholder="Search name, country, WhatsApp, email, inquiry ID..." oninput="renderTable()" />
+      </div>
+      <select id="statusFilter" class="filter-select" onchange="renderTable()">
+        <option value="">All Status</option>
+        <option value="New">🆕 New</option>
+        <option value="Contacted">📞 Contacted</option>
+        <option value="Quoted">💰 Quoted</option>
+        <option value="Closed">✅ Closed</option>
+      </select>
+      <span class="result-count">Showing <strong id="visCount">0</strong> of <strong id="totalCount">0</strong></span>
+      <button class="export-btn" onclick="exportExcel()">
+        📥 Export Excel
+      </button>
+    </div>
+
+    <!-- Table -->
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Inquiry ID</th>
+            <th>Date & Time</th>
+            <th>Customer / Company</th>
+            <th>Country</th>
+            <th class="hide-mobile">Contact Info</th>
+            <th>Items</th>
+            <th>Status</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="tableBody"></tbody>
+      </table>
+      <div class="empty-state" id="emptyState" style="display:none;">
+        <div class="ei">📭</div>
+        <p>No inquiries found.</p>
+      </div>
+    </div>
+
+  </div><!-- /admin-body -->
+</div><!-- /dashboard -->
+
+<script>
+// ── CONFIG ─────────────────────────────────────────────────────
+const ADMIN_PASSWORD = 'Cjh750804.';
+const INQUIRY_KEY    = 'cm_inquiries_v1';
+
+// ── AUTH ────────────────────────────────────────────────────────
+function doLogin() {
+  const val = document.getElementById('pwdInput').value;
+  if (val === ADMIN_PASSWORD) {
+    document.getElementById('loginScreen').style.display = 'none';
+    document.getElementById('dashboard').style.display   = 'block';
+    sessionStorage.setItem('cm_admin_auth', '1');
+    initDashboard();
+  } else {
+    document.getElementById('loginError').style.display = 'block';
+    document.getElementById('pwdInput').value = '';
+    document.getElementById('pwdInput').focus();
+  }
+}
+
+function doLogout() {
+  sessionStorage.removeItem('cm_admin_auth');
+  location.reload();
+}
+
+// Auto-login if session is still valid
+if (sessionStorage.getItem('cm_admin_auth') === '1') {
+  document.getElementById('loginScreen').style.display = 'none';
+  document.getElementById('dashboard').style.display   = 'block';
+  document.addEventListener('DOMContentLoaded', initDashboard);
+} else {
+  document.addEventListener('DOMContentLoaded', () => {
+    document.getElementById('pwdInput').focus();
+  });
+}
+
+// ── DATA ────────────────────────────────────────────────────────
+function loadInquiries() {
+  try { return JSON.parse(localStorage.getItem(INQUIRY_KEY) || '[]'); }
+  catch(e) { return []; }
+}
+
+function saveInquiries(list) {
+  localStorage.setItem(INQUIRY_KEY, JSON.stringify(list));
+}
+
+// ── INIT ────────────────────────────────────────────────────────
+function initDashboard() {
+  renderStats();
+  renderTable();
+}
+
+// ── STATS ───────────────────────────────────────────────────────
+function renderStats() {
+  const list = loadInquiries();
+  document.getElementById('statTotal').textContent     = list.length;
+  document.getElementById('statNew').textContent       = list.filter(i=>i.status==='New').length;
+  document.getElementById('statContacted').textContent = list.filter(i=>i.status==='Contacted'||i.status==='Quoted').length;
+  document.getElementById('statClosed').textContent    = list.filter(i=>i.status==='Closed').length;
+  document.getElementById('totalCount').textContent    = list.length;
+}
+
+// ── TABLE ───────────────────────────────────────────────────────
+let expandedId = null;
+
+function renderTable() {
+  const list = loadInquiries();
+  const q    = (document.getElementById('searchInput').value || '').toLowerCase();
+  const sf   = document.getElementById('statusFilter').value;
+
+  const filtered = list.filter(inq => {
+    const matchStatus = !sf || inq.status === sf;
+    const matchSearch = !q ||
+      (inq.id && inq.id.toLowerCase().includes(q)) ||
+      (inq.name && inq.name.toLowerCase().includes(q)) ||
+      (inq.country && inq.country.toLowerCase().includes(q)) ||
+      (inq.whatsapp && inq.whatsapp.includes(q)) ||
+      (inq.email && inq.email.toLowerCase().includes(q)) ||
+      (inq.wechat && inq.wechat.toLowerCase().includes(q));
+    return matchStatus && matchSearch;
+  });
+
+  document.getElementById('visCount').textContent = filtered.length;
+
+  const tbody = document.getElementById('tableBody');
+  const empty = document.getElementById('emptyState');
+
+  if (filtered.length === 0) {
+    tbody.innerHTML = '';
+    empty.style.display = 'block';
+    tbody.closest('table').style.display = 'none';
+    return;
+  }
+  empty.style.display = 'none';
+  tbody.closest('table').style.display = '';
+
+  tbody.innerHTML = filtered.map((inq, idx) => {
+    const isExp = expandedId === inq.id;
+    const statusClass = {
+      New: 'status-new', Contacted: 'status-contacted',
+      Quoted: 'status-quoted', Closed: 'status-closed'
+    }[inq.status] || 'status-new';
+
+    const contactHtml = [
+      inq.whatsapp ? `<span><span class="contact-icon">💬</span> ${inq.whatsapp}</span>` : '',
+      inq.wechat   ? `<span><span class="contact-icon">🟢</span> ${inq.wechat}</span>` : '',
+      inq.email    ? `<span><span class="contact-icon">📧</span> ${inq.email}</span>` : ''
+    ].filter(Boolean).join('');
+
+    const itemsHtml = (inq.items || []).map(it =>
+      `<tr>
+        <td><strong>${it.size}</strong></td>
+        <td>${it.brand}</td>
+        <td style="color:var(--gray);font-size:0.78rem">${it.pattern}</td>
+        <td style="color:var(--primary);font-weight:700">${it.qty} pcs</td>
+      </tr>`
+    ).join('');
+
+    return `
+      <tr onclick="toggleDetail('${inq.id}')" class="${isExp?'expanded':''}">
+        <td style="color:var(--gray-light);font-size:0.78rem">${idx+1}</td>
+        <td class="td-id">${inq.id}</td>
+        <td class="td-date">${inq.displayDate || inq.submittedAt?.substr(0,16).replace('T',' ')}</td>
+        <td class="td-name">${inq.name || '—'}</td>
+        <td class="td-country">${inq.country || '—'}</td>
+        <td class="td-contact hide-mobile">${contactHtml}</td>
+        <td><strong>${inq.itemCount || (inq.items||[]).length}</strong> type(s)</td>
+        <td>
+          <select class="status-select" onclick="event.stopPropagation()"
+            onchange="changeStatus('${inq.id}', this.value)">
+            <option ${inq.status==='New'?'selected':''}>New</option>
+            <option ${inq.status==='Contacted'?'selected':''}>Contacted</option>
+            <option ${inq.status==='Quoted'?'selected':''}>Quoted</option>
+            <option ${inq.status==='Closed'?'selected':''}>Closed</option>
+          </select>
+        </td>
+        <td>
+          <button class="action-btn del" onclick="deleteInquiry('${inq.id}',event)">🗑</button>
+        </td>
+      </tr>
+      <tr class="detail-row" id="detail-${inq.id}" style="${isExp?'display:table-row':''}">
+        <td colspan="9">
+          <div class="detail-box">
+            <h4>📦 Tire Items in This Inquiry</h4>
+            <table class="items-mini-table">
+              <thead><tr><th>Size</th><th>Brand</th><th>Pattern</th><th>Qty</th></tr></thead>
+              <tbody>${itemsHtml}</tbody>
+            </table>
+            ${inq.notes ? `<p style="margin-top:12px;font-size:0.82rem;color:var(--gray);">📝 <strong>Notes:</strong> ${inq.notes}</p>` : ''}
+          </div>
+        </td>
+      </tr>`;
+  }).join('');
+}
+
+function toggleDetail(id) {
+  const row = document.getElementById('detail-' + id);
+  if (expandedId === id) {
+    expandedId = null;
+    row.style.display = 'none';
+  } else {
+    // collapse previous
+    if (expandedId) {
+      const prev = document.getElementById('detail-' + expandedId);
+      if (prev) prev.style.display = 'none';
+    }
+    expandedId = id;
+    row.style.display = 'table-row';
+  }
+  renderTable();
+}
+
+function changeStatus(id, newStatus) {
+  const list = loadInquiries();
+  const inq  = list.find(i => i.id === id);
+  if (inq) { inq.status = newStatus; saveInquiries(list); renderStats(); renderTable(); }
+}
+
+function deleteInquiry(id, e) {
+  e.stopPropagation();
+  if (!confirm('Delete this inquiry? This cannot be undone.')) return;
+  const list = loadInquiries().filter(i => i.id !== id);
+  saveInquiries(list);
+  if (expandedId === id) expandedId = null;
+  renderStats();
+  renderTable();
+}
+
+// ── EXCEL EXPORT (SheetJS) ───────────────────────────────────────
+function exportExcel() {
+  const list = loadInquiries();
+  if (list.length === 0) { alert('No inquiries to export.'); return; }
+
+  // Sheet 1: Inquiry summary
+  const summaryData = [
+    ['Inquiry ID','Date','Customer / Company','Country','WhatsApp','WeChat','Email','Total Item Types','Status','Notes']
+  ];
+  list.forEach(inq => {
+    summaryData.push([
+      inq.id,
+      inq.displayDate || (inq.submittedAt||'').substr(0,16).replace('T',' '),
+      inq.name || '',
+      inq.country || '',
+      inq.whatsapp || '',
+      inq.wechat || '',
+      inq.email || '',
+      (inq.items||[]).length,
+      inq.status || 'New',
+      inq.notes || ''
+    ]);
+  });
+
+  // Sheet 2: All items detail
+  const detailData = [
+    ['Inquiry ID','Date','Customer','Country','Tire Size','Brand','Pattern','Category','Qty (pcs)','Price RMB','Price USD (FOB)']
+  ];
+  list.forEach(inq => {
+    (inq.items || []).forEach(it => {
+      detailData.push([
+        inq.id,
+        inq.displayDate || (inq.submittedAt||'').substr(0,16).replace('T',' '),
+        inq.name || '',
+        inq.country || '',
+        it.size,
+        it.brand,
+        it.pattern,
+        it.category,
+        it.qty,
+        it.rmb || '',
+        it.usd || ''
+      ]);
+    });
+  });
+
+  const wb = XLSX.utils.book_new();
+
+  const ws1 = XLSX.utils.aoa_to_sheet(summaryData);
+  ws1['!cols'] = [14,20,28,16,18,16,28,10,12,30].map(w=>({wch:w}));
+  XLSX.utils.book_append_sheet(wb, ws1, 'Inquiry Summary');
+
+  const ws2 = XLSX.utils.aoa_to_sheet(detailData);
+  ws2['!cols'] = [14,20,24,14,16,16,24,8,10,12,14].map(w=>({wch:w}));
+  XLSX.utils.book_append_sheet(wb, ws2, 'Item Details');
+
+  const now = new Date();
+  const fname = `CM_Inquiries_${now.getFullYear()}${String(now.getMonth()+1).padStart(2,'0')}${String(now.getDate()).padStart(2,'0')}.xlsx`;
+  XLSX.writeFile(wb, fname);
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+# 产品图片 URL 列表示例
+# 每行一个 URL，# 开头的行为注释
+# 用法: python tools/image_processor.py verify --urls-file tools/urls.txt
+# 下载: python tools/image_processor.py download --urls-file tools/urls.txt --output-dir images/products
+
+# === HOWO / Sinotruk 零件图片 ===
+https://image.made-in-china.com/155f0j00wjEQVMBYsIfa/Original-Sinotruk-Sinotruck-HOWO-Turbocharger-Vg1560118229-2-Sino-Truck-HOWO-Spare-Parts-Turbo-Charger.webp
+https://s.alicdn.com/@sc04/kf/H0fe21143b6964977a194df5a59dd5657f.jpg_300x300.jpg
+https://image.made-in-china.com/155f0j00aGcYOfnhgypl/Sinotruk-HOWO-Engine-Part-Piston-612600030017.webp
+https://image.made-in-china.com/155f0j00OMWhVyQCLzpJ/Sinotruk-HOWO-Truck-Parts-Engine-Parts-Crankshaft-61560020029-Weichai.webp
+https://s.alicdn.com/@sc04/kf/H90240957af6d4303baa6d33c2a2e346fg.jpg_300x300.jpg
+https://s.alicdn.com/@sc04/kf/H4710451075a347578f368c1f974d489e2.jpg_300x300.jpg
+https://image.made-in-china.com/202f0j00fTHROwAtCkpn/Sinotruk-HOWO-Truck-Front-Axle-Str-Axle-Assy-Ah7114100705.webp
+https://image.made-in-china.com/155f0j00dviVlLQWYcgt/Sinotruk-HOWO-Left-Headlamp-Headlight-Wg9719720001.webp
+https://image.made-in-china.com/155f0j00FAmhIacgnurV/Sinotruk-HOWO-Truck-Parts-Alternator-Vg1560090011.webp
+https://image.made-in-china.com/202f0j00fEBoZpgRJjrC/Sinotruck-HOWO-Part-Radiator-Az1630840319.webp
+
+# === BYD 零件图片 ===
+https://image.made-in-china.com/155f0j00rfDBngzFLAbj/Byd-Han-Body-Parts-Headlight-Tail-Light-Door-Bumper-Fender-Seat-Glass-Headlamp-Brake-Caliper-Mirror-Hood-Bonnest-Truck-Spoiler.webp
+https://image.made-in-china.com/3f2j00NnabtRSyZGcV/Byd-Car-Reversing-Mirror-Rear-View-Mirror-for-Byd-Song-Plus-Parts.jpg
+https://image.made-in-china.com/3f2j00UYfMHvCyABbe/Byd-Electric-Car-Spare-Parts-Byd-Han-EV-Spare-Parts-and-Body-Kits-2020-2021-2022-2023-2024.webp

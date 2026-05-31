@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>CM IMPORT&amp;EXPORT — Product Catalog 2025/2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@600;700;800;900&display=swap" rel="stylesheet"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --navy:#1B3A6B;
+  --navy-dark:#0f2447;
+  --green:#27AE60;
+  --green-dark:#1e8449;
+  --red:#C0392B;
+  --gold:#F39C12;
+  --dark:#1A1A2E;
+  --gray:#5a6472;
+  --light:#F4F6F9;
+  --border:#DDE3EC;
+}
+body{font-family:'Inter',sans-serif;color:#2c3e50;background:#fff;font-size:9pt;line-height:1.5;}
+h1,h2,h3,h4{font-family:'Poppins',sans-serif;line-height:1.15;}
+a{color:inherit;text-decoration:none;}
+
+/* ── SVG ICONS ── */
+.ico{display:inline-block;vertical-align:middle;flex-shrink:0;}
+
+/* ── PAGE ── */
+.page{width:210mm;min-height:297mm;margin:0 auto;position:relative;overflow:hidden;background:#fff;page-break-after:always;}
+.page:last-child{page-break-after:auto;}
+@page{size:A4 portrait;margin:0;}
+@media print{
+  body{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  .page{width:210mm;min-height:297mm;margin:0;box-shadow:none;}
+  .no-print{display:none!important;}
+}
+@media screen{
+  body{background:#d0d5df;padding:16px 0;}
+  .page{box-shadow:0 6px 40px rgba(0,0,0,0.22);margin:0 auto 24px;}
+}
+
+/* ── PRINT BAR ── */
+.print-bar{width:210mm;margin:0 auto 16px;display:flex;gap:10px;align-items:center;}
+.print-btn{display:inline-flex;align-items:center;gap:7px;background:var(--navy);color:#fff;padding:10px 24px;border-radius:50px;font-family:'Poppins',sans-serif;font-weight:700;font-size:13px;cursor:pointer;border:none;box-shadow:0 4px 14px rgba(27,58,107,0.4);transition:all .2s;}
+.print-btn:hover{background:var(--navy-dark);}
+.print-tip{font-size:11px;color:#666;}
+
+/* ── UTILITIES ── */
+.tag{display:inline-block;padding:2px 10px;border-radius:50px;font-size:7pt;font-weight:700;letter-spacing:0.4px;text-transform:uppercase;font-family:'Poppins',sans-serif;}
+.tag-navy{background:var(--navy);color:#fff;}
+.tag-green{background:var(--green);color:#fff;}
+.tag-outline{background:transparent;border:1.5px solid rgba(255,255,255,0.65);color:#fff;}
+.divider{height:2.5px;background:linear-gradient(90deg,var(--navy),var(--green),transparent);border-radius:2px;margin:5px 0 7px;}
+
+/* ── PAGE CHROME ── */
+.page-stripe{height:5mm;background:linear-gradient(90deg,var(--navy) 0%,var(--green) 100%);}
+.page-footer{position:absolute;bottom:0;left:0;right:0;height:7mm;background:var(--navy);display:flex;align-items:center;justify-content:space-between;padding:0 12mm;font-size:7pt;color:rgba(255,255,255,0.65);}
+.page-footer strong{color:#fff;}
+
+/* ══════════════════════════════════════
+   PAGE 1 — COVER
+══════════════════════════════════════ */
+.cover{background:linear-gradient(150deg,#0d1f3c 0%,#1B3A6B 48%,#0e4d2e 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:297mm;padding:14mm;text-align:center;position:relative;overflow:hidden;}
+.cover::before{content:'';position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;opacity:0.07;}
+.cover-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.025) 1px,transparent 1px);background-size:18mm 18mm;}
+.cover-content{position:relative;z-index:2;}
+
+.cover-logo{display:flex;align-items:center;gap:12px;margin-bottom:6mm;justify-content:center;}
+.cover-logo-icon{width:52px;height:52px;border-radius:13px;background:linear-gradient(135deg,var(--green),var(--green-dark));display:flex;align-items:center;justify-content:center;box-shadow:0 8px 28px rgba(39,174,96,0.45);}
+.cover-logo-name{font-family:'Poppins',sans-serif;font-weight:900;font-size:19pt;color:#fff;display:block;letter-spacing:0.3px;}
+.cover-logo-tagline{font-size:8pt;color:rgba(255,255,255,0.65);font-style:italic;letter-spacing:0.8px;}
+
+.cover-title{font-family:'Poppins',sans-serif;font-weight:900;font-size:30pt;color:#fff;line-height:1.08;margin:0 0 4mm;text-shadow:0 4px 20px rgba(0,0,0,0.4);}
+.cover-title .hl{color:var(--green);}
+.cover-subtitle{font-size:10.5pt;color:rgba(255,255,255,0.78);margin-bottom:6mm;font-weight:300;line-height:1.55;max-width:140mm;}
+
+.cover-pills{display:flex;gap:7px;flex-wrap:wrap;justify-content:center;margin-bottom:6mm;}
+.cover-pill{padding:4px 12px;border-radius:50px;font-size:8pt;font-weight:600;border:1.5px solid rgba(255,255,255,0.3);color:#fff;background:rgba(255,255,255,0.1);font-family:'Poppins',sans-serif;}
+
+.cover-stats{display:flex;border:1px solid rgba(255,255,255,0.18);border-radius:12px;overflow:hidden;background:rgba(255,255,255,0.07);margin-bottom:6mm;}
+.cover-stat{padding:6px 16px;text-align:center;border-right:1px solid rgba(255,255,255,0.13);min-width:34mm;}
+.cover-stat:last-child{border-right:none;}
+.cover-stat-num{font-family:'Poppins',sans-serif;font-weight:900;font-size:19pt;color:var(--green);display:block;}
+.cover-stat-lbl{font-size:7pt;color:rgba(255,255,255,0.65);margin-top:1px;}
+
+.cover-contact{background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.18);border-radius:10px;padding:7px 18px;display:flex;gap:16px;align-items:center;font-size:8.5pt;color:rgba(255,255,255,0.82);flex-wrap:wrap;justify-content:center;}
+.cover-contact span{display:flex;align-items:center;gap:7px;}
+.cover-contact strong{color:#fff;}
+.cover-year{position:absolute;bottom:10mm;right:12mm;font-size:7.5pt;color:rgba(255,255,255,0.4);letter-spacing:2px;text-transform:uppercase;}
+
+/* ══════════════════════════════════════
+   PAGE 2 — COMPANY
+══════════════════════════════════════ */
+.p-body{padding:7mm 11mm 7mm;}
+.section-hdr{margin-bottom:4mm;}
+.section-hdr h2{font-size:16pt;color:var(--dark);margin-bottom:2px;}
+.section-hdr p{color:var(--gray);font-size:8pt;}
+
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:3mm;margin-bottom:3mm;}
+.about-card{padding:3mm 4mm;border-radius:7px;background:var(--light);border:1px solid var(--border);}
+.about-card h3{font-size:9pt;color:var(--navy);margin-bottom:3px;display:flex;align-items:center;gap:7px;}
+.about-card p{font-size:7.5pt;color:var(--gray);line-height:1.5;}
+
+.strength-row{display:grid;grid-template-columns:repeat(6,1fr);gap:2.5mm;margin-bottom:3mm;}
+.strength-item{text-align:center;padding:3mm 2mm;border-radius:7px;border:1px solid var(--border);background:#fff;}
+.strength-num{font-family:'Poppins',sans-serif;font-weight:800;font-size:13pt;color:var(--navy);display:block;margin-bottom:1px;}
+.strength-lbl{font-size:6.5pt;color:var(--gray);}
+
+.markets-row{display:grid;grid-template-columns:repeat(4,1fr);gap:2.5mm;}
+.market-card{background:linear-gradient(135deg,var(--navy),var(--navy-dark));border-radius:7px;padding:3mm;text-align:center;color:#fff;}
+.market-name{font-family:'Poppins',sans-serif;font-weight:700;font-size:9pt;margin-top:3px;}
+.market-desc{font-size:6.5pt;color:rgba(255,255,255,0.68);margin-top:2px;line-height:1.4;}
+
+/* ══════════════════════════════════════
+   PAGE 3 — TIRES
+══════════════════════════════════════ */
+.prod-header{padding:5mm 11mm 4mm;color:#fff;}
+.prod-header.navy{background:linear-gradient(135deg,var(--navy),#2d5a9e);}
+.prod-header.dark{background:linear-gradient(135deg,#1a1a2e,#1B3A6B);}
+.prod-header.red{background:linear-gradient(135deg,#7B0000,#B71C1C);}
+.prod-header.green{background:linear-gradient(135deg,#1B5E20,#27AE60);}
+.prod-header h2{font-size:16pt;margin-bottom:2px;display:flex;align-items:center;gap:9px;}
+.prod-header p{font-size:8pt;opacity:0.82;margin-left:0;}
+
+.tire-brands{display:grid;grid-template-columns:repeat(4,1fr);gap:2.5mm;padding:3mm 11mm 3mm;}
+.brand-card{border:1.5px solid var(--border);border-radius:7px;padding:3mm;text-align:center;}
+.brand-logo-box{width:30px;height:30px;border-radius:6px;margin:0 auto 3px;display:flex;align-items:center;justify-content:center;}
+.brand-card h4{font-family:'Poppins',sans-serif;font-size:8pt;font-weight:700;color:var(--navy);margin-bottom:1px;}
+.brand-card p{font-size:7pt;color:var(--gray);line-height:1.35;}
+
+.table-wrap{padding:0 11mm 3mm;}
+.section-title{font-family:'Poppins',sans-serif;font-size:9.5pt;font-weight:700;color:var(--dark);margin-bottom:3px;display:flex;align-items:center;gap:6px;}
+
+.catalog-table{width:100%;border-collapse:collapse;font-size:7.5pt;}
+.catalog-table th{background:var(--navy);color:#fff;padding:4px 7px;font-family:'Poppins',sans-serif;font-size:7pt;font-weight:600;text-align:left;}
+.catalog-table td{padding:3px 7px;border-bottom:1px solid #eff1f5;vertical-align:middle;}
+.catalog-table tr:nth-child(even) td{background:#f7f9fc;}
+.price-cell{font-weight:700;color:var(--green-dark);}
+
+.cat-pill{display:inline-block;padding:1px 5px;border-radius:50px;font-size:6.5pt;font-weight:600;}
+.c-pcr{background:#dbeafe;color:#1d4ed8;}
+.c-suv{background:#fef9c3;color:#854d0e;}
+.c-tbr{background:#ede9fe;color:#5b21b6;}
+.c-at{background:#fce7f3;color:#9d174d;}
+.c-lt{background:#dcfce7;color:#166534;}
+
+.note-bar{margin:0 11mm;padding:3px 9px;background:#fff8e1;border-left:3px solid var(--gold);border-radius:0 6px 6px 0;font-size:7pt;color:#5d4037;line-height:1.45;}
+
+/* ══════════════════════════════════════
+   PAGE 4 — BYD
+══════════════════════════════════════ */
+.model-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2.5mm;padding:3mm 11mm 3mm;}
+.model-card{border-radius:7px;overflow:hidden;border:1.5px solid var(--border);}
+.model-card-hdr{padding:3px 6px;font-size:7.5pt;font-weight:700;font-family:'Poppins',sans-serif;color:#fff;background:var(--navy);}
+.model-card-body{padding:3px 6px 4px;}
+.spec{font-size:6.5pt;color:var(--gray);border-bottom:1px solid #f0f0f0;padding:1.5px 0;display:flex;justify-content:space-between;}
+.spec strong{color:var(--dark);}
+.parts-count{font-family:'Poppins',sans-serif;font-weight:700;font-size:10.5pt;color:var(--green-dark);margin-top:2px;}
+.parts-count small{font-size:6.5pt;font-weight:400;color:var(--gray);}
+
+.two-col-table{display:grid;grid-template-columns:1fr 1fr;gap:2.5mm;}
+
+/* ══════════════════════════════════════
+   PAGE 5 — SINOTRUK
+══════════════════════════════════════ */
+.truck-model-row{display:grid;grid-template-columns:repeat(3,1fr);gap:2.5mm;padding:3mm 11mm 3mm;}
+.truck-card{border-radius:7px;border:1.5px solid var(--border);overflow:hidden;}
+.truck-card-hdr{padding:4px 8px;background:linear-gradient(135deg,#7B0000,#c0392b);color:#fff;font-family:'Poppins',sans-serif;font-size:7.5pt;font-weight:700;}
+.truck-card-body{padding:3px 8px 4px;}
+.truck-spec{font-size:6.5pt;color:var(--gray);display:flex;justify-content:space-between;border-bottom:1px solid #f5f5f5;padding:1.5px 0;}
+.truck-spec strong{color:var(--dark);}
+.truck-count{font-family:'Poppins',sans-serif;font-weight:700;font-size:10.5pt;color:#c0392b;margin-top:2px;}
+
+.systems-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:2mm;padding:0 11mm 3mm;}
+.sys-chip{padding:3px 4px;border-radius:5px;text-align:center;font-size:6.5pt;font-weight:600;color:#fff;font-family:'Poppins',sans-serif;line-height:1.3;}
+
+/* ══════════════════════════════════════
+   PAGE 6 — E-BIKES
+══════════════════════════════════════ */
+.ebike-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:3mm;padding:3mm 11mm 3mm;}
+.ebike-card{border-radius:7px;border:1.5px solid var(--border);overflow:hidden;}
+.ebike-card-img{height:24mm;overflow:hidden;}
+.ebike-card-img img{width:100%;height:100%;object-fit:cover;}
+.ebike-card-body{padding:3mm;}
+.ebike-card-body h4{font-family:'Poppins',sans-serif;font-size:8pt;font-weight:700;color:var(--dark);margin-bottom:2px;}
+.ebike-spec-row{display:flex;flex-wrap:wrap;gap:2px;margin-bottom:0;}
+.ebike-spec-tag{padding:1px 5px;border-radius:50px;background:var(--light);font-size:6.5pt;color:var(--gray);border:1px solid var(--border);}
+.ebike-price{font-family:'Poppins',sans-serif;font-weight:700;font-size:9pt;color:var(--green-dark);}
+.ebike-price small{font-size:6.5pt;font-weight:400;color:var(--gray);}
+
+.ebike-advantage{display:grid;grid-template-columns:repeat(4,1fr);gap:2.5mm;padding:0 11mm 3mm;}
+.adv-chip{background:linear-gradient(135deg,var(--navy),#2d5a9e);border-radius:7px;padding:3mm;color:#fff;}
+.adv-icon-wrap{margin-bottom:3px;}
+.adv-title{font-family:'Poppins',sans-serif;font-size:7.5pt;font-weight:700;}
+.adv-desc{font-size:6.5pt;opacity:0.72;margin-top:1px;line-height:1.35;}
+
+/* ══════════════════════════════════════
+   PAGE 7 — BACK COVER
+══════════════════════════════════════ */
+.back-cover{background:linear-gradient(150deg,#0d1f3c 0%,#1B3A6B 55%,#0e4d2e 100%);min-height:297mm;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:12mm 14mm;color:#fff;text-align:center;position:relative;overflow:hidden;}
+.back-cover::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.025) 1px,transparent 1px);background-size:18mm 18mm;}
+.back-content{position:relative;z-index:2;width:100%;}
+.back-logo{font-family:'Poppins',sans-serif;font-weight:900;font-size:24pt;color:#fff;margin-bottom:2mm;}
+.back-tagline{font-size:10pt;color:rgba(255,255,255,0.65);margin-bottom:6mm;font-style:italic;}
+.back-divider{height:2px;width:50mm;background:linear-gradient(90deg,transparent,var(--green),transparent);margin:0 auto 6mm;}
+.back-cta-title{font-family:'Poppins',sans-serif;font-size:16pt;font-weight:700;margin-bottom:3mm;}
+.back-cta-sub{font-size:9pt;color:rgba(255,255,255,0.72);margin-bottom:7mm;max-width:130mm;margin-left:auto;margin-right:auto;line-height:1.55;}
+
+.contact-cards{display:grid;grid-template-columns:repeat(2,1fr);gap:4mm;max-width:144mm;margin:0 auto 7mm;text-align:left;}
+.contact-card{background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);border-radius:10px;padding:4.5mm;display:flex;gap:10px;align-items:flex-start;}
+.contact-card-icon{width:36px;height:36px;border-radius:8px;background:rgba(255,255,255,0.15);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.contact-card-text{}
+.contact-card-label{font-size:6.5pt;color:rgba(255,255,255,0.55);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:2px;}
+.contact-card-value{font-family:'Poppins',sans-serif;font-weight:700;font-size:9pt;color:#fff;}
+.contact-card-sub{font-size:7pt;color:rgba(255,255,255,0.58);margin-top:1px;}
+
+.products-footer-row{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-bottom:7mm;}
+.pf-pill{padding:4px 12px;border-radius:50px;font-size:8pt;font-weight:600;font-family:'Poppins',sans-serif;border:1.5px solid rgba(255,255,255,0.28);color:#fff;background:rgba(255,255,255,0.08);}
+
+.back-disclaimer{font-size:7pt;color:rgba(255,255,255,0.35);max-width:155mm;line-height:1.55;margin-top:6mm;}
+</style>
+  <!-- Meta Pixel Code -->
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '1662154028390817');
+  fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=1662154028390817&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Meta Pixel Code -->
+</head>
+<body>
+
+<!-- PRINT BUTTON -->
+<div class="print-bar no-print">
+  <button class="print-btn" onclick="window.print()">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+    Print / Save as PDF
+  </button>
+  <span class="print-tip">Chrome → 打印 → 目标选「另存为PDF」→ A4 · 背景图形 ☑</span>
+</div>
+
+<!-- ══════════════════════════════════════
+     PAGE 1 · COVER
+══════════════════════════════════════ -->
+<div class="page">
+  <div class="cover">
+    <div class="cover-grid"></div>
+    <div class="cover-content">
+
+      <div class="cover-logo">
+        <div class="cover-logo-icon">
+          <!-- Globe SVG -->
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/>
+            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+          </svg>
+        </div>
+        <div>
+          <span class="cover-logo-name">CM IMPORT&amp;EXPORT</span>
+          <span class="cover-logo-tagline">Driving Your World Forward</span>
+        </div>
+      </div>
+
+      <div class="cover-title">
+        Premium Auto Parts<br/>
+        &amp; <span class="hl">Mobility Solutions</span><br/>
+        From China to the World
+      </div>
+
+      <div class="cover-subtitle">
+        Factory-direct tires · BYD OEM spare parts · Sinotruk heavy truck parts<br/>
+        &amp; electric bicycles — wholesale export to global markets.
+      </div>
+
+      <div class="cover-pills">
+        <div class="cover-pill">Tires &amp; TBR</div>
+        <div class="cover-pill">BYD OEM Parts</div>
+        <div class="cover-pill">Sinotruk Parts</div>
+        <div class="cover-pill">Electric Bicycles</div>
+        <div class="cover-pill">FOB China</div>
+      </div>
+
+      <div class="cover-stats">
+        <div class="cover-stat">
+          <span class="cover-stat-num">10+</span>
+          <div class="cover-stat-lbl">Years Experience</div>
+        </div>
+        <div class="cover-stat">
+          <span class="cover-stat-num">500+</span>
+          <div class="cover-stat-lbl">Global Clients</div>
+        </div>
+        <div class="cover-stat">
+          <span class="cover-stat-num">800+</span>
+          <div class="cover-stat-lbl">Product SKUs</div>
+        </div>
+        <div class="cover-stat">
+          <span class="cover-stat-num">4</span>
+          <div class="cover-stat-lbl">Core Markets</div>
+        </div>
+      </div>
+
+      <div class="cover-contact">
+        <span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.8)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.41 2 2 0 0 1 3.58 1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.96a16 16 0 0 0 6.13 6.13l1.32-1.32a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <strong>WhatsApp: +86 173 1830 5222</strong>
+        </span>
+        <span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.8)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <strong>1063744757@qq.com</strong>
+        </span>
+        <span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.8)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          cangming.netlify.app
+        </span>
+      </div>
+
+    </div>
+    <div class="cover-year">PRODUCT CATALOG · 2025 / 2026</div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════
+     PAGE 2 · COMPANY INTRODUCTION
+══════════════════════════════════════ -->
+<div class="page">
+  <div class="page-stripe"></div>
+  <div class="p-body">
+
+    <div class="section-hdr">
+      <span class="tag tag-navy">About Us</span>
+      <div class="divider"></div>
+      <h2>Your Trusted Chinese Export Partner</h2>
+      <p>CM IMPORT&amp;EXPORT Co., Ltd. — 10+ years connecting global buyers with China's finest automotive &amp; mobility products.</p>
+    </div>
+
+    <div class="about-grid">
+      <div class="about-card">
+        <h3>
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          Who We Are
+        </h3>
+        <p>CM IMPORT&amp;EXPORT is a full-service Chinese trading company specializing in the export of premium tires, new energy auto parts, heavy truck components, and electric bicycles to importers, wholesalers, and fleet operators worldwide.</p>
+      </div>
+      <div class="about-card">
+        <h3>
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          What We Offer
+        </h3>
+        <p>Direct partnerships with 50+ ISO-certified factories across China, in-house quality inspection, competitive FOB/CIF/DAP pricing, and end-to-end logistics support from order placement to port delivery.</p>
+      </div>
+      <div class="about-card">
+        <h3>
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          Our Advantage
+        </h3>
+        <p>Factory-direct pricing cuts out middlemen. Our dedicated procurement team sources authentic OEM parts and negotiates bulk discounts on your behalf. Minimum orders start from as low as 1 piece for spare parts.</p>
+      </div>
+      <div class="about-card">
+        <h3>
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          Our Commitment
+        </h3>
+        <p>Quotation within 24 hours. Pre-shipment quality inspection included. All products certified to EU, AU, and international standards. Dedicated account manager for every repeat buyer.</p>
+      </div>
+    </div>
+
+    <div class="strength-row">
+      <div class="strength-item">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom:4px"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <span class="strength-num">10+</span>
+        <div class="strength-lbl">Years in Export</div>
+      </div>
+      <div class="strength-item">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom:4px"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg>
+        <span class="strength-num">50+</span>
+        <div class="strength-lbl">Factory Partners</div>
+      </div>
+      <div class="strength-item">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom:4px"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 2 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+        <span class="strength-num">800+</span>
+        <div class="strength-lbl">Product SKUs</div>
+      </div>
+      <div class="strength-item">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom:4px"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        <span class="strength-num">20+</span>
+        <div class="strength-lbl">Countries Served</div>
+      </div>
+      <div class="strength-item">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom:4px"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        <span class="strength-num">98%</span>
+        <div class="strength-lbl">Satisfaction Rate</div>
+      </div>
+      <div class="strength-item">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom:4px"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        <span class="strength-num">24h</span>
+        <div class="strength-lbl">Quote Response</div>
+      </div>
+    </div>
+
+    <div style="font-family:'Poppins',sans-serif;font-size:12pt;font-weight:700;color:var(--dark);margin-bottom:4mm;">Key Export Markets</div>
+    <div class="markets-row">
+      <div class="market-card">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.8)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        <div class="market-name">Zambia</div>
+        <div class="market-desc">Tires, truck parts, fleet solutions</div>
+      </div>
+      <div class="market-card">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.8)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        <div class="market-name">Singapore</div>
+        <div class="market-desc">EV parts, e-bikes, PCR tires</div>
+      </div>
+      <div class="market-card">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.8)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        <div class="market-name">Australia</div>
+        <div class="market-desc">AT/LT tires, e-bikes, EV parts</div>
+      </div>
+      <div class="market-card">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.8)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        <div class="market-name">Ethiopia</div>
+        <div class="market-desc">TBR truck tires, commercial parts</div>
+      </div>
+    </div>
+
+  </div>
+  <div class="page-footer">
+    <span>CM IMPORT&amp;EXPORT Co., Ltd. · Product Catalog 2025/2026</span>
+    <strong>Page 2</strong>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════
+     PAGE 3 · TIRES
+══════════════════════════════════════ -->
+<div class="page">
+  <div class="prod-header navy">
+    <span class="tag tag-outline" style="margin-bottom:5px;">Product Line 01</span>
+    <h2>
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/></svg>
+      Tires — PCR · SUV · TBR · AT · LT
+    </h2>
+    <p>131+ models across 8 premium brands · FOB Qingdao / Guangzhou · USD wholesale pricing</p>
+  </div>
+
+  <div class="tire-brands">
+    <div class="brand-card">
+      <div class="brand-logo-box" style="background:#dbeafe;width:34px;height:34px;border-radius:7px;margin:0 auto 4px;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="#1d4ed8"><circle cx="12" cy="12" r="10"/></svg>
+      </div>
+      <h4>ROYALBLACK</h4>
+      <p>博莱克 · PCR &amp; SUV · Premium performance</p>
+    </div>
+    <div class="brand-card">
+      <div class="brand-logo-box" style="background:#dcfce7;width:34px;height:34px;border-radius:7px;margin:0 auto 4px;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="#16a34a"><circle cx="12" cy="12" r="10"/></svg>
+      </div>
+      <h4>CHARMLION</h4>
+      <p>长路虹 · PCR &amp; AT · Value export brand</p>
+    </div>
+    <div class="brand-card">
+      <div class="brand-logo-box" style="background:#fff3e0;width:34px;height:34px;border-radius:7px;margin:0 auto 4px;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="#ea580c"><circle cx="12" cy="12" r="10"/></svg>
+      </div>
+      <h4>GRENLANDER</h4>
+      <p>固兰达 · SUV &amp; LT · All-terrain specialist</p>
+    </div>
+    <div class="brand-card">
+      <div class="brand-logo-box" style="background:#f3e8fd;width:34px;height:34px;border-radius:7px;margin:0 auto 4px;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="#7c3aed"><circle cx="12" cy="12" r="10"/></svg>
+      </div>
+      <h4>GALAXIA</h4>
+      <p>星河 · PCR &amp; EV · New energy range</p>
+    </div>
+    <div class="brand-card">
+      <div class="brand-logo-box" style="background:#fef9c3;width:34px;height:34px;border-radius:7px;margin:0 auto 4px;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="#ca8a04"><circle cx="12" cy="12" r="10"/></svg>
+      </div>
+      <h4>GREFORCE TBR</h4>
+      <p>Truck &amp; Bus Radial · Heavy-duty commercial</p>
+    </div>
+    <div class="brand-card">
+      <div class="brand-logo-box" style="background:#fee2e2;width:34px;height:34px;border-radius:7px;margin:0 auto 4px;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="#dc2626"><circle cx="12" cy="12" r="10"/></svg>
+      </div>
+      <h4>BAYI / ROADBOSS</h4>
+      <p>八一 · TBR &amp; LT · African market focus</p>
+    </div>
+    <div class="brand-card">
+      <div class="brand-logo-box" style="background:#e0f2fe;width:34px;height:34px;border-radius:7px;margin:0 auto 4px;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="#0284c7"><circle cx="12" cy="12" r="10"/></svg>
+      </div>
+      <h4>SPORTRAK</h4>
+      <p>PCR &amp; SUV · OE supply · EU-certified</p>
+    </div>
+    <div class="brand-card">
+      <div class="brand-logo-box" style="background:#fef3c7;width:34px;height:34px;border-radius:7px;margin:0 auto 4px;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="#d97706"><circle cx="12" cy="12" r="10"/></svg>
+      </div>
+      <h4>TRIANGLE</h4>
+      <p>三角 · PCR &amp; TBR · Top-tier Chinese brand</p>
+    </div>
+  </div>
+
+  <div class="table-wrap">
+    <div class="section-title">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--dark)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+      Sample Price List — USD FOB China (Reference Only)
+    </div>
+    <table class="catalog-table">
+      <thead>
+        <tr><th>Size</th><th>Brand</th><th>Category</th><th>Ref. Price (USD)</th><th>MOQ</th><th>Note</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>185/60R15</strong></td><td>ROYALBLACK</td><td><span class="cat-pill c-pcr">PCR</span></td><td class="price-cell">$28.50</td><td>200 pcs</td><td>Passenger Car</td></tr>
+        <tr><td><strong>205/55R16</strong></td><td>ROYALBLACK</td><td><span class="cat-pill c-pcr">PCR</span></td><td class="price-cell">$32.00</td><td>200 pcs</td><td>—</td></tr>
+        <tr><td><strong>225/45R17</strong></td><td>CHARMLION</td><td><span class="cat-pill c-pcr">PCR</span></td><td class="price-cell">$38.50</td><td>100 pcs</td><td>EV Exclusive</td></tr>
+        <tr><td><strong>235/65R17</strong></td><td>GRENLANDER</td><td><span class="cat-pill c-suv">SUV</span></td><td class="price-cell">$42.00</td><td>100 pcs</td><td>Highway Terrain</td></tr>
+        <tr><td><strong>265/70R17</strong></td><td>GRENLANDER</td><td><span class="cat-pill c-at">AT</span></td><td class="price-cell">$55.00</td><td>80 pcs</td><td>All Terrain</td></tr>
+        <tr><td><strong>285/70R17</strong></td><td>CHARMLION</td><td><span class="cat-pill c-at">AT</span></td><td class="price-cell">$62.00</td><td>60 pcs</td><td>MT Reinforced</td></tr>
+        <tr><td><strong>11R22.5</strong></td><td>GREFORCE TBR</td><td><span class="cat-pill c-tbr">TBR</span></td><td class="price-cell">$118.00</td><td>40 pcs</td><td>Drive Axle</td></tr>
+        <tr><td><strong>12R22.5</strong></td><td>BAYI</td><td><span class="cat-pill c-tbr">TBR</span></td><td class="price-cell">$135.00</td><td>30 pcs</td><td>Heavy Load</td></tr>
+        <tr><td><strong>295/80R22.5</strong></td><td>ROADBOSS</td><td><span class="cat-pill c-tbr">TBR</span></td><td class="price-cell">$148.00</td><td>20 pcs</td><td>Steer Axle</td></tr>
+        <tr><td><strong>7.50R16</strong></td><td>BAYI</td><td><span class="cat-pill c-lt">LT</span></td><td class="price-cell">$48.00</td><td>80 pcs</td><td>Light Truck</td></tr>
+        <tr><td><strong>8.25R16</strong></td><td>BAYI</td><td><span class="cat-pill c-lt">LT</span></td><td class="price-cell">$55.00</td><td>60 pcs</td><td>Light Truck</td></tr>
+        <tr><td><strong>12.00R20</strong></td><td>GREFORCE TBR</td><td><span class="cat-pill c-tbr">TBR</span></td><td class="price-cell">$165.00</td><td>20 pcs</td><td>Bias Radial</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="note-bar">
+    Prices are FOB China reference only — subject to change with raw material costs &amp; order qty. Full list (131+ models): <strong>cangming.netlify.app/pricelist.html</strong>
+  </div>
+
+  <div class="page-footer">
+    <span>CM IMPORT&amp;EXPORT Co., Ltd. · Product Catalog 2025/2026</span>
+    <strong>Page 3</strong>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════
+     PAGE 4 · BYD OEM SPARE PARTS
+══════════════════════════════════════ -->
+<div class="page">
+  <div class="prod-header dark" style="position:relative;overflow:hidden;">
+    <span class="tag tag-outline" style="margin-bottom:5px;">Product Line 02</span>
+    <h2>
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+      BYD OEM Spare Parts
+    </h2>
+    <p>353 SKUs across 8 BYD EV models · OEM factory-spec quality · USD FOB China wholesale</p>
+  </div>
+
+  <div class="model-grid">
+    <div class="model-card"><div class="model-card-hdr">BYD E2</div><div class="model-card-body"><div class="spec"><span>Year</span><strong>2019–2024</strong></div><div class="spec"><span>Type</span><strong>Compact Hatch</strong></div><div class="spec"><span>Motor</span><strong>90kW</strong></div><div class="parts-count">52 <small>parts</small></div></div></div>
+    <div class="model-card"><div class="model-card-hdr">BYD Atto 3</div><div class="model-card-body"><div class="spec"><span>Year</span><strong>2021–2024</strong></div><div class="spec"><span>Type</span><strong>Compact SUV</strong></div><div class="spec"><span>Motor</span><strong>150kW</strong></div><div class="parts-count">48 <small>parts</small></div></div></div>
+    <div class="model-card"><div class="model-card-hdr">BYD Seal</div><div class="model-card-body"><div class="spec"><span>Year</span><strong>2022–2024</strong></div><div class="spec"><span>Type</span><strong>EV Sedan</strong></div><div class="spec"><span>Motor</span><strong>390kW AWD</strong></div><div class="parts-count">45 <small>parts</small></div></div></div>
+    <div class="model-card"><div class="model-card-hdr">BYD Dolphin</div><div class="model-card-body"><div class="spec"><span>Year</span><strong>2021–2024</strong></div><div class="spec"><span>Type</span><strong>Compact Hatch</strong></div><div class="spec"><span>Motor</span><strong>95kW</strong></div><div class="parts-count">40 <small>parts</small></div></div></div>
+    <div class="model-card"><div class="model-card-hdr">BYD Han EV</div><div class="model-card-body"><div class="spec"><span>Year</span><strong>2020–2024</strong></div><div class="spec"><span>Type</span><strong>Full-size Sedan</strong></div><div class="spec"><span>Motor</span><strong>480kW AWD</strong></div><div class="parts-count">44 <small>parts</small></div></div></div>
+    <div class="model-card"><div class="model-card-hdr">BYD Tang EV</div><div class="model-card-body"><div class="spec"><span>Year</span><strong>2019–2024</strong></div><div class="spec"><span>Type</span><strong>7-seat SUV</strong></div><div class="spec"><span>Motor</span><strong>505kW AWD</strong></div><div class="parts-count">43 <small>parts</small></div></div></div>
+    <div class="model-card"><div class="model-card-hdr">Song Plus EV</div><div class="model-card-body"><div class="spec"><span>Year</span><strong>2021–2024</strong></div><div class="spec"><span>Type</span><strong>Mid-size SUV</strong></div><div class="spec"><span>Motor</span><strong>135kW</strong></div><div class="parts-count">40 <small>parts</small></div></div></div>
+    <div class="model-card"><div class="model-card-hdr">BYD Seagull</div><div class="model-card-body"><div class="spec"><span>Year</span><strong>2023–2024</strong></div><div class="spec"><span>Type</span><strong>Mini EV Hatch</strong></div><div class="spec"><span>Motor</span><strong>60kW / 75kW</strong></div><div class="parts-count">41 <small>parts</small></div></div></div>
+  </div>
+
+  <div class="table-wrap">
+    <div class="section-title">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--dark)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+      Sample Parts &amp; Pricing — USD FOB China
+    </div>
+    <div class="two-col-table">
+      <table class="catalog-table">
+        <thead><tr><th>Part Name</th><th>Model</th><th>Part No.</th><th>USD</th></tr></thead>
+        <tbody>
+          <tr><td>Front Bumper Assembly</td><td>Han EV</td><td>HAN-BDY-001</td><td class="price-cell">$72.00</td></tr>
+          <tr><td>LED Matrix Headlight (L)</td><td>Han EV</td><td>HAN-LGT-001</td><td class="price-cell">$158.00</td></tr>
+          <tr><td>Front Left Door</td><td>Seal</td><td>SEA-DGM-001</td><td class="price-cell">$158.00</td></tr>
+          <tr><td>OBC 11kW Charger</td><td>Atto 3</td><td>AT3-EV-001</td><td class="price-cell">$245.00</td></tr>
+          <tr><td>Front Drive Motor 150kW</td><td>Atto 3</td><td>AT3-EV-005</td><td class="price-cell">$680.00</td></tr>
+          <tr><td>BMS Blade Battery</td><td>Han EV</td><td>HAN-EV-004</td><td class="price-cell">$380.00</td></tr>
+        </tbody>
+      </table>
+      <table class="catalog-table">
+        <thead><tr><th>Part Name</th><th>Model</th><th>Part No.</th><th>USD</th></tr></thead>
+        <tbody>
+          <tr><td>Front Brake Caliper 6-Pot</td><td>Seal</td><td>SEA-BRK-001</td><td class="price-cell">$185.00</td></tr>
+          <tr><td>Panoramic Sunroof Glass</td><td>Tang EV</td><td>TNG-DGM-006</td><td class="price-cell">$245.00</td></tr>
+          <tr><td>NAPPA Leather Seat</td><td>Han EV</td><td>HAN-INT-002</td><td class="price-cell">$485.00</td></tr>
+          <tr><td>Front Shock Absorber</td><td>Dolphin</td><td>DOL-SUS-001</td><td class="price-cell">$38.00</td></tr>
+          <tr><td>Rear Motor 390kW</td><td>Seal</td><td>SEA-EV-003</td><td class="price-cell">$950.00</td></tr>
+          <tr><td>Alloy Wheel 20in</td><td>Han EV</td><td>HAN-WHL-001</td><td class="price-cell">$105.00</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="note-bar">
+    Full catalog: <strong>353 SKUs</strong> — Body · Lighting · Doors &amp; Glass · Brakes · EV Drivetrain · Suspension · Cooling · Interior · Wheels.&nbsp; Online: <strong>cangming.netlify.app/byd-parts.html</strong>
+  </div>
+  <div class="page-footer"><span>CM IMPORT&amp;EXPORT Co., Ltd. · Product Catalog 2025/2026</span><strong>Page 4</strong></div>
+</div>
+
+<!-- ══════════════════════════════════════
+     PAGE 5 · SINOTRUK
+══════════════════════════════════════ -->
+<div class="page">
+  <div class="prod-header red">
+    <span class="tag tag-outline" style="margin-bottom:5px;">Product Line 03</span>
+    <h2>
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+      Sinotruk (中国重汽) Spare Parts
+    </h2>
+    <p>368 SKUs · HOWO · SITRAK C7H / G7 · Light Truck · OEM &amp; Compatible · USD FOB China</p>
+  </div>
+
+  <div class="truck-model-row">
+    <div class="truck-card"><div class="truck-card-hdr">HOWO 6×4 Tractor 371HP</div><div class="truck-card-body"><div class="truck-spec"><span>Engine</span><strong>WD615 371HP</strong></div><div class="truck-spec"><span>GVW</span><strong>25 Tonnes</strong></div><div class="truck-spec"><span>Year</span><strong>2010–2024</strong></div><div class="truck-count">75 <small style="font-size:6.5pt;font-weight:400;color:#636e72;">parts</small></div></div></div>
+    <div class="truck-card"><div class="truck-card-hdr">HOWO 6×4 Dump Truck</div><div class="truck-card-body"><div class="truck-spec"><span>Engine</span><strong>WD615/WD10 380HP</strong></div><div class="truck-spec"><span>GVW</span><strong>31 Tonnes</strong></div><div class="truck-spec"><span>Hydraulics</span><strong>3-Stage Cylinder</strong></div><div class="truck-count">64 <small style="font-size:6.5pt;font-weight:400;color:#636e72;">parts</small></div></div></div>
+    <div class="truck-card"><div class="truck-card-hdr">HOWO A7 6×4</div><div class="truck-card-body"><div class="truck-spec"><span>Engine</span><strong>MC11/WD10 420HP</strong></div><div class="truck-spec"><span>Emission</span><strong>Euro IV / V</strong></div><div class="truck-spec"><span>Year</span><strong>2012–2024</strong></div><div class="truck-count">62 <small style="font-size:6.5pt;font-weight:400;color:#636e72;">parts</small></div></div></div>
+    <div class="truck-card"><div class="truck-card-hdr">SITRAK C7H</div><div class="truck-card-body"><div class="truck-spec"><span>Engine</span><strong>MAN D2676 540HP</strong></div><div class="truck-spec"><span>Gearbox</span><strong>ZF AMT 12TX</strong></div><div class="truck-spec"><span>Brake</span><strong>Disc / WABCO EBS</strong></div><div class="truck-count">60 <small style="font-size:6.5pt;font-weight:400;color:#636e72;">parts</small></div></div></div>
+    <div class="truck-card"><div class="truck-card-hdr">SITRAK G7</div><div class="truck-card-body"><div class="truck-spec"><span>Engine</span><strong>MC13 560HP Euro VI</strong></div><div class="truck-spec"><span>Gearbox</span><strong>ZF TraXon 16-spd</strong></div><div class="truck-spec"><span>Suspension</span><strong>Full Air</strong></div><div class="truck-count">58 <small style="font-size:6.5pt;font-weight:400;color:#636e72;">parts</small></div></div></div>
+    <div class="truck-card"><div class="truck-card-hdr">HOWO Light Truck</div><div class="truck-card-body"><div class="truck-spec"><span>Engine</span><strong>WD618 240HP</strong></div><div class="truck-spec"><span>GVW</span><strong>6–12 Tonnes</strong></div><div class="truck-spec"><span>Type</span><strong>4×2 Cargo</strong></div><div class="truck-count">49 <small style="font-size:6.5pt;font-weight:400;color:#636e72;">parts</small></div></div></div>
+  </div>
+
+  <div style="padding:0 11mm 3mm;">
+    <div class="section-title">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--dark)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+      Systems Covered (All Models)
+    </div>
+    <div class="systems-grid">
+      <div class="sys-chip" style="background:#1565C0;">Cabin &amp; Body</div>
+      <div class="sys-chip" style="background:#BF360C;">Engine &amp; Fuel</div>
+      <div class="sys-chip" style="background:#4A148C;">Transmission</div>
+      <div class="sys-chip" style="background:#1B5E20;">Axle &amp; Diff.</div>
+      <div class="sys-chip" style="background:#B71C1C;">Brakes &amp; Air</div>
+      <div class="sys-chip" style="background:#0E6655;">Suspension</div>
+      <div class="sys-chip" style="background:#E65100;">Electrical</div>
+      <div class="sys-chip" style="background:#4E342E;">Exhaust/SCR</div>
+      <div class="sys-chip" style="background:#01579B;">Cooling</div>
+      <div class="sys-chip" style="background:#33691E;">Hydraulics</div>
+      <div class="sys-chip" style="background:#37474F;">Wheels/Tyres</div>
+      <div class="sys-chip" style="background:#546E7A;">Filters/Maint.</div>
+    </div>
+  </div>
+
+  <div class="table-wrap">
+    <div class="section-title">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--dark)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+      Sample Parts &amp; Pricing — USD FOB China
+    </div>
+    <div class="two-col-table">
+      <table class="catalog-table">
+        <thead><tr><th>Part Name</th><th>Model</th><th>Part No.</th><th>USD</th></tr></thead>
+        <tbody>
+          <tr><td>Gearbox HW19710 10-spd</td><td>HOWO 371</td><td>HW371-TRN-001</td><td class="price-cell">$1,250</td></tr>
+          <tr><td>Turbocharger HX40W</td><td>HOWO 371</td><td>HW371-ENG-003</td><td class="price-cell">$185.00</td></tr>
+          <tr><td>Front Axle HC16 Assembly</td><td>HOWO 371</td><td>HW371-AXL-001</td><td class="price-cell">$680.00</td></tr>
+          <tr><td>Dump Body 20CBM Steel</td><td>Dump Truck</td><td>HWDP-CAB-008</td><td class="price-cell">$2,850</td></tr>
+          <tr><td>Hydraulic Cylinder 3-Stage</td><td>Dump Truck</td><td>HWDP-HYD-002</td><td class="price-cell">$385.00</td></tr>
+          <tr><td>ZF AMT 12TX Gearbox</td><td>SITRAK C7H</td><td>C7H-TRN-001</td><td class="price-cell">$3,850</td></tr>
+        </tbody>
+      </table>
+      <table class="catalog-table">
+        <thead><tr><th>Part Name</th><th>Model</th><th>Part No.</th><th>USD</th></tr></thead>
+        <tbody>
+          <tr><td>Brake Drum Front 420mm</td><td>HOWO 371</td><td>HW371-BRK-003</td><td class="price-cell">$52.00</td></tr>
+          <tr><td>ZF Power Steering</td><td>HOWO A7</td><td>HWA7-SUS-004</td><td class="price-cell">$325.00</td></tr>
+          <tr><td>SCR+DPF Aftertreatment</td><td>SITRAK G7</td><td>SG7-EXH-003</td><td class="price-cell">$925.00</td></tr>
+          <tr><td>Full LED Headlight G7</td><td>SITRAK G7</td><td>SG7-ELC-001</td><td class="price-cell">$125.00</td></tr>
+          <tr><td>Air Spring Rear Bag</td><td>SITRAK C7H</td><td>C7H-SUS-002</td><td class="price-cell">$95.00</td></tr>
+          <tr><td>Tyre 315/70R22.5</td><td>All HOWO/SITRAK</td><td>C7H-WHL-002</td><td class="price-cell">$195.00</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="note-bar">Full Sinotruk catalog: <strong>368 SKUs</strong> · HOWO 371 · Dump Truck · A7 · SITRAK C7H · SITRAK G7 · Light Truck · OEM &amp; compatible aftermarket options.</div>
+  <div class="page-footer"><span>CM IMPORT&amp;EXPORT Co., Ltd. · Product Catalog 2025/2026</span><strong>Page 5</strong></div>
+</div>
+
+<!-- ══════════════════════════════════════
+     PAGE 6 · E-BIKES
+══════════════════════════════════════ -->
+<div class="page">
+  <div class="prod-header green">
+    <span class="tag tag-outline" style="margin-bottom:5px;">Product Line 04</span>
+    <h2>
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18.5" cy="17.5" r="3.5"/><circle cx="5.5" cy="17.5" r="3.5"/><circle cx="15" cy="5" r="1"/><path d="M12 17.5V14l-3-3 4-3 2 3h2"/></svg>
+      Electric Bicycles — City · Cargo · Fat Tire · Folding
+    </h2>
+    <p>Factory-direct e-bikes for urban commuting, cargo delivery &amp; off-road · CE / EN15194 certified</p>
+  </div>
+
+  <div class="ebike-grid">
+    <div class="ebike-card"><div class="ebike-card-img"><img src="https://images.unsplash.com/photo-1571068316344-75bc76f77890?auto=format&fit=crop&w=600&q=80" alt="City E-Bike"/></div><div class="ebike-card-body"><h4>City &amp; Commuter E-Bike</h4><div class="ebike-spec-row"><span class="ebike-spec-tag">250W / 350W</span><span class="ebike-spec-tag">36V 15Ah</span><span class="ebike-spec-tag">100km Range</span><span class="ebike-spec-tag">EN15194</span></div></div></div>
+    <div class="ebike-card"><div class="ebike-card-img"><img src="https://images.unsplash.com/photo-1622977267014-5e7a51b4d4ba?auto=format&fit=crop&w=600&q=80" alt="Cargo E-Bike"/></div><div class="ebike-card-body"><h4>Cargo &amp; Delivery E-Bike</h4><div class="ebike-spec-row"><span class="ebike-spec-tag">500W–1000W</span><span class="ebike-spec-tag">48V 20Ah</span><span class="ebike-spec-tag">Load 150kg+</span><span class="ebike-spec-tag">Front/Rear Rack</span></div></div></div>
+    <div class="ebike-card"><div class="ebike-card-img"><img src="https://images.unsplash.com/photo-1558980664-769d59546b3d?auto=format&fit=crop&w=600&q=80" alt="Fat Tire E-Bike"/></div><div class="ebike-card-body"><h4>Fat Tire Off-Road E-Bike</h4><div class="ebike-spec-row"><span class="ebike-spec-tag">750W–1500W</span><span class="ebike-spec-tag">48V 25Ah</span><span class="ebike-spec-tag">26"×4" Fat</span><span class="ebike-spec-tag">Hydraulic Brake</span></div></div></div>
+    <div class="ebike-card"><div class="ebike-card-img"><img src="https://images.unsplash.com/photo-1571333250630-f0230c320b6d?auto=format&fit=crop&w=600&q=80" alt="Folding E-Bike"/></div><div class="ebike-card-body"><h4>Folding E-Bike</h4><div class="ebike-spec-row"><span class="ebike-spec-tag">250W / 350W</span><span class="ebike-spec-tag">36V 10Ah</span><span class="ebike-spec-tag">20" Wheels</span><span class="ebike-spec-tag">≤15kg</span></div></div></div>
+    <div class="ebike-card"><div class="ebike-card-img"><img src="https://images.unsplash.com/photo-1593642632559-0c6d3fc62b89?auto=format&fit=crop&w=600&q=80" alt="Mountain E-Bike"/></div><div class="ebike-card-body"><h4>Mountain / Trekking E-Bike</h4><div class="ebike-spec-row"><span class="ebike-spec-tag">500W–750W</span><span class="ebike-spec-tag">48V 20Ah</span><span class="ebike-spec-tag">27.5" / 29"</span><span class="ebike-spec-tag">Shimano 7-spd</span></div></div></div>
+    <div class="ebike-card"><div class="ebike-card-img"><img src="https://images.unsplash.com/photo-1502877338535-766e1452684a?auto=format&fit=crop&w=600&q=80" alt="3-Wheel Cargo"/></div><div class="ebike-card-body"><h4>3-Wheel Electric Cargo</h4><div class="ebike-spec-row"><span class="ebike-spec-tag">800W–1200W</span><span class="ebike-spec-tag">60V 30Ah</span><span class="ebike-spec-tag">Payload 300kg</span><span class="ebike-spec-tag">Enclosed Cab</span></div></div></div>
+  </div>
+
+  <div class="ebike-advantage">
+    <div class="adv-chip">
+      <div class="adv-icon-wrap"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.9)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg></div>
+      <div class="adv-title">Factory Direct</div>
+      <div class="adv-desc">No middlemen — work directly with certified e-bike manufacturers</div>
+    </div>
+    <div class="adv-chip">
+      <div class="adv-icon-wrap"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.9)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg></div>
+      <div class="adv-title">OEM / ODM</div>
+      <div class="adv-desc">Custom color, logo, battery &amp; component configurations</div>
+    </div>
+    <div class="adv-chip">
+      <div class="adv-icon-wrap"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.9)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+      <div class="adv-title">CE Certified</div>
+      <div class="adv-desc">EN15194 / CE / RoHS for EU, AU &amp; global markets</div>
+    </div>
+    <div class="adv-chip">
+      <div class="adv-icon-wrap"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.9)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 2 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg></div>
+      <div class="adv-title">Low MOQ</div>
+      <div class="adv-desc">From 5–20 pcs. Mixed container orders welcome</div>
+    </div>
+  </div>
+
+  <div class="page-footer"><span>CM IMPORT&amp;EXPORT Co., Ltd. · Product Catalog 2025/2026</span><strong>Page 6</strong></div>
+</div>
+
+<!-- ══════════════════════════════════════
+     PAGE 7 · BACK COVER
+══════════════════════════════════════ -->
+<div class="page">
+  <div class="back-cover">
+    <div class="back-content">
+
+      <div class="back-logo">CM IMPORT&amp;EXPORT</div>
+      <div class="back-tagline">Driving Your World Forward</div>
+      <div class="back-divider"></div>
+
+      <div class="back-cta-title">Ready to Start Your Order?</div>
+      <div class="back-cta-sub">
+        Send us your product inquiry and receive a detailed quotation within 24 hours.<br/>
+        Competitive pricing · Quality guaranteed · Reliable delivery
+      </div>
+
+      <div class="contact-cards">
+        <div class="contact-card">
+          <div class="contact-card-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.41 2 2 0 0 1 3.58 1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.96a16 16 0 0 0 6.13 6.13l1.32-1.32a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          </div>
+          <div class="contact-card-text">
+            <div class="contact-card-label">WhatsApp / Phone</div>
+            <div class="contact-card-value">+86 173 1830 5222</div>
+            <div class="contact-card-sub">Mon–Sat · 8am–8pm CST</div>
+          </div>
+        </div>
+        <div class="contact-card">
+          <div class="contact-card-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </div>
+          <div class="contact-card-text">
+            <div class="contact-card-label">Email</div>
+            <div class="contact-card-value">1063744757@qq.com</div>
+            <div class="contact-card-sub">Reply within 24 hours</div>
+          </div>
+        </div>
+        <div class="contact-card">
+          <div class="contact-card-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          </div>
+          <div class="contact-card-text">
+            <div class="contact-card-label">Online Catalog</div>
+            <div class="contact-card-value">cangming.netlify.app</div>
+            <div class="contact-card-sub">Price list · BYD &amp; Sinotruk parts</div>
+          </div>
+        </div>
+        <div class="contact-card">
+          <div class="contact-card-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          </div>
+          <div class="contact-card-text">
+            <div class="contact-card-label">Company</div>
+            <div class="contact-card-value">CM IMPORT&amp;EXPORT Co., Ltd.</div>
+            <div class="contact-card-sub">China · Export since 2014</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="products-footer-row">
+        <div class="pf-pill">Tires — 131+ Models</div>
+        <div class="pf-pill">BYD Parts — 353 SKUs</div>
+        <div class="pf-pill">Sinotruk Parts — 368 SKUs</div>
+        <div class="pf-pill">E-Bikes — 6 Types</div>
+      </div>
+
+      <div class="back-disclaimer">
+        All prices quoted in this catalog are FOB China reference prices and subject to change without notice based on raw material costs,
+        exchange rate fluctuations, and order quantities. Confirmed prices will be provided upon formal quotation.
+        All trademarks mentioned are the property of their respective owners. CM IMPORT&amp;EXPORT acts as authorized trading agent and reseller.
+      </div>
+
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
