@@ -650,197 +650,290 @@
 <!-- LEFT SIDE PANEL -->
 <div class="home-side-panel home-side-left">
 
-  <!-- BYD Seagull wireframe -->
-  <a class="side-card side-card-svg" href="byd-parts.html?model=seagull">
-    <svg viewBox="0 0 300 130" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
-      <defs>
-        <filter id="gw1"><feGaussianBlur stdDeviation="2.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
-      </defs>
-      <rect width="300" height="130" fill="#060c18"/>
-      <g filter="url(#gw1)" stroke="#38bdf8" stroke-width="1.4" fill="none">
-        <!-- Seagull body — compact hatchback, boxy roofline -->
-        <path d="M28,112 L26,95 C27,86 34,78 46,72 C56,67 68,60 84,55 C96,51 108,47 122,46 L188,46 C200,46 212,52 220,62 C225,69 228,80 230,90 L232,112 Z" fill="rgba(56,189,248,0.04)"/>
-        <!-- windshield -->
-        <path d="M86,55 C96,51 108,47 122,46 L188,46 C199,46 210,51 216,60" fill="rgba(56,189,248,0.08)" stroke-width="1.2"/>
-        <!-- B-pillar -->
-        <line x1="155" y1="46" x2="156" y2="87"/>
-        <!-- door sill -->
-        <line x1="96" y1="87" x2="200" y2="87"/>
-        <!-- front wheel arch -->
-        <path d="M28,95 C30,84 46,76 64,76 C82,76 94,84 96,95" stroke-width="1.2"/>
-        <!-- rear wheel arch -->
-        <path d="M196,90 C198,80 212,73 228,73 C244,73 254,81 254,92" stroke-width="1.2"/>
-        <!-- front wheel -->
-        <circle cx="64" cy="104" r="18" fill="rgba(56,189,248,0.05)"/>
-        <circle cx="64" cy="104" r="11"/>
-        <line x1="64" y1="86" x2="64" y2="122"/><line x1="46" y1="104" x2="82" y2="104"/>
-        <line x1="51" y1="91" x2="77" y2="117"/><line x1="77" y1="91" x2="51" y2="117"/>
-        <!-- rear wheel -->
-        <circle cx="228" cy="104" r="18" fill="rgba(56,189,248,0.05)"/>
-        <circle cx="228" cy="104" r="11"/>
-        <line x1="228" y1="86" x2="228" y2="122"/><line x1="210" y1="104" x2="246" y2="104"/>
-        <line x1="215" y1="91" x2="241" y2="117"/><line x1="241" y1="91" x2="215" y2="117"/>
-        <!-- ground -->
-        <line x1="8" y1="122" x2="292" y2="122" opacity="0.25"/>
-        <!-- BYD badge -->
-        <rect x="134" y="46" width="30" height="8" rx="1" fill="rgba(56,189,248,0.15)" stroke-width="0.8"/>
-      </g>
-    </svg>
-    <div class="side-card-info">
-      <div class="side-card-name">BYD Seagull 海鸥</div>
-      <div class="side-card-sub">Mini EV · 60/75kW</div>
-      <span class="side-card-tag tag-byd">EV Parts →</span>
-    </div>
-  </a>
+  <!-- BYD Seagull ANIMATED ASSEMBLY -->
+  <div class="side-card side-card-anim" style="cursor:default">
+  <svg id="sg1" viewBox="0 0 300 132" xmlns="http://www.w3.org/2000/svg" width="100%" height="92px" style="display:block;background:#060c18">
+    <defs>
+      <filter id="gf_sg1" x="-50%" y="-50%" width="200%" height="200%">
+        <feGaussianBlur stdDeviation="2.8" result="b"/>
+        <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+      </filter>
+    </defs>
+    <line x1="10" y1="122" x2="290" y2="122" stroke="rgba(56,189,248,.15)" stroke-width="1"/>
+    <!-- body -->
+    <g id="sg1-body" filter="url(#gf_sg1)" stroke="#38bdf8" stroke-width="1.8" fill="rgba(56,189,248,.04)" stroke-linejoin="round">
+      <path d="M 32,122 L 30,104 L 36,90 L 52,76 L 70,64 L 96,52 L 136,44 L 196,44 L 222,54 L 238,70 L 246,90 L 248,122 Z"/>
+    </g>
+    <!-- windshield -->
+    <g id="sg1-glass" filter="url(#gf_sg1)" stroke="rgba(56,189,248,.75)" stroke-width="1.3" fill="rgba(56,189,248,.1)">
+      <path d="M 70,64 L 96,52 L 136,44 L 192,44 L 192,72 L 70,72 Z"/>
+      <line x1="148" y1="44" x2="148" y2="72" stroke="rgba(56,189,248,.35)" stroke-width=".9"/>
+    </g>
+    <!-- roof detail -->
+    <g id="sg1-roof" filter="url(#gf_sg1)" stroke="rgba(56,189,248,.6)" stroke-width="1.1" fill="none">
+      <line x1="96" y1="52" x2="222" y2="54"/>
+      <line x1="136" y1="44" x2="196" y2="44"/>
+    </g>
+    <!-- front wheel -->
+    <g id="sg1-whf" filter="url(#gf_sg1)" stroke="#38bdf8" stroke-width="1.6" fill="none">
+      <circle cx="82" cy="104" r="18" fill="rgba(56,189,248,.04)"/>
+      <circle cx="82" cy="104" r="11"/>
+      <circle cx="82" cy="104" r="4" fill="rgba(56,189,248,.3)" stroke-width="1.3"/>
+      <line x1="82" y1="86" x2="82" y2="122"/>
+      <line x1="64" y1="104" x2="100" y2="104"/>
+      <line x1="69" y1="91" x2="95" y2="117"/>
+      <line x1="95" y1="91" x2="69" y2="117"/>
+    </g>
+    <!-- rear wheel -->
+    <g id="sg1-whr" filter="url(#gf_sg1)" stroke="#38bdf8" stroke-width="1.6" fill="none">
+      <circle cx="218" cy="104" r="18" fill="rgba(56,189,248,.04)"/>
+      <circle cx="218" cy="104" r="11"/>
+      <circle cx="218" cy="104" r="4" fill="rgba(56,189,248,.3)" stroke-width="1.3"/>
+      <line x1="218" y1="86" x2="218" y2="122"/>
+      <line x1="200" y1="104" x2="236" y2="104"/>
+      <line x1="205" y1="91" x2="231" y2="117"/>
+      <line x1="231" y1="91" x2="205" y2="117"/>
+    </g>
+    <!-- front fascia + lights -->
+    <g id="sg1-front" filter="url(#gf_sg1)" stroke="#38bdf8" stroke-width="1.2" fill="none">
+      <path d="M 30,104 L 36,90 L 52,76" fill="rgba(56,189,248,.04)"/>
+      <line x1="30" y1="97" x2="50" y2="90"/>
+      <line x1="32" y1="108" x2="56" y2="102"/>
+    </g>
+    <!-- rear details -->
+    <g id="sg1-rear" filter="url(#gf_sg1)" stroke="#38bdf8" stroke-width="1.2" fill="none">
+      <line x1="238" y1="70" x2="248" y2="90"/>
+      <line x1="238" y1="72" x2="248" y2="92" stroke="#7dd3fc" stroke-width="2.5" opacity=".7"/>
+      <line x1="248" y1="90" x2="248" y2="108"/>
+    </g>
+    <!-- body lines -->
+    <g id="sg1-lines" stroke="rgba(56,189,248,.45)" stroke-width=".9" fill="none">
+      <line x1="52" y1="76" x2="238" y2="78"/>
+      <rect x="108" y="88" width="28" height="5" rx="2.5" stroke-width=".8"/>
+      <rect x="174" y="88" width="28" height="5" rx="2.5" stroke-width=".8"/>
+    </g>
+  </svg>
+  <div class="side-card-info">
+    <div class="side-card-name">BYD Seagull 海鸥</div>
+    <div class="side-card-sub">Mini EV · 60/75kW</div>
+    <span class="side-card-tag tag-byd">EV Parts</span>
+  </div>
+  </div><!-- /sg1 card -->
 
-  <!-- BYD Song Plus wireframe -->
-  <a class="side-card side-card-svg" href="byd-parts.html?model=song">
-    <svg viewBox="0 0 300 130" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
-      <defs>
-        <filter id="gw2"><feGaussianBlur stdDeviation="2.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
-      </defs>
-      <rect width="300" height="130" fill="#060c18"/>
-      <g filter="url(#gw2)" stroke="#38bdf8" stroke-width="1.4" fill="none">
-        <!-- Song Plus body — mid-size SUV, higher stance, longer wheelbase -->
-        <path d="M24,112 L22,90 C24,80 34,72 48,66 C58,61 72,54 88,49 C100,45 114,42 128,41 L192,41 C208,41 220,47 228,58 C233,65 236,76 238,88 L240,112 Z" fill="rgba(56,189,248,0.04)"/>
-        <!-- windshield more upright -->
-        <path d="M90,49 C100,45 114,42 128,41 L192,41 C206,41 218,47 225,57" fill="rgba(56,189,248,0.08)" stroke-width="1.2"/>
-        <!-- B-pillar -->
-        <line x1="160" y1="41" x2="161" y2="84"/>
-        <!-- door sill -->
-        <line x1="96" y1="84" x2="206" y2="84"/>
-        <!-- roof rack lines -->
-        <line x1="130" y1="41" x2="192" y2="41" stroke-dasharray="4,3" opacity="0.5"/>
-        <!-- front wheel arch — higher ground clearance -->
-        <path d="M24,90 C26,78 44,70 64,70 C84,70 96,78 98,90" stroke-width="1.2"/>
-        <!-- rear wheel arch -->
-        <path d="M200,88 C202,77 218,70 236,70 C252,70 262,78 262,90" stroke-width="1.2"/>
-        <!-- front wheel -->
-        <circle cx="64" cy="100" r="20" fill="rgba(56,189,248,0.05)"/>
-        <circle cx="64" cy="100" r="12"/>
-        <line x1="64" y1="80" x2="64" y2="120"/><line x1="44" y1="100" x2="84" y2="100"/>
-        <line x1="50" y1="86" x2="78" y2="114"/><line x1="78" y1="86" x2="50" y2="114"/>
-        <!-- rear wheel -->
-        <circle cx="236" cy="100" r="20" fill="rgba(56,189,248,0.05)"/>
-        <circle cx="236" cy="100" r="12"/>
-        <line x1="236" y1="80" x2="236" y2="120"/><line x1="216" y1="100" x2="256" y2="100"/>
-        <line x1="222" y1="86" x2="250" y2="114"/><line x1="250" y1="86" x2="222" y2="114"/>
-        <!-- ground -->
-        <line x1="8" y1="120" x2="292" y2="120" opacity="0.25"/>
-        <!-- BYD badge -->
-        <rect x="138" y="41" width="30" height="8" rx="1" fill="rgba(56,189,248,0.15)" stroke-width="0.8"/>
-      </g>
-    </svg>
-    <div class="side-card-info">
-      <div class="side-card-name">BYD Song Plus 宋Plus</div>
-      <div class="side-card-sub">EV SUV · 135kW</div>
-      <span class="side-card-tag tag-byd">EV Parts →</span>
-    </div>
-  </a>
+  <!-- BYD Song Plus ANIMATED -->
+  <div class="side-card side-card-anim" style="cursor:default">
+  <svg id="sp1" viewBox="0 0 300 132" xmlns="http://www.w3.org/2000/svg" width="100%" height="92px" style="display:block;background:#060c18">
+    <defs>
+      <filter id="gf_sp1" x="-50%" y="-50%" width="200%" height="200%">
+        <feGaussianBlur stdDeviation="2.8" result="b"/>
+        <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+      </filter>
+    </defs>
+    <line x1="10" y1="122" x2="290" y2="122" stroke="rgba(56,189,248,.15)" stroke-width="1"/>
+    <!-- body (SUV — taller, boxier) -->
+    <g id="sp1-body" filter="url(#gf_sp1)" stroke="#38bdf8" stroke-width="1.8" fill="rgba(56,189,248,.04)" stroke-linejoin="round">
+      <path d="M 28,122 L 26,102 L 32,86 L 50,70 L 72,58 L 96,46 L 138,38 L 198,38 L 228,48 L 244,64 L 250,86 L 252,122 Z"/>
+    </g>
+    <!-- windshield + windows (more upright SUV) -->
+    <g id="sp1-glass" filter="url(#gf_sp1)" stroke="rgba(56,189,248,.75)" stroke-width="1.3" fill="rgba(56,189,248,.1)">
+      <path d="M 72,58 L 96,46 L 138,38 L 196,38 L 196,66 L 72,66 Z"/>
+      <line x1="148" y1="38" x2="148" y2="66" stroke="rgba(56,189,248,.35)" stroke-width=".9"/>
+      <line x1="196" y1="38" x2="228" y2="48" stroke="rgba(56,189,248,.5)" stroke-width="1"/>
+    </g>
+    <!-- roof rack lines -->
+    <g id="sp1-roof" filter="url(#gf_sp1)" stroke="rgba(56,189,248,.6)" stroke-width="1" fill="none">
+      <line x1="100" y1="38" x2="196" y2="38"/>
+      <line x1="118" y1="31" x2="182" y2="31"/>
+      <line x1="118" y1="38" x2="118" y2="31"/>
+      <line x1="150" y1="38" x2="150" y2="31"/>
+      <line x1="182" y1="38" x2="182" y2="31"/>
+    </g>
+    <!-- front wheel -->
+    <g id="sp1-whf" filter="url(#gf_sp1)" stroke="#38bdf8" stroke-width="1.6" fill="none">
+      <circle cx="78" cy="103" r="19" fill="rgba(56,189,248,.04)"/>
+      <circle cx="78" cy="103" r="12"/>
+      <circle cx="78" cy="103" r="4" fill="rgba(56,189,248,.3)" stroke-width="1.3"/>
+      <line x1="78" y1="84" x2="78" y2="122"/>
+      <line x1="59" y1="103" x2="97" y2="103"/>
+      <line x1="65" y1="90" x2="91" y2="116"/>
+      <line x1="91" y1="90" x2="65" y2="116"/>
+    </g>
+    <!-- rear wheel -->
+    <g id="sp1-whr" filter="url(#gf_sp1)" stroke="#38bdf8" stroke-width="1.6" fill="none">
+      <circle cx="222" cy="103" r="19" fill="rgba(56,189,248,.04)"/>
+      <circle cx="222" cy="103" r="12"/>
+      <circle cx="222" cy="103" r="4" fill="rgba(56,189,248,.3)" stroke-width="1.3"/>
+      <line x1="222" y1="84" x2="222" y2="122"/>
+      <line x1="203" y1="103" x2="241" y2="103"/>
+      <line x1="209" y1="90" x2="235" y2="116"/>
+      <line x1="235" y1="90" x2="209" y2="116"/>
+    </g>
+    <!-- front -->
+    <g id="sp1-front" filter="url(#gf_sp1)" stroke="#38bdf8" stroke-width="1.2" fill="none">
+      <path d="M 26,102 L 32,86 L 50,70 L 72,60"/>
+      <line x1="28" y1="94" x2="54" y2="84"/>
+    </g>
+    <!-- rear -->
+    <g id="sp1-rear" filter="url(#gf_sp1)" stroke="#38bdf8" stroke-width="1.2" fill="none">
+      <line x1="244" y1="64" x2="252" y2="86"/>
+      <line x1="244" y1="66" x2="252" y2="88" stroke="#7dd3fc" stroke-width="2.5" opacity=".7"/>
+    </g>
+    <!-- lines -->
+    <g id="sp1-lines" stroke="rgba(56,189,248,.45)" stroke-width=".9" fill="none">
+      <line x1="50" y1="70" x2="244" y2="72"/>
+      <rect x="106" y="85" width="28" height="5" rx="2.5" stroke-width=".8"/>
+      <rect x="170" y="85" width="28" height="5" rx="2.5" stroke-width=".8"/>
+    </g>
+  </svg>
+  <div class="side-card-info">
+    <div class="side-card-name">BYD Song Plus 宋Plus</div>
+    <div class="side-card-sub">EV SUV · 135kW</div>
+    <span class="side-card-tag tag-byd">EV Parts</span>
+  </div>
+  </div><!-- /sp1 card -->
 
-  <!-- HOWO Truck wireframe -->
-  <a class="side-card side-card-svg" href="sinotruk-parts.html?model=howo">
-    <svg viewBox="0 0 300 130" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
-      <defs>
-        <filter id="gw3"><feGaussianBlur stdDeviation="2.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
-      </defs>
-      <rect width="300" height="130" fill="#060c18"/>
-      <g filter="url(#gw3)" stroke="#f59e0b" stroke-width="1.4" fill="none">
-        <!-- HOWO cab-over — flat front, tall cab -->
-        <path d="M18,112 L16,72 C17,62 22,52 32,46 C38,42 48,40 60,40 L110,40 C116,40 120,44 120,50 L120,70 L282,70 L282,112 Z" fill="rgba(245,158,11,0.04)"/>
-        <!-- cab front grille detail -->
-        <line x1="16" y1="72" x2="60" y2="72"/>
-        <line x1="20" y1="62" x2="58" y2="62"/>
-        <line x1="18" y1="55" x2="50" y2="52"/>
-        <!-- cab window -->
-        <path d="M32,46 C38,42 48,40 60,40 L108,40 C114,40 118,44 118,50 L118,64 L28,64 Z" fill="rgba(245,158,11,0.1)" stroke-width="1.2"/>
-        <!-- cab door line -->
-        <line x1="78" y1="40" x2="78" y2="70"/>
-        <!-- chassis frame -->
-        <line x1="120" y1="75" x2="282" y2="75" stroke-dasharray="6,3" opacity="0.5"/>
-        <!-- fuel tank -->
-        <rect x="122" y="76" width="30" height="22" rx="3" fill="rgba(245,158,11,0.08)"/>
-        <!-- cargo body -->
-        <rect x="158" y="58" width="120" height="30" rx="2" fill="rgba(245,158,11,0.06)"/>
-        <!-- front wheel -->
-        <circle cx="52" cy="100" r="20" fill="rgba(245,158,11,0.05)"/>
-        <circle cx="52" cy="100" r="12"/>
-        <line x1="52" y1="80" x2="52" y2="120"/><line x1="32" y1="100" x2="72" y2="100"/>
-        <line x1="38" y1="86" x2="66" y2="114"/><line x1="66" y1="86" x2="38" y2="114"/>
-        <!-- drive axle 1 -->
-        <circle cx="196" cy="100" r="20" fill="rgba(245,158,11,0.05)"/>
-        <circle cx="196" cy="100" r="12"/>
-        <line x1="196" y1="80" x2="196" y2="120"/><line x1="176" y1="100" x2="216" y2="100"/>
-        <line x1="182" y1="86" x2="210" y2="114"/><line x1="210" y1="86" x2="182" y2="114"/>
-        <!-- drive axle 2 -->
-        <circle cx="244" cy="100" r="20" fill="rgba(245,158,11,0.05)"/>
-        <circle cx="244" cy="100" r="12"/>
-        <line x1="244" y1="80" x2="244" y2="120"/><line x1="224" y1="100" x2="264" y2="100"/>
-        <line x1="230" y1="86" x2="258" y2="114"/><line x1="258" y1="86" x2="230" y2="114"/>
-        <!-- ground -->
-        <line x1="8" y1="120" x2="292" y2="120" opacity="0.25"/>
-        <!-- axle connection bar -->
-        <line x1="196" y1="100" x2="244" y2="100" stroke-width="2.5" opacity="0.4"/>
-      </g>
-    </svg>
-    <div class="side-card-info">
-      <div class="side-card-name">Sinotruk HOWO 6×4</div>
-      <div class="side-card-sub">336/371HP · Cab-over</div>
-      <span class="side-card-tag tag-truck">Parts →</span>
-    </div>
-  </a>
+  <!-- HOWO ANIMATED -->
+  <div class="side-card side-card-anim" style="cursor:default">
+  <svg id="hw1" viewBox="0 0 300 132" xmlns="http://www.w3.org/2000/svg" width="100%" height="92px" style="display:block;background:#060c18">
+    <defs>
+      <filter id="gf_hw1" x="-50%" y="-50%" width="200%" height="200%">
+        <feGaussianBlur stdDeviation="2.8" result="b"/>
+        <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+      </filter>
+    </defs>
+    <line x1="10" y1="120" x2="290" y2="120" stroke="rgba(245,158,11,.15)" stroke-width="1"/>
+    <!-- cab body -->
+    <g id="hw1-cab" filter="url(#gf_hw1)" stroke="#f59e0b" stroke-width="1.8" fill="rgba(245,158,11,.04)" stroke-linejoin="round">
+      <path d="M 12,120 L 10,84 L 14,68 L 24,54 L 40,44 L 72,38 L 126,38 L 130,44 L 130,72 L 12,72 Z"/>
+    </g>
+    <!-- cab glass -->
+    <g id="hw1-glass" filter="url(#gf_hw1)" stroke="rgba(245,158,11,.75)" stroke-width="1.3" fill="rgba(245,158,11,.1)">
+      <path d="M 24,54 L 40,44 L 72,38 L 124,38 L 124,60 L 20,60 Z"/>
+      <line x1="82" y1="38" x2="82" y2="70" stroke="rgba(245,158,11,.35)" stroke-width=".9"/>
+    </g>
+    <!-- cargo box -->
+    <g id="hw1-cargo" filter="url(#gf_hw1)" stroke="#f59e0b" stroke-width="1.5" fill="rgba(245,158,11,.04)">
+      <rect x="130" y="44" width="148" height="60" rx="2"/>
+      <line x1="130" y1="64" x2="278" y2="64" stroke="rgba(245,158,11,.4)" stroke-width=".8"/>
+      <line x1="130" y1="84" x2="278" y2="84" stroke="rgba(245,158,11,.4)" stroke-width=".8"/>
+      <line x1="196" y1="44" x2="196" y2="104" stroke="rgba(245,158,11,.3)" stroke-width=".8"/>
+    </g>
+    <!-- front wheel -->
+    <g id="hw1-whf" filter="url(#gf_hw1)" stroke="#f59e0b" stroke-width="1.6" fill="none">
+      <circle cx="46" cy="102" r="18" fill="rgba(245,158,11,.04)"/>
+      <circle cx="46" cy="102" r="11"/>
+      <circle cx="46" cy="102" r="4" fill="rgba(245,158,11,.3)" stroke-width="1.3"/>
+      <line x1="46" y1="84" x2="46" y2="120"/>
+      <line x1="28" y1="102" x2="64" y2="102"/>
+      <line x1="33" y1="89" x2="59" y2="115"/>
+      <line x1="59" y1="89" x2="33" y2="115"/>
+    </g>
+    <!-- rear axles -->
+    <g id="hw1-whr" filter="url(#gf_hw1)" stroke="#f59e0b" stroke-width="1.6" fill="none">
+      <circle cx="196" cy="102" r="18" fill="rgba(245,158,11,.04)"/>
+      <circle cx="196" cy="102" r="11"/>
+      <circle cx="196" cy="102" r="4" fill="rgba(245,158,11,.3)"/>
+      <line x1="196" y1="84" x2="196" y2="120"/>
+      <line x1="178" y1="102" x2="214" y2="102"/>
+      <line x1="183" y1="89" x2="209" y2="115"/>
+      <line x1="209" y1="89" x2="183" y2="115"/>
+      <circle cx="238" cy="102" r="18" fill="rgba(245,158,11,.04)"/>
+      <circle cx="238" cy="102" r="11"/>
+      <circle cx="238" cy="102" r="4" fill="rgba(245,158,11,.3)"/>
+      <line x1="238" y1="84" x2="238" y2="120"/>
+      <line x1="220" y1="102" x2="256" y2="102"/>
+      <line x1="225" y1="89" x2="251" y2="115"/>
+      <line x1="251" y1="89" x2="225" y2="115"/>
+      <line x1="196" y1="102" x2="238" y2="102" stroke-width="2.5" opacity=".4"/>
+    </g>
+    <!-- front detail -->
+    <g id="hw1-front" filter="url(#gf_hw1)" stroke="#f59e0b" stroke-width="1.1" fill="none">
+      <line x1="10" y1="84" x2="14" y2="68"/>
+      <line x1="10" y1="78" x2="22" y2="72"/>
+      <line x1="10" y1="68" x2="20" y2="62"/>
+      <rect x="8" y="85" width="10" height="22" rx="2" fill="rgba(245,158,11,.08)"/>
+    </g>
+  </svg>
+  <div class="side-card-info">
+    <div class="side-card-name">HOWO 豪沃</div>
+    <div class="side-card-sub">6×4 Truck · 371HP</div>
+    <span class="side-card-tag tag-truck">Truck Parts</span>
+  </div>
+  </div><!-- /hw1 card -->
 
-  <!-- SITRAK C7H Truck wireframe -->
-  <a class="side-card side-card-svg" href="sinotruk-parts.html?model=sitrak">
-    <svg viewBox="0 0 300 130" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
-      <defs>
-        <filter id="gw4"><feGaussianBlur stdDeviation="2.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
-      </defs>
-      <rect width="300" height="130" fill="#060c18"/>
-      <g filter="url(#gw4)" stroke="#f59e0b" stroke-width="1.4" fill="none">
-        <!-- SITRAK C7H — short nose, aerodynamic cab -->
-        <path d="M18,112 L16,80 C18,70 26,58 40,50 C50,44 62,40 76,39 L122,39 C128,39 132,43 132,50 L132,70 L282,70 L282,112 Z" fill="rgba(245,158,11,0.04)"/>
-        <!-- short hood / nose -->
-        <path d="M16,80 C18,70 22,62 30,56 L40,50" stroke-width="1.2"/>
-        <!-- cab window — large panoramic -->
-        <path d="M40,50 C50,44 62,40 76,39 L120,39 C126,39 130,43 130,52 L130,64 L34,64 Z" fill="rgba(245,158,11,0.1)" stroke-width="1.2"/>
-        <!-- cab door line -->
-        <line x1="88" y1="39" x2="88" y2="70"/>
-        <!-- aerodynamic roof spoiler -->
-        <path d="M76,39 C84,34 100,32 120,33 L130,39" stroke-dasharray="3,2" opacity="0.6"/>
-        <!-- chassis frame -->
-        <line x1="132" y1="74" x2="282" y2="74" stroke-dasharray="6,3" opacity="0.5"/>
-        <!-- fuel tank -->
-        <rect x="134" y="75" width="28" height="22" rx="3" fill="rgba(245,158,11,0.08)"/>
-        <!-- trailer connection -->
-        <rect x="168" y="60" width="110" height="28" rx="2" fill="rgba(245,158,11,0.06)"/>
-        <!-- front wheel -->
-        <circle cx="58" cy="100" r="20" fill="rgba(245,158,11,0.05)"/>
-        <circle cx="58" cy="100" r="12"/>
-        <line x1="58" y1="80" x2="58" y2="120"/><line x1="38" y1="100" x2="78" y2="100"/>
-        <line x1="44" y1="86" x2="72" y2="114"/><line x1="72" y1="86" x2="44" y2="114"/>
-        <!-- rear drive axle 1 -->
-        <circle cx="200" cy="100" r="20" fill="rgba(245,158,11,0.05)"/>
-        <circle cx="200" cy="100" r="12"/>
-        <line x1="200" y1="80" x2="200" y2="120"/><line x1="180" y1="100" x2="220" y2="100"/>
-        <line x1="186" y1="86" x2="214" y2="114"/><line x1="214" y1="86" x2="186" y2="114"/>
-        <!-- rear drive axle 2 -->
-        <circle cx="248" cy="100" r="20" fill="rgba(245,158,11,0.05)"/>
-        <circle cx="248" cy="100" r="12"/>
-        <line x1="248" y1="80" x2="248" y2="120"/><line x1="228" y1="100" x2="268" y2="100"/>
-        <line x1="234" y1="86" x2="262" y2="114"/><line x1="262" y1="86" x2="234" y2="114"/>
-        <!-- ground -->
-        <line x1="8" y1="120" x2="292" y2="120" opacity="0.25"/>
-        <!-- axle bar -->
-        <line x1="200" y1="100" x2="248" y2="100" stroke-width="2.5" opacity="0.4"/>
-      </g>
-    </svg>
-    <div class="side-card-info">
-      <div class="side-card-name">SITRAK C7H</div>
-      <div class="side-card-sub">420/480HP · MC13</div>
-      <span class="side-card-tag tag-truck">Parts →</span>
-    </div>
-  </a>
+  <!-- SITRAK C7H ANIMATED -->
+  <div class="side-card side-card-anim" style="cursor:default">
+  <svg id="st1" viewBox="0 0 300 132" xmlns="http://www.w3.org/2000/svg" width="100%" height="92px" style="display:block;background:#060c18">
+    <defs>
+      <filter id="gf_st1" x="-50%" y="-50%" width="200%" height="200%">
+        <feGaussianBlur stdDeviation="2.8" result="b"/>
+        <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+      </filter>
+    </defs>
+    <line x1="10" y1="120" x2="290" y2="120" stroke="rgba(245,158,11,.15)" stroke-width="1"/>
+    <!-- cab (sleeker, slightly longer nose) -->
+    <g id="st1-cab" filter="url(#gf_st1)" stroke="#f59e0b" stroke-width="1.8" fill="rgba(245,158,11,.04)" stroke-linejoin="round">
+      <path d="M 14,120 L 12,86 L 18,68 L 30,54 L 50,42 L 80,36 L 134,36 L 138,42 L 138,72 L 14,72 Z"/>
+    </g>
+    <!-- glass -->
+    <g id="st1-glass" filter="url(#gf_st1)" stroke="rgba(245,158,11,.75)" stroke-width="1.3" fill="rgba(245,158,11,.1)">
+      <path d="M 30,54 L 50,42 L 80,36 L 132,36 L 132,58 L 26,58 Z"/>
+      <line x1="90" y1="36" x2="90" y2="70" stroke="rgba(245,158,11,.35)" stroke-width=".9"/>
+      <!-- roof spoiler -->
+      <path d="M 80,36 C 96,30 114,28 132,29 L 138,36" fill="none" stroke-dasharray="3,2" opacity=".55"/>
+    </g>
+    <!-- trailer bed with 5th wheel -->
+    <g id="st1-cargo" filter="url(#gf_st1)" stroke="#f59e0b" stroke-width="1.5" fill="rgba(245,158,11,.04)">
+      <path d="M 138,44 L 278,44 L 280,48 L 280,76 L 138,76 Z"/>
+      <ellipse cx="246" cy="58" rx="14" ry="5" fill="rgba(245,158,11,.15)" stroke-width="1"/>
+      <line x1="138" y1="62" x2="280" y2="62" stroke="rgba(245,158,11,.3)" stroke-width=".7"/>
+    </g>
+    <!-- chassis -->
+    <g id="st1-frame" stroke="rgba(245,158,11,.4)" stroke-width="1" stroke-dasharray="8,4" fill="none">
+      <line x1="138" y1="80" x2="280" y2="80"/>
+    </g>
+    <!-- front wheel -->
+    <g id="st1-whf" filter="url(#gf_st1)" stroke="#f59e0b" stroke-width="1.6" fill="none">
+      <circle cx="52" cy="102" r="18" fill="rgba(245,158,11,.04)"/>
+      <circle cx="52" cy="102" r="11"/>
+      <circle cx="52" cy="102" r="4" fill="rgba(245,158,11,.3)" stroke-width="1.3"/>
+      <line x1="52" y1="84" x2="52" y2="120"/>
+      <line x1="34" y1="102" x2="70" y2="102"/>
+      <line x1="39" y1="89" x2="65" y2="115"/>
+      <line x1="65" y1="89" x2="39" y2="115"/>
+    </g>
+    <!-- rear axles -->
+    <g id="st1-whr" filter="url(#gf_st1)" stroke="#f59e0b" stroke-width="1.6" fill="none">
+      <circle cx="204" cy="102" r="18" fill="rgba(245,158,11,.04)"/>
+      <circle cx="204" cy="102" r="11"/>
+      <circle cx="204" cy="102" r="4" fill="rgba(245,158,11,.3)"/>
+      <line x1="204" y1="84" x2="204" y2="120"/>
+      <line x1="186" y1="102" x2="222" y2="102"/>
+      <line x1="191" y1="89" x2="217" y2="115"/>
+      <line x1="217" y1="89" x2="191" y2="115"/>
+      <circle cx="248" cy="102" r="18" fill="rgba(245,158,11,.04)"/>
+      <circle cx="248" cy="102" r="11"/>
+      <circle cx="248" cy="102" r="4" fill="rgba(245,158,11,.3)"/>
+      <line x1="248" y1="84" x2="248" y2="120"/>
+      <line x1="230" y1="102" x2="266" y2="102"/>
+      <line x1="235" y1="89" x2="261" y2="115"/>
+      <line x1="261" y1="89" x2="235" y2="115"/>
+      <line x1="204" y1="102" x2="248" y2="102" stroke-width="2.5" opacity=".4"/>
+    </g>
+    <!-- front detail -->
+    <g id="st1-front" filter="url(#gf_st1)" stroke="#f59e0b" stroke-width="1.1" fill="none">
+      <line x1="12" y1="86" x2="18" y2="68"/>
+      <line x1="12" y1="80" x2="26" y2="72"/>
+      <line x1="13" y1="70" x2="24" y2="63"/>
+    </g>
+  </svg>
+  <div class="side-card-info">
+    <div class="side-card-name">SITRAK C7H</div>
+    <div class="side-card-sub">6×4 · 430HP · MC13</div>
+    <span class="side-card-tag tag-truck">Truck Parts</span>
+  </div>
+  </div><!-- /st1 card -->
+
 
 </div>
 
@@ -1051,174 +1144,199 @@
 <!-- RIGHT SIDE PANEL -->
 <div class="home-side-panel home-side-right">
 
-  <!-- HOWO A7 wireframe -->
-  <a class="side-card side-card-svg" href="sinotruk-parts.html?model=howo-a7">
-    <svg viewBox="0 0 300 130" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
-      <defs><filter id="gw5"><feGaussianBlur stdDeviation="2.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
-      <rect width="300" height="130" fill="#060c18"/>
-      <g filter="url(#gw5)" stroke="#f59e0b" stroke-width="1.4" fill="none">
-        <!-- HOWO A7 — short bonnet nose, modern cab -->
-        <path d="M14,112 L13,82 C14,72 20,60 34,52 C44,46 56,41 70,40 L124,40 C130,40 134,44 134,50 L134,70 L284,70 L284,112 Z" fill="rgba(245,158,11,0.04)"/>
-        <!-- short bonnet -->
-        <path d="M13,82 C14,72 18,62 28,56 L34,52" stroke-width="1.2"/>
-        <!-- grille lines -->
-        <line x1="14" y1="75" x2="34" y2="72"/><line x1="14" y1="68" x2="30" y2="65"/>
-        <!-- cab window panoramic -->
-        <path d="M34,52 C44,46 56,41 70,40 L122,40 C128,40 132,44 132,52 L132,64 L30,64 Z" fill="rgba(245,158,11,0.1)" stroke-width="1.2"/>
-        <!-- cab door -->
-        <line x1="86" y1="40" x2="86" y2="70"/>
-        <!-- aerodynamic roof deflector -->
-        <path d="M70,40 C82,35 102,33 122,34 L132,40" stroke-dasharray="3,2" opacity="0.55"/>
-        <!-- chassis -->
-        <line x1="134" y1="74" x2="284" y2="74" stroke-dasharray="6,3" opacity="0.5"/>
-        <!-- fuel tank -->
-        <rect x="136" y="75" width="26" height="22" rx="3" fill="rgba(245,158,11,0.08)"/>
-        <!-- tractor bed -->
-        <path d="M166,65 L276,65 L280,68 L280,88 L166,88 Z" fill="rgba(245,158,11,0.06)"/>
-        <!-- 5th wheel coupling -->
-        <ellipse cx="248" cy="70" rx="14" ry="5" fill="rgba(245,158,11,0.15)" stroke-width="1"/>
-        <!-- front wheel -->
-        <circle cx="56" cy="100" r="20" fill="rgba(245,158,11,0.05)"/>
-        <circle cx="56" cy="100" r="12"/>
-        <line x1="56" y1="80" x2="56" y2="120"/><line x1="36" y1="100" x2="76" y2="100"/>
-        <line x1="42" y1="86" x2="70" y2="114"/><line x1="70" y1="86" x2="42" y2="114"/>
-        <!-- rear axle 1 -->
-        <circle cx="198" cy="100" r="20" fill="rgba(245,158,11,0.05)"/>
-        <circle cx="198" cy="100" r="12"/>
-        <line x1="198" y1="80" x2="198" y2="120"/><line x1="178" y1="100" x2="218" y2="100"/>
-        <line x1="184" y1="86" x2="212" y2="114"/><line x1="212" y1="86" x2="184" y2="114"/>
-        <!-- rear axle 2 -->
-        <circle cx="246" cy="100" r="20" fill="rgba(245,158,11,0.05)"/>
-        <circle cx="246" cy="100" r="12"/>
-        <line x1="246" y1="80" x2="246" y2="120"/><line x1="226" y1="100" x2="266" y2="100"/>
-        <line x1="232" y1="86" x2="260" y2="114"/><line x1="260" y1="86" x2="232" y2="114"/>
-        <line x1="198" y1="100" x2="246" y2="100" stroke-width="2.5" opacity="0.4"/>
-        <line x1="8" y1="120" x2="292" y2="120" opacity="0.25"/>
-      </g>
-    </svg>
-    <div class="side-card-info">
-      <div class="side-card-name">HOWO A7 Tractor</div>
-      <div class="side-card-sub">6×4 · 420HP</div>
-      <span class="side-card-tag tag-truck">Parts →</span>
-    </div>
-  </a>
+  <!-- HOWO A7 ANIMATED -->
+  <div class="side-card side-card-anim" style="cursor:default">
+  <svg id="hw2" viewBox="0 0 300 132" xmlns="http://www.w3.org/2000/svg" width="100%" height="92px" style="display:block;background:#060c18">
+    <defs><filter id="gf_hw2" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="2.8" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+    <line x1="10" y1="120" x2="290" y2="120" stroke="rgba(245,158,11,.15)" stroke-width="1"/>
+    <g id="hw2-cab" filter="url(#gf_hw2)" stroke="#f59e0b" stroke-width="1.8" fill="rgba(245,158,11,.04)" stroke-linejoin="round">
+      <path d="M 14,120 L 12,84 L 18,66 L 30,52 L 48,42 L 76,36 L 130,36 L 134,42 L 134,70 L 14,70 Z"/>
+    </g>
+    <g id="hw2-glass" filter="url(#gf_hw2)" stroke="rgba(245,158,11,.75)" stroke-width="1.3" fill="rgba(245,158,11,.1)">
+      <path d="M 30,52 L 48,42 L 76,36 L 128,36 L 128,58 L 26,58 Z"/>
+      <line x1="84" y1="36" x2="84" y2="70" stroke="rgba(245,158,11,.35)" stroke-width=".9"/>
+      <path d="M 76,36 C 90,30 112,28 128,30 L 134,36" fill="none" stroke-dasharray="3,2" opacity=".5"/>
+    </g>
+    <g id="hw2-cargo" filter="url(#gf_hw2)" stroke="#f59e0b" stroke-width="1.5" fill="rgba(245,158,11,.04)">
+      <rect x="134" y="42" width="148" height="60" rx="2"/>
+      <line x1="134" y1="62" x2="282" y2="62" stroke="rgba(245,158,11,.4)" stroke-width=".8"/>
+      <line x1="134" y1="82" x2="282" y2="82" stroke="rgba(245,158,11,.4)" stroke-width=".8"/>
+      <ellipse cx="248" cy="56" rx="14" ry="5" fill="rgba(245,158,11,.15)" stroke-width="1"/>
+    </g>
+    <g id="hw2-whf" filter="url(#gf_hw2)" stroke="#f59e0b" stroke-width="1.6" fill="none">
+      <circle cx="48" cy="102" r="18" fill="rgba(245,158,11,.04)"/><circle cx="48" cy="102" r="11"/>
+      <circle cx="48" cy="102" r="4" fill="rgba(245,158,11,.3)" stroke-width="1.3"/>
+      <line x1="48" y1="84" x2="48" y2="120"/><line x1="30" y1="102" x2="66" y2="102"/>
+      <line x1="35" y1="89" x2="61" y2="115"/><line x1="61" y1="89" x2="35" y2="115"/>
+    </g>
+    <g id="hw2-whr" filter="url(#gf_hw2)" stroke="#f59e0b" stroke-width="1.6" fill="none">
+      <circle cx="198" cy="102" r="18" fill="rgba(245,158,11,.04)"/><circle cx="198" cy="102" r="11"/>
+      <circle cx="198" cy="102" r="4" fill="rgba(245,158,11,.3)"/>
+      <line x1="198" y1="84" x2="198" y2="120"/><line x1="180" y1="102" x2="216" y2="102"/>
+      <line x1="185" y1="89" x2="211" y2="115"/><line x1="211" y1="89" x2="185" y2="115"/>
+      <circle cx="240" cy="102" r="18" fill="rgba(245,158,11,.04)"/><circle cx="240" cy="102" r="11"/>
+      <circle cx="240" cy="102" r="4" fill="rgba(245,158,11,.3)"/>
+      <line x1="240" y1="84" x2="240" y2="120"/><line x1="222" y1="102" x2="258" y2="102"/>
+      <line x1="227" y1="89" x2="253" y2="115"/><line x1="253" y1="89" x2="227" y2="115"/>
+      <line x1="198" y1="102" x2="240" y2="102" stroke-width="2.5" opacity=".4"/>
+    </g>
+    <g id="hw2-front" filter="url(#gf_hw2)" stroke="#f59e0b" stroke-width="1.1" fill="none">
+      <line x1="12" y1="84" x2="18" y2="66"/><line x1="12" y1="78" x2="24" y2="72"/>
+    </g>
+  </svg>
+  <div class="side-card-info">
+    <div class="side-card-name">HOWO A7 豪沃A7</div>
+    <div class="side-card-sub">6x4 Tractor · 420HP</div>
+    <span class="side-card-tag tag-truck">Truck Parts</span>
+  </div>
+  </div>
 
-  <!-- T7H wireframe -->
-  <a class="side-card side-card-svg" href="sinotruk-parts.html?model=t5g">
-    <svg viewBox="0 0 300 130" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
-      <defs><filter id="gw6"><feGaussianBlur stdDeviation="2.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
-      <rect width="300" height="130" fill="#060c18"/>
-      <g filter="url(#gw6)" stroke="#f59e0b" stroke-width="1.4" fill="none">
-        <!-- T7H — longer nose, sleek aerodynamic profile -->
-        <path d="M12,112 L10,85 C12,72 22,58 40,50 C54,44 68,40 84,39 L132,39 C138,39 142,43 142,50 L142,70 L285,70 L285,112 Z" fill="rgba(245,158,11,0.04)"/>
-        <!-- longer sloped hood -->
-        <path d="M10,85 C12,74 18,64 28,57 C34,53 40,50 40,50" stroke-width="1.2"/>
-        <!-- front fascia detail -->
-        <line x1="12" y1="78" x2="36" y2="72"/>
-        <line x1="11" y1="70" x2="32" y2="65"/>
-        <!-- low air dam -->
-        <path d="M10,88 L40,86" stroke-width="1" opacity="0.5"/>
-        <!-- cab window — wide panoramic -->
-        <path d="M40,50 C54,44 68,40 84,39 L130,39 C136,39 140,43 140,52 L140,64 L36,64 Z" fill="rgba(245,158,11,0.1)" stroke-width="1.2"/>
-        <line x1="96" y1="39" x2="96" y2="70"/>
-        <!-- roof spoiler -->
-        <path d="M84,39 C96,33 114,31 130,32 L140,39" stroke-dasharray="3,2" opacity="0.55"/>
-        <!-- chassis beam -->
-        <line x1="142" y1="74" x2="285" y2="74" stroke-dasharray="6,3" opacity="0.5"/>
-        <!-- side fairing panels -->
-        <rect x="144" y="74" width="32" height="24" rx="3" fill="rgba(245,158,11,0.08)"/>
-        <!-- cargo/trailer platform -->
-        <path d="M180,62 L278,62 L282,66 L282,88 L180,88 Z" fill="rgba(245,158,11,0.06)"/>
-        <!-- 5th wheel -->
-        <ellipse cx="250" cy="70" rx="12" ry="4" fill="rgba(245,158,11,0.15)" stroke-width="1"/>
-        <!-- front wheel -->
-        <circle cx="62" cy="100" r="20" fill="rgba(245,158,11,0.05)"/>
-        <circle cx="62" cy="100" r="12"/>
-        <line x1="62" y1="80" x2="62" y2="120"/><line x1="42" y1="100" x2="82" y2="100"/>
-        <line x1="48" y1="86" x2="76" y2="114"/><line x1="76" y1="86" x2="48" y2="114"/>
-        <!-- rear axle 1 -->
-        <circle cx="204" cy="100" r="20" fill="rgba(245,158,11,0.05)"/>
-        <circle cx="204" cy="100" r="12"/>
-        <line x1="204" y1="80" x2="204" y2="120"/><line x1="184" y1="100" x2="224" y2="100"/>
-        <line x1="190" y1="86" x2="218" y2="114"/><line x1="218" y1="86" x2="190" y2="114"/>
-        <!-- rear axle 2 -->
-        <circle cx="252" cy="100" r="20" fill="rgba(245,158,11,0.05)"/>
-        <circle cx="252" cy="100" r="12"/>
-        <line x1="252" y1="80" x2="252" y2="120"/><line x1="232" y1="100" x2="272" y2="100"/>
-        <line x1="238" y1="86" x2="266" y2="114"/><line x1="266" y1="86" x2="238" y2="114"/>
-        <line x1="204" y1="100" x2="252" y2="100" stroke-width="2.5" opacity="0.4"/>
-        <line x1="8" y1="120" x2="292" y2="120" opacity="0.25"/>
-      </g>
-    </svg>
-    <div class="side-card-info">
-      <div class="side-card-name">Sinotruk T7H</div>
-      <div class="side-card-sub">6×4 · 480HP · MC13</div>
-      <span class="side-card-tag tag-truck">Parts →</span>
-    </div>
-  </a>
+  <!-- T7H ANIMATED -->
+  <div class="side-card side-card-anim" style="cursor:default">
+  <svg id="t7h" viewBox="0 0 300 132" xmlns="http://www.w3.org/2000/svg" width="100%" height="92px" style="display:block;background:#060c18">
+    <defs><filter id="gf_t7h" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="2.8" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+    <line x1="10" y1="120" x2="290" y2="120" stroke="rgba(245,158,11,.15)" stroke-width="1"/>
+    <g id="t7h-cab" filter="url(#gf_t7h)" stroke="#f59e0b" stroke-width="1.8" fill="rgba(245,158,11,.04)" stroke-linejoin="round">
+      <path d="M 12,120 L 10,86 L 16,68 L 28,54 L 48,42 L 82,36 L 138,36 L 142,42 L 142,72 L 12,72 Z"/>
+    </g>
+    <g id="t7h-glass" filter="url(#gf_t7h)" stroke="rgba(245,158,11,.75)" stroke-width="1.3" fill="rgba(245,158,11,.1)">
+      <path d="M 28,54 L 48,42 L 82,36 L 136,36 L 136,58 L 24,58 Z"/>
+      <line x1="92" y1="36" x2="92" y2="72" stroke="rgba(245,158,11,.35)" stroke-width=".9"/>
+      <path d="M 82,36 C 100,29 118,27 136,28 L 142,36" fill="none" stroke-dasharray="3,2" opacity=".55"/>
+    </g>
+    <g id="t7h-cargo" filter="url(#gf_t7h)" stroke="#f59e0b" stroke-width="1.5" fill="rgba(245,158,11,.04)">
+      <path d="M 142,44 L 280,44 L 282,48 L 282,76 L 142,76 Z"/>
+      <ellipse cx="248" cy="58" rx="14" ry="5" fill="rgba(245,158,11,.15)" stroke-width="1"/>
+      <line x1="142" y1="62" x2="282" y2="62" stroke="rgba(245,158,11,.3)" stroke-width=".7"/>
+    </g>
+    <g id="t7h-frame" stroke="rgba(245,158,11,.4)" stroke-width="1" stroke-dasharray="8,4" fill="none">
+      <line x1="142" y1="80" x2="282" y2="80"/>
+    </g>
+    <g id="t7h-whf" filter="url(#gf_t7h)" stroke="#f59e0b" stroke-width="1.6" fill="none">
+      <circle cx="54" cy="102" r="18" fill="rgba(245,158,11,.04)"/><circle cx="54" cy="102" r="11"/>
+      <circle cx="54" cy="102" r="4" fill="rgba(245,158,11,.3)" stroke-width="1.3"/>
+      <line x1="54" y1="84" x2="54" y2="120"/><line x1="36" y1="102" x2="72" y2="102"/>
+      <line x1="41" y1="89" x2="67" y2="115"/><line x1="67" y1="89" x2="41" y2="115"/>
+    </g>
+    <g id="t7h-whr" filter="url(#gf_t7h)" stroke="#f59e0b" stroke-width="1.6" fill="none">
+      <circle cx="206" cy="102" r="18" fill="rgba(245,158,11,.04)"/><circle cx="206" cy="102" r="11"/>
+      <circle cx="206" cy="102" r="4" fill="rgba(245,158,11,.3)"/>
+      <line x1="206" y1="84" x2="206" y2="120"/><line x1="188" y1="102" x2="224" y2="102"/>
+      <line x1="193" y1="89" x2="219" y2="115"/><line x1="219" y1="89" x2="193" y2="115"/>
+      <circle cx="250" cy="102" r="18" fill="rgba(245,158,11,.04)"/><circle cx="250" cy="102" r="11"/>
+      <circle cx="250" cy="102" r="4" fill="rgba(245,158,11,.3)"/>
+      <line x1="250" y1="84" x2="250" y2="120"/><line x1="232" y1="102" x2="268" y2="102"/>
+      <line x1="237" y1="89" x2="263" y2="115"/><line x1="263" y1="89" x2="237" y2="115"/>
+      <line x1="206" y1="102" x2="250" y2="102" stroke-width="2.5" opacity=".4"/>
+    </g>
+    <g id="t7h-front" filter="url(#gf_t7h)" stroke="#f59e0b" stroke-width="1.1" fill="none">
+      <line x1="10" y1="86" x2="16" y2="68"/><line x1="11" y1="80" x2="26" y2="73"/>
+    </g>
+  </svg>
+  <div class="side-card-info">
+    <div class="side-card-name">Sinotruk T7H</div>
+    <div class="side-card-sub">6x4 · 480HP · MC13</div>
+    <span class="side-card-tag tag-truck">Truck Parts</span>
+  </div>
+  </div>
 
-  <!-- BYD Seagull wireframe (right) -->
-  <a class="side-card side-card-svg" href="byd-parts.html?model=seagull">
-    <svg viewBox="0 0 300 130" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
-      <defs><filter id="gw7"><feGaussianBlur stdDeviation="2.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
-      <rect width="300" height="130" fill="#060c18"/>
-      <g filter="url(#gw7)" stroke="#38bdf8" stroke-width="1.4" fill="none">
-        <path d="M28,112 L26,95 C27,86 34,78 46,72 C56,67 68,60 84,55 C96,51 108,47 122,46 L188,46 C200,46 212,52 220,62 C225,69 228,80 230,90 L232,112 Z" fill="rgba(56,189,248,0.04)"/>
-        <path d="M86,55 C96,51 108,47 122,46 L188,46 C199,46 210,51 216,60" fill="rgba(56,189,248,0.08)" stroke-width="1.2"/>
-        <line x1="155" y1="46" x2="156" y2="87"/>
-        <line x1="96" y1="87" x2="200" y2="87"/>
-        <path d="M28,95 C30,84 46,76 64,76 C82,76 94,84 96,95" stroke-width="1.2"/>
-        <path d="M196,90 C198,80 212,73 228,73 C244,73 254,81 254,92" stroke-width="1.2"/>
-        <circle cx="64" cy="104" r="18" fill="rgba(56,189,248,0.05)"/>
-        <circle cx="64" cy="104" r="11"/>
-        <line x1="64" y1="86" x2="64" y2="122"/><line x1="46" y1="104" x2="82" y2="104"/>
-        <line x1="51" y1="91" x2="77" y2="117"/><line x1="77" y1="91" x2="51" y2="117"/>
-        <circle cx="228" cy="104" r="18" fill="rgba(56,189,248,0.05)"/>
-        <circle cx="228" cy="104" r="11"/>
-        <line x1="228" y1="86" x2="228" y2="122"/><line x1="210" y1="104" x2="246" y2="104"/>
-        <line x1="215" y1="91" x2="241" y2="117"/><line x1="241" y1="91" x2="215" y2="117"/>
-        <line x1="8" y1="122" x2="292" y2="122" opacity="0.25"/>
-        <rect x="134" y="46" width="30" height="8" rx="1" fill="rgba(56,189,248,0.15)" stroke-width="0.8"/>
-      </g>
-    </svg>
-    <div class="side-card-info">
-      <div class="side-card-name">BYD Seagull 海鸥</div>
-      <div class="side-card-sub">Mini EV · 60/75kW</div>
-      <span class="side-card-tag tag-byd">EV Parts →</span>
-    </div>
-  </a>
+  <!-- BYD Seagull ANIMATED (right) -->
+  <div class="side-card side-card-anim" style="cursor:default">
+  <svg id="sg2" viewBox="0 0 300 132" xmlns="http://www.w3.org/2000/svg" width="100%" height="92px" style="display:block;background:#060c18">
+    <defs><filter id="gf_sg2" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="2.8" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+    <line x1="10" y1="122" x2="290" y2="122" stroke="rgba(56,189,248,.15)" stroke-width="1"/>
+    <g id="sg2-body" filter="url(#gf_sg2)" stroke="#38bdf8" stroke-width="1.8" fill="rgba(56,189,248,.04)" stroke-linejoin="round">
+      <path d="M 32,122 L 30,104 L 36,90 L 52,76 L 70,64 L 96,52 L 136,44 L 196,44 L 222,54 L 238,70 L 246,90 L 248,122 Z"/>
+    </g>
+    <g id="sg2-glass" filter="url(#gf_sg2)" stroke="rgba(56,189,248,.75)" stroke-width="1.3" fill="rgba(56,189,248,.1)">
+      <path d="M 70,64 L 96,52 L 136,44 L 192,44 L 192,72 L 70,72 Z"/>
+      <line x1="148" y1="44" x2="148" y2="72" stroke="rgba(56,189,248,.35)" stroke-width=".9"/>
+    </g>
+    <g id="sg2-roof" filter="url(#gf_sg2)" stroke="rgba(56,189,248,.6)" stroke-width="1.1" fill="none">
+      <line x1="96" y1="52" x2="222" y2="54"/><line x1="136" y1="44" x2="196" y2="44"/>
+    </g>
+    <g id="sg2-whf" filter="url(#gf_sg2)" stroke="#38bdf8" stroke-width="1.6" fill="none">
+      <circle cx="82" cy="104" r="18" fill="rgba(56,189,248,.04)"/><circle cx="82" cy="104" r="11"/>
+      <circle cx="82" cy="104" r="4" fill="rgba(56,189,248,.3)" stroke-width="1.3"/>
+      <line x1="82" y1="86" x2="82" y2="122"/><line x1="64" y1="104" x2="100" y2="104"/>
+      <line x1="69" y1="91" x2="95" y2="117"/><line x1="95" y1="91" x2="69" y2="117"/>
+    </g>
+    <g id="sg2-whr" filter="url(#gf_sg2)" stroke="#38bdf8" stroke-width="1.6" fill="none">
+      <circle cx="218" cy="104" r="18" fill="rgba(56,189,248,.04)"/><circle cx="218" cy="104" r="11"/>
+      <circle cx="218" cy="104" r="4" fill="rgba(56,189,248,.3)" stroke-width="1.3"/>
+      <line x1="218" y1="86" x2="218" y2="122"/><line x1="200" y1="104" x2="236" y2="104"/>
+      <line x1="205" y1="91" x2="231" y2="117"/><line x1="231" y1="91" x2="205" y2="117"/>
+    </g>
+    <g id="sg2-front" filter="url(#gf_sg2)" stroke="#38bdf8" stroke-width="1.2" fill="none">
+      <path d="M 30,104 L 36,90 L 52,76" fill="rgba(56,189,248,.04)"/>
+      <line x1="30" y1="97" x2="50" y2="90"/><line x1="32" y1="108" x2="56" y2="102"/>
+    </g>
+    <g id="sg2-rear" filter="url(#gf_sg2)" stroke="#38bdf8" stroke-width="1.2" fill="none">
+      <line x1="238" y1="70" x2="248" y2="90"/>
+      <line x1="238" y1="72" x2="248" y2="92" stroke="#7dd3fc" stroke-width="2.5" opacity=".7"/>
+    </g>
+    <g id="sg2-lines" stroke="rgba(56,189,248,.45)" stroke-width=".9" fill="none">
+      <line x1="52" y1="76" x2="238" y2="78"/>
+      <rect x="108" y="88" width="28" height="5" rx="2.5" stroke-width=".8"/>
+      <rect x="174" y="88" width="28" height="5" rx="2.5" stroke-width=".8"/>
+    </g>
+  </svg>
+  <div class="side-card-info">
+    <div class="side-card-name">BYD Seagull 海鸥</div>
+    <div class="side-card-sub">Mini EV · 60/75kW</div>
+    <span class="side-card-tag tag-byd">EV Parts</span>
+  </div>
+  </div>
 
-  <!-- BYD Song Plus wireframe (right) -->
-  <a class="side-card side-card-svg" href="byd-parts.html?model=song">
-    <svg viewBox="0 0 300 130" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
-      <defs><filter id="gw8"><feGaussianBlur stdDeviation="2.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
-      <rect width="300" height="130" fill="#060c18"/>
-      <g filter="url(#gw8)" stroke="#38bdf8" stroke-width="1.4" fill="none">
-        <path d="M24,112 L22,90 C24,80 34,72 48,66 C58,61 72,54 88,49 C100,45 114,42 128,41 L192,41 C208,41 220,47 228,58 C233,65 236,76 238,88 L240,112 Z" fill="rgba(56,189,248,0.04)"/>
-        <path d="M90,49 C100,45 114,42 128,41 L192,41 C206,41 218,47 225,57" fill="rgba(56,189,248,0.08)" stroke-width="1.2"/>
-        <line x1="160" y1="41" x2="161" y2="84"/>
-        <line x1="96" y1="84" x2="206" y2="84"/>
-        <line x1="130" y1="41" x2="192" y2="41" stroke-dasharray="4,3" opacity="0.5"/>
-        <path d="M24,90 C26,78 44,70 64,70 C84,70 96,78 98,90" stroke-width="1.2"/>
-        <path d="M200,88 C202,77 218,70 236,70 C252,70 262,78 262,90" stroke-width="1.2"/>
-        <circle cx="64" cy="100" r="20" fill="rgba(56,189,248,0.05)"/>
-        <circle cx="64" cy="100" r="12"/>
-        <line x1="64" y1="80" x2="64" y2="120"/><line x1="44" y1="100" x2="84" y2="100"/>
-        <line x1="50" y1="86" x2="78" y2="114"/><line x1="78" y1="86" x2="50" y2="114"/>
-        <circle cx="236" cy="100" r="20" fill="rgba(56,189,248,0.05)"/>
-        <circle cx="236" cy="100" r="12"/>
-        <line x1="236" y1="80" x2="236" y2="120"/><line x1="216" y1="100" x2="256" y2="100"/>
-        <line x1="222" y1="86" x2="250" y2="114"/><line x1="250" y1="86" x2="222" y2="114"/>
-        <line x1="8" y1="120" x2="292" y2="120" opacity="0.25"/>
-        <rect x="138" y="41" width="30" height="8" rx="1" fill="rgba(56,189,248,0.15)" stroke-width="0.8"/>
-      </g>
-    </svg>
-    <div class="side-card-info">
-      <div class="side-card-name">BYD Song Plus 宋Plus</div>
-      <div class="side-card-sub">EV SUV · 135kW</div>
-      <span class="side-card-tag tag-byd">EV Parts →</span>
-    </div>
-  </a>
+  <!-- BYD Song Plus ANIMATED (right) -->
+  <div class="side-card side-card-anim" style="cursor:default">
+  <svg id="sp2" viewBox="0 0 300 132" xmlns="http://www.w3.org/2000/svg" width="100%" height="92px" style="display:block;background:#060c18">
+    <defs><filter id="gf_sp2" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="2.8" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+    <line x1="10" y1="122" x2="290" y2="122" stroke="rgba(56,189,248,.15)" stroke-width="1"/>
+    <g id="sp2-body" filter="url(#gf_sp2)" stroke="#38bdf8" stroke-width="1.8" fill="rgba(56,189,248,.04)" stroke-linejoin="round">
+      <path d="M 28,122 L 26,102 L 32,86 L 50,70 L 72,58 L 96,46 L 138,38 L 198,38 L 228,48 L 244,64 L 250,86 L 252,122 Z"/>
+    </g>
+    <g id="sp2-glass" filter="url(#gf_sp2)" stroke="rgba(56,189,248,.75)" stroke-width="1.3" fill="rgba(56,189,248,.1)">
+      <path d="M 72,58 L 96,46 L 138,38 L 196,38 L 196,66 L 72,66 Z"/>
+      <line x1="148" y1="38" x2="148" y2="66" stroke="rgba(56,189,248,.35)" stroke-width=".9"/>
+    </g>
+    <g id="sp2-roof" filter="url(#gf_sp2)" stroke="rgba(56,189,248,.6)" stroke-width="1" fill="none">
+      <line x1="100" y1="38" x2="196" y2="38"/>
+      <line x1="118" y1="31" x2="182" y2="31"/>
+      <line x1="118" y1="38" x2="118" y2="31"/><line x1="150" y1="38" x2="150" y2="31"/><line x1="182" y1="38" x2="182" y2="31"/>
+    </g>
+    <g id="sp2-whf" filter="url(#gf_sp2)" stroke="#38bdf8" stroke-width="1.6" fill="none">
+      <circle cx="78" cy="103" r="19" fill="rgba(56,189,248,.04)"/><circle cx="78" cy="103" r="12"/>
+      <circle cx="78" cy="103" r="4" fill="rgba(56,189,248,.3)" stroke-width="1.3"/>
+      <line x1="78" y1="84" x2="78" y2="122"/><line x1="59" y1="103" x2="97" y2="103"/>
+      <line x1="65" y1="90" x2="91" y2="116"/><line x1="91" y1="90" x2="65" y2="116"/>
+    </g>
+    <g id="sp2-whr" filter="url(#gf_sp2)" stroke="#38bdf8" stroke-width="1.6" fill="none">
+      <circle cx="222" cy="103" r="19" fill="rgba(56,189,248,.04)"/><circle cx="222" cy="103" r="12"/>
+      <circle cx="222" cy="103" r="4" fill="rgba(56,189,248,.3)" stroke-width="1.3"/>
+      <line x1="222" y1="84" x2="222" y2="122"/><line x1="203" y1="103" x2="241" y2="103"/>
+      <line x1="209" y1="90" x2="235" y2="116"/><line x1="235" y1="90" x2="209" y2="116"/>
+    </g>
+    <g id="sp2-front" filter="url(#gf_sp2)" stroke="#38bdf8" stroke-width="1.2" fill="none">
+      <path d="M 26,102 L 32,86 L 50,70 L 72,60"/>
+      <line x1="28" y1="94" x2="54" y2="84"/>
+    </g>
+    <g id="sp2-rear" filter="url(#gf_sp2)" stroke="#38bdf8" stroke-width="1.2" fill="none">
+      <line x1="244" y1="64" x2="252" y2="86"/>
+      <line x1="244" y1="66" x2="252" y2="88" stroke="#7dd3fc" stroke-width="2.5" opacity=".7"/>
+    </g>
+    <g id="sp2-lines" stroke="rgba(56,189,248,.45)" stroke-width=".9" fill="none">
+      <line x1="50" y1="70" x2="244" y2="72"/>
+      <rect x="106" y="85" width="28" height="5" rx="2.5" stroke-width=".8"/>
+      <rect x="170" y="85" width="28" height="5" rx="2.5" stroke-width=".8"/>
+    </g>
+  </svg>
+  <div class="side-card-info">
+    <div class="side-card-name">BYD Song Plus 宋Plus</div>
+    <div class="side-card-sub">EV SUV · 135kW</div>
+    <span class="side-card-tag tag-byd">EV Parts</span>
+  </div>
+  </div>
 
 </div>
 
@@ -2155,6 +2273,137 @@
   } else {
     setTimeout(loop, 600);
   }
+})();
+</script>
+<script>
+/* ── Side-panel assembly animations ── */
+(function(){
+  function makeLoop(parts, holdMs, startDelay) {
+    var maxD = 0;
+    parts.forEach(function(p){ if(p.d > maxD) maxD = p.d; });
+
+    function scatter() {
+      parts.forEach(function(p){
+        var el = document.getElementById(p.id);
+        if(!el) return;
+        el.style.transition = 'none';
+        el.style.transform  = 'translate('+p.dx+'px,'+p.dy+'px) rotate('+(p.rot||0)+'deg)';
+        el.style.opacity    = '0';
+      });
+    }
+    function assemble() {
+      var el0 = parts[0] && document.getElementById(parts[0].id);
+      if(el0) el0.getBoundingClientRect();
+      parts.forEach(function(p){
+        var el = document.getElementById(p.id);
+        if(!el) return;
+        setTimeout(function(){
+          el.style.transition = 'transform 0.75s cubic-bezier(0.16,1,0.3,1), opacity 0.5s ease';
+          el.style.transform  = 'translate(0,0) rotate(0deg)';
+          el.style.opacity    = '1';
+        }, p.d);
+      });
+    }
+    function loop(){
+      scatter();
+      setTimeout(function tick(){
+        assemble();
+        setTimeout(function(){ scatter(); setTimeout(tick, 400); }, holdMs||4200);
+      }, 400);
+    }
+    setTimeout(loop, startDelay||600);
+  }
+
+  /* BYD Seagull (left) */
+  makeLoop([
+    {id:'sg1-body',  dx: 160, dy:   0, rot:  6, d:   0},
+    {id:'sg1-whf',   dx:-120, dy:  90, rot:-30, d:  50},
+    {id:'sg1-whr',   dx: 120, dy:  90, rot: 30, d:  80},
+    {id:'sg1-glass', dx:-100, dy: -90, rot:-12, d: 120},
+    {id:'sg1-roof',  dx:   0, dy:-110, rot:  0, d: 170},
+    {id:'sg1-front', dx:-180, dy:  10, rot: -5, d:  30},
+    {id:'sg1-rear',  dx: 180, dy:  10, rot:  5, d:  60},
+    {id:'sg1-lines', dx:  -40, dy: 40, rot:  0, d: 220},
+  ], 4000, 700);
+
+  /* BYD Song Plus (left) */
+  makeLoop([
+    {id:'sp1-body',  dx: 160, dy:   0, rot:  6, d:   0},
+    {id:'sp1-whf',   dx:-120, dy:  90, rot:-30, d:  50},
+    {id:'sp1-whr',   dx: 120, dy:  90, rot: 30, d:  80},
+    {id:'sp1-glass', dx:-100, dy: -90, rot:-12, d: 120},
+    {id:'sp1-roof',  dx:   0, dy:-120, rot:  0, d: 170},
+    {id:'sp1-front', dx:-180, dy:  10, rot: -5, d:  30},
+    {id:'sp1-rear',  dx: 180, dy:  10, rot:  5, d:  60},
+    {id:'sp1-lines', dx: -40, dy:  40, rot:  0, d: 220},
+  ], 4000, 1100);
+
+  /* HOWO (left) */
+  makeLoop([
+    {id:'hw1-cab',   dx:-180, dy:  0,  rot: -8, d:   0},
+    {id:'hw1-cargo', dx: 200, dy:  0,  rot:  6, d:  40},
+    {id:'hw1-whf',   dx:-120, dy: 90,  rot:-30, d:  70},
+    {id:'hw1-whr',   dx: 120, dy: 90,  rot: 30, d: 100},
+    {id:'hw1-glass', dx:-80,  dy:-100, rot:-10, d: 130},
+    {id:'hw1-front', dx:-200, dy:  20, rot: -5, d:  20},
+  ], 4000, 1500);
+
+  /* SITRAK C7H (left) */
+  makeLoop([
+    {id:'st1-cab',   dx:-180, dy:  0,  rot: -8, d:   0},
+    {id:'st1-cargo', dx: 200, dy:  0,  rot:  6, d:  40},
+    {id:'st1-whf',   dx:-120, dy: 90,  rot:-30, d:  70},
+    {id:'st1-whr',   dx: 120, dy: 90,  rot: 30, d: 100},
+    {id:'st1-glass', dx:-80,  dy:-100, rot:-10, d: 130},
+    {id:'st1-frame', dx: 80,  dy:  60, rot:  0, d: 160},
+    {id:'st1-front', dx:-200, dy:  20, rot: -5, d:  20},
+  ], 4000, 1900);
+
+  /* HOWO A7 (right) */
+  makeLoop([
+    {id:'hw2-cab',   dx:-180, dy:  0,  rot: -8, d:   0},
+    {id:'hw2-cargo', dx: 200, dy:  0,  rot:  6, d:  40},
+    {id:'hw2-whf',   dx:-120, dy: 90,  rot:-30, d:  70},
+    {id:'hw2-whr',   dx: 120, dy: 90,  rot: 30, d: 100},
+    {id:'hw2-glass', dx:-80,  dy:-100, rot:-10, d: 130},
+    {id:'hw2-front', dx:-200, dy:  20, rot: -5, d:  20},
+  ], 4000, 900);
+
+  /* T7H (right) */
+  makeLoop([
+    {id:'t7h-cab',   dx:-180, dy:  0,  rot: -8, d:   0},
+    {id:'t7h-cargo', dx: 200, dy:  0,  rot:  6, d:  40},
+    {id:'t7h-whf',   dx:-120, dy: 90,  rot:-30, d:  70},
+    {id:'t7h-whr',   dx: 120, dy: 90,  rot: 30, d: 100},
+    {id:'t7h-glass', dx:-80,  dy:-100, rot:-10, d: 130},
+    {id:'t7h-frame', dx: 80,  dy:  60, rot:  0, d: 160},
+    {id:'t7h-front', dx:-200, dy:  20, rot: -5, d:  20},
+  ], 4000, 1300);
+
+  /* BYD Seagull (right) */
+  makeLoop([
+    {id:'sg2-body',  dx: 160, dy:   0, rot:  6, d:   0},
+    {id:'sg2-whf',   dx:-120, dy:  90, rot:-30, d:  50},
+    {id:'sg2-whr',   dx: 120, dy:  90, rot: 30, d:  80},
+    {id:'sg2-glass', dx:-100, dy: -90, rot:-12, d: 120},
+    {id:'sg2-roof',  dx:   0, dy:-110, rot:  0, d: 170},
+    {id:'sg2-front', dx:-180, dy:  10, rot: -5, d:  30},
+    {id:'sg2-rear',  dx: 180, dy:  10, rot:  5, d:  60},
+    {id:'sg2-lines', dx: -40, dy:  40, rot:  0, d: 220},
+  ], 4000, 1700);
+
+  /* BYD Song Plus (right) */
+  makeLoop([
+    {id:'sp2-body',  dx: 160, dy:   0, rot:  6, d:   0},
+    {id:'sp2-whf',   dx:-120, dy:  90, rot:-30, d:  50},
+    {id:'sp2-whr',   dx: 120, dy:  90, rot: 30, d:  80},
+    {id:'sp2-glass', dx:-100, dy: -90, rot:-12, d: 120},
+    {id:'sp2-roof',  dx:   0, dy:-120, rot:  0, d: 170},
+    {id:'sp2-front', dx:-180, dy:  10, rot: -5, d:  30},
+    {id:'sp2-rear',  dx: 180, dy:  10, rot:  5, d:  60},
+    {id:'sp2-lines', dx: -40, dy:  40, rot:  0, d: 220},
+  ], 4000, 2100);
+
 })();
 </script>
 <script>
