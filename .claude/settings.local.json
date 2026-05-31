@@ -78,7 +78,8 @@
       "Bash(netlify deploy *)",
       "Skill(update-config)",
       "Skill(update-config:*)",
-      "mcp__Claude_Preview__preview_start"
+      "mcp__Claude_Preview__preview_start",
+      "PowerShell(\\(Get-Content \"C:\\\\Users\\\\Administrator\\\\Desktop\\\\独立站项目\\\\js\\\\i18n.js\" | Measure-Object -Line\\).Lines)"
     ],
     "defaultMode": "bypassPermissions"
   }

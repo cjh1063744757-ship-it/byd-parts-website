@@ -428,7 +428,7 @@
       <a href="contact.html" class="nav-link"><span data-i18n="nav.contact">Contact</span></a>
       <!-- Cart icon in nav -->
       <a href="inquiry-cart.html" class="nav-link cart-nav-link" style="position:relative;">
-        🛒 Cart
+        <span data-i18n="nav.inquiryCart">🛒 Cart</span>
         <span id="cartBadge" class="cart-nav-badge" style="display:none;">0</span>
       </a>
     </nav>
@@ -454,12 +454,12 @@
     <div class="breadcrumb">
       <a href="index.html">Home</a>
       <span class="sep">/</span>
-      <a href="pricelist.html">Price List</a>
+      <a href="pricelist.html"><span data-i18n="cart.breadcrumb.pricelist">Price List</span></a>
       <span class="sep">/</span>
-      <span class="current">Inquiry Cart</span>
+      <span class="current" data-i18n="cart.breadcrumb.current">Inquiry Cart</span>
     </div>
-    <h1>🛒 Your Inquiry Cart</h1>
-    <p>Review your selected tires, set quantities, then submit your contact details.</p>
+    <h1 data-i18n="cart.hero.h1">🛒 Your Inquiry Cart</h1>
+    <p data-i18n="cart.hero.desc">Review your selected tires, set quantities, then submit your contact details.</p>
     <!-- Progress Steps -->
     <div style="display:flex;align-items:center;gap:8px;margin-top:20px;flex-wrap:wrap;">
       <span style="display:flex;align-items:center;gap:6px;background:rgba(255,255,255,0.15);border-radius:50px;padding:6px 14px;font-size:0.82rem;font-weight:600;">
@@ -493,7 +493,7 @@
               🛞 Selected Tires
               <span class="cart-count-tag" id="cartCountTag">0 items</span>
             </h2>
-            <button class="clear-cart-btn" onclick="confirmClear()">🗑 Clear All</button>
+            <button class="clear-cart-btn" onclick="confirmClear()" data-i18n="cart.clear_all">🗑 Clear All</button>
           </div>
           <div id="cartItemsContainer">
             <!-- Items rendered by JS -->
@@ -502,11 +502,11 @@
 
         <div style="margin-top:16px; display:flex; gap:12px; align-items:center;">
           <a href="pricelist.html" style="display:inline-flex;align-items:center;gap:6px;font-size:0.88rem;color:var(--primary);font-weight:600;">
-            ← Continue Shopping
+            <span data-i18n="cart.continue_shopping">← Continue Shopping</span>
           </a>
           <span style="color:var(--gray-light);">|</span>
           <span style="font-size:0.82rem;color:var(--gray);">
-            💡 Tip: Default quantity is 100 pcs. Adjust per item below.
+            <span data-i18n="cart.tip">💡 Tip: Default quantity is 100 pcs. Adjust per item below.</span>
           </span>
         </div>
       </div>
@@ -515,8 +515,8 @@
       <div>
         <div class="contact-card">
           <div class="contact-card-header">
-            <h2>📋 Your Contact Information</h2>
-            <p>We'll respond with a formal quotation within 24 hours.</p>
+            <h2 data-i18n="cart.form.title">📋 Your Contact Information</h2>
+            <p data-i18n="cart.form.subtitle">We'll respond with a formal quotation within 24 hours.</p>
           </div>
           <form class="contact-form" id="contactForm" name="tire-inquiry" netlify netlify-honeypot="bot-field" onsubmit="handleSubmit(event)">
             <input type="hidden" name="form-name" value="tire-inquiry" />
@@ -524,14 +524,14 @@
             <input type="hidden" name="cart-items" id="fCartItems" />
 
             <div class="form-group">
-              <label>Your Name / Company <span class="req">*</span></label>
-              <input type="text" id="fName" name="name" class="form-input" placeholder="e.g. John Smith / ABC Trading Co." required />
+              <label data-i18n="cart.form.name">Your Name / Company</label><label style="display:none"><span class="req">*</span></label>
+              <input type="text" id="fName" name="name" class="form-input" data-i18n-placeholder="cart.form.name.placeholder" placeholder="e.g. John Smith / ABC Trading Co." required />
             </div>
 
             <div class="form-group">
-              <label>Country / Region <span class="req">*</span></label>
+              <label><span data-i18n="cart.form.country">Country / Region</span> <span class="req">*</span></label>
               <select id="fCountry" name="country" class="form-select" required>
-                <option value="">— Select country —</option>
+                <option value="" data-i18n="cart.form.country.select">— Select country —</option>
                 <option>Zambia 🇿🇲</option>
                 <option>Singapore 🇸🇬</option>
                 <option>Australia 🇦🇺</option>
@@ -550,7 +550,7 @@
 
             <!-- Contact methods -->
             <div class="form-group">
-              <label>Contact Method <span class="req">*</span> <span style="font-weight:400;color:var(--gray);">(at least one)</span></label>
+              <label><span data-i18n="cart.form.contact_method">Contact Method</span> <span class="req">*</span> <span style="font-weight:400;color:var(--gray);" data-i18n="cart.form.contact_atleast">(at least one)</span></label>
             </div>
 
             <div class="form-group" style="margin-top:-10px;">
@@ -575,8 +575,8 @@
             </div>
 
             <div class="form-group">
-              <label>Additional Notes</label>
-              <textarea id="fNotes" name="notes" class="form-textarea" placeholder="Destination port, required certifications, delivery timeline, special requirements..."></textarea>
+              <label data-i18n="cart.form.notes">Additional Notes</label>
+              <textarea id="fNotes" name="notes" class="form-textarea" data-i18n-placeholder="cart.form.notes.placeholder" placeholder="Destination port, required certifications, delivery timeline, special requirements..."></textarea>
             </div>
 
             <!-- WhatsApp Send Button (Primary CTA) -->
@@ -592,17 +592,17 @@
             <!-- Divider -->
             <div style="display:flex;align-items:center;gap:12px;margin:4px 0 14px;">
               <div style="flex:1;height:1px;background:var(--border);"></div>
-              <span style="font-size:0.75rem;color:var(--gray);white-space:nowrap;">or submit by form</span>
+              <span style="font-size:0.75rem;color:var(--gray);white-space:nowrap;"><span data-i18n="cart.form.or">or submit by form</span></span>
               <div style="flex:1;height:1px;background:var(--border);"></div>
             </div>
 
             <button type="submit" class="submit-btn" id="submitBtn"
               style="background:var(--primary);">
-              <span>📩</span> Submit Inquiry (Email / Follow-up)
+              <span>📩</span> <span data-i18n="cart.form.submit_btn">Submit Inquiry (Email / Follow-up)</span>
             </button>
 
             <div class="form-privacy">
-              🔒 Your information is kept confidential and used only to respond to your inquiry.
+              <span data-i18n="cart.form.privacy">🔒 Your information is kept confidential and used only to respond to your inquiry.</span>
             </div>
           </form>
         </div>
@@ -615,7 +615,7 @@
 <div class="success-overlay" id="successOverlay">
   <div class="success-modal">
     <div class="success-icon">✓</div>
-    <h2>Inquiry Submitted!</h2>
+    <h2 data-i18n="cart.success.title">Inquiry Submitted!</h2>
     <p>Thank you! Our team will review your inquiry and get back to you within <strong>24 hours</strong>.</p>
     <p style="font-size:0.82rem;color:var(--gray-light);">Your inquiry reference:</p>
     <div class="inquiry-id-box" id="successId">INQ-XXXXXXXX</div>
@@ -624,8 +624,8 @@
       WhatsApp: <strong>+86 173 1830 5222</strong>
     </p>
     <div class="modal-actions">
-      <a href="pricelist.html" class="btn-modal-back">← Back to Price List</a>
-      <button class="btn-modal-new" onclick="startNewInquiry()">New Inquiry</button>
+      <a href="pricelist.html" class="btn-modal-back" data-i18n="cart.success.back">← Back to Price List</a>
+      <button class="btn-modal-new" onclick="startNewInquiry()" data-i18n="cart.success.new">New Inquiry</button>
     </div>
   </div>
 </div>
@@ -648,7 +648,7 @@
         <h4 data-i18n="footer.quickLinks">Quick Links</h4>
         <ul class="footer-links">
           <li><a href="index.html">Home</a></li>
-          <li><a href="pricelist.html">Price List</a></li>
+          <li><a href="pricelist.html"><span data-i18n="cart.breadcrumb.pricelist">Price List</span></a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </div>
@@ -876,6 +876,7 @@ renderCart();
 <script src="js/i18n.js"></script>
 </body>
 </html>
+
 
 
 

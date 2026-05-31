@@ -476,7 +476,7 @@
       <a href="faq.html" class="nav-link"><span data-i18n="nav.faq">FAQ</span></a>
       <a href="contact.html" class="nav-link"><span data-i18n="nav.contact">Contact</span></a>
       <a href="inquiry-cart.html" class="nav-link" style="position:relative;">
-        🛒 Inquiry Cart
+        <span data-i18n="nav.inquiryCart">🛒 Inquiry Cart</span>
         <span id="cartBadge" class="cart-nav-badge" style="display:none;">0</span>
       </a>
     </nav>
@@ -504,10 +504,10 @@
       <span class="sep">/</span>
       <a href="products.html">Products</a>
       <span class="sep">/</span>
-      <span class="current">Tire Price List</span>
+      <span class="current" data-i18n="pricelist.breadcrumb">Tire Price List</span>
     </div>
-    <h1>🛞 Tire Price List</h1>
-    <p>Factory-direct wholesale prices · FOB China · 131 models across 7 brands</p>
+    <h1 data-i18n="pricelist.hero.h1">🛞 Tire Price List</h1>
+    <p data-i18n="pricelist.hero.desc">Factory-direct wholesale prices · FOB China · 131 models across 7 brands</p>
   </div>
 </section>
 
@@ -517,11 +517,11 @@
 
     <!-- Stats -->
     <div class="pl-stats reveal">
-      <div class="pl-stat-chip">🏷️ Total Models: <strong id="totalCount">131</strong></div>
-      <div class="pl-stat-chip">🏭 Brands: <strong>7</strong></div>
-      <div class="pl-stat-chip">🚗 PCR Tires: <strong>80+</strong></div>
-      <div class="pl-stat-chip">🚛 TBR Trucks: <strong>16</strong></div>
-      <div class="pl-stat-chip">🏔️ AT/Off-Road: <strong>25+</strong></div>
+      <div class="pl-stat-chip"><span data-i18n="pricelist.stat1">🏷️ Total Models:</span> <strong id="totalCount">131</strong></div>
+      <div class="pl-stat-chip"><span data-i18n="pricelist.stat2">🏭 Brands:</span> <strong>7</strong></div>
+      <div class="pl-stat-chip"><span data-i18n="pricelist.stat3">🚗 PCR Tires:</span> <strong>80+</strong></div>
+      <div class="pl-stat-chip"><span data-i18n="pricelist.stat4">🚛 TBR Trucks:</span> <strong>16</strong></div>
+      <div class="pl-stat-chip"><span data-i18n="pricelist.stat5">🏔️ AT/Off-Road:</span> <strong>25+</strong></div>
     </div>
 
     <!-- Notice -->
@@ -535,17 +535,17 @@
     <div class="step-guide reveal">
       <div class="step-item active">
         <span class="step-num">1</span>
-        Browse Price List &amp; Add to Cart
+        <span data-i18n="pricelist.step1">Browse Price List &amp; Add to Cart</span>
       </div>
       <span class="step-arrow">›</span>
       <div class="step-item">
         <span class="step-num">2</span>
-        Review Your Selection
+        <span data-i18n="pricelist.step2">Review Your Selection</span>
       </div>
       <span class="step-arrow">›</span>
       <div class="step-item">
         <span class="step-num">3</span>
-        Submit Inquiry &amp; Get Quote
+        <span data-i18n="pricelist.step3">Submit Inquiry &amp; Get Quote</span>
       </div>
     </div>
 
@@ -564,13 +564,13 @@
 
     <!-- Brand Tabs -->
     <div class="brand-tabs reveal" id="brandTabs">
-      <button class="brand-tab active" data-brand="all">All Brands <span class="count" id="cnt-all">252</span></button>
+      <button class="brand-tab active" data-brand="all"><span data-i18n="pricelist.brand.all">All Brands</span> <span class="count" id="cnt-all">252</span></button>
       <button class="brand-tab" data-brand="royalblack">ROYALBLACK <span class="count" id="cnt-royalblack">67</span></button>
       <button class="brand-tab" data-brand="charmlion">CHARMLION <span class="count" id="cnt-charmlion">45</span></button>
       <button class="brand-tab" data-brand="grenlander">GRENLANDER <span class="count" id="cnt-grenlander">9</span></button>
       <button class="brand-tab" data-brand="galaxia">GALAXIA <span class="count" id="cnt-galaxia">4</span></button>
       <button class="brand-tab" data-brand="tough">奥骑士&amp;铁骐 <span class="count" id="cnt-tough">4</span></button>
-      <button class="brand-tab" data-brand="other">Other Brands <span class="count" id="cnt-other">6</span></button>
+      <button class="brand-tab" data-brand="other"><span data-i18n="pricelist.brand.other">Other Brands</span> <span class="count" id="cnt-other">6</span></button>
       <button class="brand-tab" data-brand="greforce">GREFORCE TBR <span class="count" id="cnt-greforce">16</span></button>
       <button class="brand-tab" data-brand="bayi">BAYI(八一) TBR <span class="count" id="cnt-bayi">39</span></button>
       <button class="brand-tab" data-brand="roadboss">ROADBOSS <span class="count" id="cnt-roadboss">11</span></button>
@@ -583,7 +583,7 @@
     <div class="pl-toolbar reveal">
       <div class="pl-search-wrap">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-        <input type="text" id="searchInput" class="pl-search" placeholder="e.g. R20  ·  175  ·  265/70R16  ·  ROYALBLACK AT" />
+        <input type="text" id="searchInput" class="pl-search" data-i18n-placeholder="pricelist.search.placeholder" placeholder="e.g. R20  ·  175  ·  265/70R16  ·  ROYALBLACK AT" />
       </div>
       <select id="catFilter" class="pl-select">
         <option value="all">All Categories</option>
@@ -594,7 +594,7 @@
         <option value="TBR">🚛 TBR (Truck &amp; Bus)</option>
         <option value="EV">⚡ EV (New Energy)</option>
       </select>
-      <span class="pl-count">Showing <strong id="visibleCount">131</strong> results</span>
+      <span class="pl-count"><span data-i18n="pricelist.showing">Showing</span> <strong id="visibleCount">131</strong> <span data-i18n="pricelist.results">results</span></span>
     </div>
 
     <!-- Table -->
@@ -603,12 +603,12 @@
         <thead>
           <tr>
             <th>#</th>
-            <th>Size / 规格</th>
-            <th>Brand / 品牌</th>
-            <th>Category</th>
+            <th data-i18n="pricelist.th.size">Size / 规格</th>
+            <th data-i18n="pricelist.th.brand">Brand / 品牌</th>
+            <th data-i18n="pricelist.th.cat">Category</th>
             <th>💱 Price USD (FOB) <small id="rateHdr" style="font-weight:400;opacity:0.85;font-size:0.7rem;white-space:nowrap;display:block;"></small></th>
-            <th>Notes</th>
-            <th>Add to Cart</th>
+            <th data-i18n="pricelist.th.notes">Notes</th>
+            <th data-i18n="pricelist.th.cart">Add to Cart</th>
           </tr>
         </thead>
         <tbody id="tableBody">
@@ -616,7 +616,7 @@
       </table>
       <div class="pl-empty" id="emptyState" style="display:none;">
         <div class="empty-icon">🔍</div>
-        <p>No results found. Try a different search term or filter.</p>
+        <p data-i18n="pricelist.empty">No results found. Try a different search term or filter.</p>
       </div>
     </div>
 
@@ -627,11 +627,11 @@
 <section class="cta-section">
   <div class="container">
     <div class="cta-content reveal">
-      <h2>Don't See What You Need?</h2>
-      <p>We have access to 200+ tire models. Send us your spec and target market — we'll source it for you.</p>
+      <h2 data-i18n="pricelist.cta.h2">Don't See What You Need?</h2>
+      <p data-i18n="pricelist.cta.desc">We have access to 200+ tire models. Send us your spec and target market — we'll source it for you.</p>
       <div class="cta-buttons">
-        <a href="contact.html" class="btn btn-white">📩 Send Custom Inquiry</a>
-        <a href="https://wa.me/8617318305222?text=Hello%2C%20I%20saw%20your%20tire%20price%20list%20and%20want%20to%20inquire." class="btn btn-outline-white" target="_blank">💬 WhatsApp Us</a>
+        <a href="contact.html" class="btn btn-white"><span data-i18n="pricelist.cta.btn1">📩 Send Custom Inquiry</span></a>
+        <a href="https://wa.me/8617318305222?text=Hello%2C%20I%20saw%20your%20tire%20price%20list%20and%20want%20to%20inquire." class="btn btn-outline-white" target="_blank"><span data-i18n="pricelist.cta.btn2">💬 WhatsApp Us</span></a>
       </div>
     </div>
   </div>
@@ -666,7 +666,7 @@
         </ul>
       </div>
       <div class="footer-col">
-        <h4>Tire Brands</h4>
+        <h4 data-i18n="pricelist.footer.brands">Tire Brands</h4>
         <ul class="footer-links">
           <li><a href="pricelist.html">ROYALBLACK (博莱克)</a></li>
           <li><a href="pricelist.html">CHARMLION (长路虹)</a></li>
@@ -1298,6 +1298,7 @@ document.getElementById('catFilter').addEventListener('change', e => {
 <script src="js/i18n.js"></script>
 </body>
 </html>
+
 
 
 
