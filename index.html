@@ -300,11 +300,182 @@
       .hero-stats { gap: 20px; }
     }
 
+    /* ══ SEARCH BAR ══ */
+    .home-search-bar {
+      background: #fff; border-bottom: 1px solid #e8edf3;
+      padding: 14px 0;
+    }
+    .home-search-inner {
+      max-width: 1280px; margin: 0 auto; padding: 0 24px;
+      display: flex; align-items: center; gap: 12px;
+    }
+    .home-search-form {
+      flex: 1; display: flex; border: 2px solid #1B3A6B;
+      border-radius: 8px; overflow: hidden;
+    }
+    .home-search-select {
+      padding: 0 14px; background: #f0f4fa; border: none;
+      border-right: 1px solid #d0daea; font-size: .85rem;
+      font-weight: 600; color: #1B3A6B; cursor: pointer; outline: none;
+      white-space: nowrap;
+    }
+    .home-search-input {
+      flex: 1; padding: 11px 16px; border: none; outline: none;
+      font-size: .92rem; color: #334155;
+    }
+    .home-search-btn {
+      background: #1B3A6B; color: #fff; border: none;
+      padding: 0 28px; font-size: .9rem; font-weight: 700;
+      cursor: pointer; transition: background .2s; white-space: nowrap;
+    }
+    .home-search-btn:hover { background: #22c55e; }
+
+    /* ══ THREE-COLUMN HOME LAYOUT ══ */
+    .home-layout {
+      display: flex; align-items: flex-start;
+      max-width: 1280px; margin: 0 auto;
+      padding: 20px 24px 32px; gap: 16px;
+    }
+
     /* ── CATEGORY SIDEBAR ── */
     .hero-with-sidebar {
-      display: flex; align-items: stretch; position: relative;
+      background: #060c18;
     }
     .hero-with-sidebar .hero { flex: 1; min-width: 0; }
+
+    /* ── LEFT SIDEBAR (reused inside home-layout) ── */
+    .home-sidebar {
+      width: 200px; flex-shrink: 0;
+    }
+    .home-sidebar .cat-sidebar {
+      width: 100%; max-height: none;
+      border-radius: 8px; border: 1px solid #e2e8f0;
+      background: #fff; overflow: visible;
+    }
+    .home-sidebar .cat-sidebar-title {
+      background: #1B3A6B; color: #fff; border-radius: 8px 8px 0 0;
+      padding: 12px 16px;
+    }
+    .home-sidebar .cat-item > a { color: #334155; border-bottom: 1px solid #f1f5f9; }
+    .home-sidebar .cat-item > a:hover,
+    .home-sidebar .cat-item:hover > a { background: #f0f7ff; color: #1B3A6B; }
+    .home-sidebar .cat-sub { background: #f8fafc; }
+    .home-sidebar .cat-sub a { color: #475569; }
+    .home-sidebar .cat-sub a:hover { color: #1B3A6B; background: #e8f0fe; }
+
+    /* ── CENTER: BANNER + MINI CARDS ── */
+    .home-center { flex: 1; min-width: 0; }
+
+    /* Big rotating banner */
+    .home-banner {
+      position: relative; border-radius: 10px; overflow: hidden;
+      height: 380px; background: #1a2540;
+    }
+    .banner-slide {
+      position: absolute; inset: 0; opacity: 0;
+      transition: opacity .7s ease;
+    }
+    .banner-slide.active { opacity: 1; }
+    .banner-slide img {
+      width: 100%; height: 100%; object-fit: cover;
+    }
+    .banner-slide-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(90deg, rgba(6,12,24,.75) 0%, rgba(6,12,24,.2) 60%, transparent 100%);
+    }
+    .banner-slide-text {
+      position: absolute; left: 36px; top: 50%; transform: translateY(-50%);
+    }
+    .banner-slide-text .bs-tag {
+      display: inline-block; background: #22c55e; color: #fff;
+      font-size: .72rem; font-weight: 700; letter-spacing: 1px;
+      padding: 3px 12px; border-radius: 20px; margin-bottom: 12px;
+    }
+    .banner-slide-text h2 {
+      font-size: clamp(1.4rem, 2.5vw, 2rem); color: #fff; font-weight: 800;
+      line-height: 1.2; margin-bottom: 8px; max-width: 360px;
+    }
+    .banner-slide-text p {
+      color: rgba(255,255,255,.8); font-size: .88rem; margin-bottom: 18px;
+    }
+    .banner-slide-text a {
+      display: inline-block; background: #fff; color: #1B3A6B;
+      font-weight: 700; font-size: .85rem; padding: 9px 22px;
+      border-radius: 6px; text-decoration: none; transition: background .2s;
+    }
+    .banner-slide-text a:hover { background: #22c55e; color: #fff; }
+    /* Dot indicators */
+    .banner-dots {
+      position: absolute; bottom: 14px; left: 50%; transform: translateX(-50%);
+      display: flex; gap: 7px;
+    }
+    .banner-dot {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: rgba(255,255,255,.45); cursor: pointer; transition: all .2s;
+    }
+    .banner-dot.active { background: #fff; transform: scale(1.3); }
+
+    /* 4 mini category cards below banner */
+    .home-mini-cards {
+      display: grid; grid-template-columns: repeat(4,1fr); gap: 10px;
+      margin-top: 12px;
+    }
+    .mini-card {
+      border-radius: 8px; overflow: hidden; position: relative;
+      height: 110px; cursor: pointer; border: 1px solid #e2e8f0;
+      transition: transform .2s, box-shadow .2s;
+    }
+    .mini-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,.12); }
+    .mini-card img { width: 100%; height: 100%; object-fit: cover; }
+    .mini-card-label {
+      position: absolute; bottom: 0; left: 0; right: 0;
+      background: linear-gradient(transparent, rgba(0,0,0,.7));
+      padding: 14px 10px 8px; font-size: .78rem; font-weight: 700; color: #fff;
+      text-align: center;
+    }
+
+    /* ── RIGHT PANEL ── */
+    .home-right { width: 220px; flex-shrink: 0; display: flex; flex-direction: column; gap: 12px; }
+    .home-right-card {
+      border-radius: 8px; overflow: hidden; border: 1px solid #e2e8f0;
+    }
+    .home-right-card img { width: 100%; height: 110px; object-fit: cover; display: block; }
+    .home-right-card-text {
+      padding: 10px 12px; background: #fff; font-size: .82rem; font-weight: 700; color: #fff;
+    }
+    .right-promo-label {
+      font-size: .72rem; font-weight: 700; color: #fff;
+      padding: 8px 12px;
+    }
+    .you-might-like {
+      background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 12px;
+    }
+    .yml-title {
+      font-size: .85rem; font-weight: 700; color: #1B3A6B; margin-bottom: 10px;
+      display: flex; align-items: center; gap: 6px;
+    }
+    .yml-item {
+      display: flex; gap: 10px; align-items: flex-start;
+      padding: 8px 0; border-bottom: 1px solid #f1f5f9; text-decoration: none;
+    }
+    .yml-item:last-child { border-bottom: none; padding-bottom: 0; }
+    .yml-item img { width: 56px; height: 56px; object-fit: cover; border-radius: 6px; flex-shrink: 0; }
+    .yml-item-info {}
+    .yml-item-name { font-size: .76rem; color: #334155; font-weight: 500; line-height: 1.35; }
+    .yml-item-price { font-size: .8rem; font-weight: 700; color: #1B3A6B; margin-top: 3px; }
+    .yml-item-moq { font-size: .68rem; color: #1B3A6B; }
+    .rfq-btn {
+      display: block; background: #fff; border: 2px solid #e53e3e;
+      border-radius: 8px; padding: 12px; text-align: center; text-decoration: none;
+      color: #e53e3e; font-weight: 700; font-size: .85rem;
+      transition: background .2s, color .2s;
+    }
+    .rfq-btn:hover { background: #e53e3e; color: #fff; }
+    .rfq-btn svg { vertical-align: middle; margin-right: 5px; }
+
+    @media (max-width: 1100px) { .home-right { display: none; } }
+    @media (max-width: 860px) { .home-sidebar { display: none; } .home-layout { padding: 12px; } }
+    @media (max-width: 640px) { .home-mini-cards { grid-template-columns: repeat(2,1fr); } .home-banner { height: 240px; } }
     .cat-sidebar {
       width: 220px; flex-shrink: 0;
       background: #060c18;
@@ -429,9 +600,208 @@
 </header>
 
 <!-- ============================================================
-     HERO + CATEGORY SIDEBAR
+     SEARCH BAR
      ============================================================ -->
-<div class="hero-with-sidebar">
+<div class="home-search-bar">
+  <div class="home-search-inner">
+    <div class="home-search-form">
+      <select class="home-search-select">
+        <option>All Products</option>
+        <option>Tires</option>
+        <option>BYD EV Parts</option>
+        <option>Sinotruk Parts</option>
+        <option>Car Accessories</option>
+      </select>
+      <input class="home-search-input" type="text" placeholder="Search tires, EV parts, truck parts..." />
+    </div>
+    <button class="home-search-btn" onclick="doSearch()">🔍 Search</button>
+  </div>
+</div>
+
+<!-- ============================================================
+     THREE-COLUMN HOME LAYOUT
+     ============================================================ -->
+<div class="home-layout">
+
+  <!-- LEFT: Category Sidebar -->
+  <div class="home-sidebar">
+    <nav class="cat-sidebar" id="catSidebar">
+      <div class="cat-sidebar-title">☰ Categories</div>
+      <div class="cat-item" id="cat-tires">
+        <a href="tires.html"><span><span class="cat-icon">🛞</span>Tires</span><span class="cat-arrow">›</span></a>
+        <div class="cat-sub">
+          <a href="tires.html?brand=royalblack">ROYALBLACK</a>
+          <a href="tires.html?brand=charmlion">CHARMLION</a>
+          <a href="tires.html?brand=grenlander">GRENLANDER</a>
+          <a href="tires.html?brand=tough">TOUGH</a>
+          <a href="tires.html?brand=doubleking">DOUBLEKING</a>
+          <a href="tires.html?brand=roadboss">ROADBOSS</a>
+          <a href="tires.html?brand=sportrak">SPORTRAK</a>
+          <a href="tires.html?brand=greforce">GREFORCE</a>
+        </div>
+      </div>
+      <div class="cat-item" id="cat-byd">
+        <a href="byd-parts.html"><span><span class="cat-icon">⚡</span>BYD EV Parts</span><span class="cat-arrow">›</span></a>
+        <div class="cat-sub">
+          <a href="byd-parts.html?model=han">BYD Han</a>
+          <a href="byd-parts.html?model=tang">BYD Tang</a>
+          <a href="byd-parts.html?model=atto3">BYD Atto 3</a>
+          <a href="byd-parts.html?model=song">BYD Song Plus</a>
+          <a href="byd-parts.html?model=dolphin">BYD Dolphin</a>
+          <a href="byd-parts.html?model=seal">BYD Seal</a>
+          <a href="byd-parts.html?model=seagull">BYD Seagull</a>
+          <a href="byd-parts.html?model=yuan">BYD Yuan Up</a>
+        </div>
+      </div>
+      <div class="cat-item" id="cat-sinotruk">
+        <a href="sinotruk-parts.html"><span><span class="cat-icon">🚛</span>Sinotruk Parts</span><span class="cat-arrow">›</span></a>
+        <div class="cat-sub">
+          <a href="sinotruk-parts.html?model=howo">HOWO</a>
+          <a href="sinotruk-parts.html?model=howo-a7">HOWO A7</a>
+          <a href="sinotruk-parts.html?model=steyr">Steyr</a>
+          <a href="sinotruk-parts.html?model=hohan">Hohan</a>
+          <a href="sinotruk-parts.html?model=sitrak">SITRAK C7H</a>
+          <a href="sinotruk-parts.html?model=t5g">T5G / T7H</a>
+        </div>
+      </div>
+      <div class="cat-item" id="cat-acc">
+        <a href="car-accessories.html"><span><span class="cat-icon">🚗</span>Car Accessories</span><span class="cat-arrow">›</span></a>
+        <div class="cat-sub">
+          <a href="car-accessories.html?cat=interior">Interior</a>
+          <a href="car-accessories.html?cat=exterior">Exterior</a>
+          <a href="car-accessories.html?cat=electronics">Electronics</a>
+          <a href="car-accessories.html?cat=safety">Safety</a>
+        </div>
+      </div>
+      <div class="cat-item"><a href="pricelist.html"><span><span class="cat-icon">💰</span>Price List</span><span class="cat-arrow">›</span></a></div>
+      <div class="cat-item"><a href="contact.html"><span><span class="cat-icon">📋</span>Get a Quote</span><span class="cat-arrow">›</span></a></div>
+    </nav>
+  </div>
+
+  <!-- CENTER: Banner + Mini Cards -->
+  <div class="home-center">
+    <!-- Auto-rotating banner -->
+    <div class="home-banner" id="homeBanner">
+      <div class="banner-slide active">
+        <img src="https://img.alicdn.com/imgextra/i4/2206686532409/O1CN01e1UJXZ1DSxn5cPSsS_!!2206686532409.jpg" alt="Tires" onerror="this.src='https://images.unsplash.com/photo-1565043666747-69f6646db940?auto=format&fit=crop&w=1200&q=80'" />
+        <div class="banner-slide-overlay"></div>
+        <div class="banner-slide-text">
+          <span class="bs-tag">BESTSELLER</span>
+          <h2>Premium Tires<br/>Factory Direct</h2>
+          <p>PCR · TBR · OTR · All Brands · FOB China</p>
+          <a href="tires.html">View More →</a>
+        </div>
+      </div>
+      <div class="banner-slide">
+        <img src="https://image.made-in-china.com/3f2j00RaloYpSrVihW/Original-and-Replacement-Byd-EV-Parts-Supplier-From-China-for-Song-Plus-Tang-Han-Seal-Dolphin-Atto3-Yuan-Plus-Electric-Models.webp" alt="BYD Parts" />
+        <div class="banner-slide-overlay"></div>
+        <div class="banner-slide-text">
+          <span class="bs-tag">TRENDING</span>
+          <h2>BYD EV Parts<br/>Genuine & OEM</h2>
+          <p>Han · Tang · Atto3 · Seal · Dolphin · Yuan Up</p>
+          <a href="byd-parts.html">View More →</a>
+        </div>
+      </div>
+      <div class="banner-slide">
+        <img src="https://image.made-in-china.com/202f0j00mzJbLplhbRuW/HOWO-Weichai-Sinotruk-Truck-371-336-420-New-Engine-Wd615-Wp10-Wp12-Wd615-36-Wd615-47-D12-42-Assembly.webp" alt="Sinotruk Parts" />
+        <div class="banner-slide-overlay"></div>
+        <div class="banner-slide-text">
+          <span class="bs-tag">HEAVY DUTY</span>
+          <h2>Sinotruk Parts<br/>HOWO & A7 Series</h2>
+          <p>Engine · Gearbox · Cabin · Axle · 500+ SKUs</p>
+          <a href="sinotruk-parts.html">View More →</a>
+        </div>
+      </div>
+      <div class="banner-slide">
+        <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=80" alt="Car Accessories" />
+        <div class="banner-slide-overlay"></div>
+        <div class="banner-slide-text">
+          <span class="bs-tag">NEW ARRIVALS</span>
+          <h2>Car Accessories<br/>Interior & Exterior</h2>
+          <p>Electronics · Safety · Styling · OEM Grade</p>
+          <a href="car-accessories.html">View More →</a>
+        </div>
+      </div>
+      <div class="banner-dots" id="bannerDots">
+        <div class="banner-dot active" onclick="goSlide(0)"></div>
+        <div class="banner-dot" onclick="goSlide(1)"></div>
+        <div class="banner-dot" onclick="goSlide(2)"></div>
+        <div class="banner-dot" onclick="goSlide(3)"></div>
+      </div>
+    </div>
+
+    <!-- 4 Mini Category Cards -->
+    <div class="home-mini-cards">
+      <a class="mini-card" href="tires.html">
+        <img src="https://images.unsplash.com/photo-1565043666747-69f6646db940?auto=format&fit=crop&w=400&q=80" alt="Tires" />
+        <div class="mini-card-label">Tires 轮胎</div>
+      </a>
+      <a class="mini-card" href="byd-parts.html">
+        <img src="https://image.made-in-china.com/3f2j00RaloYpSrVihW/Original-and-Replacement-Byd-EV-Parts-Supplier-From-China-for-Song-Plus-Tang-Han-Seal-Dolphin-Atto3-Yuan-Plus-Electric-Models.webp" alt="BYD Parts" />
+        <div class="mini-card-label">BYD Parts 汽配</div>
+      </a>
+      <a class="mini-card" href="sinotruk-parts.html">
+        <img src="https://image.made-in-china.com/202f0j00mzJbLplhbRuW/HOWO-Weichai-Sinotruk-Truck-371-336-420-New-Engine-Wd615-Wp10-Wp12-Wd615-36-Wd615-47-D12-42-Assembly.webp" alt="Truck Parts" />
+        <div class="mini-card-label">Truck Parts 卡车</div>
+      </a>
+      <a class="mini-card" href="car-accessories.html">
+        <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=400&q=80" alt="Accessories" />
+        <div class="mini-card-label">Accessories 配件</div>
+      </a>
+    </div>
+  </div>
+
+  <!-- RIGHT PANEL -->
+  <div class="home-right">
+    <!-- Promo card 1 -->
+    <a class="home-right-card" href="tires.html" style="display:block;text-decoration:none;">
+      <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=400&q=80" alt="Tire Promo" />
+      <div style="background:#1B3A6B;padding:10px 12px;">
+        <div style="font-size:.72rem;color:rgba(255,255,255,.7);font-weight:600;">FACTORY DIRECT</div>
+        <div style="font-size:.88rem;color:#fff;font-weight:700;">Triangle & Linglong<br/>Tire Wholesale</div>
+      </div>
+    </a>
+    <!-- Promo card 2 -->
+    <a class="home-right-card" href="byd-parts.html" style="display:block;text-decoration:none;">
+      <img src="https://image.made-in-china.com/3f2j00RaloYpSrVihW/Original-and-Replacement-Byd-EV-Parts-Supplier-From-China-for-Song-Plus-Tang-Han-Seal-Dolphin-Atto3-Yuan-Plus-Electric-Models.webp" alt="BYD Promo" />
+      <div style="background:#0f2044;padding:10px 12px;">
+        <div style="font-size:.72rem;color:rgba(255,255,255,.7);font-weight:600;">NEW ENERGY</div>
+        <div style="font-size:.88rem;color:#fff;font-weight:700;">BYD EV Parts<br/>Genuine & OEM</div>
+      </div>
+    </a>
+    <!-- You Might Like -->
+    <div class="you-might-like">
+      <div class="yml-title">⭐ You Might Like</div>
+      <a class="yml-item" href="tires.html">
+        <img src="https://images.unsplash.com/photo-1565043666747-69f6646db940?auto=format&fit=crop&w=120&q=80" alt="Tire" />
+        <div class="yml-item-info">
+          <div class="yml-item-name">PCR Passenger Car Tires 155/65R13–225/55R18</div>
+          <div class="yml-item-price">$18 – $65</div>
+          <div class="yml-item-moq">100 pcs (MOQ)</div>
+        </div>
+      </a>
+      <a class="yml-item" href="sinotruk-parts.html">
+        <img src="https://image.made-in-china.com/202f0j00mzJbLplhbRuW/HOWO-Weichai-Sinotruk-Truck-371-336-420-New-Engine-Wd615-Wp10-Wp12-Wd615-36-Wd615-47-D12-42-Assembly.webp" alt="Engine" />
+        <div class="yml-item-info">
+          <div class="yml-item-name">HOWO WD615 Engine Assembly</div>
+          <div class="yml-item-price">$1,200 – $2,800</div>
+          <div class="yml-item-moq">1 pc (MOQ)</div>
+        </div>
+      </a>
+    </div>
+    <!-- RFQ Button -->
+    <a class="rfq-btn" href="contact.html">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+      Request for Quotations
+    </a>
+  </div>
+
+</div><!-- end .home-layout -->
+
+<!-- ============================================================
+     HERO + CATEGORY SIDEBAR (original — now used for trust/stats)
+     ============================================================ -->
+<div class="hero-with-sidebar" style="display:none;">
 
 <!-- LEFT: Category Sidebar -->
 <nav class="cat-sidebar" id="catSidebar">
@@ -1360,6 +1730,34 @@
     setTimeout(loop, 600);
   }
 })();
+</script>
+<script>
+// Banner auto-rotate
+(function(){
+  var slides = document.querySelectorAll('.banner-slide');
+  var dots   = document.querySelectorAll('.banner-dot');
+  var cur = 0;
+  function goSlide(n){
+    slides[cur].classList.remove('active');
+    dots[cur].classList.remove('active');
+    cur = (n + slides.length) % slides.length;
+    slides[cur].classList.add('active');
+    dots[cur].classList.add('active');
+  }
+  window.goSlide = goSlide;
+  setInterval(function(){ goSlide(cur + 1); }, 4000);
+})();
+
+// Search
+function doSearch(){
+  var q = document.querySelector('.home-search-input').value.trim();
+  var cat = document.querySelector('.home-search-select').value;
+  if(!q) return;
+  var map = {'Tires':'tires.html','BYD EV Parts':'byd-parts.html','Sinotruk Parts':'sinotruk-parts.html','Car Accessories':'car-accessories.html'};
+  var page = map[cat] || 'products.html';
+  window.location.href = page + '?q=' + encodeURIComponent(q);
+}
+document.querySelector('.home-search-input').addEventListener('keydown', function(e){ if(e.key==='Enter') doSearch(); });
 </script>
 </body>
 </html>
