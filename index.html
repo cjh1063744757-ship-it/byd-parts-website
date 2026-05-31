@@ -32,7 +32,7 @@
 
     /* ── HERO: Tech split layout with car assembly ── */
     .hero {
-      position: relative; min-height: 92vh;
+      position: relative;
       display: flex; align-items: stretch;
       background: #060c18; overflow: hidden; padding: 0;
     }
@@ -49,16 +49,71 @@
     }
     .hero .container {
       position: relative; z-index: 2;
-      display: flex; align-items: center; gap: 40px;
-      padding-top: 72px; padding-bottom: 72px;
+      display: flex; flex-direction: column;
+      padding-top: 48px; padding-bottom: 0;
       width: 100%; max-width: 1280px;
+    }
+    /* Top row: text + car animation side by side */
+    .hero-top {
+      display: flex; align-items: center; gap: 40px;
+      padding-bottom: 40px;
     }
     /* Left text column */
     .hero-text { flex: 0 0 460px; min-width: 0; }
     /* Right animation column */
     .hero-car-stage {
-      flex: 1; position: relative; min-height: 360px;
+      flex: 1; position: relative; min-height: 300px;
       display: flex; flex-direction: column; align-items: center; justify-content: center;
+    }
+
+    /* ── PRODUCT CAROUSEL ── */
+    .hero-carousel {
+      width: 100%; position: relative; z-index: 3;
+      padding: 0 0 48px;
+    }
+    .hero-carousel-track {
+      display: flex; gap: 16px; overflow: hidden;
+    }
+    .hc-slide {
+      flex: 0 0 calc(25% - 12px);
+      border-radius: 12px; overflow: hidden; position: relative;
+      cursor: pointer; transition: transform .3s, box-shadow .3s;
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+    .hc-slide:hover { transform: translateY(-5px); box-shadow: 0 16px 40px rgba(0,0,0,.5); }
+    .hc-slide img {
+      width: 100%; height: 170px; object-fit: cover; display: block;
+      transition: transform .5s ease;
+    }
+    .hc-slide:hover img { transform: scale(1.06); }
+    .hc-slide-info {
+      position: absolute; bottom: 0; left: 0; right: 0;
+      background: linear-gradient(transparent, rgba(6,12,24,.92));
+      padding: 28px 14px 14px;
+    }
+    .hc-slide-label {
+      font-size: .78rem; font-weight: 700; color: #38bdf8;
+      text-transform: uppercase; letter-spacing: 1px;
+    }
+    .hc-slide-title {
+      font-size: .93rem; font-weight: 700; color: #fff; margin-top: 2px;
+    }
+    .hc-slide-tag {
+      display: inline-block; margin-top: 5px;
+      background: rgba(56,189,248,.18); border: 1px solid rgba(56,189,248,.35);
+      color: #7dd3fc; font-size: .68rem; font-weight: 600;
+      padding: 2px 8px; border-radius: 20px;
+    }
+    @media (max-width: 940px) {
+      .hero-top { flex-direction: column; gap: 20px; padding-bottom: 24px; }
+      .hero-text { flex: none; }
+      .hero-car-stage { width: 100%; min-height: 220px; }
+      .hc-slide { flex: 0 0 calc(50% - 8px); }
+    }
+    @media (max-width: 580px) {
+      .hc-slide { flex: 0 0 calc(85%); }
+      .hero-carousel-track { overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 8px; }
+      .hc-slide { scroll-snap-align: start; }
     }
     /* Car SVG */
     .car-assemble-svg { width: 100%; max-width: 660px; overflow: visible; }
@@ -461,6 +516,7 @@
 
 <section class="hero">
   <div class="container">
+  <div class="hero-top">
 
     <!-- LEFT: Text content -->
     <div class="hero-text">
@@ -692,11 +748,55 @@
       <div class="car-label" id="carLabel">YANGWANG U8 &nbsp;·&nbsp; 仰望 U8 &nbsp;·&nbsp; 1100 kW &nbsp;·&nbsp; ALL-WHEEL DRIVE</div>
     </div>
 
-  </div>
-  <div class="hero-scroll">
-    <span>Scroll Down</span>
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-  </div>
+  </div><!-- end .hero-top -->
+
+  <!-- PRODUCT CAROUSEL -->
+  <div class="hero-carousel">
+    <div class="hero-carousel-track">
+
+      <!-- Tires -->
+      <a class="hc-slide" href="tires.html">
+        <img src="https://img.alicdn.com/imgextra/i4/2206686532409/O1CN01e1UJXZ1DSxn5cPSsS_!!2206686532409.jpg" alt="Tires" />
+        <div class="hc-slide-info">
+          <div class="hc-slide-label">Category</div>
+          <div class="hc-slide-title">Tires 轮胎</div>
+          <span class="hc-slide-tag">PCR · TBR · OTR</span>
+        </div>
+      </a>
+
+      <!-- BYD / EV Parts -->
+      <a class="hc-slide" href="byd-parts.html">
+        <img src="https://image.made-in-china.com/3f2j00RaloYpSrVihW/Original-and-Replacement-Byd-EV-Parts-Supplier-From-China-for-Song-Plus-Tang-Han-Seal-Dolphin-Atto3-Yuan-Plus-Electric-Models.webp" alt="BYD EV Parts" />
+        <div class="hc-slide-info">
+          <div class="hc-slide-label">Category</div>
+          <div class="hc-slide-title">BYD EV Parts 汽配</div>
+          <span class="hc-slide-tag">Han · Tang · Atto3 · Seal</span>
+        </div>
+      </a>
+
+      <!-- Sinotruk / Truck Parts -->
+      <a class="hc-slide" href="sinotruk-parts.html">
+        <img src="https://image.made-in-china.com/202f0j00mzJbLplhbRuW/HOWO-Weichai-Sinotruk-Truck-371-336-420-New-Engine-Wd615-Wp10-Wp12-Wd615-36-Wd615-47-D12-42-Assembly.webp" alt="Sinotruk Truck Parts" />
+        <div class="hc-slide-info">
+          <div class="hc-slide-label">Category</div>
+          <div class="hc-slide-title">Truck Parts 卡车配件</div>
+          <span class="hc-slide-tag">HOWO · A7 · Steyr · Hohan</span>
+        </div>
+      </a>
+
+      <!-- Car Accessories / Interior -->
+      <a class="hc-slide" href="car-accessories.html">
+        <img src="https://img.alicdn.com/imgextra/i1/2206686532409/O1CN01ZvGAFH1DSxn7Yp4zy_!!2206686532409.jpg" alt="Car Accessories" onerror="this.src='https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=700&q=80'" />
+        <div class="hc-slide-info">
+          <div class="hc-slide-label">Category</div>
+          <div class="hc-slide-title">Car Accessories 内饰配件</div>
+          <span class="hc-slide-tag">Interior · Exterior · Electronics</span>
+        </div>
+      </a>
+
+    </div>
+  </div><!-- end hero-carousel -->
+
 </section>
 </div><!-- end .hero-with-sidebar -->
 
