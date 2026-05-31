@@ -483,6 +483,42 @@
     @media (max-width: 1100px) { .home-right { display: none; } }
     @media (max-width: 860px) { .home-sidebar { display: none; } .home-layout { padding: 12px; } }
     @media (max-width: 640px) { .home-mini-cards { grid-template-columns: repeat(2,1fr); } .home-banner { height: 240px; } }
+
+    /* ══ OUTER SIDE PANELS ══ */
+    .home-outer {
+      display: flex; align-items: flex-start; gap: 0;
+    }
+    .home-outer > .home-search-bar,
+    .home-outer > .home-layout { flex: 1; min-width: 0; }
+    .home-side-panel {
+      width: 160px; flex-shrink: 0;
+      display: flex; flex-direction: column; gap: 8px;
+      padding: 8px 6px; padding-top: 92px;
+    }
+    .side-card {
+      position: relative; border-radius: 10px; overflow: hidden;
+      height: 158px; text-decoration: none; display: block;
+      box-shadow: 0 3px 14px rgba(0,0,0,.13);
+      transition: transform .25s, box-shadow .25s;
+    }
+    .side-card:hover { transform: translateY(-4px); box-shadow: 0 10px 28px rgba(0,0,0,.22); }
+    .side-card img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .4s; }
+    .side-card:hover img { transform: scale(1.06); }
+    .side-card-info {
+      position: absolute; bottom: 0; left: 0; right: 0;
+      background: linear-gradient(transparent, rgba(0,0,0,.82));
+      padding: 20px 9px 8px;
+    }
+    .side-card-name { font-size: .72rem; font-weight: 700; color: #fff; line-height: 1.3; }
+    .side-card-sub  { font-size: .62rem; color: rgba(255,255,255,.72); margin-top: 2px; }
+    .side-card-tag  {
+      display: inline-block; margin-top: 4px;
+      font-size: .6rem; font-weight: 700; padding: 1px 7px; border-radius: 10px;
+    }
+    .tag-byd   { background: rgba(56,189,248,.25); color: #7dd3fc; border: 1px solid rgba(56,189,248,.4); }
+    .tag-truck { background: rgba(245,158,11,.22); color: #fcd34d; border: 1px solid rgba(245,158,11,.4); }
+    @media (max-width: 1400px) { .home-side-panel { width: 130px; } }
+    @media (max-width: 1200px) { .home-side-panel { display: none; } }
     .cat-sidebar {
       width: 220px; flex-shrink: 0;
       background: #060c18;
@@ -605,6 +641,62 @@
     </div>
   </div>
 </header>
+
+<!-- ============================================================
+     OUTER WRAPPER WITH SIDE PANELS
+     ============================================================ -->
+<div class="home-outer">
+
+<!-- LEFT SIDE PANEL -->
+<div class="home-side-panel home-side-left">
+  <!-- BYD Seagull -->
+  <a class="side-card" href="byd-parts.html?model=seagull">
+    <img src="https://image.made-in-china.com/2f1j00MaBbksCGvPuI/BYD-Seagull-EV-New-Energy-Automobiles-Hatchback-Electric-Car.jpg"
+         onerror="this.src='https://images.unsplash.com/photo-1593941707882-a5bba14938c7?auto=format&fit=crop&w=400&q=80'"
+         alt="BYD Seagull" />
+    <div class="side-card-info">
+      <div class="side-card-name">BYD Seagull 海鸥</div>
+      <div class="side-card-sub">Mini EV · 60/75kW</div>
+      <span class="side-card-tag tag-byd">EV Parts →</span>
+    </div>
+  </a>
+  <!-- BYD Song Plus -->
+  <a class="side-card" href="byd-parts.html?model=song">
+    <img src="https://image.made-in-china.com/2f1j00oJRbEKSCivuA/BYD-Song-Plus-EV-Electric-Car-New-Energy-SUV-Spare-Parts.jpg"
+         onerror="this.src='https://images.unsplash.com/photo-1580273916550-e323be2ae537?auto=format&fit=crop&w=400&q=80'"
+         alt="BYD Song Plus" />
+    <div class="side-card-info">
+      <div class="side-card-name">BYD Song Plus 宋Plus</div>
+      <div class="side-card-sub">EV SUV · 135kW</div>
+      <span class="side-card-tag tag-byd">EV Parts →</span>
+    </div>
+  </a>
+  <!-- HOWO Truck -->
+  <a class="side-card" href="sinotruk-parts.html?model=howo">
+    <img src="https://image.made-in-china.com/202f0j00xFGcePtWiCqO/Sinotruk-HOWO-6-4-Dump-Truck-with-336HP-371HP.webp"
+         onerror="this.src='https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=400&q=80'"
+         alt="HOWO Truck" />
+    <div class="side-card-info">
+      <div class="side-card-name">Sinotruk HOWO</div>
+      <div class="side-card-sub">6×4 · 336/371HP</div>
+      <span class="side-card-tag tag-truck">Parts →</span>
+    </div>
+  </a>
+  <!-- SITRAK Truck -->
+  <a class="side-card" href="sinotruk-parts.html?model=sitrak">
+    <img src="https://image.made-in-china.com/202f0j00RFGnwKtAoEqO/Sinotruk-Sitrak-C7h-Truck-Spare-Parts-Auto-Parts.webp"
+         onerror="this.src='https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=400&q=80'"
+         alt="SITRAK C7H" />
+    <div class="side-card-info">
+      <div class="side-card-name">SITRAK C7H</div>
+      <div class="side-card-sub">Heavy Duty · MC13</div>
+      <span class="side-card-tag tag-truck">Parts →</span>
+    </div>
+  </a>
+</div>
+
+<!-- MAIN CONTENT -->
+<div style="flex:1;min-width:0;">
 
 <!-- ============================================================
      SEARCH BAR
@@ -804,6 +896,58 @@
   </div>
 
 </div><!-- end .home-layout -->
+
+</div><!-- end main content -->
+
+<!-- RIGHT SIDE PANEL -->
+<div class="home-side-panel home-side-right">
+  <!-- HOWO A7 Truck -->
+  <a class="side-card" href="sinotruk-parts.html?model=howo-a7">
+    <img src="https://image.made-in-china.com/202f0j00eFGnwKtJoEpP/Sinotruk-HOWO-A7-Tractor-Truck-6X4-420HP-Trailer-Head.webp"
+         onerror="this.src='https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=400&q=80'"
+         alt="HOWO A7" />
+    <div class="side-card-info">
+      <div class="side-card-name">HOWO A7</div>
+      <div class="side-card-sub">Tractor · 420HP AWD</div>
+      <span class="side-card-tag tag-truck">Parts →</span>
+    </div>
+  </a>
+  <!-- T7H Truck -->
+  <a class="side-card" href="sinotruk-parts.html?model=t5g">
+    <img src="https://image.made-in-china.com/202f0j00TFGbwKmJoEpS/Sinotruk-T7H-Heavy-Duty-Truck-6X4-480HP-Tractor.webp"
+         onerror="this.src='https://images.unsplash.com/photo-1578662996442-48f60103fc96?auto=format&fit=crop&w=400&q=80'"
+         alt="T7H Truck" />
+    <div class="side-card-info">
+      <div class="side-card-name">Sinotruk T7H</div>
+      <div class="side-card-sub">Heavy Duty · 480HP</div>
+      <span class="side-card-tag tag-truck">Parts →</span>
+    </div>
+  </a>
+  <!-- BYD Seagull -->
+  <a class="side-card" href="byd-parts.html?model=seagull">
+    <img src="https://image.made-in-china.com/2f1j00MaBbksCGvPuI/BYD-Seagull-EV-New-Energy-Automobiles-Hatchback-Electric-Car.jpg"
+         onerror="this.src='https://images.unsplash.com/photo-1593941707882-a5bba14938c7?auto=format&fit=crop&w=400&q=80'"
+         alt="BYD Seagull" />
+    <div class="side-card-info">
+      <div class="side-card-name">BYD Seagull 海鸥</div>
+      <div class="side-card-sub">Mini EV · 60/75kW</div>
+      <span class="side-card-tag tag-byd">EV Parts →</span>
+    </div>
+  </a>
+  <!-- BYD Song Plus -->
+  <a class="side-card" href="byd-parts.html?model=song">
+    <img src="https://image.made-in-china.com/2f1j00oJRbEKSCivuA/BYD-Song-Plus-EV-Electric-Car-New-Energy-SUV-Spare-Parts.jpg"
+         onerror="this.src='https://images.unsplash.com/photo-1580273916550-e323be2ae537?auto=format&fit=crop&w=400&q=80'"
+         alt="BYD Song Plus" />
+    <div class="side-card-info">
+      <div class="side-card-name">BYD Song Plus 宋Plus</div>
+      <div class="side-card-sub">EV SUV · 135kW</div>
+      <span class="side-card-tag tag-byd">EV Parts →</span>
+    </div>
+  </a>
+</div>
+
+</div><!-- end .home-outer -->
 
 <!-- ============================================================
      HERO + CATEGORY SIDEBAR (original — now used for trust/stats)
