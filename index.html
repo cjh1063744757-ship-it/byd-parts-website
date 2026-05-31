@@ -53,16 +53,22 @@
       padding-top: 48px; padding-bottom: 0;
       width: 100%; max-width: 1280px;
     }
-    /* Top row: text + car animation side by side */
+    /* Top row: text + car animation side by side — compact */
     .hero-top {
-      display: flex; align-items: center; gap: 40px;
-      padding-bottom: 40px;
+      display: flex; align-items: center; gap: 32px;
+      padding-bottom: 28px;
     }
     /* Left text column */
-    .hero-text { flex: 0 0 460px; min-width: 0; }
+    .hero-text { flex: 0 0 420px; min-width: 0; }
+    .hero-text h1 { font-size: clamp(1.8rem, 3.5vw, 2.8rem); margin-bottom: 12px; }
+    .hero-text p  { font-size: .9rem; margin-bottom: 14px; }
+    .hero-trust-tags { margin-bottom: 14px; }
+    .hero-buttons { margin-bottom: 18px; }
+    .hero-stats { padding-top: 16px; }
+    .hero-stat-number { font-size: 1.5rem; }
     /* Right animation column */
     .hero-car-stage {
-      flex: 1; position: relative; min-height: 300px;
+      flex: 1; position: relative; min-height: 220px;
       display: flex; flex-direction: column; align-items: center; justify-content: center;
     }
 
@@ -82,7 +88,7 @@
     }
     .hc-slide:hover { transform: translateY(-5px); box-shadow: 0 16px 40px rgba(0,0,0,.5); }
     .hc-slide img {
-      width: 100%; height: 170px; object-fit: cover; display: block;
+      width: 100%; height: 280px; object-fit: cover; display: block;
       transition: transform .5s ease;
     }
     .hc-slide:hover img { transform: scale(1.06); }
