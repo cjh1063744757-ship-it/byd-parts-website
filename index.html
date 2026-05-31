@@ -280,7 +280,9 @@
       display: none; background: rgba(0,0,0,0.25);
       border-bottom: 1px solid rgba(255,255,255,0.05);
     }
-    .cat-item.open .cat-sub { display: block; }
+    .cat-item:hover .cat-sub { display: block; }
+    .cat-item:hover > a { background: rgba(56,189,248,0.12); color: #38bdf8; }
+    .cat-item:hover > a .cat-arrow { transform: rotate(90deg); opacity: 1; }
     .cat-sub-group { padding: 8px 0 4px; }
     .cat-sub-group-label {
       padding: 4px 16px 4px 40px;
@@ -376,7 +378,7 @@
 
   <!-- Tires -->
   <div class="cat-item" id="cat-tires">
-    <a href="tires.html" onclick="toggleCat(event,'cat-tires')">
+    <a href="tires.html">
       <span><span class="cat-icon">🛞</span>Tires</span>
       <span class="cat-arrow">›</span>
     </a>
@@ -399,7 +401,7 @@
 
   <!-- BYD Parts -->
   <div class="cat-item" id="cat-byd">
-    <a href="byd-parts.html" onclick="toggleCat(event,'cat-byd')">
+    <a href="byd-parts.html">
       <span><span class="cat-icon">⚡</span>BYD EV Parts</span>
       <span class="cat-arrow">›</span>
     </a>
@@ -424,7 +426,7 @@
 
   <!-- Sinotruk Parts -->
   <div class="cat-item" id="cat-sinotruk">
-    <a href="sinotruk-parts.html" onclick="toggleCat(event,'cat-sinotruk')">
+    <a href="sinotruk-parts.html">
       <span><span class="cat-icon">🚛</span>Sinotruk Parts</span>
       <span class="cat-arrow">›</span>
     </a>
@@ -448,7 +450,7 @@
 
   <!-- Car Accessories -->
   <div class="cat-item" id="cat-acc">
-    <a href="car-accessories.html" onclick="toggleCat(event,'cat-acc')">
+    <a href="car-accessories.html">
       <span><span class="cat-icon">🚗</span>Car Accessories</span>
       <span class="cat-arrow">›</span>
     </a>
@@ -1275,18 +1277,6 @@
     setTimeout(loop, 600);
   }
 })();
-</script>
-<script>
-function toggleCat(e, id) {
-  var item = document.getElementById(id);
-  var isOpen = item.classList.contains('open');
-  // close all
-  document.querySelectorAll('.cat-item.open').forEach(function(el){ el.classList.remove('open'); });
-  if (!isOpen) {
-    item.classList.add('open');
-    e.preventDefault();
-  }
-}
 </script>
 </body>
 </html>
