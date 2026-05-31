@@ -323,10 +323,10 @@
       <span class="sep">/</span>
       <a href="products.html">Products</a>
       <span class="sep">/</span>
-      <span class="current">Sinotruk OEM Spare Parts</span>
+      <span class="current" data-i18n="sinotruk.page.breadcrumb">Sinotruk OEM Spare Parts</span>
     </div>
-    <h1>🚛 Sinotruk OEM Spare Parts Catalog</h1>
-    <p>Factory-direct OEM &amp; aftermarket parts for HOWO, SITRAK &amp; HOWO A7 heavy trucks · FOB China · USD wholesale pricing</p>
+    <h1 data-i18n="sinotruk.page.h1">🚛 Sinotruk OEM Spare Parts Catalog</h1>
+    <p data-i18n="sinotruk.page.desc">Factory-direct OEM &amp; aftermarket parts for HOWO, SITRAK &amp; HOWO A7 heavy trucks · FOB China · USD wholesale pricing</p>
   </div>
 </section>
 
@@ -336,16 +336,16 @@
 
     <!-- Stats -->
     <div class="bp-stats reveal">
-      <div class="bp-stat-chip">🚛 Models: <strong>6</strong></div>
-      <div class="bp-stat-chip">🔩 Total Parts: <strong id="totalCount">0</strong></div>
-      <div class="bp-stat-chip">🏗️ Cabin &amp; Body: <strong>60+</strong></div>
-      <div class="bp-stat-chip">⚙️ Engine &amp; Drivetrain: <strong>80+</strong></div>
-      <div class="bp-stat-chip">🛑 Brakes &amp; Axle: <strong>70+</strong></div>
-      <div class="bp-stat-chip">🔧 Filters &amp; Maintenance: <strong>40+</strong></div>
+      <div class="bp-stat-chip"><span data-i18n="sinotruk.stats.models">🚛 Models:</span> <strong>6</strong></div>
+      <div class="bp-stat-chip"><span data-i18n="sinotruk.stats.total">🔩 Total Parts:</span> <strong id="totalCount">0</strong></div>
+      <div class="bp-stat-chip"><span data-i18n="sinotruk.stats.cabin">🏗️ Cabin &amp; Body:</span> <strong>60+</strong></div>
+      <div class="bp-stat-chip"><span data-i18n="sinotruk.stats.engine">⚙️ Engine &amp; Drivetrain:</span> <strong>80+</strong></div>
+      <div class="bp-stat-chip"><span data-i18n="sinotruk.stats.brakes">🛑 Brakes &amp; Axle:</span> <strong>70+</strong></div>
+      <div class="bp-stat-chip"><span data-i18n="sinotruk.stats.filters">🔧 Filters &amp; Maintenance:</span> <strong>40+</strong></div>
     </div>
 
     <!-- Notice -->
-    <div class="bp-notice reveal">
+    <div class="bp-notice reveal" data-i18n-html="parts.notice">
       ⚠️ <strong>Price Notice:</strong> All prices are FOB China wholesale reference prices in USD. Final pricing depends on order quantity and shipping destination.
       Prices subject to change without notice. Contact us for confirmed quotation.
       WhatsApp: <strong>+86 173 1830 5222</strong>
@@ -353,9 +353,9 @@
 
     <!-- Step Guide -->
     <div class="step-guide reveal">
-      <div class="step-item active"><span class="step-num">1</span>Browse Parts &amp; Add to Cart</div>
-      <div class="step-item"><span class="step-num">2</span>Review Inquiry List</div>
-      <div class="step-item"><span class="step-num">3</span>Send via WhatsApp / Form</div>
+      <div class="step-item active"><span class="step-num">1</span><span data-i18n="parts.step1">Browse Parts &amp; Add to Cart</span></div>
+      <div class="step-item"><span class="step-num">2</span><span data-i18n="parts.step2">Review Inquiry List</span></div>
+      <div class="step-item"><span class="step-num">3</span><span data-i18n="parts.step3">Send via WhatsApp / Form</span></div>
     </div>
 
     <!-- Toolbar -->
@@ -365,10 +365,11 @@
           <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
         </svg>
         <input type="text" class="bp-search" id="bpSearch"
-               placeholder="Search parts… e.g. gearbox · injector · brake drum · HW371-ENG" />
+               placeholder="Search parts… e.g. gearbox · injector · brake drum · HW371-ENG"
+               data-i18n-placeholder="parts.search.placeholder" />
       </div>
       <select class="bp-select" id="bpCatFilter">
-        <option value="">All Categories</option>
+        <option value="" data-i18n-option="parts.cat.all">All Categories</option>
         <option value="Cabin &amp; Body">Cabin &amp; Body</option>
         <option value="Engine &amp; Fuel System">Engine &amp; Fuel System</option>
         <option value="Transmission &amp; Drivetrain">Transmission &amp; Drivetrain</option>
@@ -382,7 +383,7 @@
         <option value="Wheels &amp; Tyres">Wheels &amp; Tyres</option>
         <option value="Filters &amp; Maintenance">Filters &amp; Maintenance</option>
       </select>
-      <div class="bp-count">Showing <strong id="shownCount">0</strong> parts</div>
+      <div class="bp-count"><span data-i18n="parts.showing">Showing</span> <strong id="shownCount">0</strong> <span data-i18n="parts.showing.suffix">parts</span></div>
     </div>
 
     <!-- Model Tabs -->
@@ -397,14 +398,14 @@
         <thead>
           <tr>
             <th>#</th>
-            <th>Category</th>
-            <th>Part Name</th>
-            <th>Part Number</th>
-            <th>Unit Price (USD)</th>
-            <th>MOQ</th>
-            <th>Condition</th>
-            <th>Notes</th>
-            <th>Inquire</th>
+            <th data-i18n="parts.th.cat">Category</th>
+            <th data-i18n="parts.th.name">Part Name</th>
+            <th data-i18n="parts.th.no">Part Number</th>
+            <th data-i18n="parts.th.price">Unit Price (USD)</th>
+            <th data-i18n="parts.th.moq">MOQ</th>
+            <th data-i18n="parts.th.cond">Condition</th>
+            <th data-i18n="parts.th.notes">Notes</th>
+            <th data-i18n="parts.th.inquire">Inquire</th>
           </tr>
         </thead>
         <tbody id="bpTbody"></tbody>
@@ -418,11 +419,11 @@
 <section class="cta-section">
   <div class="container">
     <div class="cta-content reveal">
-      <h2>Need Custom Sinotruk Parts Quote?</h2>
-      <p>Tell us your truck model, part list &amp; quantities — we'll confirm price and availability within 24 hours.</p>
+      <h2 data-i18n="sinotruk.cta.h2">Need Custom Sinotruk Parts Quote?</h2>
+      <p data-i18n="sinotruk.cta.desc">Tell us your truck model, part list &amp; quantities — we'll confirm price and availability within 24 hours.</p>
       <div class="cta-buttons">
-        <a href="https://wa.me/8617318305222?text=Hello%20CM%20IMPORT%26EXPORT!%20I%20need%20a%20quote%20for%20Sinotruk%20spare%20parts." class="btn btn-white" target="_blank">💬 WhatsApp Us Now</a>
-        <a href="contact.html" class="btn btn-outline-white">📩 Request Quote</a>
+        <a href="https://wa.me/8617318305222?text=Hello%20CM%20IMPORT%26EXPORT!%20I%20need%20a%20quote%20for%20Sinotruk%20spare%20parts." class="btn btn-white" target="_blank" data-i18n="sinotruk.cta.wa">💬 WhatsApp Us Now</a>
+        <a href="contact.html" class="btn btn-outline-white" data-i18n="sinotruk.cta.quote">📩 Request Quote</a>
       </div>
     </div>
   </div>
