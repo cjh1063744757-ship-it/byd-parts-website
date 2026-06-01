@@ -794,10 +794,11 @@ async function handleSubmit(e) {
   document.getElementById('fCartItems').value = cartSummary;
   try {
     const form = document.getElementById('contactForm');
-    await fetch('/', {
+    const data = new FormData(form);
+    data.append('access_key', '9ebe55cb-1296-42d3-91f7-91caf1cff8aa');
+    await fetch('https://api.web3forms.com/submit', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: new URLSearchParams(new FormData(form)).toString()
+      body: data
     });
   } catch(err) {
     console.warn('Netlify form post failed:', err);

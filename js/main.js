@@ -159,13 +159,20 @@ document.addEventListener('DOMContentLoaded', function () {
       submitBtn.disabled = true;
 
       try {
-        await fetch('/', {
+        const data = new FormData(form);
+        data.append('access_key', '9ebe55cb-1296-42d3-91f7-91caf1cff8aa');
+        const res = await fetch('https://api.web3forms.com/submit', {
           method: 'POST',
-          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-          body: new URLSearchParams(new FormData(form)).toString()
+          body: data
         });
+        const json = await res.json();
+        if (!json.success) throw new Error(json.message);
       } catch (err) {
         console.warn('Form submit error:', err);
+        submitBtn.textContent = 'Send Inquiry';
+        submitBtn.disabled = false;
+        alert('Failed to send. Please try again or contact us via WhatsApp.');
+        return;
       }
 
       const formContent = document.getElementById('formContent');
