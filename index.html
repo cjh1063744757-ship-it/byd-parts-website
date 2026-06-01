@@ -650,67 +650,164 @@
 <!-- LEFT SIDE PANEL -->
 <div class="home-side-panel home-side-left">
 
-  <!-- BYD Seagull ANIMATED ASSEMBLY -->
+  <!-- BYD Seagull ANIMATED ASSEMBLY (proper shape) -->
   <div class="side-card side-card-anim" style="cursor:default">
-  <svg id="sg1" viewBox="0 0 300 132" xmlns="http://www.w3.org/2000/svg" width="100%" height="92px" style="display:block;background:#060c18">
+  <svg id="sg1" viewBox="0 0 280 128" xmlns="http://www.w3.org/2000/svg" width="100%" height="92px" style="display:block;background:#060c18">
     <defs>
       <filter id="gf_sg1" x="-50%" y="-50%" width="200%" height="200%">
-        <feGaussianBlur stdDeviation="2.8" result="b"/>
+        <feGaussianBlur stdDeviation="2.4" result="b"/>
         <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
       </filter>
+      <filter id="gf_sg1b" x="-60%" y="-60%" width="220%" height="220%">
+        <feGaussianBlur stdDeviation="5" result="b"/>
+        <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+      </filter>
+      <linearGradient id="glG_sg1" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%" stop-color="#38bdf8" stop-opacity=".22"/>
+        <stop offset="100%" stop-color="#818cf8" stop-opacity=".07"/>
+      </linearGradient>
     </defs>
-    <line x1="10" y1="122" x2="290" y2="122" stroke="rgba(56,189,248,.15)" stroke-width="1"/>
-    <!-- body -->
-    <g id="sg1-body" filter="url(#gf_sg1)" stroke="#38bdf8" stroke-width="1.8" fill="rgba(56,189,248,.04)" stroke-linejoin="round">
-      <path d="M 32,122 L 30,104 L 36,90 L 52,76 L 70,64 L 96,52 L 136,44 L 196,44 L 222,54 L 238,70 L 246,90 L 248,122 Z"/>
+    <line x1="8" y1="123" x2="272" y2="123" stroke="rgba(56,189,248,.18)" stroke-width=".8"/>
+    <ellipse cx="140" cy="125" rx="120" ry="3" fill="rgba(56,189,248,.06)"/>
+
+    <!-- BODY — from right -->
+    <g id="sg1-body" filter="url(#gf_sg1)" stroke="#38bdf8" stroke-width="1.8"
+       fill="rgba(56,189,248,.04)" stroke-linejoin="round">
+      <path d="M 15,121 L 13,114 L 13,104 L 15,98 L 18,93 L 21,89
+               L 27,85 L 36,80 L 45,76 L 50,73
+               C 58,64 63,53 69,40
+               L 74,31 L 79,27
+               C 88,23 104,21 114,21
+               L 140,21
+               C 151,21 160,22 167,24
+               L 176,28 L 181,33 L 185,38
+               L 186,43 L 188,47 L 186,51
+               L 190,55 L 197,68 L 204,83
+               L 209,94 L 212,104 L 213,115 L 213,121
+               Z"/>
     </g>
-    <!-- windshield -->
-    <g id="sg1-glass" filter="url(#gf_sg1)" stroke="rgba(56,189,248,.75)" stroke-width="1.3" fill="rgba(56,189,248,.1)">
-      <path d="M 70,64 L 96,52 L 136,44 L 192,44 L 192,72 L 70,72 Z"/>
-      <line x1="148" y1="44" x2="148" y2="72" stroke="rgba(56,189,248,.35)" stroke-width=".9"/>
+
+    <!-- WHEEL ARCHES — from below -->
+    <g id="sg1-arches" filter="url(#gf_sg1)" stroke="#38bdf8" stroke-width="2.2"
+       fill="none" stroke-linecap="round">
+      <path d="M 31,121 A 19,19 0 0 1 69,121"/>
+      <path d="M 172,121 A 19,19 0 0 1 210,121"/>
     </g>
-    <!-- roof detail -->
-    <g id="sg1-roof" filter="url(#gf_sg1)" stroke="rgba(56,189,248,.6)" stroke-width="1.1" fill="none">
-      <line x1="96" y1="52" x2="222" y2="54"/>
-      <line x1="136" y1="44" x2="196" y2="44"/>
+
+    <!-- FRONT WHEEL — from bottom-left -->
+    <g id="sg1-whf" filter="url(#gf_sg1)" stroke="#38bdf8" fill="none">
+      <circle cx="50" cy="102" r="19" fill="rgba(56,189,248,.03)" stroke-width="1.6"/>
+      <circle cx="50" cy="102" r="13" fill="rgba(56,189,248,.06)" stroke-width="1.2"/>
+      <circle cx="50" cy="102" r="4" fill="rgba(56,189,248,.35)" stroke="#7dd3fc" stroke-width="1.3"/>
+      <line x1="50" y1="102" x2="50" y2="83" stroke-width="1.1" opacity=".9"/>
+      <line x1="50" y1="102" x2="67" y2="91" stroke-width="1.1" opacity=".9"/>
+      <line x1="50" y1="102" x2="68" y2="110" stroke-width="1.1" opacity=".9"/>
+      <line x1="50" y1="102" x2="57" y2="120" stroke-width="1.1" opacity=".9"/>
+      <line x1="50" y1="102" x2="43" y2="120" stroke-width="1.1" opacity=".9"/>
+      <line x1="50" y1="102" x2="32" y2="110" stroke-width="1.1" opacity=".9"/>
+      <line x1="50" y1="102" x2="33" y2="91" stroke-width="1.1" opacity=".9"/>
+      <circle cx="50" cy="102" r="9" fill="none" stroke="rgba(56,189,248,.28)" stroke-width=".8" stroke-dasharray="4 3"/>
     </g>
-    <!-- front wheel -->
-    <g id="sg1-whf" filter="url(#gf_sg1)" stroke="#38bdf8" stroke-width="1.6" fill="none">
-      <circle cx="82" cy="104" r="18" fill="rgba(56,189,248,.04)"/>
-      <circle cx="82" cy="104" r="11"/>
-      <circle cx="82" cy="104" r="4" fill="rgba(56,189,248,.3)" stroke-width="1.3"/>
-      <line x1="82" y1="86" x2="82" y2="122"/>
-      <line x1="64" y1="104" x2="100" y2="104"/>
-      <line x1="69" y1="91" x2="95" y2="117"/>
-      <line x1="95" y1="91" x2="69" y2="117"/>
+
+    <!-- REAR WHEEL — from bottom-right -->
+    <g id="sg1-whr" filter="url(#gf_sg1)" stroke="#38bdf8" fill="none">
+      <circle cx="191" cy="102" r="19" fill="rgba(56,189,248,.03)" stroke-width="1.6"/>
+      <circle cx="191" cy="102" r="13" fill="rgba(56,189,248,.06)" stroke-width="1.2"/>
+      <circle cx="191" cy="102" r="4" fill="rgba(56,189,248,.35)" stroke="#7dd3fc" stroke-width="1.3"/>
+      <line x1="191" y1="102" x2="191" y2="83" stroke-width="1.1" opacity=".9"/>
+      <line x1="191" y1="102" x2="208" y2="91" stroke-width="1.1" opacity=".9"/>
+      <line x1="191" y1="102" x2="209" y2="110" stroke-width="1.1" opacity=".9"/>
+      <line x1="191" y1="102" x2="198" y2="120" stroke-width="1.1" opacity=".9"/>
+      <line x1="191" y1="102" x2="184" y2="120" stroke-width="1.1" opacity=".9"/>
+      <line x1="191" y1="102" x2="173" y2="110" stroke-width="1.1" opacity=".9"/>
+      <line x1="191" y1="102" x2="174" y2="91" stroke-width="1.1" opacity=".9"/>
+      <circle cx="191" cy="102" r="9" fill="none" stroke="rgba(56,189,248,.28)" stroke-width=".8" stroke-dasharray="4 3"/>
     </g>
-    <!-- rear wheel -->
-    <g id="sg1-whr" filter="url(#gf_sg1)" stroke="#38bdf8" stroke-width="1.6" fill="none">
-      <circle cx="218" cy="104" r="18" fill="rgba(56,189,248,.04)"/>
-      <circle cx="218" cy="104" r="11"/>
-      <circle cx="218" cy="104" r="4" fill="rgba(56,189,248,.3)" stroke-width="1.3"/>
-      <line x1="218" y1="86" x2="218" y2="122"/>
-      <line x1="200" y1="104" x2="236" y2="104"/>
-      <line x1="205" y1="91" x2="231" y2="117"/>
-      <line x1="231" y1="91" x2="205" y2="117"/>
+
+    <!-- WINDSHIELD + FRONT DOOR GLASS — from top-left -->
+    <g id="sg1-windshield" filter="url(#gf_sg1)">
+      <path d="M 55,71 L 74,31 L 79,27 L 121,26 L 121,71 Z"
+            fill="url(#glG_sg1)" stroke="rgba(56,189,248,.72)" stroke-width="1.2"/>
+      <line x1="67" y1="40" x2="76" y2="29" stroke="rgba(56,189,248,.3)" stroke-width=".8"/>
     </g>
-    <!-- front fascia + lights -->
-    <g id="sg1-front" filter="url(#gf_sg1)" stroke="#38bdf8" stroke-width="1.2" fill="none">
-      <path d="M 30,104 L 36,90 L 52,76" fill="rgba(56,189,248,.04)"/>
-      <line x1="30" y1="97" x2="50" y2="90"/>
-      <line x1="32" y1="108" x2="56" y2="102"/>
+
+    <!-- B-PILLAR -->
+    <line id="sg1-bpillar" x1="121" y1="26" x2="121" y2="71"
+          stroke="#38bdf8" stroke-width="3.5" stroke-linecap="round" filter="url(#gf_sg1)" opacity=".5"/>
+
+    <!-- REAR DOOR GLASS — from above -->
+    <g id="sg1-rearglass" filter="url(#gf_sg1)">
+      <path d="M 121,26 L 166,25 L 166,71 L 121,71 Z"
+            fill="rgba(56,189,248,.1)" stroke="rgba(56,189,248,.6)" stroke-width="1.1"/>
+      <!-- small rear quarter triangle -->
+      <path d="M 166,25 L 175,28 L 175,47 L 166,47 Z"
+            fill="rgba(56,189,248,.08)" stroke="rgba(56,189,248,.48)" stroke-width="1"/>
     </g>
-    <!-- rear details -->
-    <g id="sg1-rear" filter="url(#gf_sg1)" stroke="#38bdf8" stroke-width="1.2" fill="none">
-      <line x1="238" y1="70" x2="248" y2="90"/>
-      <line x1="238" y1="72" x2="248" y2="92" stroke="#7dd3fc" stroke-width="2.5" opacity=".7"/>
-      <line x1="248" y1="90" x2="248" y2="108"/>
+
+    <!-- C-PILLAR + HATCH GLASS — from top-right -->
+    <g id="sg1-cpillar" filter="url(#gf_sg1)">
+      <!-- C-pillar dark area -->
+      <path d="M 175,28 L 181,33 L 185,38 L 185,71 L 166,71 L 166,47 L 175,47 Z"
+            fill="rgba(6,12,24,.78)" stroke="rgba(56,189,248,.52)" stroke-width="1"/>
+      <!-- rear hatch glass -->
+      <path d="M 185,38 L 186,43 L 188,47 L 197,68 L 204,83 L 186,83 L 181,64 L 181,50 Z"
+            fill="rgba(56,189,248,.13)" stroke="rgba(56,189,248,.62)" stroke-width="1.1"/>
     </g>
-    <!-- body lines -->
-    <g id="sg1-lines" stroke="rgba(56,189,248,.45)" stroke-width=".9" fill="none">
-      <line x1="52" y1="76" x2="238" y2="78"/>
-      <rect x="108" y="88" width="28" height="5" rx="2.5" stroke-width=".8"/>
-      <rect x="174" y="88" width="28" height="5" rx="2.5" stroke-width=".8"/>
+
+    <!-- FRONT FASCIA — headlights + grille + badge — from far left -->
+    <g id="sg1-front" filter="url(#gf_sg1)" stroke="#38bdf8" fill="none">
+      <!-- Upper DRL strip -->
+      <path d="M 13,98 L 20,92 L 25,89" stroke-width="2.8" stroke-linecap="round"/>
+      <path d="M 14,99 L 21,93 L 26,90" stroke="#7dd3fc" stroke-width=".9" opacity=".7"/>
+      <!-- Lower headlight -->
+      <path d="M 14,104 L 22,98 L 27,95" stroke-width="1.4" opacity=".6"/>
+      <!-- Front bumper -->
+      <path d="M 13,114 L 13,121 L 24,121 L 32,120 L 33,114"
+            fill="rgba(56,189,248,.07)" stroke-width="1"/>
+      <!-- Grille bars -->
+      <line x1="14" y1="116" x2="30" y2="115" stroke-width=".8" opacity=".5"/>
+      <line x1="14" y1="118" x2="31" y2="117" stroke-width=".8" opacity=".5"/>
+      <!-- BYD badge diamond -->
+      <path d="M 20,111 L 23,114 L 20,117 L 17,114 Z"
+            fill="rgba(56,189,248,.4)" stroke="#7dd3fc" stroke-width="1.4" filter="url(#gf_sg1b)"/>
+      <!-- Charging port -->
+      <circle cx="28" cy="80" r="3" stroke-width="1.1"/>
+      <circle cx="28" cy="80" r="1.2" fill="rgba(56,189,248,.4)"/>
+    </g>
+
+    <!-- REAR TAILLIGHT — full-width LED bar — from far right -->
+    <g id="sg1-rear" filter="url(#gf_sg1b)" stroke="#38bdf8" fill="none">
+      <line x1="186" y1="51" x2="213" y2="115" stroke-width="3.8" stroke-linecap="round"/>
+      <line x1="187" y1="52" x2="212" y2="113" stroke="rgba(255,255,255,.4)" stroke-width="1.1"/>
+      <line x1="186" y1="51" x2="213" y2="115" stroke="#7dd3fc" stroke-width="1" opacity=".55"/>
+      <!-- spoiler -->
+      <path d="M 184,38 L 186,43 L 184,51" stroke="rgba(56,189,248,.8)" stroke-width="1.4"
+            fill="none" filter="url(#gf_sg1)"/>
+    </g>
+
+    <!-- ROOF + CHARACTER LINES — from below -->
+    <g id="sg1-lines" stroke="rgba(56,189,248,.45)" fill="none">
+      <!-- roof crease -->
+      <path d="M 79,27 C 95,22 106,21 114,21 L 140,21 C 153,21 160,22 167,24"
+            stroke-width="1"/>
+      <!-- panoramic hint -->
+      <path d="M 86,24 C 100,19 112,18 122,18 L 140,18 C 152,18 159,19 165,21"
+            stroke-width=".7" stroke-dasharray="7 3" opacity=".5"/>
+      <!-- beltline -->
+      <line x1="55" y1="71" x2="187" y2="71" stroke-width="1.2"/>
+      <!-- lower crease -->
+      <path d="M 21,89 C 32,85 42,83 52,81 L 175,79 C 182,79 186,81 190,83"
+            stroke-width=".8" stroke-dasharray="6 3"/>
+      <!-- door handles -->
+      <rect x="76" y="83" width="12" height="3" rx="1.5" stroke-width=".9"/>
+      <rect x="138" y="82" width="12" height="3" rx="1.5" stroke-width=".9"/>
+      <!-- rocker panel -->
+      <path d="M 69,112 L 172,112 L 172,121 L 69,121 Z" fill="rgba(56,189,248,.06)" stroke-width=".8"/>
+    </g>
+
+    <!-- SIDE MIRROR -->
+    <g id="sg1-mirror" filter="url(#gf_sg1)" stroke="rgba(56,189,248,.65)" fill="rgba(56,189,248,.12)">
+      <path d="M 55,71 L 59,67 L 63,66 L 64,68 L 58,72 Z" stroke-width="1"/>
     </g>
   </svg>
   <div class="side-card-info">
@@ -1240,45 +1337,164 @@
   </div>
   </div>
 
-  <!-- BYD Seagull ANIMATED (right) -->
+  <!-- BYD Seagull ANIMATED ASSEMBLY right panel -->
   <div class="side-card side-card-anim" style="cursor:default">
-  <svg id="sg2" viewBox="0 0 300 132" xmlns="http://www.w3.org/2000/svg" width="100%" height="92px" style="display:block;background:#060c18">
-    <defs><filter id="gf_sg2" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="2.8" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
-    <line x1="10" y1="122" x2="290" y2="122" stroke="rgba(56,189,248,.15)" stroke-width="1"/>
-    <g id="sg2-body" filter="url(#gf_sg2)" stroke="#38bdf8" stroke-width="1.8" fill="rgba(56,189,248,.04)" stroke-linejoin="round">
-      <path d="M 32,122 L 30,104 L 36,90 L 52,76 L 70,64 L 96,52 L 136,44 L 196,44 L 222,54 L 238,70 L 246,90 L 248,122 Z"/>
+  <svg id="sg2" viewBox="0 0 280 128" xmlns="http://www.w3.org/2000/svg" width="100%" height="92px" style="display:block;background:#060c18">
+    <defs>
+      <filter id="gf_sg2" x="-50%" y="-50%" width="200%" height="200%">
+        <feGaussianBlur stdDeviation="2.4" result="b"/>
+        <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+      </filter>
+      <filter id="gf_sg2b" x="-60%" y="-60%" width="220%" height="220%">
+        <feGaussianBlur stdDeviation="5" result="b"/>
+        <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+      </filter>
+      <linearGradient id="glG_sg2" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%" stop-color="#38bdf8" stop-opacity=".22"/>
+        <stop offset="100%" stop-color="#818cf8" stop-opacity=".07"/>
+      </linearGradient>
+    </defs>
+    <line x1="8" y1="123" x2="272" y2="123" stroke="rgba(56,189,248,.18)" stroke-width=".8"/>
+    <ellipse cx="140" cy="125" rx="120" ry="3" fill="rgba(56,189,248,.06)"/>
+
+    <!-- BODY — from right -->
+    <g id="sg2-body" filter="url(#gf_sg2)" stroke="#38bdf8" stroke-width="1.8"
+       fill="rgba(56,189,248,.04)" stroke-linejoin="round">
+      <path d="M 15,121 L 13,114 L 13,104 L 15,98 L 18,93 L 21,89
+               L 27,85 L 36,80 L 45,76 L 50,73
+               C 58,64 63,53 69,40
+               L 74,31 L 79,27
+               C 88,23 104,21 114,21
+               L 140,21
+               C 151,21 160,22 167,24
+               L 176,28 L 181,33 L 185,38
+               L 186,43 L 188,47 L 186,51
+               L 190,55 L 197,68 L 204,83
+               L 209,94 L 212,104 L 213,115 L 213,121
+               Z"/>
     </g>
-    <g id="sg2-glass" filter="url(#gf_sg2)" stroke="rgba(56,189,248,.75)" stroke-width="1.3" fill="rgba(56,189,248,.1)">
-      <path d="M 70,64 L 96,52 L 136,44 L 192,44 L 192,72 L 70,72 Z"/>
-      <line x1="148" y1="44" x2="148" y2="72" stroke="rgba(56,189,248,.35)" stroke-width=".9"/>
+
+    <!-- WHEEL ARCHES — from below -->
+    <g id="sg2-arches" filter="url(#gf_sg2)" stroke="#38bdf8" stroke-width="2.2"
+       fill="none" stroke-linecap="round">
+      <path d="M 31,121 A 19,19 0 0 1 69,121"/>
+      <path d="M 172,121 A 19,19 0 0 1 210,121"/>
     </g>
-    <g id="sg2-roof" filter="url(#gf_sg2)" stroke="rgba(56,189,248,.6)" stroke-width="1.1" fill="none">
-      <line x1="96" y1="52" x2="222" y2="54"/><line x1="136" y1="44" x2="196" y2="44"/>
+
+    <!-- FRONT WHEEL — from bottom-left -->
+    <g id="sg2-whf" filter="url(#gf_sg2)" stroke="#38bdf8" fill="none">
+      <circle cx="50" cy="102" r="19" fill="rgba(56,189,248,.03)" stroke-width="1.6"/>
+      <circle cx="50" cy="102" r="13" fill="rgba(56,189,248,.06)" stroke-width="1.2"/>
+      <circle cx="50" cy="102" r="4" fill="rgba(56,189,248,.35)" stroke="#7dd3fc" stroke-width="1.3"/>
+      <line x1="50" y1="102" x2="50" y2="83" stroke-width="1.1" opacity=".9"/>
+      <line x1="50" y1="102" x2="67" y2="91" stroke-width="1.1" opacity=".9"/>
+      <line x1="50" y1="102" x2="68" y2="110" stroke-width="1.1" opacity=".9"/>
+      <line x1="50" y1="102" x2="57" y2="120" stroke-width="1.1" opacity=".9"/>
+      <line x1="50" y1="102" x2="43" y2="120" stroke-width="1.1" opacity=".9"/>
+      <line x1="50" y1="102" x2="32" y2="110" stroke-width="1.1" opacity=".9"/>
+      <line x1="50" y1="102" x2="33" y2="91" stroke-width="1.1" opacity=".9"/>
+      <circle cx="50" cy="102" r="9" fill="none" stroke="rgba(56,189,248,.28)" stroke-width=".8" stroke-dasharray="4 3"/>
     </g>
-    <g id="sg2-whf" filter="url(#gf_sg2)" stroke="#38bdf8" stroke-width="1.6" fill="none">
-      <circle cx="82" cy="104" r="18" fill="rgba(56,189,248,.04)"/><circle cx="82" cy="104" r="11"/>
-      <circle cx="82" cy="104" r="4" fill="rgba(56,189,248,.3)" stroke-width="1.3"/>
-      <line x1="82" y1="86" x2="82" y2="122"/><line x1="64" y1="104" x2="100" y2="104"/>
-      <line x1="69" y1="91" x2="95" y2="117"/><line x1="95" y1="91" x2="69" y2="117"/>
+
+    <!-- REAR WHEEL — from bottom-right -->
+    <g id="sg2-whr" filter="url(#gf_sg2)" stroke="#38bdf8" fill="none">
+      <circle cx="191" cy="102" r="19" fill="rgba(56,189,248,.03)" stroke-width="1.6"/>
+      <circle cx="191" cy="102" r="13" fill="rgba(56,189,248,.06)" stroke-width="1.2"/>
+      <circle cx="191" cy="102" r="4" fill="rgba(56,189,248,.35)" stroke="#7dd3fc" stroke-width="1.3"/>
+      <line x1="191" y1="102" x2="191" y2="83" stroke-width="1.1" opacity=".9"/>
+      <line x1="191" y1="102" x2="208" y2="91" stroke-width="1.1" opacity=".9"/>
+      <line x1="191" y1="102" x2="209" y2="110" stroke-width="1.1" opacity=".9"/>
+      <line x1="191" y1="102" x2="198" y2="120" stroke-width="1.1" opacity=".9"/>
+      <line x1="191" y1="102" x2="184" y2="120" stroke-width="1.1" opacity=".9"/>
+      <line x1="191" y1="102" x2="173" y2="110" stroke-width="1.1" opacity=".9"/>
+      <line x1="191" y1="102" x2="174" y2="91" stroke-width="1.1" opacity=".9"/>
+      <circle cx="191" cy="102" r="9" fill="none" stroke="rgba(56,189,248,.28)" stroke-width=".8" stroke-dasharray="4 3"/>
     </g>
-    <g id="sg2-whr" filter="url(#gf_sg2)" stroke="#38bdf8" stroke-width="1.6" fill="none">
-      <circle cx="218" cy="104" r="18" fill="rgba(56,189,248,.04)"/><circle cx="218" cy="104" r="11"/>
-      <circle cx="218" cy="104" r="4" fill="rgba(56,189,248,.3)" stroke-width="1.3"/>
-      <line x1="218" y1="86" x2="218" y2="122"/><line x1="200" y1="104" x2="236" y2="104"/>
-      <line x1="205" y1="91" x2="231" y2="117"/><line x1="231" y1="91" x2="205" y2="117"/>
+
+    <!-- WINDSHIELD + FRONT DOOR GLASS — from top-left -->
+    <g id="sg2-windshield" filter="url(#gf_sg2)">
+      <path d="M 55,71 L 74,31 L 79,27 L 121,26 L 121,71 Z"
+            fill="url(#glG_sg2)" stroke="rgba(56,189,248,.72)" stroke-width="1.2"/>
+      <line x1="67" y1="40" x2="76" y2="29" stroke="rgba(56,189,248,.3)" stroke-width=".8"/>
     </g>
-    <g id="sg2-front" filter="url(#gf_sg2)" stroke="#38bdf8" stroke-width="1.2" fill="none">
-      <path d="M 30,104 L 36,90 L 52,76" fill="rgba(56,189,248,.04)"/>
-      <line x1="30" y1="97" x2="50" y2="90"/><line x1="32" y1="108" x2="56" y2="102"/>
+
+    <!-- B-PILLAR -->
+    <line id="sg2-bpillar" x1="121" y1="26" x2="121" y2="71"
+          stroke="#38bdf8" stroke-width="3.5" stroke-linecap="round" filter="url(#gf_sg2)" opacity=".5"/>
+
+    <!-- REAR DOOR GLASS — from above -->
+    <g id="sg2-rearglass" filter="url(#gf_sg2)">
+      <path d="M 121,26 L 166,25 L 166,71 L 121,71 Z"
+            fill="rgba(56,189,248,.1)" stroke="rgba(56,189,248,.6)" stroke-width="1.1"/>
+      <!-- small rear quarter triangle -->
+      <path d="M 166,25 L 175,28 L 175,47 L 166,47 Z"
+            fill="rgba(56,189,248,.08)" stroke="rgba(56,189,248,.48)" stroke-width="1"/>
     </g>
-    <g id="sg2-rear" filter="url(#gf_sg2)" stroke="#38bdf8" stroke-width="1.2" fill="none">
-      <line x1="238" y1="70" x2="248" y2="90"/>
-      <line x1="238" y1="72" x2="248" y2="92" stroke="#7dd3fc" stroke-width="2.5" opacity=".7"/>
+
+    <!-- C-PILLAR + HATCH GLASS — from top-right -->
+    <g id="sg2-cpillar" filter="url(#gf_sg2)">
+      <!-- C-pillar dark area -->
+      <path d="M 175,28 L 181,33 L 185,38 L 185,71 L 166,71 L 166,47 L 175,47 Z"
+            fill="rgba(6,12,24,.78)" stroke="rgba(56,189,248,.52)" stroke-width="1"/>
+      <!-- rear hatch glass -->
+      <path d="M 185,38 L 186,43 L 188,47 L 197,68 L 204,83 L 186,83 L 181,64 L 181,50 Z"
+            fill="rgba(56,189,248,.13)" stroke="rgba(56,189,248,.62)" stroke-width="1.1"/>
     </g>
-    <g id="sg2-lines" stroke="rgba(56,189,248,.45)" stroke-width=".9" fill="none">
-      <line x1="52" y1="76" x2="238" y2="78"/>
-      <rect x="108" y="88" width="28" height="5" rx="2.5" stroke-width=".8"/>
-      <rect x="174" y="88" width="28" height="5" rx="2.5" stroke-width=".8"/>
+
+    <!-- FRONT FASCIA — headlights + grille + badge — from far left -->
+    <g id="sg2-front" filter="url(#gf_sg2)" stroke="#38bdf8" fill="none">
+      <!-- Upper DRL strip -->
+      <path d="M 13,98 L 20,92 L 25,89" stroke-width="2.8" stroke-linecap="round"/>
+      <path d="M 14,99 L 21,93 L 26,90" stroke="#7dd3fc" stroke-width=".9" opacity=".7"/>
+      <!-- Lower headlight -->
+      <path d="M 14,104 L 22,98 L 27,95" stroke-width="1.4" opacity=".6"/>
+      <!-- Front bumper -->
+      <path d="M 13,114 L 13,121 L 24,121 L 32,120 L 33,114"
+            fill="rgba(56,189,248,.07)" stroke-width="1"/>
+      <!-- Grille bars -->
+      <line x1="14" y1="116" x2="30" y2="115" stroke-width=".8" opacity=".5"/>
+      <line x1="14" y1="118" x2="31" y2="117" stroke-width=".8" opacity=".5"/>
+      <!-- BYD badge diamond -->
+      <path d="M 20,111 L 23,114 L 20,117 L 17,114 Z"
+            fill="rgba(56,189,248,.4)" stroke="#7dd3fc" stroke-width="1.4" filter="url(#gf_sg2b)"/>
+      <!-- Charging port -->
+      <circle cx="28" cy="80" r="3" stroke-width="1.1"/>
+      <circle cx="28" cy="80" r="1.2" fill="rgba(56,189,248,.4)"/>
+    </g>
+
+    <!-- REAR TAILLIGHT — full-width LED bar — from far right -->
+    <g id="sg2-rear" filter="url(#gf_sg2b)" stroke="#38bdf8" fill="none">
+      <line x1="186" y1="51" x2="213" y2="115" stroke-width="3.8" stroke-linecap="round"/>
+      <line x1="187" y1="52" x2="212" y2="113" stroke="rgba(255,255,255,.4)" stroke-width="1.1"/>
+      <line x1="186" y1="51" x2="213" y2="115" stroke="#7dd3fc" stroke-width="1" opacity=".55"/>
+      <!-- spoiler -->
+      <path d="M 184,38 L 186,43 L 184,51" stroke="rgba(56,189,248,.8)" stroke-width="1.4"
+            fill="none" filter="url(#gf_sg2)"/>
+    </g>
+
+    <!-- ROOF + CHARACTER LINES — from below -->
+    <g id="sg2-lines" stroke="rgba(56,189,248,.45)" fill="none">
+      <!-- roof crease -->
+      <path d="M 79,27 C 95,22 106,21 114,21 L 140,21 C 153,21 160,22 167,24"
+            stroke-width="1"/>
+      <!-- panoramic hint -->
+      <path d="M 86,24 C 100,19 112,18 122,18 L 140,18 C 152,18 159,19 165,21"
+            stroke-width=".7" stroke-dasharray="7 3" opacity=".5"/>
+      <!-- beltline -->
+      <line x1="55" y1="71" x2="187" y2="71" stroke-width="1.2"/>
+      <!-- lower crease -->
+      <path d="M 21,89 C 32,85 42,83 52,81 L 175,79 C 182,79 186,81 190,83"
+            stroke-width=".8" stroke-dasharray="6 3"/>
+      <!-- door handles -->
+      <rect x="76" y="83" width="12" height="3" rx="1.5" stroke-width=".9"/>
+      <rect x="138" y="82" width="12" height="3" rx="1.5" stroke-width=".9"/>
+      <!-- rocker panel -->
+      <path d="M 69,112 L 172,112 L 172,121 L 69,121 Z" fill="rgba(56,189,248,.06)" stroke-width=".8"/>
+    </g>
+
+    <!-- SIDE MIRROR -->
+    <g id="sg2-mirror" filter="url(#gf_sg2)" stroke="rgba(56,189,248,.65)" fill="rgba(56,189,248,.12)">
+      <path d="M 55,71 L 59,67 L 63,66 L 64,68 L 58,72 Z" stroke-width="1"/>
     </g>
   </svg>
   <div class="side-card-info">
@@ -1286,6 +1502,8 @@
     <div class="side-card-sub">Mini EV · 60/75kW</div>
     <span class="side-card-tag tag-byd">EV Parts</span>
   </div>
+  </div><!-- /sg2 card -->
+
   </div>
 
   <!-- BYD Song Plus ANIMATED (right) -->
@@ -2316,15 +2534,19 @@
 
   /* BYD Seagull (left) */
   makeLoop([
-    {id:'sg1-body',  dx: 160, dy:   0, rot:  6, d:   0},
-    {id:'sg1-whf',   dx:-120, dy:  90, rot:-30, d:  50},
-    {id:'sg1-whr',   dx: 120, dy:  90, rot: 30, d:  80},
-    {id:'sg1-glass', dx:-100, dy: -90, rot:-12, d: 120},
-    {id:'sg1-roof',  dx:   0, dy:-110, rot:  0, d: 170},
-    {id:'sg1-front', dx:-180, dy:  10, rot: -5, d:  30},
-    {id:'sg1-rear',  dx: 180, dy:  10, rot:  5, d:  60},
-    {id:'sg1-lines', dx:  -40, dy: 40, rot:  0, d: 220},
-  ], 4000, 700);
+    {id:'sg1-body',       dx: 160, dy:   0, rot:  6, d:   0},
+    {id:'sg1-arches',     dx:   0, dy: 120, rot:  0, d:  40},
+    {id:'sg1-whf',        dx:-130, dy: 100, rot:-35, d:  55},
+    {id:'sg1-whr',        dx: 130, dy: 100, rot: 35, d:  85},
+    {id:'sg1-windshield', dx:-120, dy:-100, rot:-14, d: 120},
+    {id:'sg1-bpillar',    dx:   0, dy: -80, rot:  0, d: 145},
+    {id:'sg1-rearglass',  dx:  10, dy:-110, rot:  0, d: 165},
+    {id:'sg1-cpillar',    dx: 140, dy: -80, rot: 12, d: 190},
+    {id:'sg1-front',      dx:-200, dy:  15, rot: -5, d:  25},
+    {id:'sg1-rear',       dx: 200, dy:  10, rot:  5, d:  65},
+    {id:'sg1-lines',      dx: -50, dy:  50, rot:  0, d: 230},
+    {id:'sg1-mirror',     dx:-160, dy: -60, rot:-10, d: 250},
+  ], 4500, 700);
 
   /* BYD Song Plus (left) */
   makeLoop([
@@ -2380,17 +2602,21 @@
     {id:'t7h-front', dx:-200, dy:  20, rot: -5, d:  20},
   ], 4000, 1300);
 
-  /* BYD Seagull (right) */
+  /* BYD Seagull (right) — proper Seagull shape */
   makeLoop([
-    {id:'sg2-body',  dx: 160, dy:   0, rot:  6, d:   0},
-    {id:'sg2-whf',   dx:-120, dy:  90, rot:-30, d:  50},
-    {id:'sg2-whr',   dx: 120, dy:  90, rot: 30, d:  80},
-    {id:'sg2-glass', dx:-100, dy: -90, rot:-12, d: 120},
-    {id:'sg2-roof',  dx:   0, dy:-110, rot:  0, d: 170},
-    {id:'sg2-front', dx:-180, dy:  10, rot: -5, d:  30},
-    {id:'sg2-rear',  dx: 180, dy:  10, rot:  5, d:  60},
-    {id:'sg2-lines', dx: -40, dy:  40, rot:  0, d: 220},
-  ], 4000, 1700);
+    {id:'sg2-body',       dx: 160, dy:   0, rot:  6, d:   0},
+    {id:'sg2-arches',     dx:   0, dy: 120, rot:  0, d:  40},
+    {id:'sg2-whf',        dx:-130, dy: 100, rot:-35, d:  55},
+    {id:'sg2-whr',        dx: 130, dy: 100, rot: 35, d:  85},
+    {id:'sg2-windshield', dx:-120, dy:-100, rot:-14, d: 120},
+    {id:'sg2-bpillar',    dx:   0, dy: -80, rot:  0, d: 145},
+    {id:'sg2-rearglass',  dx:  10, dy:-110, rot:  0, d: 165},
+    {id:'sg2-cpillar',    dx: 140, dy: -80, rot: 12, d: 190},
+    {id:'sg2-front',      dx:-200, dy:  15, rot: -5, d:  25},
+    {id:'sg2-rear',       dx: 200, dy:  10, rot:  5, d:  65},
+    {id:'sg2-lines',      dx: -50, dy:  50, rot:  0, d: 230},
+    {id:'sg2-mirror',     dx:-160, dy: -60, rot:-10, d: 250},
+  ], 4500, 1700);
 
   /* BYD Song Plus (right) */
   makeLoop([
