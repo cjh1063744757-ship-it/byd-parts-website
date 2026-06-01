@@ -341,7 +341,7 @@
     .home-layout {
       display: flex; align-items: flex-start;
       max-width: 1280px; margin: 0 auto;
-      padding: 48px 24px 32px; gap: 16px;
+      padding: 20px 24px 32px; gap: 16px;
     }
 
     /* ── CATEGORY SIDEBAR ── */
@@ -647,6 +647,28 @@
      ============================================================ -->
 <div class="home-outer">
 
+<!-- MAIN CONTENT -->
+<div style="flex:1;min-width:0;">
+
+<!-- ============================================================
+     SEARCH BAR
+     ============================================================ -->
+<div class="home-search-bar">
+  <div class="home-search-inner">
+    <div class="home-search-form">
+      <select class="home-search-select">
+        <option>All Products</option>
+        <option>Tires</option>
+        <option>BYD EV Parts</option>
+        <option>Sinotruk Parts</option>
+        <option>Car Accessories</option>
+      </select>
+      <input class="home-search-input" type="text" placeholder="Search tires, EV parts, truck parts..." />
+    </div>
+    <button class="home-search-btn" onclick="doSearch()">🔍 Search</button>
+  </div>
+</div>
+
 <div class="home-layout">
 
   <!-- LEFT: Category Sidebar -->
@@ -824,7 +846,7 @@
 
 </div><!-- end .home-layout -->
 
-</div><!-- end main content -->
+</div><!-- end main content wrapper -->
 
 </div><!-- end .home-outer -->
 
