@@ -100,7 +100,7 @@ header {
   position: fixed; top: 0; left: 0; right: 0;
   z-index: 1000;
   transition: var(--transition);
-  padding: 18px 0;
+  padding: 10px 0;
 }
 header.scrolled {
   background: var(--white);
