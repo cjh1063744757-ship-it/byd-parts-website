@@ -1811,7 +1811,7 @@ document.addEventListener('keydown', function(e) {
 // ═══════════════════════════════════════════════════════════════
 // State
 // ═══════════════════════════════════════════════════════════════
-let activeModelId = 'ALL';
+let activeModelId = BYD_MODELS[0]?.id || 'ALL';
 let PART_BTN_MAP  = {};   // btnId → part row data
 let rowCounter    = 0;
 
@@ -1827,13 +1827,10 @@ function buildModelTabs() {
     <button class="brand-tab active" data-brand="BYD" onclick="switchBrand('BYD')">BYD</button>`;
 
   // ── Right area: Model ──
-  let html = `<div class="model-col-header">Model</div>
-    <button class="model-tab active" data-model="ALL" onclick="switchModel('ALL')">
-      All <span class="mtab-count">${totalAll}</span>
-    </button>`;
-  BYD_MODELS.forEach(m => {
+  let html = `<div class="model-col-header">Model</div>`;
+  BYD_MODELS.forEach((m, i) => {
     const shortName = m.name.replace('BYD ', '');
-    html += `<button class="model-tab" data-model="${m.id}" onclick="switchModel('${m.id}')">
+    html += `<button class="model-tab${i === 0 ? ' active' : ''}" data-model="${m.id}" onclick="switchModel('${m.id}')">
       ${shortName} <span class="mtab-count">${m.parts.length}</span>
     </button>`;
   });
@@ -2029,7 +2026,7 @@ function updateFloatCart() {
 // ═══════════════════════════════════════════════════════════════
 document.addEventListener('DOMContentLoaded', () => {
   buildModelTabs();
-  updateModelBanner('ALL');
+  updateModelBanner(activeModelId);
   render();
   updateFloatCart();
 
