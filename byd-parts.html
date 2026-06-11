@@ -84,62 +84,67 @@
     .bp-count strong { color: var(--primary); }
 
     /* Model Tabs */
-    /* ── Two-level Brand → Model filter ── */
-    .brand-model-filter { margin-bottom: 18px; }
-
-    /* Brand row */
-    .brand-row {
-      display: flex; align-items: center; gap: 8px;
-      margin-bottom: 10px;
+    /* ── Two-level Brand | Model filter ── */
+    .brand-model-filter {
+      display: flex; border: 1px solid var(--border);
+      border-radius: var(--radius); overflow: hidden;
+      margin-bottom: 18px; background: var(--white);
     }
-    .brand-row-label {
-      font-size: 0.72rem; font-weight: 700; color: var(--gray);
-      text-transform: uppercase; letter-spacing: 0.08em; white-space: nowrap;
+
+    /* Left brand column */
+    .brand-col {
+      display: flex; flex-direction: column;
+      border-right: 1px solid var(--border);
+      background: var(--light); flex-shrink: 0; min-width: 110px;
+    }
+    .brand-col-header {
+      padding: 8px 14px 6px;
+      font-size: 0.65rem; font-weight: 700; color: var(--gray);
+      text-transform: uppercase; letter-spacing: 0.08em;
+      border-bottom: 1px solid var(--border);
     }
     .brand-tab {
-      display: flex; align-items: center; gap: 7px;
-      padding: 7px 16px; border-radius: 8px;
-      border: 2px solid var(--border); background: var(--white);
+      display: flex; align-items: center; gap: 8px;
+      padding: 10px 14px; border: none; background: transparent;
       font-size: 0.82rem; font-weight: 700; cursor: pointer;
       transition: var(--transition); color: var(--gray-dark);
-      font-family: 'Inter', sans-serif;
+      font-family: 'Inter', sans-serif; text-align: left;
+      border-left: 3px solid transparent;
     }
-    .brand-tab:hover { border-color: var(--primary); color: var(--primary); }
+    .brand-tab:hover { background: rgba(26,54,126,0.05); color: var(--primary); }
     .brand-tab.active {
-      background: var(--primary); border-color: var(--primary); color: var(--white);
-      box-shadow: 0 2px 10px rgba(26,54,126,0.25);
-    }
-    .brand-tab .brand-arrow {
-      font-size: 0.65rem; opacity: 0.7; margin-left: 2px;
+      background: var(--white); color: var(--primary);
+      border-left-color: var(--primary);
     }
 
-    /* Model row */
-    .model-row-wrap {
-      display: flex; align-items: center; gap: 6px;
+    /* Right model area */
+    .model-col {
+      flex: 1; padding: 10px 14px;
+      display: flex; flex-direction: row; flex-wrap: wrap; align-content: flex-start; gap: 0;
     }
-    .model-row-label {
-      font-size: 0.72rem; font-weight: 700; color: var(--gray);
-      text-transform: uppercase; letter-spacing: 0.08em; white-space: nowrap;
-      padding-right: 4px;
+    .model-col-header {
+      font-size: 0.65rem; font-weight: 700; color: var(--gray);
+      text-transform: uppercase; letter-spacing: 0.08em;
+      margin-bottom: 8px; width: 100%;
     }
     .model-tabs, .model-row {
-      display: flex; gap: 8px; flex-wrap: wrap;
+      display: flex; gap: 7px; flex-wrap: wrap;
     }
     .model-tab {
-      padding: 7px 15px; border-radius: 50px;
-      border: 2px solid var(--border); background: var(--white);
-      font-size: 0.8rem; font-weight: 600; cursor: pointer;
+      padding: 6px 14px; border-radius: 50px;
+      border: 1.5px solid var(--border); background: var(--white);
+      font-size: 0.78rem; font-weight: 600; cursor: pointer;
       transition: var(--transition); color: var(--gray-dark);
-      font-family: 'Inter', sans-serif; display: flex; align-items: center; gap: 6px;
+      font-family: 'Inter', sans-serif; display: flex; align-items: center; gap: 5px;
     }
     .model-tab:hover { border-color: var(--primary); color: var(--primary); }
     .model-tab.active { background: var(--primary); border-color: var(--primary); color: var(--white); }
     .model-tab .mtab-count {
       display: inline-flex; align-items: center; justify-content: center;
       background: rgba(255,255,255,0.25); border-radius: 50px;
-      padding: 1px 7px; font-size: 0.7rem; font-weight: 700;
+      padding: 0 6px; font-size: 0.68rem; font-weight: 700;
     }
-    .model-tab:not(.active) .mtab-count { background: var(--light); color: var(--gray); }
+    .model-tab:not(.active) .mtab-count { background: #e8ecf0; color: var(--gray); }
 
     /* Model Info Banner */
     .model-info-banner {
@@ -479,8 +484,8 @@
 
     <!-- Two-level Brand → Model Filter -->
     <div class="brand-model-filter reveal">
-      <div class="brand-row" id="brandRow"></div>
-      <div class="model-row" id="modelTabs"></div>
+      <div class="brand-col" id="brandRow"></div>
+      <div class="model-col" id="modelTabs"></div>
     </div>
 
     <!-- Model Info Banner -->
@@ -1814,22 +1819,15 @@ let rowCounter    = 0;
 // Build model tabs
 // ═══════════════════════════════════════════════════════════════
 function buildModelTabs() {
-  // Brand row
-  const brandRow = document.getElementById('brandRow');
   const totalAll = BYD_MODELS.reduce((s, m) => s + m.parts.length, 0);
-  brandRow.innerHTML = `
-    <span class="brand-row-label">Brand</span>
-    <button class="brand-tab active" onclick="switchBrand('BYD')">
-      <svg width="18" height="18" viewBox="0 0 40 40" fill="none" style="flex-shrink:0">
-        <rect width="40" height="40" rx="6" fill="#1a367e"/>
-        <text x="20" y="27" font-size="14" font-weight="900" fill="white" text-anchor="middle" font-family="Arial">BYD</text>
-      </svg>
-      BYD <span class="brand-arrow">▾</span>
-    </button>`;
 
-  // Model row
-  const modelRow = document.getElementById('modelTabs');
-  let html = `<span class="model-row-label">Model</span>
+  // ── Left column: Brand ──
+  document.getElementById('brandRow').innerHTML = `
+    <div class="brand-col-header">Brand</div>
+    <button class="brand-tab active" data-brand="BYD" onclick="switchBrand('BYD')">BYD</button>`;
+
+  // ── Right area: Model ──
+  let html = `<div class="model-col-header">Model</div>
     <button class="model-tab active" data-model="ALL" onclick="switchModel('ALL')">
       All <span class="mtab-count">${totalAll}</span>
     </button>`;
@@ -1839,11 +1837,12 @@ function buildModelTabs() {
       ${shortName} <span class="mtab-count">${m.parts.length}</span>
     </button>`;
   });
-  modelRow.innerHTML = html;
+  document.getElementById('modelTabs').innerHTML = html;
 }
 
 function switchBrand(brand) {
-  // placeholder for future multi-brand support
+  document.querySelectorAll('.brand-tab').forEach(b =>
+    b.classList.toggle('active', b.dataset.brand === brand));
 }
 
 // ═══════════════════════════════════════════════════════════════
