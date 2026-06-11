@@ -84,13 +84,51 @@
     .bp-count strong { color: var(--primary); }
 
     /* Model Tabs */
-    .model-tabs {
-      display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 18px;
+    /* ── Two-level Brand → Model filter ── */
+    .brand-model-filter { margin-bottom: 18px; }
+
+    /* Brand row */
+    .brand-row {
+      display: flex; align-items: center; gap: 8px;
+      margin-bottom: 10px;
+    }
+    .brand-row-label {
+      font-size: 0.72rem; font-weight: 700; color: var(--gray);
+      text-transform: uppercase; letter-spacing: 0.08em; white-space: nowrap;
+    }
+    .brand-tab {
+      display: flex; align-items: center; gap: 7px;
+      padding: 7px 16px; border-radius: 8px;
+      border: 2px solid var(--border); background: var(--white);
+      font-size: 0.82rem; font-weight: 700; cursor: pointer;
+      transition: var(--transition); color: var(--gray-dark);
+      font-family: 'Inter', sans-serif;
+    }
+    .brand-tab:hover { border-color: var(--primary); color: var(--primary); }
+    .brand-tab.active {
+      background: var(--primary); border-color: var(--primary); color: var(--white);
+      box-shadow: 0 2px 10px rgba(26,54,126,0.25);
+    }
+    .brand-tab .brand-arrow {
+      font-size: 0.65rem; opacity: 0.7; margin-left: 2px;
+    }
+
+    /* Model row */
+    .model-row-wrap {
+      display: flex; align-items: center; gap: 6px;
+    }
+    .model-row-label {
+      font-size: 0.72rem; font-weight: 700; color: var(--gray);
+      text-transform: uppercase; letter-spacing: 0.08em; white-space: nowrap;
+      padding-right: 4px;
+    }
+    .model-tabs, .model-row {
+      display: flex; gap: 8px; flex-wrap: wrap;
     }
     .model-tab {
-      padding: 9px 18px; border-radius: 50px;
+      padding: 7px 15px; border-radius: 50px;
       border: 2px solid var(--border); background: var(--white);
-      font-size: 0.82rem; font-weight: 600; cursor: pointer;
+      font-size: 0.8rem; font-weight: 600; cursor: pointer;
       transition: var(--transition); color: var(--gray-dark);
       font-family: 'Inter', sans-serif; display: flex; align-items: center; gap: 6px;
     }
@@ -99,7 +137,7 @@
     .model-tab .mtab-count {
       display: inline-flex; align-items: center; justify-content: center;
       background: rgba(255,255,255,0.25); border-radius: 50px;
-      padding: 1px 7px; font-size: 0.72rem; font-weight: 700;
+      padding: 1px 7px; font-size: 0.7rem; font-weight: 700;
     }
     .model-tab:not(.active) .mtab-count { background: var(--light); color: var(--gray); }
 
@@ -439,8 +477,11 @@
       <div class="bp-count"><span data-i18n="parts.showing">Showing</span> <strong id="shownCount">0</strong> <span data-i18n="parts.showing.suffix">parts</span></div>
     </div>
 
-    <!-- Model Tabs -->
-    <div class="model-tabs reveal" id="modelTabs"></div>
+    <!-- Two-level Brand → Model Filter -->
+    <div class="brand-model-filter reveal">
+      <div class="brand-row" id="brandRow"></div>
+      <div class="model-row" id="modelTabs"></div>
+    </div>
 
     <!-- Model Info Banner -->
     <div class="model-info-banner reveal" id="modelInfoBanner"></div>
@@ -1773,19 +1814,36 @@ let rowCounter    = 0;
 // Build model tabs
 // ═══════════════════════════════════════════════════════════════
 function buildModelTabs() {
-  const container = document.getElementById('modelTabs');
-  let totalAll = 0;
-  BYD_MODELS.forEach(m => totalAll += m.parts.length);
+  // Brand row
+  const brandRow = document.getElementById('brandRow');
+  const totalAll = BYD_MODELS.reduce((s, m) => s + m.parts.length, 0);
+  brandRow.innerHTML = `
+    <span class="brand-row-label">Brand</span>
+    <button class="brand-tab active" onclick="switchBrand('BYD')">
+      <svg width="18" height="18" viewBox="0 0 40 40" fill="none" style="flex-shrink:0">
+        <rect width="40" height="40" rx="6" fill="#1a367e"/>
+        <text x="20" y="27" font-size="14" font-weight="900" fill="white" text-anchor="middle" font-family="Arial">BYD</text>
+      </svg>
+      BYD <span class="brand-arrow">▾</span>
+    </button>`;
 
-  let html = `<button class="model-tab active" data-model="ALL" onclick="switchModel('ALL')">
-    🚘 All Models <span class="mtab-count">${totalAll}</span>
-  </button>`;
+  // Model row
+  const modelRow = document.getElementById('modelTabs');
+  let html = `<span class="model-row-label">Model</span>
+    <button class="model-tab active" data-model="ALL" onclick="switchModel('ALL')">
+      All <span class="mtab-count">${totalAll}</span>
+    </button>`;
   BYD_MODELS.forEach(m => {
+    const shortName = m.name.replace('BYD ', '');
     html += `<button class="model-tab" data-model="${m.id}" onclick="switchModel('${m.id}')">
-      ${m.name} <span class="mtab-count">${m.parts.length}</span>
+      ${shortName} <span class="mtab-count">${m.parts.length}</span>
     </button>`;
   });
-  container.innerHTML = html;
+  modelRow.innerHTML = html;
+}
+
+function switchBrand(brand) {
+  // placeholder for future multi-brand support
 }
 
 // ═══════════════════════════════════════════════════════════════

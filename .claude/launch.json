@@ -4,8 +4,9 @@
     {
       "name": "catalog-preview",
       "runtimeExecutable": "python",
-      "runtimeArgs": ["-m", "http.server", "8765"],
-      "port": 8765
+      "runtimeArgs": ["-m", "http.server", "8765", "--directory", "."],
+      "port": 8765,
+      "defaultPath": "/byd-parts.html"
     }
   ]
 }
