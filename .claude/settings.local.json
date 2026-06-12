@@ -79,7 +79,10 @@
       "Skill(update-config)",
       "Skill(update-config:*)",
       "mcp__Claude_Preview__preview_start",
-      "PowerShell(\\(Get-Content \"C:\\\\Users\\\\Administrator\\\\Desktop\\\\独立站项目\\\\js\\\\i18n.js\" | Measure-Object -Line\\).Lines)"
+      "PowerShell(\\(Get-Content \"C:\\\\Users\\\\Administrator\\\\Desktop\\\\独立站项目\\\\js\\\\i18n.js\" | Measure-Object -Line\\).Lines)",
+      "PowerShell(Get-Process | Sort-Object WorkingSet64 -Descending | Select-Object -First 20 Name, @{N='内存\\(MB\\)';E={[math]::Round\\($_.WorkingSet64/1MB,1\\)}}, Id | Format-Table -AutoSize)",
+      "PowerShell(Start-Process -FilePath \"C:\\\\Program Files \\(x86\\)\\\\Tencent\\\\QQPCMgr\\\\18.1.30302.212\\\\Uninst.exe\" -Wait)",
+      "PowerShell(Get-Content \"$env:USERPROFILE\\\\.netlify\\\\config.json\" -ErrorAction SilentlyContinue | Select-Object -First 10)"
     ],
     "defaultMode": "bypassPermissions"
   }

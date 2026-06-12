@@ -415,9 +415,7 @@
         <a href="products.html" class="nav-link nav-dropdown-trigger"><span data-i18n="nav.products">Products</span> <span class="dropdown-arrow">▾</span></a>
         <div class="dropdown-menu">
           <a href="products.html" class="dropdown-item" data-i18n="nav.allProducts">📦 All Products</a>
-          <div class="dropdown-divider"></div>
-          <a href="tires.html" class="dropdown-item" data-i18n="nav.tires">🛞 Tires</a>
-          <a href="pricelist.html" class="dropdown-item" data-i18n="nav.tirePrices">💰 Tire Prices</a>
+          <div class="dropdown-divider"></div>          <a href="pricelist.html" class="dropdown-item" data-i18n="nav.tirePrices">💰 Tire Prices</a>
           <a href="byd-parts.html" class="dropdown-item" data-i18n="nav.bydParts">⚡ BYD Parts</a>
           <a href="sinotruk-parts.html" class="dropdown-item" data-i18n="nav.sinotrukParts">🚛 Sinotruk Parts</a>
           <a href="car-accessories.html" class="dropdown-item" data-i18n="nav.carAccessories">🚗 Car Accessories</a>
@@ -443,6 +441,7 @@
         <button class="lang-option" data-lang="fr" onclick="setLang('fr')">🇫🇷 Français</button>
         <button class="lang-option" data-lang="ru" onclick="setLang('ru')">🇷🇺 Русский</button>
         <button class="lang-option" data-lang="uk" onclick="setLang('uk')">🇺🇦 Українська</button>
+        <button class="lang-option" data-lang="ar" onclick="setLang('ar')">🇸🇦 العربية</button>
       </div>
     </div>    <div class="hamburger"><span></span><span></span><span></span></div>
   </div>
@@ -789,7 +788,18 @@ async function handleSubmit(e) {
   // Save locally
   inquirySave(inquiry);
 
-  // Write cart summary into hidden field then POST to Netlify Forms
+  // POST to CM system backend (Google Apps Script)
+  const GAS_URL = 'YOUR_GAS_DEPLOYMENT_URL_HERE';
+  if (GAS_URL && GAS_URL !== 'YOUR_GAS_DEPLOYMENT_URL_HERE') {
+    fetch(GAS_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      body: JSON.stringify(inquiry),
+      headers: {'Content-Type': 'application/json'}
+    }).catch(()=>{});
+  }
+
+  // Write cart summary into hidden field then POST to Web3Forms
   const cartSummary = cart.map(i => `${i.qty || 1}x ${i.name}`).join(' | ');
   document.getElementById('fCartItems').value = cartSummary;
   try {
@@ -801,7 +811,7 @@ async function handleSubmit(e) {
       body: data
     });
   } catch(err) {
-    console.warn('Netlify form post failed:', err);
+    console.warn('Web3Forms post failed:', err);
   }
 
   // Clear cart
@@ -859,7 +869,7 @@ function sendViaWhatsApp() {
 
   // Save locally too
   const id = genId();
-  inquirySave({
+  const waInquiry = {
     id,
     submittedAt: new Date().toISOString(),
     name:    document.getElementById('fName').value.trim() || '(WhatsApp)',
@@ -868,7 +878,18 @@ function sendViaWhatsApp() {
     items:   cart,
     itemCount: cart.length,
     status:  'Sent via WhatsApp'
-  });
+  };
+  inquirySave(waInquiry);
+  // POST to CM system backend (Google Apps Script)
+  const GAS_URL_WA = 'YOUR_GAS_DEPLOYMENT_URL_HERE';
+  if (GAS_URL_WA && GAS_URL_WA !== 'YOUR_GAS_DEPLOYMENT_URL_HERE') {
+    fetch(GAS_URL_WA, {
+      method: 'POST',
+      mode: 'no-cors',
+      body: JSON.stringify(waInquiry),
+      headers: {'Content-Type': 'application/json'}
+    }).catch(()=>{});
+  }
 }
 
 // Initialize
