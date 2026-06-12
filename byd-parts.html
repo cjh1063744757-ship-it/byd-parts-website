@@ -163,6 +163,15 @@
       padding: 4px 12px; font-size: 0.78rem;
     }
     .model-info-chip strong { color: #e0eaff; }
+    .model-ded-btn {
+      display: inline-flex; align-items: center;
+      background: #4fc3f7; color: #1a1a2e;
+      border-radius: 20px; padding: 5px 14px;
+      font-size: 0.78rem; font-weight: 700;
+      text-decoration: none; margin-left: 4px;
+      transition: background 0.2s;
+    }
+    .model-ded-btn:hover { background: #81d4fa; }
 
     /* Table */
     .bp-table-wrap {
@@ -1863,13 +1872,21 @@ function updateModelBanner(modelId) {
   const m = BYD_MODELS.find(x => x.id === modelId);
   if (!m) return;
   const i = m.info;
+  const slugMap = {
+    E2:'byd-e2-parts', Atto3:'byd-atto3-parts', Seal:'byd-seal-parts',
+    Dolphin:'byd-dolphin-parts', HanEV:'byd-han-ev-parts', TangEV:'byd-tang-ev-parts',
+    SongPlusEV:'byd-song-plus-ev-parts', Seagull:'byd-seagull-parts', YuanUP:'byd-yuan-up-parts'
+  };
+  const slug = slugMap[m.id] || '';
+  const dedLink = slug ? `<a href="/${slug}.html" class="model-ded-btn">View Dedicated Page →</a>` : '';
   banner.innerHTML = `
     <span class="model-name-lbl">⚡ ${m.name}</span>
     <span class="model-info-chip">📅 <strong>${i.year}</strong></span>
     <span class="model-info-chip">🚘 <strong>${i.type}</strong></span>
     <span class="model-info-chip">🔋 <strong>${i.voltage}</strong></span>
     <span class="model-info-chip">⚡ Motor <strong>${i.motor}</strong></span>
-    <span class="model-info-chip">🔩 <strong>${m.parts.length} parts</strong></span>`;
+    <span class="model-info-chip">🔩 <strong>${m.parts.length} parts</strong></span>
+    ${dedLink}`;
 }
 
 // ═══════════════════════════════════════════════════════════════
